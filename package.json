@@ -7,7 +7,7 @@
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxt dev",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "prepare": "nuxt prepare",
+    "prepare": "nuxt prepare && simple-git-hooks",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
     "start:generate": "npx serve .output/public",
@@ -31,19 +31,20 @@
     "czg": "catalog:dev",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
+    "lint-staged": "catalog:dev",
     "nuxt": "catalog:build",
     "pinia": "catalog:frontend",
+    "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
     "vue": "catalog:frontend",
     "vue-tsc": "catalog:dev"
   },
-  "resolutions": {
-    "@nuxt/devtools": "catalog:build",
-    "@nuxt/kit": "catalog:build",
-    "nuxt": "catalog:build",
-    "unplugin": "catalog:build",
-    "vite": "catalog:build"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
