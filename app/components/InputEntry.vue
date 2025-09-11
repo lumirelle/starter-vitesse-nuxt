@@ -9,7 +9,8 @@ function go() {
 </script>
 
 <template>
-  <div>
+  <div mb-4 mt-4 pb-4 pt-4>
+    <p>To `hi` page &gt;</p>
     <input
       id="input"
       v-model="name"

@@ -20,6 +20,7 @@
     "@iconify-json/twemoji": "catalog:icons",
     "@nuxt/devtools": "catalog:build",
     "@nuxt/eslint": "catalog:build",
+    "@nuxt/image": "catalog:build",
     "@nuxtjs/color-mode": "catalog:build",
     "@pinia/nuxt": "catalog:build",
     "@unocss/eslint-config": "catalog:build",
