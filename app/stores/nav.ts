@@ -14,8 +14,6 @@ export const useNavStore = defineStore('nav', () => {
    *
    * For example, in `app.vue` or a layout component:
    *
-   * @example
-   *
    * ```ts
    * const navStore = useNavStore()
    * await callOnce('nav', () => navStore.fetchNavData())
@@ -23,11 +21,9 @@ export const useNavStore = defineStore('nav', () => {
    *
    * If we want to fetch the data while each time the user navigates to a new page, we can set `mode` option to `'navigation'`
    *
-   * @example
-   *
    * ```ts
    * const navStore = useNavStore()
-   * await callOnce('nav', () => navStore.fetchNavData()), { mode: 'navigation' })
+   * await callOnce('nav', () => navStore.fetchNavData(), { mode: 'navigation' })
    * ```
    *
    * @see https://pinia.vuejs.org/ssr/nuxt.html#Awaiting-for-actions-in-pages

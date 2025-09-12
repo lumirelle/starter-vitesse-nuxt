@@ -1,6 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
+  title: 'pages.title.index',
+})
+
+const { t } = useI18n({
+  useScope: 'local',
 })
 
 const online = useOnline()
@@ -13,11 +18,11 @@ const online = useOnline()
       <Suspense>
         <PageView v-if="online" />
         <div v-else text-gray:80>
-          You're offline
+          {{ t('offline') }}
         </div>
         <template #fallback>
           <div op50 italic>
-            <span animate-pulse>Loading...</span>
+            <span animate-pulse>{{ t('loading') }}</span>
           </div>
         </template>
       </Suspense>
@@ -33,3 +38,15 @@ const online = useOnline()
     </div>
   </div>
 </template>
+
+<i18n lang="yaml">
+en:
+  offline: "You're offline"
+  loading: "Loading..."
+zh:
+  offline: "你已离线"
+  loading: "加载中..."
+fr:
+  offline: "Vous êtes hors ligne"
+  loading: "Chargement..."
+</i18n>

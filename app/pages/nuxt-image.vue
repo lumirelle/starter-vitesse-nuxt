@@ -1,6 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
+  title: 'pages.title.nuxtImage',
+})
+
+const { t } = useI18n({
+  useScope: 'local',
 })
 </script>
 
@@ -16,15 +21,22 @@ definePageMeta({
         class="rounded"
       />
       <figcaption class="text-xs text-gray-600 mt-3">
-        Photo by <a
-          href="https://unsplash.com/@vorosbenisop"
-          target="_blank"
-          class="underline"
-        >Benjamin Voros</a> on <a
-          href="https://unsplash.com/s/photos/mountain"
-          target="_blank"
-          class="underline"
-        >Unsplash</a>.
+        <I18nT tag="span" keypath="photoBy">
+          <template #author>
+            <a
+              href="https://unsplash.com/@vorosbenisop"
+              target="_blank"
+              class="underline"
+            >Benjamin Voros</a>
+          </template>
+          <template #source>
+            <a
+              href="https://unsplash.com/s/photos/mountain"
+              target="_blank"
+              class="underline"
+            >Unsplash</a>
+          </template>
+        </I18nT>
       </figcaption>
     </figure>
     <!-- https://image.nuxt.com/usage/nuxt-picture -->
@@ -36,15 +48,22 @@ definePageMeta({
         sizes="xs:200px md:500px lg:1024"
       />
       <figcaption class="text-xs text-gray-600 mt-3">
-        Photo by <a
-          href="https://unsplash.com/@kydroon"
-          target="_blank"
-          class="underline"
-        >Kurt Cotoaga</a> on <a
-          href="https://unsplash.com/s/photos/mountain"
-          target="_blank"
-          class="underline"
-        >Unsplash</a>.
+        <I18nT tag="span" keypath="photoBy">
+          <template #author>
+            <a
+              href="https://unsplash.com/@kydroon"
+              target="_blank"
+              class="underline"
+            >Kurt Cotoaga</a>
+          </template>
+          <template #source>
+            <a
+              href="https://unsplash.com/s/photos/mountain"
+              target="_blank"
+              class="underline"
+            >Unsplash</a>
+          </template>
+        </I18nT>
       </figcaption>
     </figure>
 
@@ -53,8 +72,20 @@ definePageMeta({
         class="text-sm btn m-3"
         to="/"
       >
-        Back
+        {{ t('back') }}
       </NuxtLink>
     </div>
   </div>
 </template>
+
+<i18n lang="yaml">
+en:
+  photoBy: "Photo by {author} on {source}."
+  back: "Back"
+zh:
+  photoBy: "照片作者 {author}，来源于 {source}。"
+  back: "返回"
+fr:
+  photoBy: "Photo par {author} sur {source}."
+  back: "Retour"
+</i18n>

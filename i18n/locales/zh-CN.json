@@ -1,0 +1,19 @@
+{
+  "welcome": "欢迎来到我们的网站！",
+
+  "layouts": {
+    "title": {
+      "home": "首页布局 - Starter Vitesse Nuxt",
+      "default": "默认布局 - Starter Vitesse Nuxt"
+    }
+  },
+
+  "pages": {
+    "title": {
+      "notFound": "404 未找到 - Starter Vitesse Nuxt",
+      "index": "索引页面 - Starter Vitesse Nuxt",
+      "hi": "你好页面 - Starter Vitesse Nuxt",
+      "nuxtImage": "Nuxt 图片页面 - Starter Vitesse Nuxt"
+    }
+  }
+}

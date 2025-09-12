@@ -1,0 +1,19 @@
+{
+  "welcome": "Bienvenue sur notre site web !",
+
+  "layouts": {
+    "title": {
+      "home": "Layout Accueil - Starter Vitesse Nuxt",
+      "default": "Layout Par Défaut - Starter Vitesse Nuxt"
+    }
+  },
+
+  "pages": {
+    "title": {
+      "notFound": "404 Non Trouvé - Starter Vitesse Nuxt",
+      "index": "Page d'Index - Starter Vitesse Nuxt",
+      "hi": "Page Salut - Starter Vitesse Nuxt",
+      "nuxtImage": "Page Nuxt Image - Starter Vitesse Nuxt"
+    }
+  }
+}

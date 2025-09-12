@@ -1,5 +1,5 @@
 import { pwa } from './app/config/pwa'
-import { appDescription } from './app/constants/index'
+import { appDescription, appName } from './app/constants/index'
 
 export default defineNuxtConfig({
   modules: [
@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxtjs/i18n',
   ],
 
   devtools: {
@@ -18,6 +19,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: appName,
       viewport: 'width=device-width,initial-scale=1',
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
@@ -67,6 +69,87 @@ export default defineNuxtConfig({
       nuxt: {
         sortConfigKeys: true,
       },
+    },
+  },
+
+  i18n: {
+    /**
+     * Nuxt i18n module overrides Nuxt default routes to add locale prefixes to every URL (except in 'no_prefix'
+     * strategy).
+     * @default 'prefix_except_default'
+     */
+    strategy: 'prefix_except_default',
+
+    /**
+     * Required if using `prefix_except_default` strategy
+     * @default ''
+     */
+    defaultLocale: 'en',
+    /**
+     * Available locales.
+     *
+     * To leverage the SEO benefits, you must configure the `locales` option, where each object has an `language` option
+     * set to the locale language tags:
+     *
+     * ```ts
+     * export default defineNuxtConfig({
+     *   i18n: {
+     *     locales: [
+     *       { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
+     *       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr-FR.json' }
+     *     ]
+     *   }
+     * })
+     * ```ts
+     *
+     * You must also set the baseUrl option to your production domain in order to make alternate URLs fully-qualified:
+     *
+     * ```ts
+     * export default defineNuxtConfig({
+     *   i18n: {
+     *     baseUrl: 'https://my-nuxt-app.com'
+     *   }
+     * })
+     * ```
+     */
+    locales: [
+      { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
+      { code: 'zh', language: 'zh-CN', name: '简体中文', file: 'zh-CN.json' },
+      { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr-FR.json' },
+    ],
+
+    detectBrowserLanguage: {
+      useCookie: true,
+      /**
+       * The name of the cookie to use, when using `useCookie: true`
+       *
+       * You should use the name agreed upon with your backend if you have one.
+       * @default 'i18n_redirected'
+       */
+      cookieKey: 'locale',
+      /**
+       * For better SEO, it's recommended to set redirectOn to root (which is the default value). When set, the language
+       * detection is only attempted when the user visits the root path ('/') of the site. This allows crawlers to
+       * access the requested page rather than being redirected away based on detected locale. It also allows linking to
+       * pages in specific locales.
+       * @default 'root'
+       * @see https://i18n.nuxtjs.org/docs/guide/browser-language-detection
+       */
+      redirectOn: 'root',
+    },
+
+    /**
+     * Base URL of your website. It is required to generate valid SEO tag links, such as hreflang tags.
+     */
+    baseUrl: 'http://localhost:3000',
+
+    experimental: {
+      /**
+       * This is useful for generating types of global messages. Currently, it's not support component-level messages.
+       * @default false
+       * @see https://i18n.nuxtjs.org/docs/api/options#typedoptionsandmessages
+       */
+      typedOptionsAndMessages: 'all',
     },
   },
 
@@ -173,7 +256,6 @@ export default defineNuxtConfig({
      *
      * Below is an example for the case of using ipx provider:
      *
-     * @example
      * Before using alias:
      *
      * ```html
