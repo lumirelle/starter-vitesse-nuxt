@@ -30,5 +30,11 @@ export const useUserStore = defineStore('user', () => {
   }
 })
 
+/**
+ * Support HMR in development, so you can edit your stores and interact with them directly in your app without reloading
+ * the page, allowing you to keep the existing state, add, or even remove state, actions, and getters.
+ *
+ * @see https://pinia.vuejs.org/cookbook/hot-module-replacement.html#HMR-Hot-Module-Replacement-
+ */
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
