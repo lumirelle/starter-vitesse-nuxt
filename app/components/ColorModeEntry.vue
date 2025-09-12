@@ -1,11 +1,14 @@
 <script setup lang="ts">
 const router = useRouter()
+
+const localPath = useLocalePath()
+
 function goLight() {
-  router.push('/color-mode/light')
+  router.push(localPath('color-mode-light'))
 }
 
 function goDark() {
-  router.push('/color-mode/dark')
+  router.push(localPath('color-mode-dark'))
 }
 
 const { t } = useI18n({

@@ -32,9 +32,9 @@ const { t } = useI18n({
         <span op-50>{{ t('alsoKnownAs') }}</span>
         <ul>
           <li v-for="otherName in user.otherNames" :key="otherName">
-            <router-link :to="`/hi/${otherName}`" replace>
+            <NuxtLinkLocale :to="{ path: `/hi/${otherName}` }">
               {{ otherName }}
-            </router-link>
+            </NuxtLinkLocale>
           </li>
         </ul>
       </div>
@@ -43,12 +43,12 @@ const { t } = useI18n({
     <Counter />
 
     <div>
-      <NuxtLink
+      <NuxtLinkLocale
         class="text-sm btn m-3"
-        to="/"
+        to="index"
       >
         {{ t('back') }}
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>

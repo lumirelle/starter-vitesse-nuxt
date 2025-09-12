@@ -2,9 +2,15 @@
 const name = ref('')
 
 const router = useRouter()
+
+const localePath = useLocalePath()
+
 function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+  if (name.value) {
+    router.push(localePath({
+      path: `hi/${encodeURIComponent(name.value)}`,
+    }))
+  }
 }
 
 const { t } = useI18n({

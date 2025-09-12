@@ -1,7 +1,10 @@
 <script setup lang="ts">
 const router = useRouter()
+
+const localePath = useLocalePath()
+
 function go() {
-  router.push('/nuxt-image')
+  router.push(localePath('nuxt-image'))
 }
 
 const { t } = useI18n({

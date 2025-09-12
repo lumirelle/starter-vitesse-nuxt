@@ -14,12 +14,12 @@ const { t } = useI18n({
   <div>
     <p>{{ t('forcedLight') }}</p>
     <div>
-      <NuxtLink
+      <NuxtLinkLocale
         class="text-sm btn m-3"
-        to="/"
+        to="index"
       >
         {{ t('back') }}
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>
