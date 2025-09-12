@@ -75,7 +75,16 @@ export default defineNuxtConfig({
 
   eslint: {
     config: {
+      /**
+       * Setup basic JavaScript, TypeScript and Vue plugins and rules.
+       *
+       * You might want to disable it when you are using other ESLint config that handles the basic setup.
+       * @default true
+       */
       standalone: false,
+      /**
+       * Additional options for Nuxt specific rules.
+       */
       nuxt: {
         sortConfigKeys: true,
       },
