@@ -47,5 +47,14 @@ definePageMeta({
         >Unsplash</a>.
       </figcaption>
     </figure>
+
+    <div>
+      <NuxtLink
+        class="text-sm btn m-3"
+        to="/"
+      >
+        Back
+      </NuxtLink>
+    </div>
   </div>
 </template>
