@@ -9,9 +9,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
-    /**
-     * FIXME: Cannot preview images with Nuxt Image in dev mode
-     */
     '@nuxt/image',
   ],
 
@@ -142,15 +139,21 @@ export default defineNuxtConfig({
     /**
      * This option allows you to specify the location of the source images when using the ipx or ipxStatic provider.
      *
-     * For example, if you want to use ipx with images stored in the `assets/images` folder, you can set the `dir`
+     * For example, if you want to use ipx with images stored in the `<srcDir>/assets/images` folder, you can set the `dir`
      * option to `assets/images`.
      *
      * Notice that, there are some limitation for using non-public folders, please check the documentation for more
      * information.
+     *
+     * Notice that, Nuxt 4 move default src directory from `<rootDir>` to `<rootDir>/app`, so if your images
+     * are stored in the `<rootDir>/public` folder, you need to set the `dir` option to `../public` instead of `public`.
      * @see https://image.nuxt.com/get-started/configuration#dir
+     * @see https://nuxt.com/docs/4.x/api/nuxt-config#srcdir
+     * @see https://github.com/nuxt/image/blob/main/src/module.ts#L59
+     * @see https://github.com/nuxt/image/issues/1956
      * @default 'public'
      */
-    dir: 'public',
+    dir: '../public',
 
     /**
      * To enable image optimization on an external website, specify which domains are allowed to be optimized.
