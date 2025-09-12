@@ -37,6 +37,16 @@ export default defineNuxtConfig({
   },
 
   colorMode: {
+    /**
+     * Suffix of the class added to `<html>` element.
+     *
+     * By default, the class will be `<value><suffix>`, e.g. `dark-mode`.
+     *
+     * Set suffix to an empty string to left `<value>` only for most common cases.
+     *
+     * There is also a option to set custom prefix called `classPrefix`.
+     * @default '-mode'
+     */
     classSuffix: '',
   },
 

@@ -1,4 +1,22 @@
 <script setup lang="ts">
+/**
+ * Notice that, the initial value of color is dependent on the user's system preference.
+ *
+ * You should pay attention to the risk of hydration mismatch if you use `color.value` in the template directly.
+ *
+ * For example:
+ *
+ * ```html
+ * <div v-if="color.value === 'dark'">
+ *   This is dark mode
+ * </div>
+ * <div v-else>
+ *   This is light mode
+ * </div>
+ * ```
+ *
+ * This component will not cause hydration mismatch because the content does not rely on `color.value`, it is dependent on the CSS only.
+ */
 const color = useColorMode()
 
 useHead({

@@ -13,7 +13,9 @@
       "notFound": "404 未找到 - Starter Vitesse Nuxt",
       "index": "索引页面 - Starter Vitesse Nuxt",
       "hi": "你好页面 - Starter Vitesse Nuxt",
-      "nuxtImage": "Nuxt 图片页面 - Starter Vitesse Nuxt"
+      "nuxtImage": "Nuxt 图片页面 - Starter Vitesse Nuxt",
+      "lightMode": "亮色模式页面 - Starter Vitesse Nuxt",
+      "darkMode": "暗色模式页面 - Starter Vitesse Nuxt"
     }
   }
 }

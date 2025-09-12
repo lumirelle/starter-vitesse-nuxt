@@ -13,7 +13,9 @@
       "notFound": "404 Not Found - Starter Vitesse Nuxt",
       "index": "Index Page - Starter Vitesse Nuxt",
       "hi": "Hi Page - Starter Vitesse Nuxt",
-      "nuxtImage": "Nuxt Image Page - Starter Vitesse Nuxt"
+      "nuxtImage": "Nuxt Image Page - Starter Vitesse Nuxt",
+      "lightMode": "Light Mode Page - Starter Vitesse Nuxt",
+      "darkMode": "Dark Mode Page - Starter Vitesse Nuxt"
     }
   }
 }
