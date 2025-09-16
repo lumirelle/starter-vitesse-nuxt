@@ -24,6 +24,7 @@ export default defineNuxtConfig({
      *  @see https://github.com/nuxt/nuxt-typed-router
      */
     'nuxt-typed-router',
+    'nuxt-qrcode',
   ],
 
   devtools: {

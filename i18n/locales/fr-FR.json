@@ -18,7 +18,8 @@
       "darkMode": "Page Mode Sombre - Starter Vitesse Nuxt",
       "nuxtDevice": "Page Nuxt Device - Starter Vitesse Nuxt",
       "svgo": "Page SVGO - Starter Vitesse Nuxt",
-      "dayjsNuxt": "Page Dayjs Nuxt - Starter Vitesse Nuxt"
+      "dayjsNuxt": "Page Dayjs Nuxt - Starter Vitesse Nuxt",
+      "nuxtQrcode": "Page Nuxt QRCode - Starter Vitesse Nuxt"
     }
   }
 }

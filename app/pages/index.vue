@@ -33,12 +33,13 @@ const online = useOnline()
       </template>
     </ClientOnly>
     <div>
-      <InputEntry b-t-1 entry />
+      <InputEntry entry />
       <NuxtImageEntry entry />
       <ColorModeEntry entry />
       <NuxtDeviceEntry entry />
       <NuxtSvgoEntry entry />
       <DayjsNuxtEntry entry />
+      <NuxtQrcodeEntry entry />
     </div>
   </div>
 </template>

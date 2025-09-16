@@ -16,6 +16,7 @@ catalogs:
     '@vueuse/nuxt': ^13.9.0
     dayjs-nuxt: ^2.1.11
     nuxt: ^4.1.1
+    nuxt-qrcode: ^0.4.8
     nuxt-svgo: ^4.2.6
     nuxt-typed-router: ^4.0.2
     unocss: ^66.5.1

@@ -38,6 +38,7 @@
     "eslint-plugin-format": "catalog:dev",
     "lint-staged": "catalog:dev",
     "nuxt": "catalog:build",
+    "nuxt-qrcode": "catalog:build",
     "nuxt-svgo": "catalog:build",
     "nuxt-typed-router": "catalog:build",
     "pinia": "catalog:frontend",
