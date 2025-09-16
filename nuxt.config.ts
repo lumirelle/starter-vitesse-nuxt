@@ -366,4 +366,11 @@ export default defineNuxtConfig({
      */
     customComponent: 'VitesseIcon',
   },
+
+  unocss: {
+    /**
+     * @see https://github.com/unocss/unocss/issues/4366
+     */
+    disableNuxtInlineStyle: false,
+  },
 })
