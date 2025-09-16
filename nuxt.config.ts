@@ -14,6 +14,16 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     'nuxt-svgo',
     'dayjs-nuxt',
+    /**
+     * This module generates TypeScript types for your pages and routes in path syntax, different from the built-in
+     *  experimental `typedPages` feature which generates types in name syntax. In my opinion, path syntax is more intuitive
+     *  and easier to use.
+     *
+     *  It's recommended to use this module instead of the built-in `typedPages` feature currently.
+     *
+     *  @see https://github.com/nuxt/nuxt-typed-router
+     */
+    'nuxt-typed-router',
   ],
 
   devtools: {
@@ -58,7 +68,6 @@ export default defineNuxtConfig({
     // but missing on offline, disabling extraction it until fixed
     payloadExtraction: false,
     renderJsonPayloads: true,
-    typedPages: true,
   },
 
   compatibilityDate: '2024-08-14',

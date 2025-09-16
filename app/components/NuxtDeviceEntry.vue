@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('nuxt-device'))
+  router.push(localePath('/nuxt-device'))
 }
 
 const { t } = useI18n({

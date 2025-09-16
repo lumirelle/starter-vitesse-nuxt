@@ -7,9 +7,7 @@ const localePath = useLocalePath()
 
 function go() {
   if (name.value) {
-    router.push(localePath({
-      path: `hi/${encodeURIComponent(name.value)}`,
-    }))
+    router.push(localePath(`/hi/${encodeURIComponent(name.value)}`))
   }
 }
 

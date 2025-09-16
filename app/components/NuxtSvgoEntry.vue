@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('nuxt-svgo'))
+  router.push(localePath('/nuxt-svgo'))
 }
 
 const { t } = useI18n({
