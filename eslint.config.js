@@ -70,28 +70,6 @@ export default antfu(
       'regexp/no-unused-capturing-group': 'off',
     },
   })
-  .insertAfter('lumirelle/regexp/rules', {
-    name: 'lumirelle/vue/rules',
-    files: ['**/*.vue'],
-    rules: {
-      // RECOMMENDED:
-      /**
-       * Enforce that properties used in templates are defined in the component
-       */
-      'vue/no-undef-properties': 'error',
-    },
-  })
-  .insertAfter('lumirelle/vue/rules', {
-    name: 'lumirelle/import/rules',
-    rules: {
-      // RECOMMENDED:
-      /**
-       * Ensure imports point to files/modules that can be resolved. Not implemented in `eslint-plugin-import-lite` currently.
-       * @see https://github.com/9romise/eslint-plugin-import-lite/issues/9
-       */
-      // 'import/named': 'error',
-    },
-  })
   /**
    * Append Nuxt specific rules and settings.
    */
