@@ -1,24 +1,21 @@
 import { pwa } from './app/config/pwa'
-import { appDescription, appName } from './app/constants/index'
+import { appDescription, appName } from './app/constants/app'
 
 export default defineNuxtConfig({
   modules: [
-    '@vueuse/nuxt',
-    '@unocss/nuxt',
-    '@pinia/nuxt',
-    '@nuxtjs/color-mode',
-    '@vite-pwa/nuxt',
     '@nuxt/eslint',
+    '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxtjs/i18n',
+    '@nuxtjs/color-mode',
     '@nuxtjs/device',
-    'nuxt-svgo',
-    /**
-     * This module is amiming to manipulate date, e.g. add, subtract, format and display relative time. It's recommended
-     * to use it with Nuxt built-in component `<NuxtTime>`.
-     */
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@unocss/nuxt',
+    '@vite-pwa/nuxt',
+    '@vueuse/nuxt',
     'dayjs-nuxt',
     'nuxt-qrcode',
+    'nuxt-svgo',
   ],
 
   devtools: {

@@ -4,6 +4,7 @@ catalogs:
   build:
     '@nuxt/devtools': ^2.6.3
     '@nuxt/eslint': ^1.9.0
+    '@nuxt/fonts': ^0.11.4
     '@nuxt/image': ^1.11.0
     '@nuxtjs/color-mode': ^3.5.2
     '@nuxtjs/device': ^3.2.4
@@ -11,7 +12,6 @@ catalogs:
     '@pinia/nuxt': ^0.11.2
     '@unocss/eslint-config': ^66.5.1
     '@unocss/nuxt': ^66.5.1
-    '@unocss/preset-web-fonts': ^66.5.1
     '@vite-pwa/nuxt': ^1.0.4
     '@vueuse/nuxt': ^13.9.0
     dayjs-nuxt: ^2.1.11
