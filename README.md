@@ -53,7 +53,6 @@
 - [Device](https://github.com/nuxt-modules/device) - Detect the type of device in your Nuxt applications.
 - [Svgo](https://github.com/cpsoinos/nuxt-svgo) - Load optimized SVG files as Vue components.
 - [Dayjs](https://github.com/fumeapp/dayjs) - Natively integrate Day.js into Nuxt.
-- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
 - [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
 
 ## IDE

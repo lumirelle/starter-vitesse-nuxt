@@ -15,7 +15,7 @@ const head = useLocaleHead()
  *
  * In the case above, if `<key>` is not found, it will return `<defaultValue>`.
  *
- * Notice that, `<key>` can not be null or undefined, otherwise it will throw error: "Invalid arguments".
+ * @remarks `<key>` can not be null or undefined, otherwise it will throw error: "Invalid arguments".
  */
 const title = computed(() => t(route.meta.title as string ?? 'TBD', t('layouts.title.home')),
 )

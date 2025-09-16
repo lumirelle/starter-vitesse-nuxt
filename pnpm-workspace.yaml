@@ -15,10 +15,9 @@ catalogs:
     '@vite-pwa/nuxt': ^1.0.4
     '@vueuse/nuxt': ^13.9.0
     dayjs-nuxt: ^2.1.11
-    nuxt: ^4.1.1
+    nuxt: ^4.1.2
     nuxt-qrcode: ^0.4.8
     nuxt-svgo: ^4.2.6
-    nuxt-typed-router: ^4.0.2
     unocss: ^66.5.1
   dev:
     '@antfu/eslint-config': ^5.3.0
@@ -29,7 +28,7 @@ catalogs:
     simple-git-hooks: ^2.13.1
     taze: ^19.6.0
     typescript: ^5.9.2
-    vue-tsc: ^3.0.6
+    vue-tsc: ^3.0.7
   frontend:
     '@vueuse/core': ^13.9.0
     dayjs: ^1.11.18

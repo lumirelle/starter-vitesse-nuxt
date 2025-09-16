@@ -7,7 +7,10 @@ const localePath = useLocalePath()
 
 function go() {
   if (name.value) {
-    router.push(localePath(`/hi/${encodeURIComponent(name.value)}`))
+    router.push(localePath({
+      name: 'hi-id',
+      params: { id: name.value.trim() },
+    }))
   }
 }
 
@@ -45,15 +48,15 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toHiPage: To `hi` page >
+  toHiPage: To `hi` (`pinia` usecase) page >
   inputPlaceholder: Enter your name
   button: GO
 zh:
-  toHiPage: 前往 `hi` 页面 >
+  toHiPage: 前往 `hi` (`pinia` 用例) 页面 >
   inputPlaceholder: 请输入您的姓名
   button: 前往
 fr:
-  toHiPage: Aller à la page `hi` >
+  toHiPage: Aller à la page `hi` (cas d'utilisation de `pinia`) >
   inputPlaceholder: Entrez votre nom
   button: Aller
 </i18n>

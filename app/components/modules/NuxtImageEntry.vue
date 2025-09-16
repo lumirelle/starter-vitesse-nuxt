@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('/nuxt-qrcode'))
+  router.push(localePath('modules-nuxt-image'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toNuxtQrcodePage') }}</p>
+    <p>{{ t('toNuxtImagePage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtQrcodePage: To `nuxt-qrcode` page >
+  toNuxtImagePage: To `nuxt-image` page >
   button: GO
 zh:
-  toNuxtQrcodePage: 前往 `nuxt-qrcode` 页面 >
+  toNuxtImagePage: 前往 `nuxt-image` 页面 >
   button: 前往
 fr:
-  toNuxtQrcodePage: Aller à la page `nuxt-qrcode` >
+  toNuxtImagePage: Aller à la page `nuxt-image` >
   button: Aller
 </i18n>

@@ -71,14 +71,6 @@ export default antfu(
     },
   })
   .insertAfter('lumirelle/regexp/rules', {
-    name: 'lumirelle/node/rules',
-    rules: {
-      // RECOMMENDED:
-      'node/no-missing-import': ['error', { tryExtensions: ['.js', '.json', '.node', '.ts', '.tsx', '.vue'] }],
-      'node/no-missing-require': ['error', { tryExtensions: ['.js', '.json', '.node', '.ts', '.tsx', '.vue'] }],
-    },
-  })
-  .insertAfter('lumirelle/node/rules', {
     name: 'lumirelle/vue/rules',
     files: ['**/*.vue'],
     rules: {
@@ -89,7 +81,7 @@ export default antfu(
       'vue/no-undef-properties': 'error',
     },
   })
-  .insertAfter('lumirelle/node/rules', {
+  .insertAfter('lumirelle/vue/rules', {
     name: 'lumirelle/import/rules',
     rules: {
       // RECOMMENDED:

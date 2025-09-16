@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('/nuxt-device'))
+  router.push(localePath('modules-nuxt-svgo'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toNuxtDevicePage') }}</p>
+    <p>{{ t('toNuxtSvgoPage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtDevicePage: To `nuxt-device` page >
+  toNuxtSvgoPage: To `nuxt-svgo` page >
   button: GO
 zh:
-  toNuxtDevicePage: 前往 `nuxt-device` 页面 >
+  toNuxtSvgoPage: 前往 `nuxt-svgo` 页面 >
   button: 前往
 fr:
-  toNuxtDevicePage: Aller à la page `nuxt-device` >
+  toNuxtSvgoPage: Aller à la page `nuxt-svgo` >
   button: Aller
 </i18n>

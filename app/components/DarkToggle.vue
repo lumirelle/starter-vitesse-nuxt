@@ -1,8 +1,9 @@
 <script setup lang="ts">
 /**
- * Notice that, the initial value of color is dependent on the user's system preference.
+ * CAUTION:
  *
- * You should pay attention to the risk of hydration mismatch if you use `color.value` in the template directly.
+ * The initial value of color is dependent on the user's system preference, you should pay attention to the
+ * risk of hydration mismatch if you use `color.value` in the template directly.
  *
  * For example:
  *

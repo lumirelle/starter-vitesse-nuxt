@@ -13,17 +13,11 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/device',
     'nuxt-svgo',
-    'dayjs-nuxt',
     /**
-     * This module generates TypeScript types for your pages and routes in path syntax, different from the built-in
-     *  experimental `typedPages` feature which generates types in name syntax. In my opinion, path syntax is more intuitive
-     *  and easier to use.
-     *
-     *  It's recommended to use this module instead of the built-in `typedPages` feature currently.
-     *
-     *  @see https://github.com/victorgarciaesgi/nuxt-typed-router
+     * This module is amiming to manipulate date, e.g. add, subtract, format and display relative time. It's recommended
+     * to use it with Nuxt built-in component `<NuxtTime>`.
      */
-    'nuxt-typed-router',
+    'dayjs-nuxt',
     'nuxt-qrcode',
   ],
 
@@ -64,11 +58,28 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
+  features: {
+    /**
+     * @see https://nuxt.com/docs/4.x/guide/going-further/features#inlinestyles
+     */
+    inlineStyles: true,
+  },
+
   experimental: {
-    // when using generate, payload js assets included in sw precache manifest
-    // but missing on offline, disabling extraction it until fixed
+    /**
+     * When using `nuxt generate`, payload js assets included in sw precache manifest, but missing on offline, disabling
+     * extraction it until fixed.
+     * @see https://nuxt.com/docs/4.x/guide/going-further/experimental-features#payloadextraction
+     */
     payloadExtraction: false,
-    renderJsonPayloads: true,
+    /**
+     * Different from the module `nuxt-typed-router`, this feature is forced developers to use name syntax routes. In
+     * some cases, it can avoid path mistakes caused by typos (Commonly, we'd like to add an 404 page to our app which
+     * will match all of paths).
+     *
+     * It's recommended to use this feature instead of `nuxt-typed-router` module.
+     */
+    typedPages: true,
   },
 
   compatibilityDate: '2024-08-14',
@@ -275,11 +286,9 @@ export default defineNuxtConfig({
      *
      * For example, if you want to use ipx with images stored in the `<srcDir>/assets/images` folder, you can set the `dir`
      * option to `assets/images`.
-     *
-     * Notice that, there are some limitation for using non-public folders, please check the documentation for more
+     * @remarks There are some limitation for using non-public folders, please check the documentation for more
      * information.
-     *
-     * Notice that, Nuxt 4 move default src directory from `<rootDir>` to `<rootDir>/app`, so if your images
+     * @remarks Nuxt 4 move default src directory from `<rootDir>` to `<rootDir>/app`, so if your images
      * are stored in the `<rootDir>/public` folder, you need to set the `dir` option to `../public` instead of `public`.
      * @see https://image.nuxt.com/get-started/configuration#dir
      * @see https://nuxt.com/docs/4.x/api/nuxt-config#srcdir
@@ -358,6 +367,6 @@ export default defineNuxtConfig({
      * instead by setting this option.
      * @default 'NuxtIcon' (built-in)
      */
-    customComponent: 'NuxtIcon', // Use our custom component by providing the same name but explicitly
+    customComponent: 'VitesseIcon',
   },
 })
