@@ -36,7 +36,7 @@
 
 - 🦾 TypeScript, of course.
 
-- 📲 [PWA](https://github.com/vite-pwa/nuxt) with offline support and auto-update behavior.
+- ⚙️ Variant of modules with variant business features.
 
 ## Plugins
 
@@ -48,6 +48,13 @@
 - [Pinia](https://github.com/vuejs/pinia) - intuitive, type safe, light and flexible Store for Vue.
 - [VitePWA](https://github.com/vite-pwa/nuxt) - zero-config PWA Plugin for Nuxt 4.
 - [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience.
+- [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
+- [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
+- [Device](https://github.com/nuxt-modules/device) - Detect the type of device in your Nuxt applications.
+- [Svgo](https://github.com/cpsoinos/nuxt-svgo) - Load optimized SVG files as Vue components.
+- [Dayjs](https://github.com/fumeapp/dayjs) - Natively integrate Day.js into Nuxt.
+- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
+- [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
 
 ## IDE
 

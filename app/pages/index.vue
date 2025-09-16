@@ -32,7 +32,7 @@ const online = useOnline()
         </div>
       </template>
     </ClientOnly>
-    <div>
+    <div mt-6 flex flex-col gap-6 items-center>
       <InputEntry entry />
       <NuxtImageEntry entry />
       <ColorModeEntry entry />

@@ -21,7 +21,7 @@ export default defineNuxtConfig({
      *
      *  It's recommended to use this module instead of the built-in `typedPages` feature currently.
      *
-     *  @see https://github.com/nuxt/nuxt-typed-router
+     *  @see https://github.com/victorgarciaesgi/nuxt-typed-router
      */
     'nuxt-typed-router',
     'nuxt-qrcode',

@@ -13,7 +13,7 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <div mb-4 mt-4 pb-4 pt-4>
+  <div>
     <p>{{ t('toNuxtQrcodePage') }}</p>
     <div>
       <button
