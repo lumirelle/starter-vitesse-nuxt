@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/device',
     'nuxt-svgo',
+    'dayjs-nuxt',
   ],
 
   devtools: {
@@ -73,6 +74,17 @@ export default defineNuxtConfig({
       routes: ['/'],
       ignore: ['/hi'],
     },
+  },
+
+  dayjs: {
+    locales: ['en', 'zh', 'fr'],
+    defaultLocale: 'en',
+    defaultTimezone: 'Asia/Shanghai',
+    /**
+     * By default, this module include the `relativeTime` and `utc` plugins, and always import `updateLocale`.
+     * @see https://day.js.org/docs/zh-CN/plugin/plugin
+     */
+    plugins: ['relativeTime', 'utc', 'timezone', 'localizedFormat'],
   },
 
   device: {

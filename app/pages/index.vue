@@ -38,6 +38,7 @@ const online = useOnline()
       <ColorModeEntry entry />
       <NuxtDeviceEntry entry />
       <NuxtSvgoEntry entry />
+      <DayjsNuxtEntry entry />
     </div>
   </div>
 </template>

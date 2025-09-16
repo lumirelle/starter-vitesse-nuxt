@@ -13,13 +13,13 @@ const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid } = 
 
 <template>
   <div>
-    <p>Is this device <span text-fuchsia>Desktop?</span> <span text-amber>{{ isDesktop }}</span></p>
-    <p>Is this device <span text-fuchsia>Mobile?</span> <span text-amber>{{ isMobile }}</span></p>
-    <p>Is this device <span text-fuchsia>Tablet?</span> <span text-amber>{{ isTablet }}</span></p>
-    <p>Is this device <span text-fuchsia>Ios?</span> <span text-amber>{{ isIos }}</span></p>
-    <p>Is this device <span text-fuchsia>Windows?</span> <span text-amber>{{ isWindows }}</span></p>
-    <p>Is this device <span text-fuchsia>MacOS?</span> <span text-amber>{{ isMacOS }}</span></p>
-    <p>Is this device <span text-fuchsia>Android?</span> <span text-amber>{{ isAndroid }}</span></p>
+    <p>{{ t('isDevice', { device: 'Desktop' }) }} <span text-amber>{{ isDesktop }}</span></p>
+    <p>{{ t('isDevice', { device: 'Mobile' }) }} <span text-amber>{{ isMobile }}</span></p>
+    <p>{{ t('isDevice', { device: 'Tablet' }) }} <span text-amber>{{ isTablet }}</span></p>
+    <p>{{ t('isDevice', { device: 'Ios' }) }} <span text-amber>{{ isIos }}</span></p>
+    <p>{{ t('isDevice', { device: 'Windows' }) }} <span text-amber>{{ isWindows }}</span></p>
+    <p>{{ t('isDevice', { device: 'MacOS' }) }} <span text-amber>{{ isMacOS }}</span></p>
+    <p>{{ t('isDevice', { device: 'Android' }) }} <span text-amber>{{ isAndroid }}</span></p>
     <div>
       <NuxtLinkLocale
         class="text-sm btn m-3"
@@ -33,9 +33,12 @@ const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid } = 
 
 <i18n lang="yaml">
 en:
+  isDevice: "Is this device {device}?"
   back: "Back"
 zh:
+  isDevice: "这个设备是 {device} 吗？"
   back: "返回"
 fr:
+  isDevice: "Cet appareil est {device} ?"
   back: "Retour"
 </i18n>

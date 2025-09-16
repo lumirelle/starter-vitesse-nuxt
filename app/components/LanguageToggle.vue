@@ -20,7 +20,8 @@ function getNationFlag(code: string) {
 <template>
   <NuxtLink
     v-for="availableLocale in availableLocales"
-    :key="availableLocale.code" :to="switchLocalePath(availableLocale.code)"
+    :key="availableLocale.code"
+    :to="switchLocalePath(availableLocale.code)"
     :class="getNationFlag(availableLocale.code)"
   />
 </template>

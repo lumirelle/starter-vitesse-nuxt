@@ -32,6 +32,8 @@
     "@vueuse/core": "catalog:frontend",
     "@vueuse/nuxt": "catalog:build",
     "czg": "catalog:dev",
+    "dayjs": "catalog:frontend",
+    "dayjs-nuxt": "catalog:build",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "lint-staged": "catalog:dev",

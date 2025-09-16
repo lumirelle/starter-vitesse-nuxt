@@ -17,7 +17,8 @@
       "lightMode": "亮色模式页面 - Starter Vitesse Nuxt",
       "darkMode": "暗色模式页面 - Starter Vitesse Nuxt",
       "nuxtDevice": "Nuxt 设备页面 - Starter Vitesse Nuxt",
-      "svgo": "SVGO 页面 - Starter Vitesse Nuxt"
+      "svgo": "SVGO 页面 - Starter Vitesse Nuxt",
+      "dayjsNuxt": "Dayjs Nuxt 页面 - Starter Vitesse Nuxt"
     }
   }
 }
