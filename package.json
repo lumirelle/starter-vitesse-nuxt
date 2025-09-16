@@ -34,10 +34,12 @@
     "czg": "catalog:dev",
     "dayjs": "catalog:frontend",
     "dayjs-nuxt": "catalog:build",
+    "echarts": "catalog:frontend",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "lint-staged": "catalog:dev",
     "nuxt": "catalog:build",
+    "nuxt-echarts": "catalog:build",
     "nuxt-qrcode": "catalog:build",
     "nuxt-svgo": "catalog:build",
     "pinia": "catalog:frontend",
@@ -46,6 +48,7 @@
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
     "vue": "catalog:frontend",
+    "vue-echarts": "catalog:frontend",
     "vue-tsc": "catalog:dev"
   },
   "simple-git-hooks": {

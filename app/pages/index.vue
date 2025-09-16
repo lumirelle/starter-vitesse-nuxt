@@ -34,13 +34,14 @@ const online = useOnline()
     </ClientOnly>
     <div mt-6 flex flex-col gap-6 items-center>
       <!-- Modules -->
-      <ModulesHiEntry entry />
-      <ModulesNuxtImageEntry entry />
       <ModulesColorModeEntry entry />
-      <ModulesNuxtDeviceEntry entry />
-      <ModulesNuxtSvgoEntry entry />
-      <ModulesNuxtQrcodeEntry entry />
       <ModulesDayjsNuxtEntry entry />
+      <ModulesHiEntry entry />
+      <ModulesNuxtDeviceEntry entry />
+      <ModulesNuxtEChartsEntry entry />
+      <ModulesNuxtImageEntry entry />
+      <ModulesNuxtQrcodeEntry entry />
+      <ModulesNuxtSvgoEntry entry />
     </div>
   </div>
 </template>

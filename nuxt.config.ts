@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
     'dayjs-nuxt',
+    'nuxt-echarts',
     'nuxt-qrcode',
     'nuxt-svgo',
   ],
@@ -111,6 +112,33 @@ export default defineNuxtConfig({
      * @default 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36'
      */
     defaultUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36',
+  },
+
+  echarts: {
+    /**
+     * Register the renderer used by `<VChart>`. You can also import both `'canvas'` and `'svg'`.
+     */
+    renderer: ['canvas', 'svg'],
+    /**
+     * Register the charts used by `<VChart>` (imported only if `<VChart>` is used).
+     */
+    charts: ['LineChart', 'BarChart', 'MapChart', 'PieChart'],
+    /**
+     * Register the charts used by `<VChart>` (imported only if `<VChart>` is used).
+     */
+    components: [
+      'DatasetComponent',
+      'GridComponent',
+      'TooltipComponent',
+      'ToolboxComponent',
+      'LegendComponent',
+      'GeoComponent',
+      'VisualMapComponent',
+    ],
+    /**
+     * Register the features used by `<VChart>` (imported only if `<VChart>` is used).
+     */
+    features: ['LabelLayout', 'UniversalTransition'],
   },
 
   eslint: {
