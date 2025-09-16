@@ -16,7 +16,8 @@
       "nuxtImage": "Page Nuxt Image - Starter Vitesse Nuxt",
       "lightMode": "Page Mode Clair - Starter Vitesse Nuxt",
       "darkMode": "Page Mode Sombre - Starter Vitesse Nuxt",
-      "nuxtDevice": "Page Nuxt Device - Starter Vitesse Nuxt"
+      "nuxtDevice": "Page Nuxt Device - Starter Vitesse Nuxt",
+      "svgo": "Page SVGO - Starter Vitesse Nuxt"
     }
   }
 }

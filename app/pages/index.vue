@@ -33,10 +33,11 @@ const online = useOnline()
       </template>
     </ClientOnly>
     <div>
-      <InputEntry b-b-1 b-t-1 border-gray-200 dark:border-gray-700 />
-      <NuxtImageEntry b-b-1 border-gray-200 dark:border-gray-700 />
-      <ColorModeEntry b-b-1 border-gray-200 dark:border-gray-700 />
-      <NuxtDeviceEntry b-b-1 border-gray-200 dark:border-gray-700 />
+      <InputEntry b-t-1 entry />
+      <NuxtImageEntry entry />
+      <ColorModeEntry entry />
+      <NuxtDeviceEntry entry />
+      <NuxtSvgoEntry entry />
     </div>
   </div>
 </template>

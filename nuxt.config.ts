@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxtjs/device',
+    'nuxt-svgo',
   ],
 
   devtools: {
@@ -316,4 +317,25 @@ export default defineNuxtConfig({
   },
 
   pwa,
+
+  svgo: {
+    /**
+     * This module automatically imports your icons from `assets/icons/` folder by default. you can configure this by
+     * passing `autoImportPath` in your config
+     * @default './assets/icons/'
+     */
+    autoImportPath: './assets/icons/',
+    /**
+     * You can change the default prefix (`svgo`) to your custom prefix using `componentPrefix` option.
+     * @default 'svgo'
+     */
+    componentPrefix: 'i',
+
+    /**
+     * By default, this module uses its own component to render SVG icons. You can use your own custom component
+     * instead by setting this option.
+     * @default 'NuxtIcon' (built-in)
+     */
+    customComponent: 'NuxtIcon', // Use our custom component by providing the same name but explicitly
+  },
 })

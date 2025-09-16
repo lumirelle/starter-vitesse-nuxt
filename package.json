@@ -36,6 +36,7 @@
     "eslint-plugin-format": "catalog:dev",
     "lint-staged": "catalog:dev",
     "nuxt": "catalog:build",
+    "nuxt-svgo": "catalog:build",
     "pinia": "catalog:frontend",
     "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
