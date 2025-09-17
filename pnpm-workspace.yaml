@@ -19,6 +19,7 @@ catalogs:
     nuxt-echarts: ^1.0.0
     nuxt-qrcode: ^0.4.8
     nuxt-svgo: ^4.2.6
+    nuxt-swiper: ^2.0.1
     unocss: ^66.5.1
   dev:
     '@antfu/eslint-config': ^5.3.0

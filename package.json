@@ -42,6 +42,7 @@
     "nuxt-echarts": "catalog:build",
     "nuxt-qrcode": "catalog:build",
     "nuxt-svgo": "catalog:build",
+    "nuxt-swiper": "catalog:build",
     "pinia": "catalog:frontend",
     "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",

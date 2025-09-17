@@ -42,6 +42,7 @@ const online = useOnline()
       <ModulesNuxtImageEntry entry />
       <ModulesNuxtQrcodeEntry entry />
       <ModulesNuxtSvgoEntry entry />
+      <ModulesNuxtSwiperEntry entry />
     </div>
   </div>
 </template>

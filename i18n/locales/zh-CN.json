@@ -20,6 +20,7 @@
       "nuxtDevice": "Nuxt 设备页面 - Starter Vitesse Nuxt",
       "nuxtImage": "Nuxt 图片页面 - Starter Vitesse Nuxt",
       "nuxtQrcode": "Nuxt 二维码页面 - Starter Vitesse Nuxt",
+      "nuxtSwiper": "Nuxt 轮播页面 - Starter Vitesse Nuxt",
       "svgo": "SVGO 页面 - Starter Vitesse Nuxt"
     }
   }

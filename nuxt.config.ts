@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     'nuxt-echarts',
     'nuxt-qrcode',
     'nuxt-svgo',
+    'nuxt-swiper',
   ],
 
   devtools: {

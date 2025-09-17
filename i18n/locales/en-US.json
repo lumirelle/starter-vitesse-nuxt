@@ -20,6 +20,7 @@
       "nuxtDevice": "Nuxt Device Page - Starter Vitesse Nuxt",
       "nuxtImage": "Nuxt Image Page - Starter Vitesse Nuxt",
       "nuxtQrcode": "Nuxt QRCode Page - Starter Vitesse Nuxt",
+      "nuxtSwiper": "Nuxt Swiper Page - Starter Vitesse Nuxt",
       "svgo": "SVGO Page - Starter Vitesse Nuxt"
     }
   }

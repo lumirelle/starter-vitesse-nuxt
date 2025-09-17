@@ -46,6 +46,7 @@
 - [Dayjs](https://github.com/fumeapp/dayjs) - Natively integrate Day.js into Nuxt.
 - [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience.
 - [Device](https://github.com/nuxt-modules/device) - Detect the type of device in your Nuxt applications.
+- [ECharts](https://github.com/kingyue737/nuxt-echarts) - Nuxt Module for Apache ECharts™.
 - [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
 - [Fonts](https://github.com/nuxt/fonts) - Plug-and-play custom web font optimization and configuration for Nuxt apps.
 - [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
@@ -53,6 +54,7 @@
 - [Pinia](https://github.com/vuejs/pinia) - intuitive, type safe, light and flexible Store for Vue.
 - [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
 - [Svgo](https://github.com/cpsoinos/nuxt-svgo) - Load optimized SVG files as Vue components.
+- [Swiper](https://github.com/cpreston321/nuxt-swiper) - Utilizes Swiper.js as its foundation using its web components.
 - [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic CSS engine.
 - [VitePWA](https://github.com/vite-pwa/nuxt) - zero-config PWA Plugin for Nuxt 4.
 - [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
