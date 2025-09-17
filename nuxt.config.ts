@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/device',
     '@nuxtjs/i18n',
+    '@nuxtjs/seo',
     '@pinia/nuxt',
     '@unocss/nuxt',
     '@vite-pwa/nuxt',
@@ -18,7 +19,6 @@ export default defineNuxtConfig({
     'nuxt-qrcode',
     'nuxt-svgo',
     'nuxt-swiper',
-    '@nuxtjs/seo',
   ],
 
   devtools: {
@@ -226,7 +226,12 @@ export default defineNuxtConfig({
      */
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
-      { code: 'zh', language: 'zh-CN', name: '简体中文', file: 'zh-CN.json' },
+      /**
+       * For Chinese, it should be expressed with a script subtag instead of a region subtag. So we use `Hans` (for
+       * Simplified) or `Hant` (for Traditional) as recommended by BCP 47.
+       * @see https://en.wikipedia.org/wiki/IETF_language_tag#ISO_3166-1_and_UN_M.49
+       */
+      { code: 'zh', language: 'zh-Hans', name: '简体中文', file: 'zh-Hans.json' },
       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr-FR.json' },
     ],
 
