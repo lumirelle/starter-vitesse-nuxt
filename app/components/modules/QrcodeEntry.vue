@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-nuxt-swiper'))
+  router.push(localePath('modules-qrcode'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toNuxtSwiperPage') }}</p>
+    <p>{{ t('toNuxtQrcodePage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtSwiperPage: To `nuxt-swiper` page >
-  button: GO
+  toNuxtQrcodePage: To `nuxt-qrcode` usecase >
+  button: '@:global.go'
 zh:
-  toNuxtSwiperPage: 前往 `nuxt-swiper` 页面 >
-  button: 前往
+  toNuxtQrcodePage: 前往 `nuxt-qrcode` 用例 >
+  button: '@:global.go'
 fr:
-  toNuxtSwiperPage: Aller à la page `nuxt-swiper` >
-  button: Aller
+  toNuxtQrcodePage: Aller à la utilisation de `nuxt-qrcode` >
+  button: '@:global.go'
 </i18n>

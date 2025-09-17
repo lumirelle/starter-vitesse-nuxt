@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-dayjs-nuxt'))
+  router.push(localePath('modules-swiper'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toDayjsNuxtPage') }}</p>
+    <p>{{ t('toNuxtSwiperPage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toDayjsNuxtPage: To `dayjs-nuxt` page >
-  button: GO
+  toNuxtSwiperPage: To `nuxt-swiper` usecase >
+  button: '@:global.go'
 zh:
-  toDayjsNuxtPage: 前往 `dayjs-nuxt` 页面 >
-  button: 前往
+  toNuxtSwiperPage: 前往 `nuxt-swiper` 用例 >
+  button: '@:global.go'
 fr:
-  toDayjsNuxtPage: Aller à la page `dayjs-nuxt` >
-  button: Aller
+  toNuxtSwiperPage: Aller à la utilisation de `nuxt-swiper` >
+  button: '@:global.go'
 </i18n>

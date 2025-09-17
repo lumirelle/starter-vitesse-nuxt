@@ -1,11 +1,14 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.svgo',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 </script>
 
@@ -25,9 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  back: "Back"
+  title: Nuxt SVGO
+  back: '@:global.back'
 zh:
-  back: "返回"
+  title: Nuxt SVGO
+  back: '@:global.back'
 fr:
-  back: "Retour"
+  title: Nuxt SVGO
+  back: '@:global.back'
 </i18n>

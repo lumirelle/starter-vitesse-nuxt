@@ -9,11 +9,25 @@ watchEffect(() => {
 
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.hi',
+})
+
+/**
+ * Page scope robots rule (requires enabling `experimental.inlineRouteRules`).
+ */
+defineRouteRules({
+  robots: {
+    noindex: true,
+    nofollow: true,
+    noai: true,
+  },
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 </script>
 
@@ -55,18 +69,21 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  hi: "Hi,"
-  name: "{name}!"
-  alsoKnownAs: "Also as known as:"
-  back: "Back"
+  title: Hi
+  hi: Hi,
+  name: '{name}!'
+  alsoKnownAs: 'Also as known as:'
+  back: '@:global.back'
 zh:
-  hi: "你好，"
-  name: "{name}！"
-  alsoKnownAs: "也被称为："
-  back: "返回"
+  title: 你好
+  hi: 你好，
+  name: '{name}！'
+  alsoKnownAs: '也被称为：'
+  back: '@:global.back'
 fr:
-  hi: "Salut,"
-  name: "{name} !"
-  alsoKnownAs: "Aussi connu sous le nom de :"
-  back: "Retour"
+  title: Salut
+  hi: Salut,
+  name: '{name} !'
+  alsoKnownAs: 'Aussi connu sous le nom de :'
+  back: '@:global.back'
 </i18n>

@@ -1,11 +1,14 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.dayjsNuxt',
 })
 
 const { t, locale } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 
 const dayjs = useDayjs()
@@ -36,18 +39,21 @@ const dayjs = useDayjs()
 
 <i18n lang="yaml">
 en:
-  timezone: "Timezone: { timezone }"
-  dayjsNowIs: "Day.js Now is: { now }"
-  nuxtTimeNowIs: "Nuxt Time Now is: { now }"
-  back: "Back"
+  title: Day.js Nuxt
+  timezone: 'Timezone: { timezone }'
+  dayjsNowIs: 'Day.js Now is: { now }'
+  nuxtTimeNowIs: 'Nuxt Time Now is: { now }'
+  back: '@:global.back'
 zh:
-  timezone: "时区：{ timezone }"
-  dayjsNowIs: "Day.js 现在是：{ now }"
-  nuxtTimeNowIs: "Nuxt Time 现在是：{ now }"
-  back: "返回"
+  title: Day.js Nuxt
+  timezone: '时区：{ timezone }'
+  dayjsNowIs: 'Day.js 现在是：{ now }'
+  nuxtTimeNowIs: 'Nuxt Time 现在是：{ now }'
+  back: '@:global.back'
 fr:
-  timezone: "Fuseau horaire : { timezone }"
-  dayjsNowIs: "Day.js Maintenant : { now }"
-  nuxtTimeNowIs: "Nuxt Time Maintenant : { now }"
-  back: "Retour"
+  title: Day.js Nuxt
+  timezone: 'Fuseau horaire : { timezone }'
+  dayjsNowIs: 'Day.js Maintenant : { now }'
+  nuxtTimeNowIs: 'Nuxt Time Maintenant : { now }'
+  back: '@:global.back'
 </i18n>

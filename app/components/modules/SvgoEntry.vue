@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-nuxt-svgo'))
+  router.push(localePath('modules-svgo'))
 }
 
 const { t } = useI18n({
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtSvgoPage: To `nuxt-svgo` page >
-  button: GO
+  toNuxtSvgoPage: To `nuxt-svgo` usecase >
+  button: '@:global.go'
 zh:
-  toNuxtSvgoPage: 前往 `nuxt-svgo` 页面 >
-  button: 前往
+  toNuxtSvgoPage: 前往 `nuxt-svgo` 用例 >
+  button: '@:global.go'
 fr:
-  toNuxtSvgoPage: Aller à la page `nuxt-svgo` >
-  button: Aller
+  toNuxtSvgoPage: Aller à la utilisation de `nuxt-svgo` >
+  button: '@:global.go'
 </i18n>

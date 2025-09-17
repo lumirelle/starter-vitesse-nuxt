@@ -1,11 +1,14 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.nuxtSwiper',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 
 // Create 10 slides
@@ -58,18 +61,21 @@ onMounted(() => {
 
 <i18n lang="yaml">
 en:
-  slide: "Slide { number }"
-  prev: "Prev"
-  next: "Next"
-  back: "Back"
+  title: Nuxt Swiper
+  slide: 'Slide { number }'
+  prev: Prev
+  next: Next
+  back: '@:global.back'
 zh:
-  slide: "幻灯片 { number }"
-  prev: "上一张"
-  next: "下一张"
-  back: "返回"
+  title: Nuxt Swiper
+  slide: '幻灯片 { number }'
+  prev: 上一张
+  next: 下一张
+  back: '@:global.back'
 fr:
-  slide: "Diapositive { number }"
-  prev: "Précédent"
-  next: "Suivant"
-  back: "Retour"
+  title: Nuxt Swiper
+  slide: 'Diapositive { number }'
+  prev: Précédent
+  next: Suivant
+  back: '@:global.back'
 </i18n>

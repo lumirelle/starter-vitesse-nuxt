@@ -1,11 +1,16 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.index',
 })
+
+defineOgImageComponent('NuxtSeo')
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 
 const online = useOnline()
@@ -35,26 +40,29 @@ const online = useOnline()
     <div mt-6 flex flex-col gap-6 items-center>
       <!-- Modules -->
       <ModulesColorModeEntry entry />
-      <ModulesDayjsNuxtEntry entry />
+      <ModulesDayjsEntry entry />
       <ModulesHiEntry entry />
-      <ModulesNuxtDeviceEntry entry />
-      <ModulesNuxtEChartsEntry entry />
-      <ModulesNuxtImageEntry entry />
-      <ModulesNuxtQrcodeEntry entry />
-      <ModulesNuxtSvgoEntry entry />
-      <ModulesNuxtSwiperEntry entry />
+      <ModulesDeviceEntry entry />
+      <ModulesEChartsEntry entry />
+      <ModulesImageEntry entry />
+      <ModulesQrcodeEntry entry />
+      <ModulesSvgoEntry entry />
+      <ModulesSwiperEntry entry />
     </div>
   </div>
 </template>
 
 <i18n lang="yaml">
 en:
-  offline: "You're offline"
-  loading: "Loading..."
+  title: Home
+  offline: You're offline
+  loading: Loading...
 zh:
-  offline: "你已离线"
-  loading: "加载中..."
+  title: 首页
+  offline: 你已离线
+  loading: 加载中...
 fr:
-  offline: "Vous êtes hors ligne"
-  loading: "Chargement..."
+  title: Accueil
+  offline: Vous êtes hors ligne
+  loading: Chargement...
 </i18n>

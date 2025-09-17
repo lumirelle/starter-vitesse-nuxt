@@ -53,6 +53,7 @@
 - [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
 - [Pinia](https://github.com/vuejs/pinia) - intuitive, type safe, light and flexible Store for Vue.
 - [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
+- [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
 - [Svgo](https://github.com/cpsoinos/nuxt-svgo) - Load optimized SVG files as Vue components.
 - [Swiper](https://github.com/cpreston321/nuxt-swiper) - Utilizes Swiper.js as its foundation using its web components.
 - [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic CSS engine.

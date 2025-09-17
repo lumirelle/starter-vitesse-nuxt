@@ -1,12 +1,12 @@
 <script setup lang="ts">
-definePageMeta({
-  title: 'pages.title.notFound',
-})
-
 const router = useRouter()
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 </script>
 
@@ -26,12 +26,15 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  notFound: "404 Not found"
-  back: "Back"
+  title: 404 Not found
+  notFound: 404 Not found
+  back: '@:global.back'
 zh:
-  notFound: "404 未找到"
-  back: "返回"
+  title: 404 未找到
+  notFound: 404 未找到
+  back: '@:global.back'
 fr:
-  notFound: "404 Non trouvé"
-  back: "Retour"
+  title: 404 Non trouvé
+  notFound: 404 Non trouvé
+  back: '@:global.back'
 </i18n>

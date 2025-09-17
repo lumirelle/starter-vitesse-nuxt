@@ -25,6 +25,7 @@
     "@nuxtjs/color-mode": "catalog:build",
     "@nuxtjs/device": "catalog:build",
     "@nuxtjs/i18n": "catalog:build",
+    "@nuxtjs/seo": "catalog:build",
     "@pinia/nuxt": "catalog:build",
     "@unocss/eslint-config": "catalog:build",
     "@unocss/nuxt": "catalog:build",

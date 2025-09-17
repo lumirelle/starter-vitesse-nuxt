@@ -1,11 +1,14 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.nuxtImage',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 </script>
 
@@ -80,12 +83,15 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  photoBy: "Photo by {author} on {source}."
-  back: "Back"
+  title: Nuxt Image
+  photoBy: 'Photo by {author} on {source}.'
+  back: '@:global.back'
 zh:
-  photoBy: "照片作者 {author}，来源于 {source}。"
-  back: "返回"
+  title: Nuxt Image
+  photoBy: '照片作者 {author}，来源于 {source}。'
+  back: '@:global.back'
 fr:
-  photoBy: "Photo par {author} sur {source}."
-  back: "Retour"
+  title: Nuxt Image
+  photoBy: 'Photo par {author} sur {source}.'
+  back: '@:global.back'
 </i18n>

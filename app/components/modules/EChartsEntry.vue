@@ -38,15 +38,15 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtEChartsPage: To `nuxt-e-charts` page >
-  button1: GO Line Chart
-  button2: GO Pie Chart
+  toNuxtEChartsPage: To `nuxt-echarts` usecase >
+  button1: '@:global.go - Line Chart'
+  button2: '@:global.go - Pie Chart'
 zh:
-  toNuxtEChartsPage: 前往 `nuxt-e-charts` 页面 >
-  button1: 前往折线图
-  button2: 前往饼图
+  toNuxtEChartsPage: 前往 `nuxt-echarts` 用例 >
+  button1: '@:global.go - 折线图'
+  button2: '@:global.go - 饼图'
 fr:
-  toNuxtEChartsPage: Aller à la page `nuxt-e-charts` >
-  button1: Aller au graphique linéaire
-  button2: Aller au graphique circulaire
+  toNuxtEChartsPage: Aller à la utilisation de `nuxt-echarts` >
+  button1: '@:global.go - Graphique Linéaire'
+  button2: '@:global.go - Graphique Circulaire'
 </i18n>

@@ -1,27 +1,6 @@
 {
-  "welcome": "欢迎来到我们的网站！",
-
-  "layouts": {
-    "title": {
-      "default": "默认布局 - Starter Vitesse Nuxt",
-      "home": "首页布局 - Starter Vitesse Nuxt"
-    }
-  },
-
-  "pages": {
-    "title": {
-      "darkMode": "暗色模式页面 - Starter Vitesse Nuxt",
-      "dayjsNuxt": "Dayjs Nuxt 页面 - Starter Vitesse Nuxt",
-      "eCharts": "ECharts 页面 - Starter Vitesse Nuxt",
-      "hi": "你好页面 - Starter Vitesse Nuxt",
-      "index": "索引页面 - Starter Vitesse Nuxt",
-      "lightMode": "亮色模式页面 - Starter Vitesse Nuxt",
-      "notFound": "404 未找到 - Starter Vitesse Nuxt",
-      "nuxtDevice": "Nuxt 设备页面 - Starter Vitesse Nuxt",
-      "nuxtImage": "Nuxt 图片页面 - Starter Vitesse Nuxt",
-      "nuxtQrcode": "Nuxt 二维码页面 - Starter Vitesse Nuxt",
-      "nuxtSwiper": "Nuxt 轮播页面 - Starter Vitesse Nuxt",
-      "svgo": "SVGO 页面 - Starter Vitesse Nuxt"
-    }
+  "global": {
+    "go": "出发",
+    "back": "返回"
   }
 }

@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-nuxt-image'))
+  router.push(localePath('modules-dayjs'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toNuxtImagePage') }}</p>
+    <p>{{ t('toDayjsNuxtPage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtImagePage: To `nuxt-image` page >
-  button: GO
+  toDayjsNuxtPage: To `dayjs-nuxt` usecase >
+  button: '@:global.go'
 zh:
-  toNuxtImagePage: 前往 `nuxt-image` 页面 >
-  button: 前往
+  toDayjsNuxtPage: 前往 `dayjs-nuxt` 用例 >
+  button: '@:global.go'
 fr:
-  toNuxtImagePage: Aller à la page `nuxt-image` >
-  button: Aller
+  toDayjsNuxtPage: Aller à la utilisation de `dayjs-nuxt` >
+  button: '@:global.go'
 </i18n>

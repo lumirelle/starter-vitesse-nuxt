@@ -1,27 +1,6 @@
 {
-  "welcome": "Welcome to our website!",
-
-  "layouts": {
-    "title": {
-      "default": "Default Layout - Starter Vitesse Nuxt",
-      "home": "Home Layout - Starter Vitesse Nuxt"
-    }
-  },
-
-  "pages": {
-    "title": {
-      "darkMode": "Dark Mode Page - Starter Vitesse Nuxt",
-      "dayjsNuxt": "Dayjs Nuxt Page - Starter Vitesse Nuxt",
-      "eCharts": "ECharts Page - Starter Vitesse Nuxt",
-      "hi": "Hi Page - Starter Vitesse Nuxt",
-      "index": "Index Page - Starter Vitesse Nuxt",
-      "lightMode": "Light Mode Page - Starter Vitesse Nuxt",
-      "notFound": "404 Not Found - Starter Vitesse Nuxt",
-      "nuxtDevice": "Nuxt Device Page - Starter Vitesse Nuxt",
-      "nuxtImage": "Nuxt Image Page - Starter Vitesse Nuxt",
-      "nuxtQrcode": "Nuxt QRCode Page - Starter Vitesse Nuxt",
-      "nuxtSwiper": "Nuxt Swiper Page - Starter Vitesse Nuxt",
-      "svgo": "SVGO Page - Starter Vitesse Nuxt"
-    }
+  "global": {
+    "go": "GO",
+    "back": "Back"
   }
 }

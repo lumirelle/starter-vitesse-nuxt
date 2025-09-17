@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.nuxtDevice',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 
 const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid } = useDevice()
@@ -33,12 +36,15 @@ const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid } = 
 
 <i18n lang="yaml">
 en:
-  isDevice: "Is this device {device}?"
-  back: "Back"
+  title: Nuxt Device
+  isDevice: 'Is this device {device}?'
+  back: '@:global.back'
 zh:
-  isDevice: "这个设备是 {device} 吗？"
-  back: "返回"
+  title: Nuxt Device
+  isDevice: '这个设备是 {device} 吗？'
+  back: '@:global.back'
 fr:
-  isDevice: "Cet appareil est {device} ?"
-  back: "Retour"
+  title: Nuxt Device
+  isDevice: 'Cet appareil est {device} ?'
+  back: '@:global.back'
 </i18n>

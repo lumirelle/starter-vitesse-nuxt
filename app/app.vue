@@ -1,3 +1,20 @@
+<script lang="ts" setup>
+import { appName } from './constants/app'
+
+useSchemaOrg([
+  defineWebPage({
+    name: appName,
+  }),
+  defineWebSite({
+    name: appName,
+  }),
+  defineOrganization({
+    name: appName,
+    logo: '/icon.png',
+  }),
+])
+</script>
+
 <template>
   <VitePwaManifest />
   <NuxtLayout>

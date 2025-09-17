@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.darkMode',
   colorMode: 'dark',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 </script>
 
@@ -26,12 +29,15 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
+  title: Dark Mode
   forcedDark: This page is forced to dark mode.
-  back: Back
+  back: '@:global.back'
 zh:
+  title: 深色模式
   forcedDark: 本页面被强制为了深色模式。
-  back: 返回
+  back: '@:global.back'
 fr:
+  title: Mode Sombre
   forcedDark: Cette page est forcée en mode sombre.
-  back: Retour
+  back: '@:global.back'
 </i18n>

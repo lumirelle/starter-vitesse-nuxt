@@ -1,11 +1,14 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.eCharts',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 
 const option: ECOption = {
@@ -109,9 +112,12 @@ const initOptions = {
 
 <i18n lang="yaml">
 en:
-  back: "Back"
+  title: ECharts Line Chart
+  back: '@:global.back'
 zh:
-  back: "返回"
+  title: ECharts 折线图
+  back: '@:global.back'
 fr:
-  back: "Retour"
+  title: ECharts Graphique Linéaire
+  back: '@:global.back'
 </i18n>

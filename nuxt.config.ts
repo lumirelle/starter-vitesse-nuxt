@@ -1,5 +1,5 @@
 import { pwa } from './app/config/pwa'
-import { appDescription, appName } from './app/constants/app'
+import { appBaseUrl, appDescription, appName } from './app/constants/app'
 
 export default defineNuxtConfig({
   modules: [
@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     'nuxt-qrcode',
     'nuxt-svgo',
     'nuxt-swiper',
+    '@nuxtjs/seo',
   ],
 
   devtools: {
@@ -28,19 +29,33 @@ export default defineNuxtConfig({
     head: {
       title: appName,
       viewport: 'width=device-width,initial-scale=1',
-      link: [
-        { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
-        { rel: 'icon', type: 'image/svg+xml', href: '/nuxt.svg' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-      ],
+      templateParams: {
+        separator: '·',
+      },
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: appDescription },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
         { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222' },
       ],
     },
+  },
+
+  /**
+   * Shared config for SEO modules integrated by `nuxt-seo`.
+   * @see https://nuxtseo.com/docs/site-config/api/config
+   */
+  site: {
+    /**
+     * Site name.
+     */
+    name: appName,
+    /**
+     * If you prefer to trailing slashes in your URLs, you can enable this option.
+     * @see https://github.com/harlan-zw/nuxt-site-config/blob/main/packages/site-config/src/stack.ts#L9
+     * @default false
+     */
+    trailingSlash: false,
   },
 
   colorMode: {
@@ -79,6 +94,15 @@ export default defineNuxtConfig({
      * It's recommended to use this feature instead of `nuxt-typed-router` module.
      */
     typedPages: true,
+
+    /**
+     * Allow defining `routeRules` directly within your `~/pages` directory using `defineRouteRules`. Rules are converted
+     * (based on the path) and applied for server requests. For example, a rule defined in `~/pages/foo/bar.vue` will be
+     * applied to `/foo/bar` requests. A rule in `~/pages/foo/[id].vue` will be applied to `/foo/**` requests. For more
+     * control, such as if you are using a custom path or alias set in the page's definePageMeta, you should set
+     * `routeRules` directly within your `nuxt.config`.
+     */
+    inlineRouteRules: true,
   },
 
   compatibilityDate: '2024-08-14',
@@ -228,8 +252,10 @@ export default defineNuxtConfig({
 
     /**
      * Base URL of your website. It is required to generate valid SEO tag links, such as hreflang tags.
+     *
+     * It's also used by `nuxt-sitemap` module.
      */
-    baseUrl: 'http://localhost:3000',
+    baseUrl: appBaseUrl,
 
     experimental: {
       /**
@@ -373,7 +399,39 @@ export default defineNuxtConfig({
     },
   },
 
+  linkChecker: {
+    skipInspections: [
+      'link-text',
+    ],
+  },
+
+  ogImage: {
+    /**
+     * Support non-English characters.
+     */
+    fonts: [
+      'Noto+Sans+SC:400',
+      'Noto+Sans+SC:700',
+      'Work+Sans:ital:400',
+    ],
+  },
+
   pwa,
+
+  /**
+   * For more options, please check:
+   * @see https://nuxtseo.com/docs/robots/api/use-robots-rule
+   */
+  robots: {
+    /**
+     * If you're finding your site is getting hit with a lot of bots, you may consider enabling the `blockNonSeoBots` option.
+     * @default false
+     */
+    blockNonSeoBots: true,
+  },
+
+  seo: {
+  },
 
   svgo: {
     /**

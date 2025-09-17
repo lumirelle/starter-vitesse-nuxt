@@ -3,11 +3,14 @@ import type { SVGVariant } from 'nuxt-qrcode'
 
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.nuxtQrcode',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 
 const variant = ref<SVGVariant>('default')
@@ -67,42 +70,45 @@ const radius = ref(0)
 
 <i18n lang="yaml">
 en:
-  variant: "Variant: "
+  title: Nuxt QRCode
+  variant: 'Variant: '
   variants:
-    default: "Default"
-    dots: "Dots"
-    rounded: "Rounded"
-    pixelated: "Pixelated"
-    circle: "Circle"
-  radius: "Radius (No effect on `default` & `pixelated` variant): "
+    default: Default
+    dots: Dots
+    rounded: Rounded
+    pixelated: Pixelated
+    circle: Circle
+  radius: 'Radius (No effect on `default` & `pixelated` variant):'
   radiusOptions:
-    0: "Disable"
-    1: "Enable"
-  back: "Back"
+    0: Disable
+    1: Enable
+  back: '@:global.back'
 zh:
-  variant: "变种: "
+  title: Nuxt QRCode
+  variant: '变种：'
   variants:
-    default: "默认"
-    dots: "点状"
-    rounded: "圆角"
-    pixelated: "像素化"
-    circle: "圆形"
-  radius: "圆角 (对 `默认` 和 `像素化` 无效): "
+    default: 默认
+    dots: 点状
+    rounded: 圆角
+    pixelated: 像素化
+    circle: 圆形
+  radius: '圆角 (对 `默认` 和 `像素化` 无效):'
   radiusOptions:
-    0: "禁用"
-    1: "启用"
-  back: "返回"
+    0: 禁用
+    1: 启用
+  back: '@:global.back'
 fr:
-  variant: "Variante: "
+  title: Nuxt QRCode
+  variant: 'Variante:'
   variants:
-    default: "Défaut"
-    dots: "Points"
-    rounded: "Arrondi"
-    pixelated: "Pixellisé"
-    circle: "Cercle"
-  radius: "Rayon (Pas d'effet sur les variantes `défaut` et `pixellisé`): "
+    default: Défaut
+    dots: Points
+    rounded: Arrondi
+    pixelated: Pixellisé
+    circle: Cercle
+  radius: "Rayon (Pas d'effet sur les variantes `défaut` et `pixellisé`):"
   radiusOptions:
-    0: "Désactiver"
-    1: "Activer"
-  back: "Retour"
+    0: Désactiver
+    1: Activer
+  back: '@:global.back'
 </i18n>

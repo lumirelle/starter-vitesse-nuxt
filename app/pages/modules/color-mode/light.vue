@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'home',
-  title: 'pages.title.lightMode',
   colorMode: 'light',
 })
 
 const { t } = useI18n({
   useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
 })
 </script>
 
@@ -26,12 +29,15 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
+  title: Light Mode
   forcedLight: This page is forced to light mode.
-  back: Back
+  back: '@:global.back'
 zh:
+  title: 浅色模式
   forcedLight: 本页面被强制为了浅色模式。
-  back: 返回
+  back: '@:global.back'
 fr:
+  title: Mode Clair
   forcedLight: Cette page est forcée en mode clair.
-  back: Retour
+  back: '@:global.back'
 </i18n>

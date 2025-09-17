@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-nuxt-qrcode'))
+  router.push(localePath('modules-device'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toNuxtQrcodePage') }}</p>
+    <p>{{ t('toNuxtDevicePage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtQrcodePage: To `nuxt-qrcode` page >
-  button: GO
+  toNuxtDevicePage: To `{'@'}nuxtjs/device` usecase >
+  button: '@:global.go'
 zh:
-  toNuxtQrcodePage: 前往 `nuxt-qrcode` 页面 >
-  button: 前往
+  toNuxtDevicePage: 前往 `{'@'}nuxtjs/device` 用例 >
+  button: '@:global.go'
 fr:
-  toNuxtQrcodePage: Aller à la page `nuxt-qrcode` >
-  button: Aller
+  toNuxtDevicePage: Aller à la utilisation de `{'@'}nuxtjs/device` >
+  button: '@:global.go'
 </i18n>

@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-nuxt-device'))
+  router.push(localePath('modules-image'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toNuxtDevicePage') }}</p>
+    <p>{{ t('toNuxtImagePage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,12 +28,12 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtDevicePage: To `nuxt-device` page >
-  button: GO
+  toNuxtImagePage: To `{'@'}nuxt/image` usecase >
+  button: '@:global.go'
 zh:
-  toNuxtDevicePage: 前往 `nuxt-device` 页面 >
-  button: 前往
+  toNuxtImagePage: 前往 `{'@'}nuxt/image` 用例 >
+  button: '@:global.go'
 fr:
-  toNuxtDevicePage: Aller à la page `nuxt-device` >
-  button: Aller
+  toNuxtImagePage: Aller à la utilisation de `{'@'}nuxt/image` >
+  button: '@:global.go'
 </i18n>
