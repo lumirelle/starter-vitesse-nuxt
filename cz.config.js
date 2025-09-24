@@ -4,7 +4,7 @@ import path from 'node:path'
 import { definePrompt } from 'czg'
 
 /* -------------------------- Config for generation ------------------------- */
-const modulesDir = 'app'
+const modulesDir = '.'
 
 /* ---------------------------- Scopes generation --------------------------- */
 /**
@@ -12,8 +12,11 @@ const modulesDir = 'app'
  * @return {string[]} names of directories under `dir`
  */
 function getModuleNames(dir) {
+  if (!dir || dir === '') {
+    return []
+  }
   return fs.readdirSync(path.resolve(import.meta.dirname, dir)).filter((file) => {
-    return fs.statSync(path.resolve(import.meta.dirname, dir, file)).isDirectory()
+    return fs.statSync(path.resolve(import.meta.dirname, dir, file)).isDirectory() && !file.match(/^\.|node_modules/)
   })
 }
 
@@ -45,13 +48,6 @@ export default definePrompt({
   },
 
   scopes: moduleScopes,
-  scopeOverrides: {
-    chore: [
-      ...moduleScopes,
-      { value: 'deps', name: `${formatName('deps: ', maxLenModuleName)} A dependencies change` },
-      { value: 'tools', name: `${formatName('tools: ', maxLenModuleName)} A tools and utilities change` },
-    ],
-  },
 
   allowBreakingChanges: ['feat', 'fix', 'chore'],
   markBreakingChangeMode: true,
