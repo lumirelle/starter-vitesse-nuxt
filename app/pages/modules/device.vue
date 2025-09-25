@@ -11,11 +11,12 @@ useHead({
   title: t('title'),
 })
 
-const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid } = useDevice()
+const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid, userAgent } = useDevice()
 </script>
 
 <template>
   <div>
+    <p>userAgent: <span text-amber>{{ userAgent }}</span></p>
     <p>{{ t('isDevice', { device: 'Desktop' }) }} <span text-amber>{{ isDesktop }}</span></p>
     <p>{{ t('isDevice', { device: 'Mobile' }) }} <span text-amber>{{ isMobile }}</span></p>
     <p>{{ t('isDevice', { device: 'Tablet' }) }} <span text-amber>{{ isTablet }}</span></p>
