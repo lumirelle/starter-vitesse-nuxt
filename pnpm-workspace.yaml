@@ -49,3 +49,6 @@ onlyBuiltDependencies:
   - sharp
   - simple-git-hooks
   - unrs-resolver
+
+verifyDepsBeforeRun: install
+shellEmulator: true
