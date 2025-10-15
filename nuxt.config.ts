@@ -72,6 +72,16 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
+  devServer: {
+    port: 3000,
+    /**
+     * Listen on all IPv4 and IPv6 addresses.
+     * By default, Windows resolves `localhost` to IPv6 address `::1` (IPv6 loopback) first, then to IPv4 address `127.0.0.1`.
+     * If we only listen on IPv4 address, it may cause slow response to the dev server.
+     */
+    host: '::',
+  },
+
   features: {
     /**
      * @see https://nuxt.com/docs/4.x/guide/going-further/features#inlinestyles
