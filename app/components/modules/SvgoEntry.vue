@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-svgo'))
+  router.push(localePath('/modules/svgo'))
 }
 
 const { t } = useI18n({

@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-qrcode'))
+  router.push(localePath('/modules/qrcode'))
 }
 
 const { t } = useI18n({

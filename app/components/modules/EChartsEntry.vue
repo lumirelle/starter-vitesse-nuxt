@@ -4,11 +4,11 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function goLine() {
-  router.push(localePath('modules-e-charts-line'))
+  router.push(localePath('/modules/e-charts/line'))
 }
 
 function goPie() {
-  router.push(localePath('modules-e-charts-pie'))
+  router.push(localePath('/modules/e-charts/pie'))
 }
 
 const { t } = useI18n({

@@ -12,6 +12,8 @@ export default defineConfig({
   theme: {
     /**
      * Use fonts name directly, `@nuxt/font` will auto resolve the font resources from predefined providers.
+     *
+     * @see https://fonts.nuxt.com/get-started/usage#unocss
      */
     font: {
       sans: 'DM Sans',

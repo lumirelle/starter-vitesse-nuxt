@@ -1,5 +1,5 @@
 import { pwa } from './app/config/pwa'
-import { appBaseUrl, appDescription, appName } from './app/constants/app'
+import { appDescription, appName } from './app/constants/app'
 
 export default defineNuxtConfig({
   modules: [
@@ -19,7 +19,15 @@ export default defineNuxtConfig({
     'nuxt-qrcode',
     'nuxt-svgo',
     'nuxt-swiper',
+    'nuxt-typed-router',
   ],
+
+  /**
+   * Exclude `components/` directory from `pages/` directory scanning.
+   */
+  pages: {
+    pattern: ['**/*.vue', '!**/components/**'],
+  },
 
   devtools: {
     enabled: true,
@@ -43,30 +51,22 @@ export default defineNuxtConfig({
 
   /**
    * Shared config for SEO modules integrated by `nuxt-seo`.
+   *
    * @see https://nuxtseo.com/docs/site-config/api/config
    */
   site: {
-    /**
-     * Site name.
-     */
     name: appName,
-    /**
-     * If you prefer to trailing slashes in your URLs, you can enable this option.
-     * @see https://github.com/harlan-zw/nuxt-site-config/blob/main/packages/site-config/src/stack.ts#L9
-     * @default false
-     */
-    trailingSlash: false,
   },
 
   colorMode: {
     /**
-     * Suffix of the class added to `<html>` element.
+     * Color mode will add current color mode as a class to `<html>` element, e.g. `class="light"` or `class="dark"`,
+     * this option allows to customize the suffix of the class name.
      *
-     * By default, the class will be `<value><suffix>`, e.g. `dark-mode`.
+     * Set this option to an empty string in order to support third-party CSS frameworks like Tailwind CSS or UnoCSS.
      *
-     * Set suffix to an empty string to left `<value>` only for most common cases.
+     * There is also another option named `classPrefix`, which is used to customize the prefix of the class name.
      *
-     * There is also a option to set custom prefix called `classPrefix`.
      * @default '-mode'
      */
     classSuffix: '',
@@ -75,42 +75,29 @@ export default defineNuxtConfig({
   devServer: {
     port: 3000,
     /**
-     * Listen on all IPv4 and IPv6 addresses.
-     * By default, Windows resolves `localhost` to IPv6 address `::1` (IPv6 loopback) first, then to IPv4 address `127.0.0.1`.
-     * If we only listen on IPv4 address, it may cause slow response to the dev server.
+     * Listen both IPv4 and IPv6 localhost addresses (`127.0.0.1` and `::1`).
+     *
+     * By default, Windows resolves `localhost` to IPv6 address `::1` (IPv6 loopback) first, then to IPv4 address
+     * `127.0.0.1`. If we only listen on IPv4 address, it may cause slow response to the dev server.
      */
     host: '::',
-  },
-
-  features: {
-    /**
-     * @see https://nuxt.com/docs/4.x/guide/going-further/features#inlinestyles
-     */
-    inlineStyles: true,
   },
 
   experimental: {
     /**
      * When using `nuxt generate`, payload js assets included in sw precache manifest, but missing on offline, disabling
      * extraction it until fixed.
+     *
      * @see https://nuxt.com/docs/4.x/guide/going-further/experimental-features#payloadextraction
      */
     payloadExtraction: false,
     /**
-     * Different from the module `nuxt-typed-router`, this feature is forced developers to use name syntax routes. In
-     * some cases, it can avoid path mistakes caused by typos (Commonly, we'd like to add an 404 page to our app which
-     * will match all of paths).
+     * Allow defining `routeRules` directly within your `~/pages` directory using `defineRouteRules`.
      *
-     * It's recommended to use this feature instead of `nuxt-typed-router` module.
-     */
-    typedPages: true,
-
-    /**
-     * Allow defining `routeRules` directly within your `~/pages` directory using `defineRouteRules`. Rules are converted
-     * (based on the path) and applied for server requests. For example, a rule defined in `~/pages/foo/bar.vue` will be
-     * applied to `/foo/bar` requests. A rule in `~/pages/foo/[id].vue` will be applied to `/foo/**` requests. For more
-     * control, such as if you are using a custom path or alias set in the page's definePageMeta, you should set
-     * `routeRules` directly within your `nuxt.config`.
+     * Rules are converted (based on the path) and applied for server requests. For example, a rule defined in
+     * `~/pages/foo/bar.vue` will be applied to `/foo/bar` requests. A rule in `~/pages/foo/[id].vue` will be applied to
+     * `/foo/**` requests. For more control, such as if you are using a custom path or alias set in the page's
+     * definePageMeta, you should set `routeRules` directly within your `nuxt.config`.
      */
     inlineRouteRules: true,
   },
@@ -118,13 +105,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
+    /**
+     * Prerender specific routes (actually, it generates static HTML files for the routes) while `nuxt build` or `nuxt
+     * generate`.
+     *
+     * @see https://nuxt.com/docs/4.x/getting-started/prerendering
+     */
     prerender: {
-      crawlLinks: false,
       routes: ['/'],
       ignore: ['/hi'],
     },
@@ -135,31 +122,21 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     defaultTimezone: 'Asia/Shanghai',
     /**
-     * By default, this module include the `relativeTime` and `utc` plugins, and always import `updateLocale`.
+     * Day.js plugins to load.
+     *
+     * @default ['relativeTime', 'utc']
      * @see https://day.js.org/docs/zh-CN/plugin/plugin
      */
     plugins: ['relativeTime', 'utc', 'timezone', 'localizedFormat'],
   },
 
-  device: {
-    /**
-     * Sets the default value for the user-agent header (useful when running npm run generate).
-     * @default 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36'
-     */
-    defaultUserAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36',
-  },
-
   echarts: {
     /**
-     * Register the renderer used by `<VChart>`. You can also import both `'canvas'` and `'svg'`.
-     */
-    renderer: ['canvas', 'svg'],
-    /**
-     * Register the charts used by `<VChart>` (imported only if `<VChart>` is used).
+     * Register the charts used by `<VChart>` (dynamic imported only if `<VChart>` is used).
      */
     charts: ['LineChart', 'BarChart', 'MapChart', 'PieChart'],
     /**
-     * Register the charts used by `<VChart>` (imported only if `<VChart>` is used).
+     * Register the charts used by `<VChart>` (dynamic imported only if `<VChart>` is used).
      */
     components: [
       'DatasetComponent',
@@ -171,7 +148,7 @@ export default defineNuxtConfig({
       'VisualMapComponent',
     ],
     /**
-     * Register the features used by `<VChart>` (imported only if `<VChart>` is used).
+     * Register the features used by `<VChart>` (dynamic imported only if `<VChart>` is used).
      */
     features: ['LabelLayout', 'UniversalTransition'],
   },
@@ -179,14 +156,15 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       /**
-       * Setup basic JavaScript, TypeScript and Vue plugins and rules.
+       * Disable to generate only Nuxt specific rules.
        *
-       * You might want to disable it when you are using other ESLint config that handles the basic setup.
+       * We use `@antfu/ni` to handles other rules.
+       *
        * @default true
        */
       standalone: false,
       /**
-       * Additional options for Nuxt specific rules.
+       * Additional options for generating Nuxt specific rules.
        */
       nuxt: {
         sortConfigKeys: true,
@@ -196,85 +174,55 @@ export default defineNuxtConfig({
 
   i18n: {
     /**
-     * Nuxt i18n module overrides Nuxt default routes to add locale prefixes to every URL (except in 'no_prefix'
-     * strategy).
+     * I18n module will generate locale routes based on the existing routes, this option controls the strategy for how
+     * to prefix route names.
+     *
+     * `prefix_except_default` is the most common choice, which will only prefix non-default locale routes.
+     *
      * @default 'prefix_except_default'
      */
     strategy: 'prefix_except_default',
-
-    /**
-     * Required if using `prefix_except_default` strategy
-     * @default ''
-     */
-    defaultLocale: 'en',
     /**
      * Available locales.
      *
-     * To leverage the SEO benefits, you must configure the `locales` option, where each object has an `language` option
-     * set to the locale language tags:
-     *
-     * ```ts
-     * export default defineNuxtConfig({
-     *   i18n: {
-     *     locales: [
-     *       { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
-     *       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr-FR.json' }
-     *     ]
-     *   }
-     * })
-     * ```ts
-     *
-     * You must also set the baseUrl option to your production domain in order to make alternate URLs fully-qualified:
-     *
-     * ```ts
-     * export default defineNuxtConfig({
-     *   i18n: {
-     *     baseUrl: 'https://my-nuxt-app.com'
-     *   }
-     * })
-     * ```
+     * To leverage the SEO benefits, you must configure the `language` option for each locale, which will be set to the
+     * `lang` attribute of `<html>` tag.
      */
     locales: [
       { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
       /**
        * For Chinese, it should be expressed with a script subtag instead of a region subtag. So we use `Hans` (for
        * Simplified) or `Hant` (for Traditional) as recommended by BCP 47.
+       *
        * @see https://en.wikipedia.org/wiki/IETF_language_tag#ISO_3166-1_and_UN_M.49
        */
       { code: 'zh', language: 'zh-Hans', name: '简体中文', file: 'zh-Hans.json' },
       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr-FR.json' },
     ],
-
+    /**
+     * Required if using `prefix_except_default` strategy.
+     *
+     * @default ''
+     */
+    defaultLocale: 'en',
+    /**
+     * Options about whether/how to detect the user's browser language.
+     */
     detectBrowserLanguage: {
       useCookie: true,
       /**
-       * The name of the cookie to use, when using `useCookie: true`
+       * The name of the cookie to use.
        *
        * You should use the name agreed upon with your backend if you have one.
+       *
        * @default 'i18n_redirected'
        */
       cookieKey: 'locale',
-      /**
-       * For better SEO, it's recommended to set redirectOn to root (which is the default value). When set, the language
-       * detection is only attempted when the user visits the root path ('/') of the site. This allows crawlers to
-       * access the requested page rather than being redirected away based on detected locale. It also allows linking to
-       * pages in specific locales.
-       * @default 'root'
-       * @see https://i18n.nuxtjs.org/docs/guide/browser-language-detection
-       */
-      redirectOn: 'root',
     },
-
-    /**
-     * Base URL of your website. It is required to generate valid SEO tag links, such as hreflang tags.
-     *
-     * It's also used by `nuxt-sitemap` module.
-     */
-    baseUrl: appBaseUrl,
-
     experimental: {
       /**
        * This is useful for generating types of global messages. Currently, it's not support component-level messages.
+       *
        * @default false
        * @see https://i18n.nuxtjs.org/docs/api/options#typedoptionsandmessages
        */
@@ -285,49 +233,48 @@ export default defineNuxtConfig({
   image: {
     /**
      * The quality for the generated image(s).
+     *
      * @see https://image.nuxt.com/get-started/configuration#quality
      * @default 80
      */
     quality: 80,
     /**
-     * Specify a value to work with DPR > 1 (these are devices with retina display and others). You must specify for
-     * which DPR values you want to adapt images.
-     *
-     * Density values above 2 are not recommended. See https://observablehq.com/@eeeps/visual-acuity-and-device-pixel-ratio.
-     * @see https://image.nuxt.com/get-started/configuration#densities
-     * @default [1, 2]
-     */
-    densities: [1, 2],
-    /**
      * You can use this option to configure the default format for your images used by <NuxtPicture>. If the format is
      * not specified, it will respect the default image format.
      *
+     * If default image format is also not specified, it will fallback to the legacy format.
+     *
      * `['avif', 'webp']` is recommended for common use cases.
+     *
      * @see https://image.nuxt.com/get-started/configuration#format
+     * @see https://image.nuxt.com/usage/nuxt-picture#legacyformat
      * @default ['webp']
      */
     format: ['avif', 'webp'],
     /**
-     * List of predefined screen sizes, share the same naming and sizes as Tailwind CSS, with the addition of xs and xxl
-     * (for backwards compatibility).
+     * List of predefined screen sizes, share the same naming and sizes as Tailwind CSS, with the addition of `xs` and
+     * `xxl` (for backwards compatibility).
+     *
      * @see https://image.nuxt.com/get-started/configuration#screens
      * @see https://tailwindcss.com/docs/responsive-design
      * @default The values below
      */
     screens: {
-      'xs': 320, // Mobile start, another common value is 375 (iPhone 6/7/8/X)
+      'xs': 320, // Additional
       'sm': 640,
-      'md': 768, // Pad start
-      'lg': 1024, // Laptop start
-      'xl': 1280, // Desktop start
-      'xxl': 1536, // Large desktop start
-      '2xl': 1536,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      'xxl': 1536,
+      '2xl': 1536, // Additional
     },
-
     /**
-     * Presets are collections of pre-defined configurations for your projects. Presets will help you to unify images
-     * all over your project.
+     * Presets are collections of pre-defined configurations for your projects.
+     *
+     * You can use it in `<NuxtImg>` and `<NuxtPicture>` component via `preset` prop.
+     *
      * @see https://image.nuxt.com/get-started/configuration#presets
+     * @see https://image.nuxt.com/usage/nuxt-img#preset
      */
     presets: {
       avatar: {
@@ -347,16 +294,17 @@ export default defineNuxtConfig({
         },
       },
     },
-
     /**
      * This option allows you to specify the location of the source images when using the ipx or ipxStatic provider.
      *
-     * For example, if you want to use ipx with images stored in the `<srcDir>/assets/images` folder, you can set the `dir`
-     * option to `assets/images`.
-     * @remarks There are some limitation for using non-public folders, please check the documentation for more
-     * information.
-     * @remarks Nuxt 4 move default src directory from `<rootDir>` to `<rootDir>/app`, so if your images
-     * are stored in the `<rootDir>/public` folder, you need to set the `dir` option to `../public` instead of `public`.
+     * For example, if you want to use ipx with images stored in the `<srcDir>/assets/images` folder, you can set the
+     * `dir` option to `assets/images`. There are some limitation for using non-public folders, please check the
+     * documentation for more information.
+     *
+     * Notice that, Nuxt 4 move default `srcDir` from `<rootDir>` to `<rootDir>/app`, and this module use `srcDir` as
+     * the base directory, so if your images are stored in the `<rootDir>/public` folder, you need to set the `dir`
+     * option to `../public` instead of `public`.
+     *
      * @see https://image.nuxt.com/get-started/configuration#dir
      * @see https://nuxt.com/docs/4.x/api/nuxt-config#srcdir
      * @see https://github.com/nuxt/image/blob/main/src/module.ts#L59
@@ -364,9 +312,9 @@ export default defineNuxtConfig({
      * @default 'public'
      */
     dir: '../public',
-
     /**
      * To enable image optimization on an external website, specify which domains are allowed to be optimized.
+     *
      * @see https://image.nuxt.com/get-started/configuration#domains
      * @default undefined
      */
@@ -415,14 +363,32 @@ export default defineNuxtConfig({
   },
 
   linkChecker: {
+    /**
+     * If you don't want to check url link validation, you can disable this module.
+     */
+    enabled: true,
+    /**
+     * Skip specific inspections by their names.
+     *
+     * @see https://nuxtseo.com/docs/link-checker/guides/rules
+     */
     skipInspections: [
       'link-text',
     ],
   },
 
+  /**
+   * For futher usage, please refer to the official documentation:
+   *
+   * @see https://nuxtseo.com/docs/og-image/getting-started/introduction
+   */
   ogImage: {
     /**
-     * Support non-English characters.
+     * If your don't need it, you can disable this module.
+     */
+    enabled: true,
+    /**
+     * Support non-English characters in OG image.
      */
     fonts: [
       'Noto+Sans+SC:400',
@@ -434,45 +400,117 @@ export default defineNuxtConfig({
   pwa,
 
   /**
-   * For more options, please check:
-   * @see https://nuxtseo.com/docs/robots/api/use-robots-rule
+   * This module has out-of-box support for i18n support, all allowed/disallowed paths have different locales will be
+   * recognized and generated automatically.
+   *
+   * @see https://nuxtseo.com/docs/robots/guides/i18n
    */
   robots: {
     /**
-     * If you're finding your site is getting hit with a lot of bots, you may consider enabling the `blockNonSeoBots` option.
+     * If your project maintains `/robots.txt` manually, you can disable this module.
+     */
+    enabled: true,
+    /**
+     * Blocks bots that don't benefit our SEO and are known to cause issues.
+     *
      * @default false
+     * @see https://github.com/nuxt-modules/robots/blob/main/src/const.ts#L6
      */
     blockNonSeoBots: true,
+    /**
+     * Allow paths to be indexed for the `*` user-agent (all robots).
+     *
+     * Customize to fit your needs.
+     */
+    allow: ['/', '/sitemap.xml'],
+    /**
+     * Disallow paths to be indexed for the `*` user-agent (all robots).
+     *
+     * Customize to fit your needs.
+     */
+    disallow: ['/personal-center'],
+    /**
+     * Custom groups of rules for specific user agents.
+     */
+    groups: [
+      {
+        userAgent: ['AdsBot-Google-Mobile', 'AdsBot-Google-Mobile-Apps'],
+        disallow: ['/admin'],
+        allow: ['/admin/login'],
+        /**
+         * @see https://nuxtseo.com/docs/robots/guides/robots-txt#content-signals
+         */
+        contentUsage: ['ai=n', '/docs/ train-ai=y'],
+        comment: ['Allow Google AdsBot to index the login page but no-admin pages'],
+      },
+    ],
   },
 
-  seo: {
+  /**
+   * This module exports a composable `useSchemaOrg` to manage `schema.org` data, see examples in:
+   *
+   * @see {@link app/app.vue}
+   */
+  schemaOrg: {
+    /**
+     * If your project maintains `schema.org` data manually, you can disable this module.
+     *
+     * @default true
+     */
+    enabled: true,
+  },
+
+  /**
+   * This module will generate `sitemap.xml` automatically based on your routes.
+   *
+   * You can also configure dynamic routes via Nitro runtime hooks or custom endpoints.
+   *
+   * @see https://nuxtseo.com/docs/sitemap/guides/data-sources#application-sources
+   * @see https://nuxtseo.com/docs/sitemap/guides/data-sources#_3-dynamic-sources-using-nitro-hooks
+   * @see https://nuxtseo.com/docs/sitemap/guides/dynamic-urls#_2-creating-custom-endpoints
+   */
+  sitemap: {
+    /**
+     * If your project maintains `/sitemap.xml` manually, you can disable this module.
+     */
+    enabled: true,
   },
 
   svgo: {
     /**
-     * This module automatically imports your icons from `assets/icons/` folder by default. you can configure this by
-     * passing `autoImportPath` in your config
+     * Configure the auto import path for SVG icons. This path is relative to the `srcDir`.
+     *
      * @default './assets/icons/'
      */
     autoImportPath: './assets/icons/',
     /**
-     * You can change the default prefix (`svgo`) to your custom prefix using `componentPrefix` option.
+     * Svg component prefix, e.g. `your-icon.svg` -> `<i-your-icon />`.
+     *
      * @default 'svgo'
      */
     componentPrefix: 'i',
-
     /**
-     * By default, this module uses its own component to render SVG icons. You can use your own custom component
-     * instead by setting this option.
-     * @default 'NuxtIcon' (built-in)
+     * Use a custom component name instead of the built-in `NuxtIcon` component with more cleaner implementation.
+     *
+     * @default 'NuxtIcon' (module built-in)
      */
     customComponent: 'VitesseIcon',
+    /**
+     * When importing a SVG component in TypeScript, you will get a "Cannot find module" error. In order to fix this,
+     * you should enable dts option in the module config.
+     *
+     * @see https://github.com/cpsoinos/nuxt-svgo#usage-with-typescript
+     */
+    dts: true,
   },
 
-  unocss: {
+  vueuse: {
     /**
-     * @see https://github.com/unocss/unocss/issues/4366
+     * Maybe can support SSR better.
+     *
+     * @experimental
+     * @see https://github.com/vueuse/vueuse/blob/main/packages/nuxt/ssr-plugin.mjs
      */
-    disableNuxtInlineStyle: false,
+    ssrHandlers: true,
   },
 })

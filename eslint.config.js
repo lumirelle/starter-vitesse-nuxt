@@ -37,9 +37,9 @@ export default antfu(
   },
 )
   /**
-   * Prepend custom rules below
+   * Append custom rules below
    */
-  .prepend({
+  .append({
     name: 'lumirelle/javascript/setup',
     languageOptions: {
       globals: {
@@ -47,17 +47,17 @@ export default antfu(
       },
     },
   })
-  .insertAfter('lumirelle/javascript/setup', {
+  .append({
     name: 'lumirelle/javascript/rules',
     rules: {
       // RECOMMENDED:
       /**
        * We need to use `console` in development environment, we can use build plugin to remove it in production environment
        */
-      'no-console': 'off',
+      'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     },
   })
-  .insertAfter('lumirelle/javascript/rules', {
+  .append({
     name: 'lumirelle/regexp/rules',
     rules: {
       // RECOMMENDED:

@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-image'))
+  router.push(localePath('/modules/image'))
 }
 
 const { t } = useI18n({

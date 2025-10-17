@@ -44,11 +44,13 @@
     "nuxt-qrcode": "catalog:build",
     "nuxt-svgo": "catalog:build",
     "nuxt-swiper": "catalog:build",
+    "nuxt-typed-router": "catalog:build",
     "pinia": "catalog:frontend",
     "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
+    "unplugin-vue-router": "catalog:build",
     "vue": "catalog:frontend",
     "vue-echarts": "catalog:frontend",
     "vue-tsc": "catalog:dev"

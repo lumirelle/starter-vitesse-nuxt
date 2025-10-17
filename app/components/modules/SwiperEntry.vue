@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-swiper'))
+  router.push(localePath('/modules/swiper'))
 }
 
 const { t } = useI18n({

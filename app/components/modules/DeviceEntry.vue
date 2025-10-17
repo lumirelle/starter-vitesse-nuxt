@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-device'))
+  router.push(localePath('/modules/device'))
 }
 
 const { t } = useI18n({

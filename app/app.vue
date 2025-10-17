@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { appName } from './constants/app'
 
+/**
+ * @see https://nuxtseo.com/docs/schema-org/api/use-schema-org
+ */
 useSchemaOrg([
   defineWebPage({
     name: appName,

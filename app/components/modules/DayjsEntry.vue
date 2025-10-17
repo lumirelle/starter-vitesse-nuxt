@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('modules-dayjs'))
+  router.push(localePath('/modules/dayjs'))
 }
 
 const { t } = useI18n({
