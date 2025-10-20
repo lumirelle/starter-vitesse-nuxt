@@ -101,6 +101,9 @@ catalogs:
       specifier: ^3.1.1
       version: 3.1.1
   frontend:
+    '@antfu/utils':
+      specifier: ^9.3.0
+      version: 9.3.0
     '@vueuse/core':
       specifier: ^13.9.0
       version: 13.9.0
@@ -134,6 +137,9 @@ importers:
       '@antfu/eslint-config':
         specifier: catalog:dev
         version: 6.0.0(@unocss/eslint-plugin@66.5.4(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.22)(eslint-plugin-format@1.0.2(eslint@9.37.0(jiti@2.6.1)))(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
+      '@antfu/utils':
+        specifier: catalog:frontend
+        version: 9.3.0
       '@iconify-json/carbon':
         specifier: catalog:icons
         version: 1.2.14
