@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ColorModeEntry from './components/ColorModeEntry.vue'
+import CustomFetchEntry from './components/CustomFetchEntry.vue'
 import DayjsEntry from './components/DayjsEntry.vue'
 import DeviceEntry from './components/DeviceEntry.vue'
 import EChartsEntry from './components/EChartsEntry.vue'
@@ -46,10 +47,11 @@ const online = useOnline()
     <div mt-6 flex flex-col gap-6 items-center>
       <!-- Modules -->
       <ColorModeEntry entry />
+      <CustomFetchEntry entry />
       <DayjsEntry entry />
-      <HiEntry entry />
       <DeviceEntry entry />
       <EChartsEntry entry />
+      <HiEntry entry />
       <ImageEntry entry />
       <QrcodeEntry entry />
       <SvgoEntry entry />

@@ -72,6 +72,17 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
+  /**
+   * Define runtime configuration that is exposed to the client-side.
+   *
+   * These will be automatically replaced by matching environment variables.
+   */
+  runtimeConfig: {
+    public: {
+      apiBase: '',
+    },
+  },
+
   devServer: {
     port: 3000,
     /**
