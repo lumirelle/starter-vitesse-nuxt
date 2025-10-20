@@ -17,9 +17,9 @@ const dayjs = useDayjs()
 <template>
   <div>
     <!-- Use dayjs directly, `<ClientOnly>` is required -->
-    <ClientOnlyWithFallback>
+    <VitesseClientOnly>
       <p>{{ t('dayjsNowIs', { now: dayjs().format('LLdddd LTS') }) }}</p>
-    </ClientOnlyWithFallback>
+    </VitesseClientOnly>
     <!-- Use `<NuxtTime>` component directly -->
     <I18nT keypath="nuxtTimeNowIs" tag="p">
       <template #now>

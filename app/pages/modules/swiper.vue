@@ -20,14 +20,13 @@ const swiper = useSwiper(containerRef)
 onMounted(() => {
   // Access Swiper instance
   // Read more about Swiper instance: https://swiperjs.com/swiper-api#methods--properties
-  // eslint-disable-next-line no-console
-  console.log(swiper.instance)
+  console.info(swiper.instance)
 })
 </script>
 
 <template>
   <div>
-    <ClientOnly>
+    <VitesseClientOnly>
       <swiper-container ref="containerRef" m="t-4 b-4">
         <swiper-slide
           v-for="(slide, idx) in slides" :key="idx"
@@ -37,7 +36,7 @@ onMounted(() => {
           {{ t('slide', { number: idx + 1 }) }}
         </swiper-slide>
       </swiper-container>
-    </ClientOnly>
+    </VitesseClientOnly>
     <div flex="~ justify-center gap-4">
       <!-- Go back one slide -->
       <button btn @click="swiper.prev()">
