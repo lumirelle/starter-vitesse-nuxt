@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'home',
+  /**
+   * Force light mode for this page, so that `toggleDark` in `DarkToggle.vue` will
+   * not take effect in this page.
+   */
   colorMode: 'light',
 })
 

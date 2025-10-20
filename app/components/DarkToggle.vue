@@ -2,10 +2,10 @@
 /**
  * CAUTION:
  *
- * The initial value of color is dependent on the user's system preference, you should pay attention to the
- * risk of hydration mismatch if you use `color.value` in the template directly.
+ * `color.value` is dependent on the user's system preference, you should pay attention to the risk of hydration
+ * mismatch if you use `color.value` in the template directly.
  *
- * For example:
+ * For example, this will cause hydration mismatch:
  *
  * ```html
  * <div v-if="color.value === 'dark'">
@@ -15,8 +15,6 @@
  *   This is light mode
  * </div>
  * ```
- *
- * This component will not cause hydration mismatch because the content does not rely on `color.value`, it is dependent on the CSS only.
  */
 const color = useColorMode()
 
