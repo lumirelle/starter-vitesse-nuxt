@@ -26,6 +26,8 @@ useHead({
 })
 
 const online = useOnline()
+
+const navStore = useNavStore()
 </script>
 
 <template>
@@ -33,9 +35,12 @@ const online = useOnline()
     <Logos mb-6 />
     <VitesseClientOnly>
       <Suspense>
-        <PageView v-if="online" />
-        <div v-else text-gray:80>
-          {{ t('offline') }}
+        <div>
+          <PageView v-if="online" />
+          <div v-else text-gray:80>
+            {{ t('offline') }}
+          </div>
+          <Nav v-if="navStore.navData" :items="navStore.navData.items" />
         </div>
         <template #fallback>
           <div op50 italic>

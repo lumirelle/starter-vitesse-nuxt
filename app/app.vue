@@ -16,6 +16,12 @@ useSchemaOrg([
     logo: '/icon.png',
   }),
 ])
+
+/**
+ * An example shows how to initialize a Pinia store when the app starts.
+ */
+const navStore = useNavStore()
+await callOnce('nav', navStore.fetchNavData)
 </script>
 
 <template>

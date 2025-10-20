@@ -8,8 +8,7 @@ const localePath = useLocalePath()
 function go() {
   if (name.value) {
     router.push(localePath({
-      path: '/hi',
-      params: { id: name.value.trim() },
+      path: `/hi/${name.value.trim()}`,
     }))
   }
 }

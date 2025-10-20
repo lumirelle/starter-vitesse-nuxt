@@ -433,7 +433,7 @@ export default defineNuxtConfig({
      *
      * Customize to fit your needs.
      */
-    allow: ['/', '/sitemap.xml'],
+    allow: ['/sitemap.xml'],
     /**
      * Disallow paths to be indexed for the `*` user-agent (all robots).
      *

@@ -5,38 +5,18 @@ export interface Nav {
 }
 
 export const useNavStore = defineStore('nav', () => {
-  const navData = ref<Nav>({
-    items: [],
-  })
+  const navData = ref<Nav>()
 
   /**
-   * This example fetch action should be called on app initialization to load the navigation data.
-   *
-   * For example, in `app.vue` or a layout component:
-   *
-   * ```ts
-   * const navStore = useNavStore()
-   * await callOnce('nav', () => navStore.fetchNavData())
-   * ```
-   *
-   * If we want to fetch the data while each time the user navigates to a new page, we can set `mode` option to `'navigation'`
-   *
-   * ```ts
-   * const navStore = useNavStore()
-   * await callOnce('nav', () => navStore.fetchNavData(), { mode: 'navigation' })
-   * ```
-   *
-   * @see https://pinia.vuejs.org/ssr/nuxt.html#Awaiting-for-actions-in-pages
+   * Fetch navigation data from an API or other sources.
    */
-  const fetchNavData = async () => {
-    setTimeout(() => {
-      navData.value = {
-        items: [
-          { title: 'Home', link: '/' },
-          { title: 'About', link: '/about' },
-        ],
-      }
-    }, 1000)
+  async function fetchNavData() {
+    try {
+      navData.value = await $fetch('/api/nav')
+    }
+    catch (error) {
+      console.error(error)
+    }
   }
 
   return {
