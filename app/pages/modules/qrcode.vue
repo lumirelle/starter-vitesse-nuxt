@@ -97,18 +97,4 @@ zh:
     0: 禁用
     1: 启用
   back: '@:global.back'
-fr:
-  title: Nuxt QRCode
-  variant: 'Variante:'
-  variants:
-    default: Défaut
-    dots: Points
-    rounded: Arrondi
-    pixelated: Pixellisé
-    circle: Cercle
-  radius: "Rayon (Pas d'effet sur les variantes `défaut` et `pixellisé`):"
-  radiusOptions:
-    0: Désactiver
-    1: Activer
-  back: '@:global.back'
 </i18n>

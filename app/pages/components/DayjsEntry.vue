@@ -28,12 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toDayjsNuxtPage: To `dayjs-nuxt` usecase >
+  toDayjsNuxtPage: To dayjs usecase >
   button: '@:global.go'
 zh:
-  toDayjsNuxtPage: 前往 `dayjs-nuxt` 用例 >
-  button: '@:global.go'
-fr:
-  toDayjsNuxtPage: Aller à la utilisation de `dayjs-nuxt` >
+  toDayjsNuxtPage: 前往 dayjs 用例 >
   button: '@:global.go'
 </i18n>

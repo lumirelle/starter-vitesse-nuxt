@@ -38,15 +38,11 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toColorModePage: To `{'@'}nuxtjs/color-mode` usecase >
-  button1: '@:global.go - Light'
-  button2: '@:global.go - Dark'
+  toColorModePage: To color mode usecase >
+  button1: '@:global.go - Forced light mode'
+  button2: '@:global.go - Forced dark mode'
 zh:
-  toColorModePage: 前往 `{'@'}nuxtjs/color-mode` 用例 >
-  button1: '@:global.go - 亮色模式'
-  button2: '@:global.go - 暗色模式'
-fr:
-  toColorModePage: Aller à la utilisation de `{'@'}nuxtjs/color-mode` >
-  button1: '@:global.go - à la mode claire'
-  button2: '@:global.go - à la mode sombre'
+  toColorModePage: 前往颜色模式用例 >
+  button1: '@:global.go - 强制亮色模式'
+  button2: '@:global.go - 强制暗色模式'
 </i18n>

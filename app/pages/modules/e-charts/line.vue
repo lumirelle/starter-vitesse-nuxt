@@ -117,7 +117,4 @@ en:
 zh:
   title: ECharts 折线图
   back: '@:global.back'
-fr:
-  title: ECharts Graphique Linéaire
-  back: '@:global.back'
 </i18n>

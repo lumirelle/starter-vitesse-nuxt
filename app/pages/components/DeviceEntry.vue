@@ -28,12 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtDevicePage: To `{'@'}nuxtjs/device` usecase >
+  toNuxtDevicePage: To user device detection usecase >
   button: '@:global.go'
 zh:
-  toNuxtDevicePage: 前往 `{'@'}nuxtjs/device` 用例 >
-  button: '@:global.go'
-fr:
-  toNuxtDevicePage: Aller à la utilisation de `{'@'}nuxtjs/device` >
+  toNuxtDevicePage: 前往用户设备检测用例 >
   button: '@:global.go'
 </i18n>

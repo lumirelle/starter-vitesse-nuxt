@@ -71,10 +71,4 @@ zh:
   prev: 上一张
   next: 下一张
   back: '@:global.back'
-fr:
-  title: Nuxt Swiper
-  slide: 'Diapositive { number }'
-  prev: Précédent
-  next: Suivant
-  back: '@:global.back'
 </i18n>

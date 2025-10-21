@@ -40,8 +40,4 @@ zh:
   title: 浅色模式
   forcedLight: 本页面被强制为了浅色模式。
   back: '@:global.back'
-fr:
-  title: Mode Clair
-  forcedLight: Cette page est forcée en mode clair.
-  back: '@:global.back'
 </i18n>

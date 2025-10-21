@@ -90,8 +90,4 @@ zh:
   title: Nuxt Image
   photoBy: '照片作者 {author}，来源于 {source}。'
   back: '@:global.back'
-fr:
-  title: Nuxt Image
-  photoBy: 'Photo par {author} sur {source}.'
-  back: '@:global.back'
 </i18n>

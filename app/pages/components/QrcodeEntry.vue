@@ -28,12 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtQrcodePage: To `nuxt-qrcode` usecase >
+  toNuxtQrcodePage: To QRCode usecase >
   button: '@:global.go'
 zh:
-  toNuxtQrcodePage: 前往 `nuxt-qrcode` 用例 >
-  button: '@:global.go'
-fr:
-  toNuxtQrcodePage: Aller à la utilisation de `nuxt-qrcode` >
+  toNuxtQrcodePage: 前往 QRCode 用例 >
   button: '@:global.go'
 </i18n>

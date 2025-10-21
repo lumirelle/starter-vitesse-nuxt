@@ -82,10 +82,4 @@ zh:
   name: '{name}！'
   alsoKnownAs: '也被称为：'
   back: '@:global.back'
-fr:
-  title: Salut
-  hi: Salut,
-  name: '{name} !'
-  alsoKnownAs: 'Aussi connu sous le nom de :'
-  back: '@:global.back'
 </i18n>

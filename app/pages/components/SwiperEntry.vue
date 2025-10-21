@@ -28,12 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtSwiperPage: To `nuxt-swiper` usecase >
+  toNuxtSwiperPage: To Swiper usecase >
   button: '@:global.go'
 zh:
-  toNuxtSwiperPage: 前往 `nuxt-swiper` 用例 >
-  button: '@:global.go'
-fr:
-  toNuxtSwiperPage: Aller à la utilisation de `nuxt-swiper` >
+  toNuxtSwiperPage: 前往轮播图用例 >
   button: '@:global.go'
 </i18n>

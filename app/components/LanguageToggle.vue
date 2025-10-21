@@ -11,8 +11,6 @@ function getNationFlag(code: string) {
     return 'i-twemoji-flag-china'
   else if (code === 'en')
     return 'i-twemoji-flag-united-kingdom'
-  else if (code === 'fr')
-    return 'i-twemoji-flag-france'
   return 'i-twemoji-flag-united-nations'
 }
 </script>

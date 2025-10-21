@@ -129,7 +129,7 @@ export default defineNuxtConfig({
   },
 
   dayjs: {
-    locales: ['en', 'zh', 'fr'],
+    locales: ['en', 'zh'],
     defaultLocale: 'en',
     defaultTimezone: 'Asia/Shanghai',
     /**
@@ -208,7 +208,6 @@ export default defineNuxtConfig({
        * @see https://en.wikipedia.org/wiki/IETF_language_tag#ISO_3166-1_and_UN_M.49
        */
       { code: 'zh', language: 'zh-Hans', name: '简体中文', file: 'zh-Hans.json' },
-      { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr-FR.json' },
     ],
     /**
      * Required if using `prefix_except_default` strategy.

@@ -5,11 +5,11 @@ defineProps<{
 </script>
 
 <template>
-  <nav>
+  <nav p-4 rounded-lg bg="gray:10 dark:gray:800">
     <ul>
-      <li v-for="(item, index) in items" :key="item.link">
+      <li v-for="item in items" :key="item.link">
         <NuxtLink :to="item.link">
-          <span>No {{ index + 1 }}: {{ item.title }}</span>
+          <span>-> {{ item.title }}</span>
         </NuxtLink>
       </li>
     </ul>

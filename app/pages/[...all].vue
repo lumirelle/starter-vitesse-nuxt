@@ -33,8 +33,4 @@ zh:
   title: 404 未找到
   notFound: 404 未找到
   back: '@:global.back'
-fr:
-  title: 404 Non trouvé
-  notFound: 404 Non trouvé
-  back: '@:global.back'
 </i18n>

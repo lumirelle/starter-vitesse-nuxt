@@ -4,9 +4,9 @@ import CustomFetchEntry from './components/CustomFetchEntry.vue'
 import DayjsEntry from './components/DayjsEntry.vue'
 import DeviceEntry from './components/DeviceEntry.vue'
 import EChartsEntry from './components/EChartsEntry.vue'
-import HiEntry from './components/HiEntry.vue'
 import ImageEntry from './components/ImageEntry.vue'
 import PageView from './components/PageView.vue'
+import PiniaEntry from './components/PiniaEntry.vue'
 import QrcodeEntry from './components/QrcodeEntry.vue'
 import SvgoEntry from './components/SvgoEntry.vue'
 import SwiperEntry from './components/SwiperEntry.vue'
@@ -50,17 +50,22 @@ const navStore = useNavStore()
       </Suspense>
     </VitesseClientOnly>
     <div mt-6 flex flex-col gap-6 items-center>
+      <!-- Nuxt -->
+      <section>
+        <CustomFetchEntry entry />
+      </section>
       <!-- Modules -->
-      <ColorModeEntry entry />
-      <CustomFetchEntry entry />
-      <DayjsEntry entry />
-      <DeviceEntry entry />
-      <EChartsEntry entry />
-      <HiEntry entry />
-      <ImageEntry entry />
-      <QrcodeEntry entry />
-      <SvgoEntry entry />
-      <SwiperEntry entry />
+      <section>
+        <ColorModeEntry entry />
+        <DayjsEntry entry />
+        <DeviceEntry entry />
+        <EChartsEntry entry />
+        <ImageEntry entry />
+        <PiniaEntry entry />
+        <QrcodeEntry entry />
+        <SvgoEntry entry />
+        <SwiperEntry entry />
+      </section>
     </div>
   </div>
 </template>
@@ -74,8 +79,4 @@ zh:
   title: 首页
   offline: 你已离线
   loading: 加载中...
-fr:
-  title: Accueil
-  offline: Vous êtes hors ligne
-  loading: Chargement...
 </i18n>

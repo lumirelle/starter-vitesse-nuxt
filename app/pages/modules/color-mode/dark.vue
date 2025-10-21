@@ -40,8 +40,4 @@ zh:
   title: 深色模式
   forcedDark: 本页面被强制为了深色模式。
   back: '@:global.back'
-fr:
-  title: Mode Sombre
-  forcedDark: Cette page est forcée en mode sombre.
-  back: '@:global.back'
 </i18n>

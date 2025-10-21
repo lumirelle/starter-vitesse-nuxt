@@ -33,7 +33,4 @@ en:
 zh:
   toCustomFetchPage: 前往自定义 fetch 用例 >
   button: '@:global.go'
-fr:
-  toCustomFetchPage: Aller à la utilisation de fetch personnalisé >
-  button: '@:global.go'
 </i18n>

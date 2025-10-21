@@ -87,24 +87,4 @@ zh:
   hours: '{n} 小时 | {n} 小时'
   minutes: '{n} 分钟 | {n} 分钟'
   seconds: '{n} 秒 | {n} 秒'
-fr:
-  pageViews: vues depuis
-  justNow: à l'instant
-  ago: 'il y a {time}'
-  in: 'dans {time}'
-  lastMonth: le mois dernier
-  nextMonth: le mois prochain
-  lastYear: l'année dernière
-  nextYear: l'année prochaine
-  yesterday: hier
-  tomorrow: demain
-  lastWeek: la semaine dernière
-  nextWeek: la semaine prochaine
-  months: '{n} mois | {n} mois'
-  years: '{n} an | {n} ans'
-  days: '{n} jour | {n} jours'
-  weeks: '{n} semaine | {n} semaines'
-  hours: '{n} heure | {n} heures'
-  minutes: '{n} minute | {n} minutes'
-  seconds: '{n} seconde | {n} secondes'
 </i18n>

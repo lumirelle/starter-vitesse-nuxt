@@ -33,7 +33,4 @@ en:
 zh:
   title: Nuxt SVGO
   back: '@:global.back'
-fr:
-  title: Nuxt SVGO
-  back: '@:global.back'
 </i18n>

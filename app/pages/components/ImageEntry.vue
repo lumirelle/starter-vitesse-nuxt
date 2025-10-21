@@ -28,12 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtImagePage: To `{'@'}nuxt/image` usecase >
+  toNuxtImagePage: To {'@'}nuxt/image usecase >
   button: '@:global.go'
 zh:
-  toNuxtImagePage: 前往 `{'@'}nuxt/image` 用例 >
-  button: '@:global.go'
-fr:
-  toNuxtImagePage: Aller à la utilisation de `{'@'}nuxt/image` >
+  toNuxtImagePage: 前往 {'@'}nuxt/image 用例 >
   button: '@:global.go'
 </i18n>

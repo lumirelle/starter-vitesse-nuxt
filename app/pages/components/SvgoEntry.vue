@@ -28,12 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toNuxtSvgoPage: To `nuxt-svgo` usecase >
+  toNuxtSvgoPage: To SVGO usecase >
   button: '@:global.go'
 zh:
-  toNuxtSvgoPage: 前往 `nuxt-svgo` 用例 >
-  button: '@:global.go'
-fr:
-  toNuxtSvgoPage: Aller à la utilisation de `nuxt-svgo` >
+  toNuxtSvgoPage: 前往 SVGO 用例 >
   button: '@:global.go'
 </i18n>

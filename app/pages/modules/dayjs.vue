@@ -16,12 +16,14 @@ const dayjs = useDayjs()
 
 <template>
   <div>
-    <!-- Use dayjs directly, `<ClientOnly>` is required -->
+    <!-- Use dayjs directly, `<ClientOnly>` is required to avoid hydration mismatch -->
     <VitesseClientOnly>
-      <p>{{ t('dayjsNowIs', { now: dayjs().format('LLdddd LTS') }) }}</p>
+      <p text-amber>
+        {{ t('dayjsNowIs', { now: dayjs().format('LLdddd LTS') }) }}
+      </p>
     </VitesseClientOnly>
     <!-- Use `<NuxtTime>` component directly -->
-    <I18nT keypath="nuxtTimeNowIs" tag="p">
+    <I18nT keypath="nuxtTimeNowIs" tag="p" text-green>
       <template #now>
         <NuxtTime :datetime="dayjs().toISOString()" date-style="full" time-style="full" :locale="locale" />
       </template>
@@ -49,11 +51,5 @@ zh:
   timezone: '时区：{ timezone }'
   dayjsNowIs: 'Day.js 现在是：{ now }'
   nuxtTimeNowIs: 'Nuxt Time 现在是：{ now }'
-  back: '@:global.back'
-fr:
-  title: Day.js Nuxt
-  timezone: 'Fuseau horaire : { timezone }'
-  dayjsNowIs: 'Day.js Maintenant : { now }'
-  nuxtTimeNowIs: 'Nuxt Time Maintenant : { now }'
   back: '@:global.back'
 </i18n>

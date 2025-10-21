@@ -83,7 +83,4 @@ en:
 zh:
   title: ECharts 饼图
   back: '@:global.back'
-fr:
-  title: ECharts Graphique Circulaire
-  back: '@:global.back'
 </i18n>
