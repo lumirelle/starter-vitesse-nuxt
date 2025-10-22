@@ -4,7 +4,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 function go() {
-  router.push(localePath('/modules/custom-fetch'))
+  router.push(localePath('/nuxt/custom-error'))
 }
 
 const { t } = useI18n({
@@ -14,7 +14,7 @@ const { t } = useI18n({
 
 <template>
   <div>
-    <p>{{ t('toCustomFetchPage') }}</p>
+    <p>{{ t('toCustomErrorPage') }}</p>
     <div>
       <button
         text-sm btn m-3
@@ -28,9 +28,9 @@ const { t } = useI18n({
 
 <i18n lang="yaml">
 en:
-  toCustomFetchPage: To custom fetch usecase >
+  toCustomErrorPage: To custom error usecase >
   button: '@:global.go'
 zh:
-  toCustomFetchPage: 前往自定义 fetch 用例 >
+  toCustomErrorPage: 前往自定义 error 用例 >
   button: '@:global.go'
 </i18n>

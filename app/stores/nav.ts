@@ -12,7 +12,11 @@ export const useNavStore = defineStore('nav', () => {
    */
   async function fetchNavData() {
     try {
-      navData.value = await $fetch('/api/nav')
+      const { $api } = useNuxtApp()
+      const res = await $api('/api/v1/nav')
+      if (res && res.data) {
+        navData.value = res.data
+      }
     }
     catch (error) {
       console.error(error)

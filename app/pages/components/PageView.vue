@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { data } = await useFetch('/api/pageview')
+const { data: res } = await useApi('/api/v1/pageview')
 
 const { t } = useI18n({
   useScope: 'local',
 })
 
-const time = useTimeAgo(() => data.value?.startAt || 0, {
+const time = useTimeAgo(() => res.value?.data?.pageview || 0, {
   messages: {
     justNow: t('justNow'),
     past: (n: any) => n.match(/\d/) ? t('ago', { time: n }) : n,
@@ -40,7 +40,7 @@ const time = useTimeAgo(() => data.value?.startAt || 0, {
 
 <template>
   <div text-gray:80>
-    <span text-gray font-500>{{ data?.pageview }}</span>
+    <span text-gray font-500>{{ res?.data?.pageview }}</span>
     {{ t('pageViews') }}
     <span text-gray>{{ time }}</span>
   </div>

@@ -14,11 +14,12 @@ useHead({
 /**
  * `useApi` uses `$api` under the hood.
  */
-const { data: resUseApi } = await useApi('/api/request-headers', {
+const { data: resUseApi } = await useApi('/api/v1/request-headers', {
   key: 'useApi/request-headers',
 })
 
-const apiPath = ref('/api/request-headers')
+const apiPath = ref('/api/v1/request-headers')
+const method = ref<'POST' | 'GET' | 'PUT' | 'PATCH' | 'DELETE'>('POST')
 const res = ref()
 
 const { $api } = useNuxtApp()
@@ -26,7 +27,7 @@ async function doFetch() {
   /**
    * `$api` will automatically prefix the base URL, handle errors, forward headers, and support custom headers.
    */
-  res.value = await $api(apiPath.value)
+  res.value = await $api(apiPath.value, { method: method.value })
 }
 function clearResp() {
   res.value = null
@@ -42,9 +43,30 @@ function clearResp() {
       </div>
     </div>
     <div>
-      <div>
-        <span mr-2>API:</span>
-        <input v-model="apiPath" class="input" type="text" :placeholder="t('inputPlaceholder')">
+      <div flex gap-10 justify-center>
+        <label>API
+          <input v-model="apiPath" input m="l-2" type="text" :placeholder="t('inputPlaceholder')">
+        </label>
+        <label>
+          {{ t('method') }}
+          <select v-model="method" select m="l-2">
+            <option value="POST">
+              POST
+            </option>
+            <option value="GET">
+              GET
+            </option>
+            <option value="PUT">
+              PUT
+            </option>
+            <option value="PATCH">
+              PATCH
+            </option>
+            <option value="DELETE">
+              DELETE
+            </option>
+          </select>
+        </label>
       </div>
       <div my-4>
         {{ t('resp') }}
@@ -73,16 +95,18 @@ function clearResp() {
 <i18n lang="yaml">
 en:
   title: Custom Fetch
-  resp: 'Response:'
-  respUseApi: 'Response from useApi:'
+  resp: Response
+  respUseApi: Response from useApi
+  method: HTTP Method
   makeRequest: Make a custom fetch request
   clearResp: Clear Response
   inputPlaceholder: Enter api path to fetch
   back: '@:global.back'
 zh:
   title: 自定义 Fetch
-  resp: '响应:'
-  respUseApi: 'useApi 的响应:'
+  resp: 响应
+  respUseApi: useApi 的响应
+  method: HTTP 方法
   makeRequest: 发起自定义 fetch 请求
   clearResp: 清空响应
   inputPlaceholder: 请输入要请求的 API 路径

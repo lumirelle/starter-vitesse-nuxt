@@ -28,12 +28,6 @@ export default defineNuxtPlugin({
             navigateTo('/')
           })
         }
-        else {
-          console.error('API Error:', response.statusText)
-          await nuxtApp.runWithContext(() => {
-            navigateTo('/')
-          })
-        }
       },
     })
 
