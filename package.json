@@ -10,12 +10,13 @@
     "prepare": "nuxt prepare && simple-git-hooks",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
-    "start:generate": "npx serve .output/public",
+    "start:generate": "na exec serve .output/public",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
+    "@antfu/ni": "catalog:dev",
     "@antfu/utils": "catalog:frontend",
     "@iconify-json/carbon": "catalog:icons",
     "@iconify-json/twemoji": "catalog:icons",
@@ -57,7 +58,7 @@
     "vue-tsc": "catalog:dev"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "na exec lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
