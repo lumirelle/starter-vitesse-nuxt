@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "pnpm@10.20.0",
   "scripts": {
     "build": "nuxt build",
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxt dev",
@@ -20,7 +20,6 @@
     "@antfu/utils": "catalog:frontend",
     "@iconify-json/carbon": "catalog:icons",
     "@iconify-json/twemoji": "catalog:icons",
-    "@nuxt/devtools": "catalog:build",
     "@nuxt/eslint": "catalog:build",
     "@nuxt/fonts": "catalog:build",
     "@nuxt/image": "catalog:build",
