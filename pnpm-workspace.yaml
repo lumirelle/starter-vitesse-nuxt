@@ -15,7 +15,7 @@ catalogs:
     '@vite-pwa/nuxt': ^1.0.7
     '@vueuse/nuxt': ^14.0.0
     dayjs-nuxt: ^2.1.11
-    nuxt: ^4.2.0
+    nuxt: npm:nuxt-nightly@4.2.1-29362163.2a087817
     nuxt-echarts: ^1.0.1
     nuxt-qrcode: ^0.4.8
     nuxt-svgo: ^4.2.6
@@ -26,7 +26,6 @@ catalogs:
   cli:
     open: ^10.2.0
     tsx: ^4.20.6
-
   dev:
     '@antfu/eslint-config': ^6.1.0
     '@antfu/ni': ^27.0.1
@@ -49,6 +48,7 @@ catalogs:
   icons:
     '@iconify-json/carbon': ^1.2.14
     '@iconify-json/twemoji': ^1.2.4
+
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
