@@ -79,7 +79,7 @@ export default defineNuxtConfig({
    */
   runtimeConfig: {
     public: {
-      apiBase: '',
+      BASE_URL: '',
     },
   },
 

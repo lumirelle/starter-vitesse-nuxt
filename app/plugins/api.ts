@@ -7,7 +7,7 @@ export default defineNuxtPlugin({
     const token = useCookie('token').value
 
     const api = $fetch.create({
-      baseURL: runtimeConfig.public.apiBase || '/',
+      baseURL: runtimeConfig.public.BASE_URL || '/',
       onRequest({ options }) {
         // Forward headers
         if (import.meta.server) {
