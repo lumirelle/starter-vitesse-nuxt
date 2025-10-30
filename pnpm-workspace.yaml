@@ -23,6 +23,10 @@ catalogs:
     nuxt-typed-router: ^4.0.2
     unocss: ^66.5.4
     unplugin-vue-router: ^0.16.0
+  cli:
+    open: ^10.2.0
+    tsx: ^4.20.6
+
   dev:
     '@antfu/eslint-config': ^6.1.0
     '@antfu/ni': ^27.0.1
@@ -45,7 +49,6 @@ catalogs:
   icons:
     '@iconify-json/carbon': ^1.2.14
     '@iconify-json/twemoji': ^1.2.4
-
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
