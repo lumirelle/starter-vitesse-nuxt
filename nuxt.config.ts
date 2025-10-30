@@ -86,7 +86,19 @@ export default defineNuxtConfig({
   devServer: {
     port: 3000,
     /**
-     * Listen both IPv4 and IPv6 localhost addresses (`127.0.0.1` and `::1`).
+     * Listen both IPv4 and IPv6 for all interfaces (including localhost).
+     *
+     * For example, you have two interfaces. The first one has IPv4 address `192.168.1.100` and IPv6 address `fe80::1`,
+     * another one has IPv4 address `172.16.0.1` and IPv6 address `fe80::2`, then the dev server will listen on:
+     *
+     * - `127.0.0.1`
+     * - `::1`
+     * - `192.168.1.100`
+     * - `fe80::1`
+     * - `172.16.0.1`
+     * - `fe80::2`
+     *
+     * Why should we do this?
      *
      * By default, Windows resolves `localhost` to IPv6 address `::1` (IPv6 loopback) first, then to IPv4 address
      * `127.0.0.1`. If we only listen on IPv4 address, it may cause slow response to the dev server.
