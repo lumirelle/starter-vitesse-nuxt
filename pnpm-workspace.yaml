@@ -22,12 +22,12 @@ catalogs:
     nuxt-swiper: ^2.0.1
     nuxt-typed-router: ^4.0.2
     unocss: ^66.5.4
-    unplugin-vue-router: ^0.16.0
+    unplugin-vue-router: ^0.16.1
   cli:
     open: ^10.2.0
     tsx: ^4.20.6
   dev:
-    '@antfu/eslint-config': ^6.1.0
+    '@antfu/eslint-config': ^6.2.0
     '@antfu/ni': ^27.0.1
     czg: ^1.12.0
     eslint: ^9.38.0
