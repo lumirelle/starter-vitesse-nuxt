@@ -1,6 +1,5 @@
 import { pwa } from './app/config/pwa'
 import { appDescription, appName } from './app/constants/app'
-import { DEV_SERVER_HOST, DEV_SERVER_PORT } from './app/constants/dev-server'
 
 export default defineNuxtConfig({
   modules: [
@@ -89,7 +88,7 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: DEV_SERVER_PORT,
+    port: 3000,
     /**
      * Listen both IPv4 and IPv6 for all interfaces (including localhost).
      *
@@ -108,7 +107,7 @@ export default defineNuxtConfig({
      * By default, Windows resolves `localhost` to IPv6 address `::1` (IPv6 loopback) first, then to IPv4 address
      * `127.0.0.1`. If we only listen on IPv4 address, it may cause slow response to the dev server.
      */
-    host: DEV_SERVER_HOST,
+    host: '::',
   },
 
   future: {

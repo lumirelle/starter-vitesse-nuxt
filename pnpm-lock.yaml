@@ -88,18 +88,12 @@ catalogs:
     lint-staged:
       specifier: ^16.2.6
       version: 16.2.6
-    open:
-      specifier: ^10.2.0
-      version: 10.2.0
     simple-git-hooks:
       specifier: ^2.13.1
       version: 2.13.1
     taze:
       specifier: ^19.9.0
       version: 19.9.0
-    tsx:
-      specifier: ^4.20.6
-      version: 4.20.6
     typescript:
       specifier: ^5.9.3
       version: 5.9.3
@@ -233,9 +227,6 @@ importers:
       nuxt-typed-router:
         specifier: catalog:build
         version: 4.0.2(magicast@0.5.1)(prettier@3.6.2)
-      open:
-        specifier: catalog:dev
-        version: 10.2.0
       pinia:
         specifier: catalog:frontend
         version: 3.0.3(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
@@ -245,9 +236,6 @@ importers:
       taze:
         specifier: catalog:dev
         version: 19.9.0
-      tsx:
-        specifier: catalog:dev
-        version: 4.20.6
       typescript:
         specifier: catalog:dev
         version: 5.9.3
@@ -14554,6 +14542,7 @@ snapshots:
       get-tsconfig: 4.13.0
     optionalDependencies:
       fsevents: 2.3.3
+    optional: true
 
   tunnel-agent@0.6.0:
     dependencies:
