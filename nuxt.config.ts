@@ -111,6 +111,15 @@ export default defineNuxtConfig({
     host: DEV_SERVER_HOST,
   },
 
+  future: {
+    /**
+     * Include future features, such as using `nitropack@^3`.
+     *
+     * @see https://nuxt.com/blog/v4-2#opt-in-vite-environment-api
+     */
+    compatibilityVersion: 5,
+  },
+
   experimental: {
     /**
      * When using `nuxt generate`, payload js assets included in sw precache manifest, but missing on offline, disabling
