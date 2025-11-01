@@ -1,5 +1,31 @@
+import os from 'node:os'
 import { pwa } from './app/config/pwa'
 import { appDescription, appName } from './app/constants/app'
+
+/**
+ * Get local network IP address (IPv4).
+ *
+ * This function will find the first non-internal IPv4 address from network interfaces.
+ *
+ * This is an workaround and will be improved in the future.
+ */
+function getLocalIPv4(): string {
+  const interfaces = os.networkInterfaces()
+  for (const name of Object.keys(interfaces)) {
+    const iface = interfaces[name]
+    if (!iface)
+      continue
+
+    for (const alias of iface) {
+      // Skip internal (loopback) addresses and IPv6
+      if (alias.family === 'IPv4' && !alias.internal) {
+        return alias.address
+      }
+    }
+  }
+  // Fallback to localhost if no network interface found
+  return 'localhost'
+}
 
 export default defineNuxtConfig({
   modules: [
@@ -88,26 +114,20 @@ export default defineNuxtConfig({
   },
 
   devServer: {
-    port: 3000,
     /**
-     * Listen both IPv4 and IPv6 for all interfaces (including localhost).
+     * Automatically detect and listen on the local IPv4 address.
      *
-     * For example, you have two interfaces. The first one has IPv4 address `192.168.1.100` and IPv6 address `fe80::1`,
-     * another one has IPv4 address `172.16.0.1` and IPv6 address `fe80::2`, then the dev server will listen on:
+     * This will listen on IPv4 addresses of all network interfaces.
      *
-     * - `127.0.0.1`
-     * - `::1`
-     * - `192.168.1.100`
-     * - `fe80::1`
-     * - `172.16.0.1`
-     * - `fe80::2`
+     * Different from using `0.0.0.0`, this support automatically opening server URL in the browser, but does not
+     * support `localhost`.
      *
-     * Why should we do this?
-     *
-     * By default, Windows resolves `localhost` to IPv6 address `::1` (IPv6 loopback) first, then to IPv4 address
-     * `127.0.0.1`. If we only listen on IPv4 address, it may cause slow response to the dev server.
+     * This is expected behavior, because in Windows, `localhost` is resolved to IPv6 address `::1` (IPv6 loopback)
+     * first, then to IPv4 address `127.0.0.1`. If we support `localhost`, it may cause slow response to the dev
+     * server and hard to find out the reason.
      */
-    host: '::',
+    host: getLocalIPv4(),
+    port: 3000,
   },
 
   future: {
