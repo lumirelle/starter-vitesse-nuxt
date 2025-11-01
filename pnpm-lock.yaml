@@ -130,6 +130,11 @@ catalogs:
       specifier: ^1.2.4
       version: 1.2.4
 
+patchedDependencies:
+  listhen:
+    hash: bc7d7752546cfafca4ed876563c4d180968f1e506ddda00c9d1bf6d5ced759a9
+    path: patches/listhen.patch
+
 importers:
 
   .:
@@ -8213,7 +8218,7 @@ snapshots:
       fuse.js: 7.1.0
       giget: 2.0.0
       jiti: 2.6.1
-      listhen: 1.9.0
+      listhen: 1.9.0(patch_hash=bc7d7752546cfafca4ed876563c4d180968f1e506ddda00c9d1bf6d5ced759a9)
       nypm: 0.6.2
       ofetch: 1.5.0
       ohash: 2.0.11
@@ -11903,7 +11908,7 @@ snapshots:
       etag: 1.8.1
       h3: 1.15.4
       image-meta: 0.2.2
-      listhen: 1.9.0
+      listhen: 1.9.0(patch_hash=bc7d7752546cfafca4ed876563c4d180968f1e506ddda00c9d1bf6d5ced759a9)
       ofetch: 1.5.0
       pathe: 1.1.2
       sharp: 0.32.6
@@ -12248,7 +12253,7 @@ snapshots:
       string-argv: 0.3.2
       yaml: 2.8.1
 
-  listhen@1.9.0:
+  listhen@1.9.0(patch_hash=bc7d7752546cfafca4ed876563c4d180968f1e506ddda00c9d1bf6d5ced759a9):
     dependencies:
       '@parcel/watcher': 2.5.1
       '@parcel/watcher-wasm': 2.5.1
@@ -12830,7 +12835,7 @@ snapshots:
       jiti: 2.6.1
       klona: 2.0.6
       knitwork: 1.2.0
-      listhen: 1.9.0
+      listhen: 1.9.0(patch_hash=bc7d7752546cfafca4ed876563c4d180968f1e506ddda00c9d1bf6d5ced759a9)
       magic-string: 0.30.21
       magicast: 0.5.1
       mime: 4.1.0

@@ -1,0 +1,114 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index aedec5e08bf8c4b249211d929beb5fb4a1fe4bb7..c15bf9b05058aeb453a26d3edd5ce66ad7319290 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -649,6 +649,15 @@ async function listen(handle, _options = {}) {
+     }
+   }
+   const getURL = (host = listhenOptions.hostname, baseURL) => generateURL(host, listhenOptions, baseURL);
++  const resolveAnyHost = (host) => {
++    if (host === '0.0.0.0') {
++      return '127.0.0.1';
++    }
++    if (host === '::') {
++      return '::1';
++    }
++    return host;
++  };
+   let tunnel;
+   if (listhenOptions.tunnel) {
+     const { startTunnel } = await import('untun');
+@@ -669,7 +678,7 @@ async function listen(handle, _options = {}) {
+   };
+   if (listhenOptions.clipboard) {
+     const clipboardy = await import('clipboardy').then((r) => r.default || r);
+-    await clipboardy.write(getURL()).catch(() => {
++    await clipboardy.write(getURL(resolveAnyHost(listhenOptions.hostname))).catch(() => {
+       listhenOptions.clipboard = false;
+     });
+   }
+@@ -687,9 +696,17 @@ async function listen(handle, _options = {}) {
+     if (publicURL) {
+       _addURL("network", publicURL);
+     }
+-    if (_localhost || _anyhost) {
++    if (_localhost) {
+       _addURL("local", getURL(listhenOptions.hostname, getURLOptions.baseURL));
+     }
++    if (_anyhost) {
++      if (listhenOptions.hostname === '::') {
++        _addURL("local", getURL('::1', getURLOptions.baseURL));
++        _addURL("local", getURL('127.0.0.1', getURLOptions.baseURL));
++      } else {
++        _addURL("local", getURL(resolveAnyHost(listhenOptions.hostname), getURLOptions.baseURL));
++      }
++    }
+     if (tunnel) {
+       _addURL("tunnel", await tunnel.getURL());
+     }
+@@ -749,7 +766,7 @@ async function listen(handle, _options = {}) {
+     showURL();
+   }
+   const _open = async () => {
+-    await open(getURL()).catch(() => {
++    await open(getURL(resolveAnyHost(listhenOptions.hostname))).catch(() => {
+     });
+   };
+   if (listhenOptions.open) {
+diff --git a/dist/index.mjs b/dist/index.mjs
+index db00b6c0c3e515d6ae80b829b512bac9b9842baf..fd47b2fcf67895e87c16098ab116fad1b7914401 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -637,6 +637,15 @@ async function listen(handle, _options = {}) {
+     }
+   }
+   const getURL = (host = listhenOptions.hostname, baseURL) => generateURL(host, listhenOptions, baseURL);
++  const resolveAnyHost = (host) => {
++    if (host === '0.0.0.0') {
++      return '127.0.0.1';
++    }
++    if (host === '::') {
++      return '::1';
++    }
++    return host;
++  };
+   let tunnel;
+   if (listhenOptions.tunnel) {
+     const { startTunnel } = await import('untun');
+@@ -657,7 +666,7 @@ async function listen(handle, _options = {}) {
+   };
+   if (listhenOptions.clipboard) {
+     const clipboardy = await import('clipboardy').then((r) => r.default || r);
+-    await clipboardy.write(getURL()).catch(() => {
++    await clipboardy.write(getURL(resolveAnyHost(listhenOptions.hostname))).catch(() => {
+       listhenOptions.clipboard = false;
+     });
+   }
+@@ -675,9 +684,17 @@ async function listen(handle, _options = {}) {
+     if (publicURL) {
+       _addURL("network", publicURL);
+     }
+-    if (_localhost || _anyhost) {
++    if (_localhost) {
+       _addURL("local", getURL(listhenOptions.hostname, getURLOptions.baseURL));
+     }
++    if (_anyhost) {
++      if (listhenOptions.hostname === '::') {
++        _addURL("local", getURL('::1', getURLOptions.baseURL));
++        _addURL("local", getURL('127.0.0.1', getURLOptions.baseURL));
++      } else {
++        _addURL("local", getURL(resolveAnyHost(listhenOptions.hostname), getURLOptions.baseURL));
++      }
++    }
+     if (tunnel) {
+       _addURL("tunnel", await tunnel.getURL());
+     }
+@@ -737,7 +754,7 @@ async function listen(handle, _options = {}) {
+     showURL();
+   }
+   const _open = async () => {
+-    await open(getURL()).catch(() => {
++    await open(getURL(resolveAnyHost(listhenOptions.hostname))).catch(() => {
+     });
+   };
+   if (listhenOptions.open) {

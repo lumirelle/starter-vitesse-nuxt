@@ -1,5 +1,8 @@
 packages: []
 
+patchedDependencies:
+  listhen: patches/listhen.patch
+
 catalogs:
   build:
     '@nuxt/eslint': ^1.10.0
