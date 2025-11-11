@@ -6,15 +6,15 @@ patchedDependencies:
 catalogs:
   build:
     '@nuxt/eslint': ^1.10.0
-    '@nuxt/fonts': ^0.11.4
+    '@nuxt/fonts': ^0.12.1
     '@nuxt/image': 'npm:@nuxt/image-nightly@^2.0.1-20251105-124145-39f83b0'
     '@nuxtjs/color-mode': ^3.5.2
     '@nuxtjs/device': ^3.2.4
     '@nuxtjs/i18n': ^10.2.0
     '@nuxtjs/seo': ^3.2.2
     '@pinia/nuxt': ^0.11.3
-    '@unocss/eslint-config': ^66.5.4
-    '@unocss/nuxt': ^66.5.4
+    '@unocss/eslint-config': ^66.5.6
+    '@unocss/nuxt': ^66.5.6
     '@vite-pwa/nuxt': ^1.0.7
     '@vueuse/nuxt': ^14.0.0
     dayjs-nuxt: ^2.1.11
@@ -24,7 +24,7 @@ catalogs:
     nuxt-svgo: ^4.2.6
     nuxt-swiper: ^2.0.1
     nuxt-typed-router: ^4.0.2
-    unocss: ^66.5.4
+    unocss: ^66.5.6
     unplugin-vue-router: ^0.16.1
   dev:
     '@antfu/eslint-config': ^6.2.0
@@ -43,7 +43,7 @@ catalogs:
     dayjs: ^1.11.19
     echarts: ^6.0.0
     pinia: ^3.0.4
-    vue: ^3.5.23
+    vue: ^3.5.24
     vue-echarts: ^8.0.1
   icons:
     '@iconify-json/carbon': ^1.2.14
