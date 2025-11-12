@@ -6,7 +6,6 @@
     "editorconfig.editorconfig",
     "jgclark.vscode-todo-highlight",
     "lokalise.i18n-ally",
-    "vue.volar",
-    "vunguyentuan.vscode-postcss"
+    "vue.volar"
   ]
 }
