@@ -50,6 +50,7 @@ catalogs:
     '@iconify-json/carbon': ^1.2.14
     '@iconify-json/twemoji': ^1.2.4
   testing:
+    '@vitest/coverage-v8': ^4.0.9
     '@vitest/ui': ^4.0.8
     '@vue/test-utils': ^2.4.6
     happy-dom: ^20.0.10
