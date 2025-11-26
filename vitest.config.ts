@@ -1,4 +1,5 @@
 import { defineVitestProject } from '@nuxt/test-utils/config'
+import { isWindows } from 'std-env'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
           name: 'e2e',
           include: ['test/e2e/*.{test,spec}.ts'],
           environment: 'node',
+          testTimeout: isWindows ? 36_000 : 12_000,
         },
       },
       await defineVitestProject({

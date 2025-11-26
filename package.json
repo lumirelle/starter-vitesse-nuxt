@@ -15,7 +15,7 @@
     "typecheck": "nuxt typecheck",
     "test": "vitest",
     "test:unit": "vitest --project unit",
-    "pretest:e2e": "nlx playwright-core install --with-deps",
+    "pretest:e2e": "playwright-core install --with-deps",
     "test:e2e": "vitest --project e2e",
     "test:nuxt": "vitest --project nuxt"
   },
@@ -59,6 +59,7 @@
     "pinia": "catalog:frontend",
     "playwright-core": "catalog:testing",
     "simple-git-hooks": "catalog:dev",
+    "std-env": "catalog:testing",
     "taze": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",

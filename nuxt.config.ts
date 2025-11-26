@@ -154,22 +154,6 @@ export default defineNuxtConfig({
     },
   },
 
-  /**
-   * Add type support for test files, workaround for https://github.com/nuxt/nuxt/issues/33593.
-   */
-  typescript: {
-    tsConfig: {
-      include: [
-        '../tests/**/*.ts',
-        '../tests/**/*.spec.ts',
-        '../tests/**/*.test.ts',
-        '../test/**/*.ts',
-        '../test/**/*.spec.ts',
-        '../test/**/*.test.ts',
-      ],
-    },
-  },
-
   dayjs: {
     locales: ['en', 'zh'],
     defaultLocale: 'en',
