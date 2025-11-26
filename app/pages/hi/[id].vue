@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Counter from './components/Counter.vue'
-
 const route = useRoute<'hi-id'>()
 const user = useUserStore()
 const name = route.params.id
@@ -56,7 +54,7 @@ useHead({
       </div>
     </template>
 
-    <Counter />
+    <HiCounter />
 
     <div>
       <NuxtLinkLocale

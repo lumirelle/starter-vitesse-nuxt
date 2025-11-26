@@ -1,17 +1,4 @@
 <script setup lang="ts">
-import ColorModeEntry from './components/modules/ColorModeEntry.vue'
-import DayjsEntry from './components/modules/DayjsEntry.vue'
-import DeviceEntry from './components/modules/DeviceEntry.vue'
-import EChartsEntry from './components/modules/EChartsEntry.vue'
-import ImageEntry from './components/modules/ImageEntry.vue'
-import PiniaEntry from './components/modules/PiniaEntry.vue'
-import QrcodeEntry from './components/modules/QrcodeEntry.vue'
-import SvgoEntry from './components/modules/SvgoEntry.vue'
-import SwiperEntry from './components/modules/SwiperEntry.vue'
-import CustomErrorEntry from './components/nuxt/CustomErrorEntry.vue'
-import CustomFetchEntry from './components/nuxt/CustomFetchEntry.vue'
-import PageView from './components/PageView.vue'
-
 definePageMeta({
   layout: 'home',
 })
@@ -53,20 +40,20 @@ const navStore = useNavStore()
     <div mt-6 flex flex-col gap-6 items-center>
       <!-- Nuxt -->
       <section>
-        <CustomErrorEntry entry />
-        <CustomFetchEntry entry />
+        <EntryCustomError entry />
+        <EntryCustomFetch entry />
       </section>
       <!-- Modules -->
       <section>
-        <ColorModeEntry entry />
-        <DayjsEntry entry />
-        <DeviceEntry entry />
-        <EChartsEntry entry />
-        <ImageEntry entry />
-        <PiniaEntry entry />
-        <QrcodeEntry entry />
-        <SvgoEntry entry />
-        <SwiperEntry entry />
+        <EntryColorMode entry />
+        <EntryDayjs entry />
+        <EntryDevice entry />
+        <EntryECharts entry />
+        <EntryImage entry />
+        <EntryPinia entry />
+        <EntryQrCode entry />
+        <EntrySvgo entry />
+        <EntrySwiper entry />
       </section>
     </div>
   </div>
