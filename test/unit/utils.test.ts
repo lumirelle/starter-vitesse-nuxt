@@ -1,5 +1,4 @@
-// classic unit tests of business logic functions
-// test env is set to 'node'
+// A demo for testing utility functions
 
 import { describe, expect, it } from 'vitest'
 

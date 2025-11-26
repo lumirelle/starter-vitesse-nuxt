@@ -1,21 +1,24 @@
-// testing the behavior of the whole application
-// test env is set to 'node' to simulate the real environment
+// A demo for testing the behavior of the whole application (SSR)
 
 import { $fetch, createPage, setup, url } from '@nuxt/test-utils/e2e'
 import { describe, expect, it } from 'vitest'
 
 describe('example nuxt e2e test', async () => {
-  // setup app.vue in headless browser
+  /**
+   * Setup test environment
+   *
+   * @see [Setup Vitest](https://github.com/nuxt/test-utils/blob/main/src/e2e/setup/vitest.ts#L3)
+   */
   await setup()
 
-  it('component renders in browser', async () => {
-    // fetch for the rendered value
+  it('with server-side rendered result', async () => {
+    // Fetch for the server-side rendered result
     const html = await $fetch('/')
     expect(html).toContain('<!DOCTYPE html>')
   })
 
-  it('with playwright', async () => {
-    // render page in headless browser
+  it('with hydrated client-side result', async () => {
+    // Render page in headless browser and wait until hydration is complete
     const page = await createPage()
     await page.goto(url('/'), { waitUntil: 'hydration' })
     const html = await page.content()

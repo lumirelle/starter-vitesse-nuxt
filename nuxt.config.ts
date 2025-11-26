@@ -23,16 +23,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
   ],
 
-  /**
-   * Exclude `components/` directory from `pages/` directory scanning.
-   */
-  pages: {
-    pattern: ['**/*.vue', '!**/components/**'],
-  },
-
   devtools: {
     enabled: true,
-
     timeline: {
       enabled: true,
     },
