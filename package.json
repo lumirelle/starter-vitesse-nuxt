@@ -3,21 +3,22 @@
   "private": true,
   "packageManager": "pnpm@10.23.0",
   "scripts": {
-    "build": "nuxt build",
+    "prepare": "nuxt prepare && simple-git-hooks",
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxt dev -o",
     "dev": "nuxt dev -o",
+    "build": "nuxt build",
     "generate": "nuxt generate",
-    "prepare": "nuxt prepare && simple-git-hooks",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
-    "start:generate": "na exec serve .output/public",
+    "start:generate": "nlx serve .output/public",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "test": "vitest",
     "test:unit": "vitest --project unit",
     "pretest:e2e": "playwright-core install --with-deps",
     "test:e2e": "vitest --project e2e",
-    "test:nuxt": "vitest --project nuxt"
+    "test:nuxt": "vitest --project nuxt",
+    "pretest": "nr pretest:e2e",
+    "test": "vitest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
