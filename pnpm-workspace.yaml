@@ -7,6 +7,7 @@ catalogs:
   build:
     '@nuxt/eslint': ^1.10.0
     '@nuxt/fonts': ^0.12.1
+    '@nuxt/hints': ^1.0.0-alpha.2
     '@nuxt/image': 'npm:@nuxt/image-nightly@2.0.1-20251118-093558-ab652ab'
     '@nuxt/test-utils': ^3.20.1
     '@nuxtjs/color-mode': ^4.0.0

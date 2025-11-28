@@ -2,10 +2,13 @@ import { pwa } from './app/config/pwa'
 import { appDescription, appName } from './app/constants/app'
 
 export default defineNuxtConfig({
+  // @keep-sorted
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
+    '@nuxt/hints',
     '@nuxt/image',
+    '@nuxt/test-utils',
     '@nuxtjs/color-mode',
     '@nuxtjs/device',
     '@nuxtjs/i18n',
@@ -20,7 +23,6 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     'nuxt-swiper',
     'nuxt-typed-router',
-    '@nuxt/test-utils',
   ],
 
   devtools: {
