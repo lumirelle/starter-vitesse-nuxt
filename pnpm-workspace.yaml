@@ -5,7 +5,7 @@ patchedDependencies:
 
 catalogs:
   build:
-    '@nuxt/eslint': ^1.10.0
+    '@nuxt/eslint': ^1.11.0
     '@nuxt/fonts': ^0.12.1
     '@nuxt/hints': ^1.0.0-alpha.2
     '@nuxt/image': 'npm:@nuxt/image-nightly@2.0.1-20251118-093558-ab652ab'
@@ -17,8 +17,8 @@ catalogs:
     '@pinia/nuxt': ^0.11.3
     '@unocss/eslint-config': ^66.5.9
     '@unocss/nuxt': ^66.5.9
-    '@vite-pwa/nuxt': ^1.0.7
-    '@vueuse/nuxt': ^14.0.0
+    '@vite-pwa/nuxt': ^1.1.0
+    '@vueuse/nuxt': ^14.1.0
     dayjs-nuxt: ^2.1.11
     nuxt: 'npm:nuxt-nightly@4.2.2-29401542.1ec99e9a'
     nuxt-echarts: ^1.0.1
@@ -27,7 +27,7 @@ catalogs:
     nuxt-swiper: ^2.0.1
     nuxt-typed-router: ^4.0.2
     unocss: ^66.5.9
-    unplugin-vue-router: ^0.17.1
+    unplugin-vue-router: ^0.18.0
   dev:
     '@antfu/eslint-config': ^6.2.0
     '@antfu/ni': ^27.0.1
@@ -36,12 +36,12 @@ catalogs:
     eslint-plugin-format: ^1.0.2
     lint-staged: ^16.2.7
     simple-git-hooks: ^2.13.1
-    taze: ^19.9.0
+    taze: ^19.9.2
     typescript: ^5.9.3
     vue-tsc: ^3.1.5
   frontend:
     '@antfu/utils': ^9.3.0
-    '@vueuse/core': ^14.0.0
+    '@vueuse/core': ^14.1.0
     dayjs: ^1.11.19
     echarts: ^6.0.0
     pinia: ^3.0.4
@@ -54,7 +54,7 @@ catalogs:
     '@vitest/coverage-v8': ^3.2.4
     '@vitest/ui': ^3.2.4
     '@vue/test-utils': ^2.4.6
-    happy-dom: ^20.0.10
+    happy-dom: ^20.0.11
     playwright-core: ^1.57.0
     std-env: ^3.10.0
     vitest: ^3.2.4

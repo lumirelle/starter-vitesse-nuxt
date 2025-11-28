@@ -49,22 +49,22 @@
 - [ECharts](https://github.com/kingyue737/nuxt-echarts) - Nuxt Module for Apache ECharts™.
 - [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
 - [Fonts](https://github.com/nuxt/fonts) - Plug-and-play custom web font optimization and configuration for Nuxt apps.
+- [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
 - [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
 - [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
 - [Pinia](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue.
-- [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
+- [QrCode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
 - [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
 - [Svgo](https://github.com/cpsoinos/nuxt-svgo) - Load optimized SVG files as Vue components.
 - [Swiper](https://github.com/cpreston321/nuxt-swiper) - Utilizes Swiper.js as its foundation using its web components.
+- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
 - [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
 - [VitePWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt 4.
 - [VueUse](https://github.com/vueuse/vueuse) - Collection of useful composition APIs.
-- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
 
 ## IDE
 
-We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https://github.com/vuejs/language-tools.git) to get
-the best experience.
+We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https://github.com/vuejs/language-tools.git) to get the best experience.
 
 ## Variations
 
