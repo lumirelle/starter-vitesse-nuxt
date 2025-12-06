@@ -23,10 +23,6 @@ export default antfu(
      * UnoCSS support.
      */
     unocss: true,
-    /**
-     * PNPM support.
-     */
-    pnpm: true,
 
     /**
      * Custom ignore patterns.
