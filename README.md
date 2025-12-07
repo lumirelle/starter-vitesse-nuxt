@@ -19,7 +19,7 @@
 > - [x] Package Manager: `pnpm` -> `bun`
 > - [ ] Build Tool: Still using `vite` with `typescript`.
 > - [ ] Test Runner: Still using `vitest`.
-> - [ ] Runtime: Still using bun's `nodejs` runtime.
+> - [ ] Runtime: Still using nodejs as nuxt's runtime.
 
 > [!Note]
 >
