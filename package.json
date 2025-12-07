@@ -83,7 +83,7 @@
         "@nuxt/eslint": "^1.11.0",
         "@nuxt/fonts": "^0.12.1",
         "@nuxt/hints": "^1.0.0-alpha.2",
-        "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251118-093558-ab652ab",
+        "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251126-104656-db87207",
         "@nuxt/test-utils": "^3.20.1",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/device": "^3.2.4",
@@ -95,14 +95,14 @@
         "@vite-pwa/nuxt": "^1.1.0",
         "@vueuse/nuxt": "^14.1.0",
         "dayjs-nuxt": "^2.1.11",
-        "nuxt": "npm:nuxt-nightly@4.2.2-29401542.1ec99e9a",
+        "nuxt": "npm:nuxt-nightly@4.2.2-29413365.2a912219",
         "nuxt-echarts": "^1.0.1",
         "nuxt-qrcode": "^0.4.8",
         "nuxt-svgo": "^4.2.6",
         "nuxt-swiper": "^2.0.1",
         "nuxt-typed-router": "^4.0.2",
         "unocss": "^66.5.9",
-        "unplugin-vue-router": "^0.18.0"
+        "unplugin-vue-router": "^0.19.0"
       },
       "dev": {
         "@antfu/eslint-config": "^6.2.0",
