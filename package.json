@@ -14,12 +14,12 @@
     "start:generate": "bunx -b serve .output/public",
     "lint": "eslint .",
     "typecheck": "bun run -b nuxt typecheck",
-    "test:unit": "bun run -b vitest --project unit",
+    "test:unit": "bun run test --project unit",
     "pretest:e2e": "bun run -b playwright-core install --with-deps",
-    "test:e2e": "bun run -b vitest --project e2e",
-    "test:nuxt": "bun run -b vitest --project nuxt",
+    "test:e2e": "bun run test --project e2e",
+    "test:nuxt": "bun run test --project nuxt",
     "pretest": "bun run pretest:e2e",
-    "test": "bun run -b vitest"
+    "test": "bun run vitest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",

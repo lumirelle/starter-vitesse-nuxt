@@ -21,7 +21,7 @@
 > - [x] Package Manager: `pnpm` -> `bun`
 > - [ ] Build Tool: Still using `vite` with `typescript`.
 > - [ ] Test Runner: Still using `vitest`.
-> - [ ] Runtime: Partial using `bun` runtime, eslint is still using `nodejs` runtime. How to check?
+> - [ ] Runtime: Partial using `bun` runtime, `eslint` and `vitest` is still using `nodejs` runtime. How to check?
 >
 >   Add the following code at begin of the running script under `node_modules/`:
 >
