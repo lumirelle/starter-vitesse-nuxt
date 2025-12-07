@@ -82,6 +82,17 @@ export default defineNuxtConfig({
     },
   },
 
+  /**
+   * Prerender or not specific routes (actually, it generates static HTML files for the routes) while `nuxt build` or `nuxt
+   * generate`.
+   *
+   * @see https://nuxt.com/docs/4.x/getting-started/prerendering
+   */
+  routeRules: {
+    '/': { prerender: true },
+    '/__og-image__/**': { prerender: false },
+  },
+
   devServer: {
     port: 3000,
     /**
@@ -136,16 +147,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-08-14',
 
   nitro: {
-    /**
-     * Prerender specific routes (actually, it generates static HTML files for the routes) while `nuxt build` or `nuxt
-     * generate`.
-     *
-     * @see https://nuxt.com/docs/4.x/getting-started/prerendering
-     */
-    prerender: {
-      routes: ['/'],
-      ignore: ['/hi'],
-    },
+    preset: 'bun',
   },
 
   dayjs: {
