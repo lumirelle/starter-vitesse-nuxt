@@ -19,7 +19,7 @@
     "test:e2e": "bun run test --project e2e",
     "test:nuxt": "bun run test --project nuxt",
     "pretest": "bun run pretest:e2e",
-    "test": "bun run vitest"
+    "test": "vitest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
@@ -72,7 +72,7 @@
     "vue-tsc": "catalog:dev"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun run lint-staged"
+    "pre-commit": "bun run -b lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
