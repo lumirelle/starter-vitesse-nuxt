@@ -32,6 +32,8 @@
 >   console.log('Node.js version:', process.version)
 >   console.log('Bun detected:', typeof Bun !== 'undefined')
 >   ```
+>
+> - [ ] Deploy Environment Support: `netlify` yes, `stackblitz` not yet.
 
 > [!Caution]
 >
