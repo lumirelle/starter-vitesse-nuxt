@@ -44,7 +44,6 @@
     "@vue/test-utils": "catalog:testing",
     "@vueuse/core": "catalog:frontend",
     "@vueuse/nuxt": "catalog:build",
-    "czg": "catalog:dev",
     "dayjs": "catalog:frontend",
     "dayjs-nuxt": "catalog:build",
     "echarts": "catalog:frontend",
@@ -105,7 +104,6 @@
       },
       "dev": {
         "@antfu/eslint-config": "^6.6.1",
-        "czg": "^1.12.0",
         "eslint": "^9.39.1",
         "eslint-plugin-format": "^1.0.2",
         "lint-staged": "^16.2.7",
