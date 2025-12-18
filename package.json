@@ -5,14 +5,14 @@
     "node": "^20.19 || >=22.12"
   },
   "scripts": {
-    "prepare": "bun run -b nuxt prepare && simple-git-hooks",
+    "prepare": "bun run -b nuxt prepare && bun run -b simple-git-hooks",
     "dev": "bun run -b nuxt dev -o",
     "dev:pwa": "VITE_PLUGIN_PWA=true bun run -b nuxt dev -o",
     "build": "bun run -b nuxt build",
     "generate": "bun run -b nuxt generate",
     "start": "bun run .output/server/index.mjs",
     "start:generate": "bunx -b serve .output/public",
-    "lint": "eslint .",
+    "lint": "bun run -b eslint .",
     "typecheck": "bun run -b nuxt typecheck",
     "test:unit": "bun run test --project unit",
     "pretest:e2e": "bun run -b playwright-core install --with-deps",
@@ -73,14 +73,14 @@
     "pre-commit": "bun run -b lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*": "bun run -b eslint --fix"
   },
   "workspaces": {
     "catalogs": {
       "build": {
         "@nuxt/eslint": "^1.12.1",
         "@nuxt/fonts": "^0.12.1",
-        "@nuxt/hints": "^1.0.0-alpha.2",
+        "@nuxt/hints": "^1.0.0-alpha.4",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251126-104656-db87207",
         "@nuxt/test-utils": "^3.20.1",
         "@nuxtjs/color-mode": "^4.0.0",
@@ -100,11 +100,11 @@
         "nuxt-swiper": "^2.0.1",
         "nuxt-typed-router": "^4.0.2",
         "unocss": "^66.5.9",
-        "unplugin-vue-router": "^0.19.0"
+        "unplugin-vue-router": "^0.19.1"
       },
       "dev": {
-        "@antfu/eslint-config": "^6.6.1",
-        "eslint": "^9.39.1",
+        "@antfu/eslint-config": "^6.7.1",
+        "eslint": "^9.39.2",
         "eslint-plugin-format": "^1.0.2",
         "lint-staged": "^16.2.7",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
