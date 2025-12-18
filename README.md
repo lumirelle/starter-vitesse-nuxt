@@ -19,11 +19,11 @@
 > Migration progress:
 >
 > - [x] Package Manager: `pnpm` -> `bun`
-> - [ ] Build Tool: Still using `vite` with `typescript`.
-> - [ ] Test Runner: Still using `vitest`.
-> - [ ] Runtime: Partial using `bun` runtime, `eslint` and `vitest` is still using `nodejs` runtime. How to check?
+> - [ ] Build Tool: Still using `vite` with `typescript`
+> - [ ] Test Runner: Still using `vitest`
+> - [ ] Runtime: Partial using `bun` runtime, `vitest` is still using `nodejs` runtime
 >
->   Add the following code at begin of the running script under `node_modules/`:
+>   How to check? Add the following code at begin of the running script under `node_modules/`:
 >
 >   <!-- eslint-disable no-console -->
 >
@@ -33,9 +33,7 @@
 >   console.log('Bun detected:', typeof Bun !== 'undefined')
 >   ```
 >
-> - [ ] Deploy Environment Support: `netlify` yes, `stackblitz` not yet.
-
-> [!Caution]
+> - [ ] Deploy Environment Support: `netlify` yes, `stackblitz` not yet
 >
 > `nuxt dev` is currently broken by `bun`, please waiting for the new release or [build `bun` manually](https://github.com/oven-sh/bun/tree/riskymh/18748).
 >
@@ -119,7 +117,7 @@ We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https:
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-bunx degit lumirelle/starter-vitesse-nuxt my-nuxt-app
+bunx -b degit lumirelle/starter-vitesse-nuxt my-nuxt-app
 cd my-nuxt-app
 bun i # If you don't have bun installed, run: npm install -g bun or install via https://bun.sh/
 ```

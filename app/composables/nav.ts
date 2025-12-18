@@ -29,6 +29,5 @@ export const useNavStore = defineStore('nav', () => {
   }
 })
 
-if (import.meta.hot) {
+if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useNavStore, import.meta.hot))
-}
