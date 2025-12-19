@@ -18,7 +18,7 @@ const radius = ref(0)
 </script>
 
 <template>
-  <div>
+  <PageHomeBase>
     <div flex gap-10 justify-center>
       <label>
         {{ t('variant') }}
@@ -40,32 +40,22 @@ const radius = ref(0)
           </option>
         </select>
       </label>
-
       <label>
         {{ t('radius') }}
         <select v-model.number="radius" select m="l-2">
           <option value="0">
-            {{ t('radiusOptions.0') }}
+            {{ t('radius-options.0') }}
           </option>
           <option value="1">
-            {{ t('radiusOptions.1') }}
+            {{ t('radius-options.1') }}
           </option>
         </select>
       </label>
     </div>
-
     <div mb-4 mt-4 flex justify-center>
       <Qrcode value="https://qrcode.s94.dev" :variant="variant" :radius="radius" width="200" height="200" />
     </div>
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
@@ -79,10 +69,9 @@ en:
     pixelated: Pixelated
     circle: Circle
   radius: 'Radius (No effect on `default` & `pixelated` variant):'
-  radiusOptions:
+  radius-options:
     0: Disable
     1: Enable
-  back: '@:global.back'
 zh:
   title: Nuxt QRCode
   variant: '变种：'
@@ -93,8 +82,7 @@ zh:
     pixelated: 像素化
     circle: 圆形
   radius: '圆角 (对 `默认` 和 `像素化` 无效):'
-  radiusOptions:
+  radius-options:
     0: 禁用
     1: 启用
-  back: '@:global.back'
 </i18n>

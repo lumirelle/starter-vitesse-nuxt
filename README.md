@@ -55,7 +55,7 @@
 
 - 🔥 The `<script setup>` syntax.
 
-- 🍍 [State Management via Pinia](https://github.com/vuejs/pinia), see [./app/composables/user.ts](./app/composables/user.ts).
+- 🍍 [State Management via Pinia](https://github.com/vuejs/pinia), see [./app/composables/store.ts](./app/composables/store.ts).
 
 - 📑 [Layout system](./app/layouts).
 
@@ -69,27 +69,32 @@
 
 ## Plugins
 
-### Nuxt Modules
+### Nuxt Modules -- UI
 
-- [ColorMode](https://github.com/nuxt-modules/color-mode) - Dark and light mode with auto detection made easy with Nuxt.
-- [Dayjs](https://github.com/fumeapp/dayjs) - Natively integrate Day.js into Nuxt.
-- [DevTools](https://github.com/nuxt/devtools) - Unleash Nuxt Developer Experience.
-- [Device](https://github.com/nuxt-modules/device) - Detect the type of device in your Nuxt applications.
-- [ECharts](https://github.com/kingyue737/nuxt-echarts) - Nuxt Module for Apache ECharts™.
-- [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
-- [Fonts](https://github.com/nuxt/fonts) - Plug-and-play custom web font optimization and configuration for Nuxt apps.
-- [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
-- [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
-- [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
-- [Pinia](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue.
-- [QrCode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
-- [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
-- [Svgo](https://github.com/cpsoinos/nuxt-svgo) - Load optimized SVG files as Vue components.
-- [Swiper](https://github.com/cpreston321/nuxt-swiper) - Utilizes Swiper.js as its foundation using its web components.
-- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
 - [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
-- [VitePWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt 4.
-- [VueUse](https://github.com/vueuse/vueuse) - Collection of useful composition APIs.
+- [Fonts](https://github.com/nuxt/fonts) - Plug-and-play custom web font optimization and configuration for Nuxt apps.
+- [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
+- [Color Mode](https://github.com/nuxt-modules/color-mode) - Dark and light mode with auto detection made easy with Nuxt.
+- [Device](https://github.com/nuxt-modules/device) - Detect the type of device in your Nuxt applications.
+- [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
+- [Swiper](https://github.com/cpreston321/nuxt-swiper) - Utilizes Swiper.js as its foundation using its web components.
+- [ECharts](https://github.com/kingyue737/nuxt-echarts) - Nuxt Module for Apache ECharts™.
+- [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
+
+### Nuxt Modules -- Utilities
+
+- [Vue Use](https://github.com/vueuse/vueuse) - Collection of useful composition APIs.
+- [Pinia](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue.
+- [Dayjs](https://github.com/fumeapp/dayjs) - Natively integrate Day.js into Nuxt.
+- [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
+- [Vite PWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt 4.
+
+### Nuxt Modules -- Development
+
+- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
+- [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
+- [DevTools](https://github.com/nuxt/devtools) - Unleash Nuxt Developer Experience.
+- [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
 
 ## IDE
 

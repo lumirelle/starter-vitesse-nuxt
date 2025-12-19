@@ -1,3 +1,4 @@
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import {
   defineConfig,
   presetAttributify,
@@ -32,7 +33,30 @@ export default defineConfig({
     presetWind4(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+      collections: {
+        public: FileSystemIconLoader('./public/icons'),
+      },
+      processor(props, meta) {
+        if (meta.collection === 'public') {
+          let width = 1
+          let height = 1
+          if (typeof props.width === 'string' && typeof props.height === 'string') {
+            width = Number.parseInt(props.width)
+            height = Number.parseInt(props.height)
+          }
+          else if (typeof props.width === 'number' && typeof props.height === 'number') {
+            width = props.width
+            height = props.height
+          }
+          const min = Math.min(width, height)
+          props.width = `${Math.round(width / min * 100) / 100}em`
+          props.height = `${Math.round(height / min * 100) / 100}em`
+        }
+      },
     }),
     presetTypography(),
   ],

@@ -2,8 +2,7 @@
 definePageMeta({
   layout: 'home',
   /**
-   * Force light mode for this page, so that `toggleDark` in `DarkToggle.vue` will
-   * not take effect in this page.
+   * Force using dark mode on this page.
    */
   colorMode: 'light',
 })
@@ -18,26 +17,18 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <p>{{ t('forcedLight') }}</p>
+  <PageHomeBase>
     <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
+      <p>{{ t('forced-light') }}</p>
     </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
-  title: Light Mode
-  forcedLight: This page is forced to light mode.
-  back: '@:global.back'
+  title: light mode
+  forced-light: this page is forced to light mode.
 zh:
   title: 浅色模式
-  forcedLight: 本页面被强制为了浅色模式。
-  back: '@:global.back'
+  forced-light: 本页面被强制为了浅色模式。
 </i18n>

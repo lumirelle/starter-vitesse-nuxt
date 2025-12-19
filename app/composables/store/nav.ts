@@ -14,9 +14,10 @@ export const useNavStore = defineStore('nav', () => {
     try {
       const { $api } = useNuxtApp()
       const res = await $api('/api/v1/nav')
-      if (res && res.data) {
+      if (res && res.data)
         navData.value = res.data
-      }
+      else
+        throw new Error('No data received from nav API')
     }
     catch (error) {
       console.error(error)

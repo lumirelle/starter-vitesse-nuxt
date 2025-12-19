@@ -91,7 +91,7 @@ const initOptions = {
 </script>
 
 <template>
-  <div>
+  <PageHomeBase>
     <div flex="~ justify-center">
       <VChart :option="option" h-500px w-full>
         <template #tooltip="params">
@@ -99,22 +99,12 @@ const initOptions = {
         </template>
       </VChart>
     </div>
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
   title: ECharts Line Chart
-  back: '@:global.back'
 zh:
   title: ECharts 折线图
-  back: '@:global.back'
 </i18n>

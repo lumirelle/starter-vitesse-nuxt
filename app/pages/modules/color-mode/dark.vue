@@ -2,8 +2,7 @@
 definePageMeta({
   layout: 'home',
   /**
-   * Force dark mode for this page, so that `toggleDark` in `DarkToggle.vue` will
-   * not take effect in this page.
+   * Force using dark mode on this page.
    */
   colorMode: 'dark',
 })
@@ -18,26 +17,18 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <p>{{ t('forcedDark') }}</p>
+  <PageHomeBase>
     <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
+      <p>{{ t('forced-dark') }}</p>
     </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
   title: Dark Mode
-  forcedDark: This page is forced to dark mode.
-  back: '@:global.back'
+  forced-dark: This page is forced to dark mode.
 zh:
   title: 深色模式
-  forcedDark: 本页面被强制为了深色模式。
-  back: '@:global.back'
+  forced-dark: 本页面被强制为了深色模式。
 </i18n>

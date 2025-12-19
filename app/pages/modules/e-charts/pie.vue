@@ -60,27 +60,17 @@ function onClick(params: ECSSRClientEventParams) {
 </script>
 
 <template>
-  <div>
+  <PageHomeBase>
     <div flex="~ justify-center">
       <!-- We have to specify the `height` and `width` property in `init-options` for SVG. -->
       <VChartLight :init-options="{ height: 400, width: 1200 }" :option="option" @click="onClick" />
     </div>
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
   title: ECharts Pie Chart
-  back: '@:global.back'
 zh:
   title: ECharts 饼图
-  back: '@:global.back'
 </i18n>

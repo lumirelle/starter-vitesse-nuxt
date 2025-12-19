@@ -11,40 +11,121 @@ useHead({
   title: t('title'),
 })
 
-const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isAndroid, userAgent } = useDevice()
+const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isLinux, isAndroid, isChrome, isEdge, isFirefox, isSafari, userAgent } = useDevice()
 </script>
 
 <template>
-  <div>
-    <div m-auto text-left w-fit>
+  <PageHomeBase>
+    <div>
       <p>userAgent: <span text-amber>{{ userAgent }}</span></p>
       <br>
-      <p>{{ t('isDevice', { device: 'Desktop' }) }} <span text-green>{{ isDesktop }}</span></p>
-      <p>{{ t('isDevice', { device: 'Mobile' }) }} <span text-green>{{ isMobile }}</span></p>
-      <p>{{ t('isDevice', { device: 'Tablet' }) }} <span text-green>{{ isTablet }}</span></p>
-      <p>{{ t('isDevice', { device: 'Ios' }) }} <span text-green>{{ isIos }}</span></p>
-      <p>{{ t('isDevice', { device: 'Windows' }) }} <span text-green>{{ isWindows }}</span></p>
-      <p>{{ t('isDevice', { device: 'MacOS' }) }} <span text-green>{{ isMacOS }}</span></p>
-      <p>{{ t('isDevice', { device: 'Android' }) }} <span text-green>{{ isAndroid }}</span></p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Desktop</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isDesktop }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Mobile</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isMobile }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Tablet</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isTablet }}</span>
+      </p>
+      <br>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Windows</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isWindows }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>MacOS</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isMacOS }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Linux</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isLinux }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Android</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isAndroid }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>iOS</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isIos }}</span>
+      </p>
+      <br>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Chrome</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isChrome }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Edge</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isEdge }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Firefox</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isFirefox }}</span>
+      </p>
+      <p>
+        <I18nT keypath="is-this-device">
+          <template #device>
+            <span font-bold>Safari</span>
+          </template>
+        </I18nT>
+        <span text-green>{{ isSafari }}</span>
+      </p>
     </div>
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
   title: Nuxt Device
-  isDevice: 'Is this device {device}?'
-  back: '@:global.back'
+  is-this-device: 'Is this device {device}? '
 zh:
   title: Nuxt Device
-  isDevice: '这个设备是 {device} 吗？'
-  back: '@:global.back'
+  is-this-device: '这个设备是 {device} 吗？'
 </i18n>

@@ -15,41 +15,31 @@ const dayjs = useDayjs()
 </script>
 
 <template>
-  <div>
-    <!-- Use dayjs directly, `<ClientOnly>` is required to avoid hydration mismatch -->
-    <VitesseClientOnly>
-      <p text-amber>
-        {{ t('dayjsNowIs', { now: dayjs().format('LLdddd LTS') }) }}
-      </p>
-    </VitesseClientOnly>
-    <!-- Use `<NuxtTime>` component directly -->
-    <I18nT keypath="nuxtTimeNowIs" tag="p" text-green>
-      <template #now>
-        <NuxtTime :datetime="dayjs().toISOString()" date-style="full" time-style="full" :locale="locale" />
-      </template>
-    </I18nT>
+  <PageHomeBase>
     <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
+      <!-- Use dayjs directly, `<ClientOnly>` is required to avoid hydration mismatch -->
+      <VitesseClientOnly>
+        <p text-amber>
+          {{ t('dayjs-now-is', { now: dayjs().format('LLdddd [at] LTS zzz') }) }}
+        </p>
+      </VitesseClientOnly>
+      <!-- The better solution is to use `<NuxtTime>` component -->
+      <I18nT keypath="nuxt-time-now-is" tag="p" text-green>
+        <template #now>
+          <NuxtTime :datetime="dayjs().toString()" date-style="full" time-style="full" :locale="locale" />
+        </template>
+      </I18nT>
     </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
   title: Day.js Nuxt
-  timezone: 'Timezone: { timezone }'
-  dayjsNowIs: 'Day.js Now is: { now }'
-  nuxtTimeNowIs: 'Nuxt Time Now is: { now }'
-  back: '@:global.back'
+  dayjs-now-is: 'Day.js Now is: { now }'
+  nuxt-time-now-is: 'Nuxt Time Now is: { now }'
 zh:
   title: Day.js Nuxt
-  timezone: '时区：{ timezone }'
-  dayjsNowIs: 'Day.js 现在是：{ now }'
-  nuxtTimeNowIs: 'Nuxt Time 现在是：{ now }'
-  back: '@:global.back'
+  dayjs-now-is: 'Day.js 现在是：{ now }'
+  nuxt-time-now-is: 'Nuxt Time 现在是：{ now }'
 </i18n>

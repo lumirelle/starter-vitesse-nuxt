@@ -11,11 +11,10 @@ useHead({
   title: t('title'),
 })
 
-// Create 10 slides
 const containerRef = ref(null)
-const slides = ref(Array.from({ length: 10 }))
-
 const swiper = useSwiper(containerRef)
+// Create 10 slides
+const slides = ref(Array.from({ length: 10 }))
 
 onMounted(() => {
   // Access Swiper instance
@@ -25,8 +24,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <PageHomeBase>
     <VitesseClientOnly>
+      <!-- Web Component -->
       <swiper-container ref="containerRef" m="t-4 b-4">
         <swiper-slide
           v-for="(slide, idx) in slides" :key="idx"
@@ -47,15 +47,7 @@ onMounted(() => {
         {{ t('next') }}
       </button>
     </div>
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
@@ -64,11 +56,9 @@ en:
   slide: 'Slide { number }'
   prev: Prev
   next: Next
-  back: '@:global.back'
 zh:
   title: Nuxt Swiper
   slide: '幻灯片 { number }'
   prev: 上一张
   next: 下一张
-  back: '@:global.back'
 </i18n>

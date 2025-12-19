@@ -13,7 +13,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <PageHomeBase>
     <!-- https://image.nuxt.com/usage/nuxt-img -->
     <figure class="mb-8">
       <NuxtImg
@@ -24,7 +24,7 @@ useHead({
         class="rounded"
       />
       <figcaption class="text-xs text-gray-600 mt-3">
-        <I18nT tag="span" keypath="photoBy">
+        <I18nT tag="span" keypath="photo-by">
           <template #author>
             <a
               href="https://unsplash.com/@vorosbenisop"
@@ -51,7 +51,7 @@ useHead({
         sizes="xs:200px md:500px lg:1024"
       />
       <figcaption class="text-xs text-gray-600 mt-3">
-        <I18nT tag="span" keypath="photoBy">
+        <I18nT tag="span" keypath="photo-by">
           <template #author>
             <a
               href="https://unsplash.com/@kydroon"
@@ -69,25 +69,14 @@ useHead({
         </I18nT>
       </figcaption>
     </figure>
-
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
   title: Nuxt Image
-  photoBy: 'Photo by {author} on {source}.'
-  back: '@:global.back'
+  photo-by: 'Photo by {author} on {source}.'
 zh:
   title: Nuxt Image
-  photoBy: '照片作者 {author}，来源于 {source}。'
-  back: '@:global.back'
+  photo-by: '照片作者 {author}，来源于 {source}。'
 </i18n>

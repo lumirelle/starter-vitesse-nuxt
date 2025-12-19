@@ -19,8 +19,7 @@ export const useUserStore = defineStore('user', () => {
   const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
 
   /**
-   * Changes the current name of the user and saves the one that was used
-   * before.
+   * Changes the current name of the user and saves the one that was used before.
    *
    * @param name new name to set
    */
@@ -39,8 +38,7 @@ export const useUserStore = defineStore('user', () => {
 })
 
 /**
- * Support HMR in development, so you can edit your stores and interact with them directly in your app without reloading
- * the page, allowing you to keep the existing state, add, or even remove state, actions, and getters.
+ * Support HMR of pinia store in development.
  *
  * @see https://pinia.vuejs.org/cookbook/hot-module-replacement.html#HMR-Hot-Module-Replacement-
  */
