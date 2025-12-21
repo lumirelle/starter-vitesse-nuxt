@@ -10,7 +10,7 @@
 <a href="https://stackblitz.com/github/lumirelle/starter-vitesse-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
 </p>
 
-> [!Caution]
+> [!Note]
 >
 > `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-vitesse-nuxt/tree/nodejs).
 >
@@ -33,11 +33,16 @@
 >   console.log('Bun detected:', typeof Bun !== 'undefined')
 >   ```
 >
-> - [ ] Deploy Environment Support: `netlify` yes, `stackblitz` not yet
+> - [x] Deploy Environment Support: `netlify` and `stackblitz`
+
+> [!Caution]
+> `nuxt dev` is currently broken by `bun`, because `bun` limits the url passed to `fileURLToPath` to be an absolute path.
 >
-> `nuxt dev` is currently broken by `bun`, please waiting for the new release or [build `bun` manually](https://github.com/oven-sh/bun/tree/riskymh/18748).
+> There is a [PR](https://github.com/oven-sh/bun/pull/21765) can fix it, please waiting for it to being merged and released.
 >
-> Related [PR](https://github.com/oven-sh/bun/pull/21765).
+> Before that, the workaround is to surround the `fileURLToPath` calls with a try-catch block to silently ignore the error.
+>
+> See the related [issue](https://github.com/oven-sh/bun/issues/18748) for more details.
 
 > [!Note]
 >
