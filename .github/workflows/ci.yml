@@ -40,7 +40,7 @@ jobs:
       - run: bun i -g @antfu/ni
       - run: nci
       - run: nr build
-      - run: npm run test --coverage
+      - run: npm run --ignore-scripts test -- --project unit --project nuxt --coverage
       - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
