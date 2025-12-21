@@ -34,10 +34,13 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: ${{ matrix.bun }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
       - run: bun i -g @antfu/ni
       - run: nci
       - run: nr build
-      - run: nr test --coverage
+      - run: npm run test --coverage
       - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
