@@ -5,17 +5,17 @@
     "node": "^20.19 || >=22.12"
   },
   "scripts": {
-    "prepare": "bun run -b nuxt prepare && bun run -b simple-git-hooks",
-    "dev": "bun run -b nuxt dev -o",
-    "dev:pwa": "VITE_PLUGIN_PWA=true bun run -b nuxt dev -o",
-    "build": "bun run -b nuxt build",
-    "generate": "bun run -b nuxt generate",
+    "prepare": "bun run nuxt prepare && bun run simple-git-hooks",
+    "dev": "bun run nuxt dev -o",
+    "dev:pwa": "VITE_PLUGIN_PWA=true bun run nuxt dev -o",
+    "build": "bun run nuxt build",
+    "generate": "bun run nuxt generate",
     "start": "bun run .output/server/index.mjs",
-    "start:generate": "bunx -b serve .output/public",
-    "lint": "bun run -b eslint .",
-    "typecheck": "bun run -b nuxt typecheck",
+    "start:generate": "bunx serve .output/public",
+    "lint": "bun run eslint .",
+    "typecheck": "bun run nuxt typecheck",
     "test:unit": "bun run test --project unit",
-    "pretest:e2e": "bun run -b playwright-core install --with-deps",
+    "pretest:e2e": "bun run playwright-core install --with-deps",
     "test:e2e": "bun run test --project e2e",
     "test:nuxt": "bun run test --project nuxt",
     "pretest": "bun run pretest:e2e",
@@ -70,10 +70,10 @@
     "vue-tsc": "catalog:dev"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun run -b lint-staged"
+    "pre-commit": "bun run lint-staged"
   },
   "lint-staged": {
-    "*": "bun run -b eslint --fix"
+    "*": "bun run eslint --fix"
   },
   "workspaces": {
     "catalogs": {
