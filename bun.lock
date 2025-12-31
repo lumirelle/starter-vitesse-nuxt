@@ -54,7 +54,7 @@
     },
   },
   "patchedDependencies": {
-    "listhen@1.9.0": "patches/listhen.patch",
+    "listhen@1.9.0": "patches/listhen@1.9.0.patch",
   },
   "catalogs": {
     "build": {
