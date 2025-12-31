@@ -79,16 +79,16 @@
       "build": {
         "@nuxt/eslint": "^1.12.1",
         "@nuxt/fonts": "^0.12.1",
-        "@nuxt/hints": "^1.0.0-alpha.4",
-        "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251126-104656-db87207",
+        "@nuxt/hints": "^1.0.0-alpha.5",
+        "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251225-125234-23b8cef",
         "@nuxt/test-utils": "^3.20.1",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/device": "^4.0.0",
         "@nuxtjs/i18n": "^10.2.1",
         "@nuxtjs/seo": "^3.3.0",
         "@pinia/nuxt": "^0.11.3",
-        "@unocss/eslint-config": "^66.5.9",
-        "@unocss/nuxt": "^66.5.9",
+        "@unocss/eslint-config": "^66.5.12",
+        "@unocss/nuxt": "^66.5.12",
         "@vite-pwa/nuxt": "^1.1.0",
         "@vueuse/nuxt": "^14.1.0",
         "dayjs-nuxt": "^2.1.11",
@@ -97,17 +97,17 @@
         "nuxt-qrcode": "^0.4.8",
         "nuxt-swiper": "^2.0.1",
         "nuxt-typed-router": "^4.0.2",
-        "unocss": "^66.5.9",
-        "unplugin-vue-router": "^0.19.1"
+        "unocss": "^66.5.12",
+        "unplugin-vue-router": "^0.19.2"
       },
       "dev": {
-        "@antfu/eslint-config": "^6.7.1",
+        "@antfu/eslint-config": "^6.7.3",
         "eslint": "^9.39.2",
         "eslint-plugin-format": "^1.0.2",
         "lint-staged": "^16.2.7",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^5.9.3",
-        "vue-tsc": "^3.1.8"
+        "vue-tsc": "^3.2.1"
       },
       "frontend": {
         "@antfu/utils": "^9.3.0",
@@ -120,7 +120,7 @@
       },
       "icons": {
         "@iconify-json/carbon": "^1.2.14",
-        "@iconify-json/twemoji": "^1.2.4",
+        "@iconify-json/twemoji": "^1.2.5",
         "@iconify/utils": "^3.1.0"
       },
       "testing": {
