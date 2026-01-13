@@ -81,7 +81,7 @@
         "@nuxt/fonts": "^0.12.1",
         "@nuxt/hints": "^1.0.0-alpha.5",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251225-125234-23b8cef",
-        "@nuxt/test-utils": "^3.20.1",
+        "@nuxt/test-utils": "^3.23.0",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/device": "^4.0.0",
         "@nuxtjs/i18n": "^10.2.1",
@@ -103,11 +103,11 @@
       "dev": {
         "@antfu/eslint-config": "^6.7.3",
         "eslint": "^9.39.2",
-        "eslint-plugin-format": "^1.0.2",
+        "eslint-plugin-format": "^1.2.0",
         "lint-staged": "^16.2.7",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^5.9.3",
-        "vue-tsc": "^3.2.1"
+        "vue-tsc": "^3.2.2"
       },
       "frontend": {
         "@antfu/utils": "^9.3.0",
@@ -119,18 +119,18 @@
         "vue-echarts": "^8.0.1"
       },
       "icons": {
-        "@iconify-json/carbon": "^1.2.14",
+        "@iconify-json/carbon": "^1.2.16",
         "@iconify-json/twemoji": "^1.2.5",
         "@iconify/utils": "^3.1.0"
       },
       "testing": {
-        "@vitest/coverage-v8": "^4.0.16",
-        "@vitest/ui": "^4.0.16",
+        "@vitest/coverage-v8": "^4.0.17",
+        "@vitest/ui": "^4.0.17",
         "@vue/test-utils": "^2.4.6",
-        "happy-dom": "^20.0.11",
+        "happy-dom": "^20.1.0",
         "playwright-core": "^1.57.0",
         "std-env": "^3.10.0",
-        "vitest": "^4.0.16"
+        "vitest": "^4.0.17"
       }
     }
   },
