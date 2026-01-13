@@ -15,7 +15,7 @@ await setup({
   rootDir: fileURLToPath(new URL('../../', import.meta.url)),
 })
 
-describe('example nuxt e2e  server test', async () => {
+describe('example nuxt e2e server test', async () => {
   it('with server-side rendered result', async () => {
     // Fetch for the server-side rendered result
     const html = await $fetch('/')
