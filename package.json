@@ -15,10 +15,10 @@
     "lint": "bun run eslint .",
     "typecheck": "bun run nuxt typecheck",
     "pretest": "bun run playwright-core install --with-deps",
-    "test": "vitest",
-    "test:unit": "npm run test --project unit",
-    "test:e2e": "npm run test --project e2e",
-    "test:nuxt": "npm run test --project nuxt"
+    "test": "bunx vitest",
+    "test:unit": "bun run test --project unit",
+    "test:e2e": "bun run test --project e2e",
+    "test:nuxt": "bun run test --project nuxt"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
@@ -40,7 +40,6 @@
     "@unocss/nuxt": "catalog:build",
     "@vite-pwa/nuxt": "catalog:build",
     "@vitest/coverage-v8": "catalog:testing",
-    "@vitest/ui": "catalog:testing",
     "@vue/test-utils": "catalog:testing",
     "@vueuse/core": "catalog:frontend",
     "@vueuse/nuxt": "catalog:build",
@@ -125,7 +124,6 @@
       },
       "testing": {
         "@vitest/coverage-v8": "^4.0.17",
-        "@vitest/ui": "^4.0.17",
         "@vue/test-utils": "^2.4.6",
         "happy-dom": "^20.1.0",
         "playwright-core": "^1.57.0",

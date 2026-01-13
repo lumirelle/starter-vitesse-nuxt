@@ -1,4 +1,6 @@
-// A demo for testing Nuxt components
+/**
+ * @file A demo for testing Nuxt components in nuxt (vitest browser) environment
+ */
 
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { mount } from '@vue/test-utils'

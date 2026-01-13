@@ -1,4 +1,6 @@
-// A demo for testing utility functions
+/**
+ * @file A demo for testing utility functions
+ */
 
 import { describe, expect, it } from 'vitest'
 
