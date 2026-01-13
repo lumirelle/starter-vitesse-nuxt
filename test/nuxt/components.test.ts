@@ -2,10 +2,10 @@
  * @file A demo for testing Nuxt components in nuxt (vitest browser) environment
  */
 
+import { NuxtTestComponent } from '#components'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import NuxtTestComponent from '@/components/NuxtTestComponent.vue'
 
 const text = 'custom-text'
 

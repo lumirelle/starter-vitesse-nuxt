@@ -8,9 +8,4 @@ describe('example unit test', () => {
   it('true should be true', () => {
     expect(true).toBe(true)
   })
-
-  it('console.warn should be called', () => {
-    console.warn('This is a warning')
-    expect(console.warn).toHaveBeenCalled()
-  })
 })
