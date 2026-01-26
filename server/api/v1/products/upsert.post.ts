@@ -1,3 +1,3 @@
 export default defineEventHandler(() =>
-  createError({ statusCode: 501, statusMessage: 'Not Implemented' }),
+  createError({ status: 501, statusText: 'Not Implemented' }),
 )

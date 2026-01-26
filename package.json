@@ -78,8 +78,8 @@
   "workspaces": {
     "catalogs": {
       "build": {
-        "@nuxt/eslint": "^1.12.1",
-        "@nuxt/fonts": "^0.12.1",
+        "@nuxt/eslint": "^1.13.0",
+        "@nuxt/fonts": "^0.13.0",
         "@nuxt/hints": "^1.0.0-alpha.5",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251225-125234-23b8cef",
         "@nuxt/test-utils": "^3.23.0",
@@ -93,7 +93,7 @@
         "@vite-pwa/nuxt": "^1.1.0",
         "@vueuse/nuxt": "^14.1.0",
         "dayjs-nuxt": "^2.1.11",
-        "nuxt": "^4.2.2",
+        "nuxt": "^4.3.0",
         "nuxt-echarts": "^1.0.1",
         "nuxt-qrcode": "^0.4.8",
         "nuxt-swiper": "^2.0.1",
@@ -108,7 +108,7 @@
         "lint-staged": "^16.2.7",
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^5.9.3",
-        "vue-tsc": "^3.2.2"
+        "vue-tsc": "^3.2.4"
       },
       "frontend": {
         "@antfu/utils": "^9.3.0",
@@ -125,12 +125,12 @@
         "@iconify/utils": "^3.1.0"
       },
       "testing": {
-        "@vitest/coverage-v8": "^4.0.17",
+        "@vitest/coverage-v8": "^4.0.18",
         "@vue/test-utils": "^2.4.6",
-        "happy-dom": "^20.3.4",
-        "playwright-core": "^1.57.0",
+        "happy-dom": "^20.3.9",
+        "playwright-core": "^1.58.0",
         "std-env": "^3.10.0",
-        "vitest": "^4.0.17"
+        "vitest": "^4.0.18"
       }
     }
   },
