@@ -12,10 +12,7 @@ export default defineNuxtPlugin({
     const { getUserSource, saveUserSource } = useUserSource()
     router.afterEach((to) => {
       const userSource = getUserSource()
-      if (!userSource.value) {
-        saveUserSource()
-      }
-      else if (USER_SOURCE_ROUTE_QUERY_KEYS.some(param => to.query[param])) {
+      if (!userSource.value || USER_SOURCE_ROUTE_QUERY_KEYS.some((key) => to.query[key])) {
         saveUserSource()
       }
     })

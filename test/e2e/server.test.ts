@@ -18,7 +18,7 @@ await setup({
 describe('example nuxt e2e server test', async () => {
   it('with server-side rendered result', async () => {
     // Fetch for the server-side rendered result
-    const html = await $fetch('/')
-    expect(html).toContain('<!DOCTYPE html>')
+    const html = await $fetch<string>('/')
+    expect(html.slice(0, 15)).toMatchInlineSnapshot(`"<!DOCTYPE html>"`)
   })
 })

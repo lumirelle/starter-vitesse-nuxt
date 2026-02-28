@@ -37,7 +37,9 @@ export function useUserSource(options: UseUserSourceOptions = {}) {
   function saveUserSource() {
     refererCookie.value = window.document.referrer
     targetCookie.value = window.location.href
-    console.info(`Saved user source: ${JSON.stringify({ referer: refererCookie.value, target: targetCookie.value })}`)
+    console.info(
+      `Saved user source: ${JSON.stringify({ referer: refererCookie.value, target: targetCookie.value })}`,
+    )
   }
 
   function getUserSource() {

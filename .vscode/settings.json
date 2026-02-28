@@ -1,12 +1,11 @@
 {
-  // Editor Code Actions on Save
+  // Code Quality
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.oxc": "always",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "never"
   },
-
-  // Formatter & Linter
-  "prettier.enable": false,
   "eslint.runtime": "bun",
   "eslint.execArgv": ["-b"],
   "eslint.validate": [
@@ -28,16 +27,38 @@
     "sass",
     "less"
   ],
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "format/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
-  ]
+
+  // I18n Ally
+  "i18n-ally.autoDetection": false,
+  "i18n-ally.enabledFrameworks": ["vue", "vue-sfc"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": [
+    "locales",
+    "pages",
+    "components",
+    "app/i18n/locales",
+    "app/pages",
+    "app/components"
+  ],
+  "i18n-ally.namespace": true,
+  // If your i18n modules are under `modules` folder, or you don't need to use custom path matcher
+  // "i18n-ally.pathMatcher": "modules/{namespaces}/{locale}.json",
+
+  // Rest client
+  // See https://github.com/Huachao/vscode-restclient/blob/master/README.md for details
+  "rest-client.defaultHeaders": {
+    "User-Agent": "vscode-restclient",
+    "Accept-Encoding": "gzip, deflate, br"
+  },
+  "rest-client.environmentVariables": {
+    "$shared": {
+      // Your shared environment variables
+    },
+    "dev": {
+      // Your development environment variables
+    },
+    "prod": {
+      // Your production environment variables
+    }
+  }
 }

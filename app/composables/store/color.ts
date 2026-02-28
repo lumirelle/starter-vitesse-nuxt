@@ -11,5 +11,4 @@ export const useColorStore = defineStore('color', () => {
   }
 })
 
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useColorStore, import.meta.hot))
+if (import.meta.hot) import.meta.hot.accept(acceptHMRUpdate(useColorStore, import.meta.hot))

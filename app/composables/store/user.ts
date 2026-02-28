@@ -16,7 +16,7 @@ export const useUserStore = defineStore('user', () => {
   /**
    * List of previously used names, excluding the current one.
    */
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+  const otherNames = computed(() => usedNames.value.filter((name) => name !== savedName.value))
 
   /**
    * Changes the current name of the user and saves the one that was used before.
@@ -42,5 +42,4 @@ export const useUserStore = defineStore('user', () => {
  *
  * @see https://pinia.vuejs.org/cookbook/hot-module-replacement.html#HMR-Hot-Module-Replacement-
  */
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+if (import.meta.hot) import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))

@@ -85,7 +85,7 @@ export default defineNuxtConfig({
    */
   routeRules: {
     '/': { prerender: true },
-    '/__og-image__/**': { prerender: false },
+    // '/__og-image__/**': { prerender: false },
   },
 
   devServer: {
@@ -128,7 +128,7 @@ export default defineNuxtConfig({
     inlineRouteRules: true,
   },
 
-  compatibilityDate: '2025-12-18',
+  compatibilityDate: '2026-02-28',
 
   nitro: {
     preset: 'bun',
@@ -144,14 +144,8 @@ export default defineNuxtConfig({
      * @default ['relativeTime', 'utc']
      * @see https://day.js.org/docs/zh-CN/plugin/plugin
      */
-    plugins: [
-      // @keep-sorted
-      'advancedFormat',
-      'localizedFormat',
-      'relativeTime',
-      'timezone',
-      'utc',
-    ],
+    // @keep-sorted
+    plugins: ['advancedFormat', 'localizedFormat', 'relativeTime', 'timezone', 'utc'],
   },
 
   /**
@@ -160,16 +154,19 @@ export default defineNuxtConfig({
    * They are still dynamically imported when needed.
    */
   echarts: {
-    charts: ['LineChart', 'BarChart', 'MapChart', 'PieChart'],
+    // @keep-sorted
+    charts: ['BarChart', 'LineChart', 'MapChart', 'PieChart'],
+    // @keep-sorted
     components: [
       'DatasetComponent',
-      'GridComponent',
-      'TooltipComponent',
-      'ToolboxComponent',
-      'LegendComponent',
       'GeoComponent',
+      'GridComponent',
+      'LegendComponent',
+      'ToolboxComponent',
+      'TooltipComponent',
       'VisualMapComponent',
     ],
+    // @keep-sorted
     features: ['LabelLayout', 'UniversalTransition'],
   },
 
@@ -265,12 +262,12 @@ export default defineNuxtConfig({
      * @default { 'xs': 320, 'sm': 640, 'md': 768, 'lg': 1024, 'xl': 1280, '2xl': 1536 }
      */
     screens: {
-      'xs': 320, // Additional
-      'sm': 640,
-      'md': 768,
-      'lg': 1024,
-      'xl': 1280,
-      'xxl': 1536,
+      xs: 320, // Additional
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
       '2xl': 1536, // Additional
     },
     /**
@@ -305,9 +302,7 @@ export default defineNuxtConfig({
      * @see https://image.nuxt.com/get-started/configuration#domains
      * @default undefined
      */
-    domains: [
-      'images.unsplash.com',
-    ],
+    domains: ['images.unsplash.com'],
     /**
      * Aliases for src.
      *
@@ -360,9 +355,7 @@ export default defineNuxtConfig({
      *
      * @see https://nuxtseo.com/docs/link-checker/guides/rules
      */
-    skipInspections: [
-      'link-text',
-    ],
+    skipInspections: ['link-text'],
   },
 
   /**
@@ -377,14 +370,6 @@ export default defineNuxtConfig({
      * If your don't need this module, you can disable it.
      */
     enabled: true,
-    /**
-     * Support CJK characters in OG images.
-     */
-    fonts: [
-      'Noto+Sans+SC:400',
-      'Noto+Sans+SC:700',
-      'Work+Sans:ital:400',
-    ],
   },
 
   /**

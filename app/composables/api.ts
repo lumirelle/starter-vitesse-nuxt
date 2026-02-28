@@ -1,5 +1,8 @@
 import type { RouterMethod } from 'h3'
-import type { AvailableRouterMethod as _AvailableRouterMethod, NitroFetchRequest } from 'nitropack/types'
+import type {
+  AvailableRouterMethod as _AvailableRouterMethod,
+  NitroFetchRequest,
+} from 'nitropack/types'
 import type { AsyncData, FetchResult, UseFetchOptions } from 'nuxt/app'
 
 /**
@@ -7,13 +10,22 @@ import type { AsyncData, FetchResult, UseFetchOptions } from 'nuxt/app'
  *
  * NOTE: This is a fork for `KeysOf` type from `asyncData.d.ts` as it's not exported there.
  */
-type KeysOf<T> = Array<T extends T ? keyof T extends string ? keyof T : never : never>
+type KeysOf<T> = Array<T extends T ? (keyof T extends string ? keyof T : never) : never>
 /**
  * Pick properties `K` from `T`.
  *
  * NOTE: This is a fork for `PickFrom` type from `asyncData.d.ts` as it's not exported there.
  */
-type PickFrom<T, K extends Array<string>> = T extends Array<any> ? T : T extends Record<string, any> ? keyof T extends K[number] ? T : K[number] extends never ? T : Pick<T, K[number]> : T
+type PickFrom<T, K extends Array<string>> =
+  T extends Array<any>
+    ? T
+    : T extends Record<string, any>
+      ? keyof T extends K[number]
+        ? T
+        : K[number] extends never
+          ? T
+          : Pick<T, K[number]>
+      : T
 /**
  * Extract string type from a given union type `T`.
  */
@@ -24,7 +36,9 @@ type ExtractString<T> = T extends string ? T : never
  *
  * NOTE: This is a fork for `AvailableRouterMethod` type from `fetch.d.ts` as it's not exported there.
  */
-type AvailableRouterMethod<R extends NitroFetchRequest> = _AvailableRouterMethod<R> | Uppercase<_AvailableRouterMethod<R>>
+type AvailableRouterMethod<R extends NitroFetchRequest> =
+  | _AvailableRouterMethod<R>
+  | Uppercase<_AvailableRouterMethod<R>>
 /**
  * All routes of `NitroFetchRequest`.
  */
@@ -99,17 +113,17 @@ export function useApiGet<
 >(
   request: Ref<ReqT> | ReqT | (() => ReqT),
   params?: Record<string, any>,
-  options?: Omit<UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>, 'method' | 'params'>,
+  options?: Omit<
+    UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>,
+    'method' | 'params'
+  >,
 ): AsyncData<PickFrom<DataT, PickKeys> | DefaultT, ErrorT | undefined> {
-  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(
-    request,
-    {
-      ...options,
-      // @ts-expect-error: Method is secured.
-      method: 'get',
-      params,
-    },
-  )
+  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(request, {
+    ...options,
+    // @ts-expect-error: Method is secured.
+    method: 'get',
+    params,
+  })
 }
 
 /**
@@ -138,17 +152,17 @@ export function useApiPost<
 >(
   request: Ref<ReqT> | ReqT | (() => ReqT),
   body?: Record<string, any>,
-  options?: Omit<UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>, 'method' | 'body'>,
+  options?: Omit<
+    UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>,
+    'method' | 'body'
+  >,
 ): AsyncData<PickFrom<DataT, PickKeys> | DefaultT, ErrorT | undefined> {
-  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(
-    request,
-    {
-      ...options,
-      // @ts-expect-error: Method is secured.
-      method: 'post',
-      body,
-    },
-  )
+  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(request, {
+    ...options,
+    // @ts-expect-error: Method is secured.
+    method: 'post',
+    body,
+  })
 }
 
 /**
@@ -177,17 +191,17 @@ export function useApiPut<
 >(
   request: Ref<ReqT> | ReqT | (() => ReqT),
   body?: Record<string, any>,
-  options?: Omit<UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>, 'method' | 'body'>,
+  options?: Omit<
+    UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>,
+    'method' | 'body'
+  >,
 ): AsyncData<PickFrom<DataT, PickKeys> | DefaultT, ErrorT | undefined> {
-  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(
-    request,
-    {
-      ...options,
-      // @ts-expect-error: Method is secured.
-      method: 'put',
-      body,
-    },
-  )
+  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(request, {
+    ...options,
+    // @ts-expect-error: Method is secured.
+    method: 'put',
+    body,
+  })
 }
 
 /**
@@ -216,17 +230,17 @@ export function useApiPatch<
 >(
   request: Ref<ReqT> | ReqT | (() => ReqT),
   body?: Record<string, any>,
-  options?: Omit<UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>, 'method' | 'body'>,
+  options?: Omit<
+    UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>,
+    'method' | 'body'
+  >,
 ): AsyncData<PickFrom<DataT, PickKeys> | DefaultT, ErrorT | undefined> {
-  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(
-    request,
-    {
-      ...options,
-      // @ts-expect-error: Method is secured.
-      method: 'patch',
-      body,
-    },
-  )
+  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(request, {
+    ...options,
+    // @ts-expect-error: Method is secured.
+    method: 'patch',
+    body,
+  })
 }
 
 /**
@@ -255,15 +269,15 @@ export function useApiDelete<
 >(
   request: Ref<ReqT> | ReqT | (() => ReqT),
   params?: Record<string, any>,
-  options?: Omit<UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>, 'method' | 'params'>,
+  options?: Omit<
+    UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, AvailableRouterMethod<ReqT>>,
+    'method' | 'params'
+  >,
 ): AsyncData<PickFrom<DataT, PickKeys> | DefaultT, ErrorT | undefined> {
-  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(
-    request,
-    {
-      ...options,
-      // @ts-expect-error: Method is secured.
-      method: 'delete',
-      params,
-    },
-  )
+  return useApi<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(request, {
+    ...options,
+    // @ts-expect-error: Method is secured.
+    method: 'delete',
+    params,
+  })
 }

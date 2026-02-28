@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'home',
 })
 
-defineOgImageComponent('NuxtSeo')
+defineOgImage('NuxtSeo.takumi')
 
 const { t } = useI18n({
   useScope: 'local',

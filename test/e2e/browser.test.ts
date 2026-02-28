@@ -3,7 +3,7 @@
  */
 
 import { fileURLToPath } from 'node:url'
-import { createPage, setup, url } from '@nuxt/test-utils/e2e'
+import { createPage, setup } from '@nuxt/test-utils/e2e'
 import { describe, expect, it } from 'vitest'
 
 /**
@@ -19,8 +19,7 @@ await setup({
 describe('example nuxt e2e browser test', async () => {
   it('with hydrated client-side result', async () => {
     // Render page in headless browser and wait until hydration is complete
-    const page = await createPage()
-    await page.goto(url('/'), { waitUntil: 'hydration' })
+    const page = await createPage('/')
     const html = await page.content()
     expect(html).toContain('<!DOCTYPE html>')
   })

@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://user-images.githubusercontent.com/11247099/140462375-7b7ac4db-35b7-453c-8a05-13d8d20282c4.png" width="600"/>
+<img src="https://user-images.githubusercontent.com/11247099/140462375-7b7ac4db-35b7-453c-8a05-13d8d20282c4.png" width="600" alt="Vitesse Nuxt 4 Starter"/>
 </p>
 
 <h2 align="center">
@@ -7,7 +7,7 @@
 </h2><br>
 
 <p align="center">
-<a href="https://stackblitz.com/github/lumirelle/starter-vitesse-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
+<a href="https://stackblitz.com/github/lumirelle/starter-vitesse-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Stackblitz"></a>
 </p>
 
 > [!Note]
@@ -25,12 +25,10 @@
 >
 >   How to check? Add the following code at begin of the running script under `node_modules/`:
 >
->   <!-- eslint-disable no-console -->
->
 >   ```ts
->   console.log(process.execPath)
->   console.log('Node.js version:', process.version)
->   console.log('Bun detected:', typeof Bun !== 'undefined')
+>   console.info(process.execPath)
+>   console.info('Node.js version:', process.version)
+>   console.info('Bun detected:', typeof Bun !== 'undefined')
 >   ```
 >
 > - [x] Deploy Environment Support: `netlify` and `stackblitz`

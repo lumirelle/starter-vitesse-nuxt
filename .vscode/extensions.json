@@ -5,10 +5,9 @@
     "oven.bun-vscode",
     "vue.volar",
     "lokalise.i18n-ally",
-    "antfu.iconify",
-    "antfu.unocss",
+    "humao.rest-client",
+    "oxc.oxc-vscode",
     "dbaeumer.vscode-eslint",
-    "antfu.pnpm-catalog-lens",
-    "antfu.goto-alias"
+    "antfu.pnpm-catalog-lens"
   ]
 }
