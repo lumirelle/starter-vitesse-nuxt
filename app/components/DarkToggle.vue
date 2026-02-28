@@ -19,11 +19,13 @@
 const color = useColorMode()
 
 useHead({
-  meta: [{
-    id: 'theme-color',
-    name: 'theme-color',
-    content: () => color.value === 'dark' ? '#222222' : '#ffffff',
-  }],
+  meta: [
+    {
+      id: 'theme-color',
+      name: 'theme-color',
+      content: () => (color.value === 'dark' ? '#222222' : '#ffffff'),
+    },
+  ],
 })
 
 function toggleDark() {
@@ -32,7 +34,8 @@ function toggleDark() {
 </script>
 
 <template>
-  <button class="cursor-pointer !outline-none" @click="toggleDark">
-    <div class="i-carbon-sun dark:i-carbon-moon" />
-  </button>
+  <i
+    class="i-carbon-sun dark:i-carbon-moon h-[1em] w-[1em] cursor-pointer !outline-none"
+    @click="toggleDark"
+  />
 </template>

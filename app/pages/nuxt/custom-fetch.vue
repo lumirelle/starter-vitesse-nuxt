@@ -35,7 +35,7 @@ function clearResp() {
 </script>
 
 <template>
-  <div>
+  <PageHomeBase>
     <div>
       <div my-4>
         {{ t('respUseApi') }}
@@ -44,27 +44,18 @@ function clearResp() {
     </div>
     <div>
       <div flex gap-10 justify-center>
-        <label>API
-          <input v-model="apiPath" input m="l-2" type="text" :placeholder="t('inputPlaceholder')">
+        <label
+          >API
+          <input v-model="apiPath" input m="l-2" type="text" :placeholder="t('inputPlaceholder')" />
         </label>
         <label>
           {{ t('method') }}
           <select v-model="method" select m="l-2">
-            <option value="POST">
-              POST
-            </option>
-            <option value="GET">
-              GET
-            </option>
-            <option value="PUT">
-              PUT
-            </option>
-            <option value="PATCH">
-              PATCH
-            </option>
-            <option value="DELETE">
-              DELETE
-            </option>
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value="PUT">PUT</option>
+            <option value="PATCH">PATCH</option>
+            <option value="DELETE">DELETE</option>
           </select>
         </label>
       </div>
@@ -81,15 +72,7 @@ function clearResp() {
         </button>
       </div>
     </div>
-    <div>
-      <NuxtLinkLocale
-        class="text-sm btn m-3"
-        to="index"
-      >
-        {{ t('back') }}
-      </NuxtLinkLocale>
-    </div>
-  </div>
+  </PageHomeBase>
 </template>
 
 <i18n lang="yaml">

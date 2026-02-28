@@ -5,34 +5,18 @@ const { t } = useI18n({
   useScope: 'local',
 })
 
-const time = useTimeAgo(() => res.value?.data?.pageview || 0, {
+const time = useTimeAgo(() => res.value?.data?.startAt || 0, {
   messages: {
     justNow: t('justNow'),
-    past: (n: any) => n.match(/\d/) ? t('ago', { time: n }) : n,
-    future: (n: any) => n.match(/\d/) ? t('in', { time: n }) : n,
-    month: (n, past) => n === 1
-      ? past
-        ? t('lastMonth')
-        : t('nextMonth')
-      : t('months', { n }),
-    year: (n, past) => n === 1
-      ? past
-        ? t('lastYear')
-        : t('nextYear')
-      : t('years', { n }),
-    day: (n, past) => n === 1
-      ? past
-        ? t('yesterday')
-        : t('tomorrow')
-      : t('days', { n }),
-    week: (n, past) => n === 1
-      ? past
-        ? t('lastWeek')
-        : t('nextWeek')
-      : t('weeks', { n }),
-    hour: n => t('hours', { n }),
-    minute: n => t('minutes', { n }),
-    second: n => t('seconds', { n }),
+    past: (n: any) => (n.match(/\d/) ? t('ago', { time: n }) : n),
+    future: (n: any) => (n.match(/\d/) ? t('in', { time: n }) : n),
+    month: (n, past) => (n === 1 ? (past ? t('lastMonth') : t('nextMonth')) : t('months', { n })),
+    year: (n, past) => (n === 1 ? (past ? t('lastYear') : t('nextYear')) : t('years', { n })),
+    day: (n, past) => (n === 1 ? (past ? t('yesterday') : t('tomorrow')) : t('days', { n })),
+    week: (n, past) => (n === 1 ? (past ? t('lastWeek') : t('nextWeek')) : t('weeks', { n })),
+    hour: (n) => t('hours', { n }),
+    minute: (n) => t('minutes', { n }),
+    second: (n) => t('seconds', { n }),
     invalid: '',
   },
 })

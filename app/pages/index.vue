@@ -39,21 +39,22 @@ const navStore = useNavStore()
     </VitesseClientOnly>
     <div mt-6 flex flex-col gap-6 items-center>
       <Section title="Nuxt">
-        <EntryNuxtCustomError entry />
-        <EntryNuxtCustomFetch entry />
+        <EntryNuxtCustomError />
+        <EntryNuxtCustomFetch />
+        <EntryNuxtPrerendering />
       </Section>
       <Section title="Nuxt Modules -- UI">
-        <EntryModuleUnoCssIcon entry />
-        <EntryModuleImage entry />
-        <EntryModuleColorMode entry />
-        <EntryModuleDevice entry />
-        <EntryModuleSwiper entry />
-        <EntryModuleECharts entry />
-        <EntryModuleQrCode entry />
+        <EntryModuleUnoCssIcon />
+        <EntryModuleImage />
+        <EntryModuleColorMode />
+        <EntryModuleDevice />
+        <EntryModuleSwiper />
+        <EntryModuleECharts />
+        <EntryModuleQrCode />
       </Section>
       <Section title="Nuxt Modules -- Utilities">
-        <EntryModulePinia entry />
-        <EntryModuleDayjs entry />
+        <EntryModulePinia />
+        <EntryModuleDayjs />
       </Section>
     </div>
   </div>

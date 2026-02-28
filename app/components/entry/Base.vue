@@ -22,18 +22,13 @@ function go(path: string) {
 </script>
 
 <template>
-  <div>
+  <div entry>
     <h3>{{ title }}</h3>
     <div>
       <slot />
     </div>
     <div>
-      <button
-        v-for="(btn, index) in buttons"
-        :key="index"
-        text-sm btn m-3
-        @click="go(btn.path)"
-      >
+      <button v-for="(btn, index) in buttons" :key="index" text-sm btn m-3 @click="go(btn.path)">
         {{ btn.text }}
       </button>
     </div>

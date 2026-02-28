@@ -26,18 +26,14 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true,
-    timeline: {
-      enabled: true,
-    },
+    timeline: { enabled: true },
   },
 
   app: {
     head: {
       title: appName,
       viewport: 'width=device-width,initial-scale=1',
-      templateParams: {
-        separator: '·',
-      },
+      templateParams: { separator: '·' },
       meta: [
         { name: 'description', content: appDescription },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
@@ -52,20 +48,7 @@ export default defineNuxtConfig({
    *
    * @see https://nuxtseo.com/docs/site-config/api/config
    */
-  site: {
-    name: appName,
-  },
-
-  colorMode: {
-    /**
-     * Color mode will add the current color mode (light, dark, etc.) to the class of `<html>` element.
-     *
-     * Set this option to an empty string to support third-party CSS frameworks, like Tailwind CSS or UnoCSS.
-     *
-     * @default '-mode'
-     */
-    classSuffix: '',
-  },
+  site: { name: appName },
 
   /**
    * Runtime configuration.
@@ -76,16 +59,6 @@ export default defineNuxtConfig({
     public: {
       BASE_URL: '',
     },
-  },
-
-  /**
-   * Prerender (or not) routes while `nuxt build` and `nuxt generate`.
-   *
-   * @see https://nuxt.com/docs/4.x/getting-started/prerendering
-   */
-  routeRules: {
-    '/': { prerender: true },
-    // '/__og-image__/**': { prerender: false },
   },
 
   devServer: {
@@ -112,7 +85,7 @@ export default defineNuxtConfig({
   /**
    * Control experimental features.
    *
-   * @see https://github.com/nuxt/nuxt/blob/main/packages/schema/src/config/experimental.ts
+   * @see https://github.com/nuxt/nuxt/blob/main/packages/schema/src/config/experimental.ts for default values
    */
   experimental: {
     /**
@@ -181,9 +154,7 @@ export default defineNuxtConfig({
       /**
        * Additional options for generating Nuxt specific rules.
        */
-      nuxt: {
-        sortConfigKeys: true,
-      },
+      nuxt: { sortConfigKeys: true },
     },
   },
 
@@ -220,7 +191,6 @@ export default defineNuxtConfig({
      * Options about whether/how to detect the user's browser language.
      */
     detectBrowserLanguage: {
-      useCookie: true,
       /**
        * You should use the key name agreed upon with the backend.
        *
@@ -254,22 +224,6 @@ export default defineNuxtConfig({
      * @default ['webp']
      */
     format: ['avif', 'webp'],
-    /**
-     * List of predefined screen sizes, share the same naming and sizes as Tailwind CSS, with the addition of `xs` and `xxl` (for backwards compatibility).
-     *
-     * @see https://image.nuxt.com/get-started/configuration#screens
-     * @see https://tailwindcss.com/docs/responsive-design
-     * @default { 'xs': 320, 'sm': 640, 'md': 768, 'lg': 1024, 'xl': 1280, '2xl': 1536 }
-     */
-    screens: {
-      xs: 320, // Additional
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-      '2xl': 1536, // Additional
-    },
     /**
      * Presets are collections of pre-defined image configurations for your projects.
      *
@@ -345,48 +299,19 @@ export default defineNuxtConfig({
     },
   },
 
-  linkChecker: {
-    /**
-     * If you don't want to check url link validation, you can disable this module.
-     */
-    enabled: true,
-    /**
-     * Skip specific inspections by their names.
-     *
-     * @see https://nuxtseo.com/docs/link-checker/guides/rules
-     */
-    skipInspections: ['link-text'],
-  },
-
-  /**
-   * Generate Open Graph images (OG images) for your pages on the fly.
-   *
-   * This module only works on server-side rendering (SSR) mode.
-   *
-   * @see https://nuxtseo.com/docs/og-image/getting-started/introduction
-   */
-  ogImage: {
-    /**
-     * If your don't need this module, you can disable it.
-     */
-    enabled: true,
-  },
-
   /**
    * Configurations for PWA (Progressive Web App).
    */
   pwa,
 
   /**
+   * Helps you to manage `robots.txt` rules.
+   *
    * This module has out-of-box i18n support, all allowed/disallowed paths have different locales are respected.
    *
    * @see https://nuxtseo.com/docs/robots/guides/i18n
    */
   robots: {
-    /**
-     * If your project maintains `/robots.txt` manually, you should disable this module.
-     */
-    enabled: true,
     /**
      * Blocks bots that don't benefit our SEO and are known to cause issues.
      *
@@ -394,63 +319,6 @@ export default defineNuxtConfig({
      * @see https://github.com/nuxt-modules/robots/blob/main/src/const.ts#L6
      */
     blockNonSeoBots: true,
-    /**
-     * Allow paths to be indexed for the `*` user-agent (all robots).
-     *
-     * Customize to fit your needs.
-     */
-    allow: ['/sitemap.xml'],
-    /**
-     * Disallow paths to be indexed for the `*` user-agent (all robots).
-     *
-     * Customize to fit your needs.
-     */
-    disallow: ['/personal-center'],
-    /**
-     * Custom rules for specific user agents.
-     */
-    groups: [
-      {
-        userAgent: ['AdsBot-Google-Mobile', 'AdsBot-Google-Mobile-Apps'],
-        disallow: ['/admin'],
-        allow: ['/admin/login'],
-        /**
-         * @see https://nuxtseo.com/docs/robots/guides/robots-txt#content-signals
-         */
-        contentUsage: ['ai=n', '/docs/ train-ai=y'],
-        comment: ['Allow Google AdsBot to index the login page but no-admin pages'],
-      },
-    ],
-  },
-
-  /**
-   * This module exports a composable `useSchemaOrg` to manage `schema.org` data.
-   *
-   * @see {@link ./app/app.vue}
-   */
-  schemaOrg: {
-    /**
-     * If your project maintains `schema.org` data manually, you can disable this module.
-     *
-     * @default true
-     */
-    enabled: true,
-  },
-
-  /**
-   * This module will generate `sitemap.xml` automatically based on your routes.
-   *
-   * You can also configure dynamic routes via Nitro runtime hooks or custom endpoints.
-   *
-   * @see https://nuxtseo.com/docs/sitemap/guides/data-sources#application-sources
-   * @see https://nuxtseo.com/docs/sitemap/guides/data-sources#_3-dynamic-sources-using-nitro-hooks
-   * @see https://nuxtseo.com/docs/sitemap/guides/dynamic-urls#_2-creating-custom-endpoints
-   */
-  sitemap: {
-    /**
-     * If your project maintains `/sitemap.xml` manually, you can disable this module.
-     */
-    enabled: true,
   },
 
   vueuse: {
