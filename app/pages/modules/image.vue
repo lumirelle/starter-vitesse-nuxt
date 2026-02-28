@@ -26,18 +26,14 @@ useHead({
       <figcaption class="text-xs text-gray-600 mt-3">
         <I18nT tag="span" keypath="photo-by">
           <template #author>
-            <a
-              href="https://unsplash.com/@vorosbenisop"
-              target="_blank"
-              class="underline"
-            >Benjamin Voros</a>
+            <a href="https://unsplash.com/@vorosbenisop" target="_blank" class="underline"
+              >Benjamin Voros</a
+            >
           </template>
           <template #source>
-            <a
-              href="https://unsplash.com/s/photos/mountain"
-              target="_blank"
-              class="underline"
-            >Unsplash</a>
+            <a href="https://unsplash.com/s/photos/mountain" target="_blank" class="underline"
+              >Unsplash</a
+            >
           </template>
         </I18nT>
       </figcaption>
@@ -53,18 +49,14 @@ useHead({
       <figcaption class="text-xs text-gray-600 mt-3">
         <I18nT tag="span" keypath="photo-by">
           <template #author>
-            <a
-              href="https://unsplash.com/@kydroon"
-              target="_blank"
-              class="underline"
-            >Kurt Cotoaga</a>
+            <a href="https://unsplash.com/@kydroon" target="_blank" class="underline"
+              >Kurt Cotoaga</a
+            >
           </template>
           <template #source>
-            <a
-              href="https://unsplash.com/s/photos/mountain"
-              target="_blank"
-              class="underline"
-            >Unsplash</a>
+            <a href="https://unsplash.com/s/photos/mountain" target="_blank" class="underline"
+              >Unsplash</a
+            >
           </template>
         </I18nT>
       </figcaption>

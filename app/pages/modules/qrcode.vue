@@ -53,7 +53,13 @@ const radius = ref(0)
       </label>
     </div>
     <div mb-4 mt-4 flex justify-center>
-      <Qrcode value="https://qrcode.s94.dev" :variant="variant" :radius="radius" width="200" height="200" />
+      <Qrcode
+        value="https://qrcode.s94.dev"
+        :variant="variant"
+        :radius="radius"
+        width="200"
+        height="200"
+      />
     </div>
   </PageHomeBase>
 </template>

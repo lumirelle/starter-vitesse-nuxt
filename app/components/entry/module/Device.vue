@@ -5,10 +5,7 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase
-    :title="t('title')"
-    :button="[{ text: t('button-text'), path: '/modules/device' }]"
-  />
+  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), path: '/modules/device' }]" />
 </template>
 
 <i18n lang="yaml">

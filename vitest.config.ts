@@ -43,15 +43,9 @@ export default defineConfig({
       {
         test: {
           name: 'e2e',
-          include: [
-            './test/e2e/*.{test,spec}.ts',
-            '**/*.e2e.{test,spec}.ts',
-          ],
+          include: ['./test/e2e/*.{test,spec}.ts', '**/*.e2e.{test,spec}.ts'],
           benchmark: {
-            include: [
-              './test/e2e/*.{bench,benchmark}.ts',
-              '**/*.e2e.{bench,benchmark}.ts',
-            ],
+            include: ['./test/e2e/*.{bench,benchmark}.ts', '**/*.e2e.{bench,benchmark}.ts'],
           },
           testTimeout: isWindows ? 36_000 : 12_000,
         },

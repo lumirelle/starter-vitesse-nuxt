@@ -23,7 +23,7 @@ export default defineNuxtPlugin({
       },
       async onResponseError({ response }) {
         if (response.status === 401 || response.status === 403) {
-          console.error('User doesn\'t login!')
+          console.error("User doesn't login!")
           await nuxtApp.runWithContext(() => {
             navigateTo('/')
           })

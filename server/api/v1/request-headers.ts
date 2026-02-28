@@ -1,3 +1,1 @@
-export default defineEventHandler(event =>
-  getRequestHeaders(event),
-)
+export default defineEventHandler((event) => getRequestHeaders(event))

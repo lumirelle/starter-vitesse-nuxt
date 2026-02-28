@@ -20,8 +20,8 @@ const option = ref({
     left: 'center',
     selected: {
       'Search Engine': true,
-      'Direct': true,
-      'Email': true,
+      Direct: true,
+      Email: true,
       'Union Ads': true,
       'Video Ads': true,
     },

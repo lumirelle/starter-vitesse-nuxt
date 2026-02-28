@@ -7,18 +7,16 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase
-    :title="t('title')"
-    :button="[{ text: t('button-text'), path: `/hi/${name.trim()}` }]"
-  >
+  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), path: `/hi/${name.trim()}` }]">
     <input
       id="input"
       v-model="name"
       :placeholder="t('placeholder')"
       type="text"
       autocomplete="off"
-      my-4 input
-    >
+      my-4
+      input
+    />
   </EntryBase>
 </template>
 

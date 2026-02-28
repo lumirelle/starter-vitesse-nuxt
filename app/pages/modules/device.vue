@@ -11,14 +11,30 @@ useHead({
   title: t('title'),
 })
 
-const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isLinux, isAndroid, isChrome, isEdge, isFirefox, isSafari, userAgent } = useDevice()
+const {
+  isDesktop,
+  isMobile,
+  isTablet,
+  isIos,
+  isWindows,
+  isMacOS,
+  isLinux,
+  isAndroid,
+  isChrome,
+  isEdge,
+  isFirefox,
+  isSafari,
+  userAgent,
+} = useDevice()
 </script>
 
 <template>
   <PageHomeBase>
     <div>
-      <p>userAgent: <span text-amber>{{ userAgent }}</span></p>
-      <br>
+      <p>
+        userAgent: <span text-amber>{{ userAgent }}</span>
+      </p>
+      <br />
       <p>
         <I18nT keypath="is-this-device">
           <template #device>
@@ -43,7 +59,7 @@ const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isLinux, isAnd
         </I18nT>
         <span text-green>{{ isTablet }}</span>
       </p>
-      <br>
+      <br />
       <p>
         <I18nT keypath="is-this-device">
           <template #device>
@@ -84,7 +100,7 @@ const { isDesktop, isMobile, isTablet, isIos, isWindows, isMacOS, isLinux, isAnd
         </I18nT>
         <span text-green>{{ isIos }}</span>
       </p>
-      <br>
+      <br />
       <p>
         <I18nT keypath="is-this-device">
           <template #device>

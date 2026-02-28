@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps<{
-  items: { title: string, link: string }[]
+  items: { title: string; link: string }[]
 }>()
 </script>
 

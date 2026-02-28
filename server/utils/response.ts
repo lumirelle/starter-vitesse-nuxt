@@ -8,10 +8,10 @@ import type { ServerResponse } from '../types/response'
  * @param meta Metadata
  * @returns Standard server response object
  */
-export function createServerResponse<DataT, MetaT extends Record<string, any> = Record<string, any>>(
-  data: Nullable<DataT> = null,
-  meta: Nullable<MetaT> = null,
-): ServerResponse<DataT, MetaT> {
+export function createServerResponse<
+  DataT,
+  MetaT extends Record<string, any> = Record<string, any>,
+>(data: Nullable<DataT> = null, meta: Nullable<MetaT> = null): ServerResponse<DataT, MetaT> {
   return {
     data,
     meta,

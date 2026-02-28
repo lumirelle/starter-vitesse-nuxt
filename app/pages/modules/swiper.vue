@@ -29,9 +29,14 @@ onMounted(() => {
       <!-- Web Component -->
       <swiper-container ref="containerRef" m="t-4 b-4">
         <swiper-slide
-          v-for="(slide, idx) in slides" :key="idx"
-          flex="~ justify-center items-center" text-lg color-white font-bold
-          bg-amber h-20vh
+          v-for="(slide, idx) in slides"
+          :key="idx"
+          flex="~ justify-center items-center"
+          text-lg
+          color-white
+          font-bold
+          bg-amber
+          h-20vh
         >
           {{ t('slide', { number: idx + 1 }) }}
         </swiper-slide>

@@ -16,8 +16,20 @@ useHead({
   <PageHomeBase>
     <div>
       <span i-public-my-icon text="[40px]" title="Icon from `public` folder" />
-      <span i-carbon-add text="[40px]" transform transition-all-500 hover:rotate-135 title="Icon from Iconify" />
-      <span i-carbon-sun dark:i-carbon-moon text="[40px]" title="Icon from Iconify with color mode" />
+      <span
+        i-carbon-add
+        text="[40px]"
+        transform
+        transition-all-500
+        hover:rotate-135
+        title="Icon from Iconify"
+      />
+      <span
+        i-carbon-sun
+        dark:i-carbon-moon
+        text="[40px]"
+        title="Icon from Iconify with color mode"
+      />
     </div>
   </PageHomeBase>
 </template>

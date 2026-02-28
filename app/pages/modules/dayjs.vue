@@ -26,7 +26,12 @@ const dayjs = useDayjs()
       <!-- The better solution is to use `<NuxtTime>` component -->
       <I18nT keypath="nuxt-time-now-is" tag="p" text-green>
         <template #now>
-          <NuxtTime :datetime="dayjs().toString()" date-style="full" time-style="full" :locale="locale" />
+          <NuxtTime
+            :datetime="dayjs().toString()"
+            date-style="full"
+            time-style="full"
+            :locale="locale"
+          />
         </template>
       </I18nT>
     </div>
