@@ -16,7 +16,7 @@
     "lint": "bun --parallel oxlint eslint",
     "lint:fix": "bun --sequential 'oxlint --fix' 'eslint --fix'",
     "check:type": "bun nuxt typecheck",
-    "check:usage": "echo 'WIP...",
+    "check:usage": "echo 'WIP...'",
     "check": "bun run --parallel lint check:type check:usage",
     "pretest": "bun playwright-core install --with-deps",
     "test": "bunx vitest",
