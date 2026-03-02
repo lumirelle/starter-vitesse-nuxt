@@ -44,7 +44,6 @@
     "eslint/no-magic-numbers": "off",
     "eslint/no-plusplus": "off",
     "eslint/no-ternary": "off",
-    "eslint/no-undef": "off",
     "eslint/no-undefined": "off",
     "eslint/no-warning-comments": "off",
     "eslint/radix": "off",
