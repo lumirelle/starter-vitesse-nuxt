@@ -4,11 +4,11 @@
 import type { NuxtError } from '#app'
 import { useHead } from '#imports'
 
-const props = defineProps<{
+const { error } = defineProps<{
   error: NuxtError
 }>()
 useHead({
-  title: `${props.error.statusCode} - ${props.error.statusMessage || 'Internal Server Error'}`,
+  title: `${error.status} - ${error.statusText || 'Internal Server Error'}`,
 })
 </script>
 
@@ -16,8 +16,8 @@ useHead({
   <div
     class="text-black font-sans px-10 pt-12 bg-white flex flex-col min-h-screen antialiased dark:text-white dark:bg-[#020420]"
   >
-    <h1 class="text-6xl font-medium mb-4 sm:text-8xl" v-text="error.statusCode" />
-    <p class="text-xl leading-tight font-light mb-8 sm:text-2xl" v-text="error.statusMessage" />
+    <h1 class="text-6xl font-medium mb-4 sm:text-8xl" v-text="error.status" />
+    <p class="text-xl leading-tight font-light mb-8 sm:text-2xl" v-text="error.statusText" />
     <a
       href="https://nuxt.com/docs/4.x/getting-started/error-handling?utm_source=nuxt-error-dev-page"
       target="_blank"

@@ -49,7 +49,7 @@ const option = ref({
   ],
 })
 
-function onClick(params: ECSSRClientEventParams) {
+function onClick(params: ECSSRClientEventParams): void {
   if (params.ssrType === 'legend') {
     const key = Object.keys(option.value.legend.selected)[
       params.dataIndex!

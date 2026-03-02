@@ -57,14 +57,12 @@ export default defineConfig({
       },
       processor(props, meta) {
         if (meta.collection === 'public') {
-          let width = 1
-          let height = 1
-          if (typeof props.width === 'string' && typeof props.height === 'string') {
-            width = Number.parseInt(props.width)
-            height = Number.parseInt(props.height)
-          } else if (typeof props.width === 'number' && typeof props.height === 'number') {
-            width = props.width
-            height = props.height
+          let { width = 1, height = 1 } = props
+          if (typeof width === 'string') {
+            width = Number.parseInt(width)
+          }
+          if (typeof height === 'string') {
+            height = Number.parseInt(height)
           }
           const min = Math.min(width, height)
           props.width = `${Math.round((width / min) * 100) / 100}em`

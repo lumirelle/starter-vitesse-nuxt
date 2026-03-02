@@ -1,7 +1,7 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 interface Nav {
-  items: Array<{ title: string; link: string }>
+  items: { title: string; link: string }[]
 }
 
 export const useNavStore = defineStore('nav', () => {
@@ -10,12 +10,15 @@ export const useNavStore = defineStore('nav', () => {
   /**
    * Fetch navigation data from an API or other sources.
    */
-  async function fetchNavData() {
+  async function fetchNavData(): Promise<void> {
     try {
       const { $api } = useNuxtApp()
       const res = await $api('/api/v1/nav')
-      if (res?.data) navData.value = res.data
-      else throw new Error('No data received from nav API')
+      if (res.data) {
+        navData.value = res.data
+      } else {
+        throw new Error('No data received from nav API')
+      }
     } catch (error) {
       console.error(error)
     }
@@ -27,4 +30,6 @@ export const useNavStore = defineStore('nav', () => {
   }
 })
 
-if (import.meta.hot) import.meta.hot.accept(acceptHMRUpdate(useNavStore, import.meta.hot))
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useNavStore, import.meta.hot))
+}

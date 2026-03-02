@@ -8,12 +8,32 @@ const { t } = useI18n({
 const time = useTimeAgo(() => res.value?.data?.startAt || 0, {
   messages: {
     justNow: t('justNow'),
-    past: (n: any) => (n.match(/\d/) ? t('ago', { time: n }) : n),
-    future: (n: any) => (n.match(/\d/) ? t('in', { time: n }) : n),
-    month: (n, past) => (n === 1 ? (past ? t('lastMonth') : t('nextMonth')) : t('months', { n })),
-    year: (n, past) => (n === 1 ? (past ? t('lastYear') : t('nextYear')) : t('years', { n })),
-    day: (n, past) => (n === 1 ? (past ? t('yesterday') : t('tomorrow')) : t('days', { n })),
-    week: (n, past) => (n === 1 ? (past ? t('lastWeek') : t('nextWeek')) : t('weeks', { n })),
+    past: (n: any) => (/\d/.test(n) ? t('ago', { time: n }) : n),
+    future: (n: any) => (/\d/.test(n) ? t('in', { time: n }) : n),
+    month: (n, past) => {
+      if (n === 1) {
+        return past ? t('lastMonth') : t('nextMonth')
+      }
+      return t('months', { n })
+    },
+    year: (n, past) => {
+      if (n === 1) {
+        return past ? t('lastYear') : t('nextYear')
+      }
+      return t('years', { n })
+    },
+    day: (n, past) => {
+      if (n === 1) {
+        return past ? t('yesterday') : t('tomorrow')
+      }
+      return t('days', { n })
+    },
+    week: (n, past) => {
+      if (n === 1) {
+        return past ? t('lastWeek') : t('nextWeek')
+      }
+      return t('weeks', { n })
+    },
     hour: (n) => t('hours', { n }),
     minute: (n) => t('minutes', { n }),
     second: (n) => t('seconds', { n }),

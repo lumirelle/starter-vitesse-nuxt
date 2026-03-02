@@ -23,12 +23,12 @@ useHead({
     {
       id: 'theme-color',
       name: 'theme-color',
-      content: () => (color.value === 'dark' ? '#222222' : '#ffffff'),
+      content: (): string => (color.value === 'dark' ? '#222222' : '#ffffff'),
     },
   ],
 })
 
-function toggleDark() {
+function toggleDark(): void {
   color.preference = color.value === 'dark' ? 'light' : 'dark'
 }
 </script>

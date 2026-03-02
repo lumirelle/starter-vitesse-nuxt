@@ -16,7 +16,7 @@ await setup({
   browser: true,
 })
 
-describe('example nuxt e2e browser test', async () => {
+describe('example nuxt e2e browser test', () => {
   it('with hydrated client-side result', async () => {
     // Render page in headless browser and wait until hydration is complete
     const page = await createPage('/')

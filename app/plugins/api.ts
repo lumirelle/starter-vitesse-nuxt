@@ -3,7 +3,7 @@ export default defineNuxtPlugin({
   setup(nuxtApp) {
     const runtimeConfig = useRuntimeConfig()
     const headers = useRequestHeaders()
-    const locale = useCookie('locale').value || 'en'
+    const locale = useCookie('locale').value ?? 'en'
     const token = useCookie('token').value
 
     const api = $fetch.create({
@@ -24,8 +24,8 @@ export default defineNuxtPlugin({
       async onResponseError({ response }) {
         if (response.status === 401 || response.status === 403) {
           console.error("User doesn't login!")
-          await nuxtApp.runWithContext(() => {
-            navigateTo('/')
+          await nuxtApp.runWithContext(async () => {
+            await navigateTo('/')
           })
         }
       },

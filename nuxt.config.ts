@@ -325,7 +325,6 @@ export default defineNuxtConfig({
     /**
      * Better SSR support.
      *
-     * @experimental
      * @see https://github.com/vueuse/vueuse/blob/main/packages/nuxt/ssr-plugin.mjs
      */
     ssrHandlers: true,

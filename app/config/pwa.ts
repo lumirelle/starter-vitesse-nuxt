@@ -47,7 +47,8 @@ export const pwa: ModuleOptions = {
           cacheName: 'google-fonts-cache',
           expiration: {
             maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+            // <== 365 days
+            maxAgeSeconds: 60 * 60 * 24 * 365,
           },
           cacheableResponse: {
             statuses: [0, 200],
@@ -61,7 +62,8 @@ export const pwa: ModuleOptions = {
           cacheName: 'gstatic-fonts-cache',
           expiration: {
             maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+            // <== 365 days
+            maxAgeSeconds: 60 * 60 * 24 * 365,
           },
           cacheableResponse: {
             statuses: [0, 200],

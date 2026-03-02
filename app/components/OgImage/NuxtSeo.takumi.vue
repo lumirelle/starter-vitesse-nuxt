@@ -5,24 +5,16 @@
 
 import { computed } from 'vue'
 
-const props = withDefaults(
-  defineProps<{
-    colorMode?: 'dark' | 'light'
-    title?: string
-    description?: string
-    isPro?: boolean
-    width?: number
-    height?: number
-  }>(),
-  {
-    colorMode: 'light',
-    title: 'title',
-    width: 1200,
-    height: 630,
-  },
-)
+const { title = 'title', isPro } = defineProps<{
+  colorMode?: 'dark' | 'light'
+  title?: string
+  description?: string
+  isPro?: boolean
+  width?: number
+  height?: number
+}>()
 
-const themeColor = computed(() => (props.isPro ? '124, 58, 237' : '34, 197, 94'))
+const themeColor = computed(() => (isPro ? '124, 58, 237' : '34, 197, 94'))
 </script>
 
 <template>

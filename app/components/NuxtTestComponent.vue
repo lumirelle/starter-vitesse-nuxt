@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({ text: { type: String, default: 'nuxt-spec' } })
+const { text = 'nuxt-spec' } = defineProps<{ text?: string }>()
 </script>
 
 <template>

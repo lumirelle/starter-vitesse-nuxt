@@ -20,16 +20,16 @@ const { data: resUseApi } = await useApi('/api/v1/request-headers', {
 
 const apiPath = ref('/api/v1/request-headers')
 const method = ref<'POST' | 'GET' | 'PUT' | 'PATCH' | 'DELETE'>('POST')
-const res = ref()
+const res = ref<unknown>()
 
 const { $api } = useNuxtApp()
-async function doFetch() {
+async function doFetch(): Promise<void> {
   /**
    * `$api` will automatically prefix the base URL, handle errors, forward headers, and support custom headers.
    */
   res.value = await $api(apiPath.value, { method: method.value })
 }
-function clearResp() {
+function clearResp(): void {
   res.value = null
 }
 </script>

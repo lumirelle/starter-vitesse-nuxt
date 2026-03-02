@@ -1,5 +1,5 @@
 // @ts-check
-import antfu from '@antfu/eslint-config'
+import { antfu } from '@antfu/eslint-config'
 import oxlint from 'eslint-plugin-oxlint'
 import nuxt from './.nuxt/eslint.config.mjs'
 
@@ -13,7 +13,7 @@ export default antfu(
    * Don't forget to set `standalone: false` in your Nuxt ESLint module options.
    */
   nuxt(),
-  ...oxlint.configs['flat/recommended'],
+  ...oxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 )
   .override('antfu/perfectionist/setup', {
     rules: {
@@ -40,16 +40,4 @@ export default antfu(
       ],
     },
   })
-  .override('antfu/vue/rules', {
-    rules: {
-      'vue/html-indent': 'off',
-      'vue/html-closing-bracket-newline': 'off',
-      'vue/html-self-closing': 'off',
-    },
-  })
-  .append({
-    name: 'lumirelle/javascript/rules',
-    rules: {
-      'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
-    },
-  })
+  .removeRules('vue/html-indent', 'vue/html-closing-bracket-newline', 'vue/html-self-closing')

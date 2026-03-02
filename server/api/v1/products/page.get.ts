@@ -1,5 +1,5 @@
 export default defineEventHandler(() =>
-  createPagingResponse<ApiProducts.Product>(
+  createQueryResponse<ApiProducts.Product>(
     [
       {
         id: '1',
@@ -14,8 +14,8 @@ export default defineEventHandler(() =>
         category: 'Category 2',
       },
     ],
-    2, // total number of products
-    1, // current page
-    10, // page size
+    2,
+    1,
+    10,
   ),
 )

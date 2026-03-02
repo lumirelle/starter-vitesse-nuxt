@@ -18,6 +18,7 @@ defineRouteRules({
   /**
    * Prevent indexing of these dynamic hi pages.
    */
+  // @ts-expect-error Type missing
   robots: {
     noindex: true,
     nofollow: true,

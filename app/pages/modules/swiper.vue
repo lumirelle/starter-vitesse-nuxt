@@ -11,7 +11,8 @@ useHead({
   title: t('title'),
 })
 
-const containerRef = ref(null)
+const containerRef = useTemplateRef('containerRef')
+// @ts-expect-error Missing types for useSwiper
 const swiper = useSwiper(containerRef)
 // Create 10 slides
 const slides = ref(Array.from({ length: 10 }))

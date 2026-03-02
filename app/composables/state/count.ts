@@ -1,10 +1,14 @@
-export function useCount() {
+export function useCount(): {
+  count: Ref<number>
+  inc: () => void
+  dec: () => void
+} {
   const count = useState('count', () => Math.round(Math.random() * 20))
 
-  function inc() {
+  function inc(): void {
     count.value += 1
   }
-  function dec() {
+  function dec(): void {
     count.value -= 1
   }
 

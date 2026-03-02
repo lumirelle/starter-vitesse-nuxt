@@ -7,16 +7,16 @@ interface Button {
   path: string
 }
 
-const props = defineProps<{
+const { button } = defineProps<{
   title: string
   button: Arrayable<Button>
 }>()
 
-const buttons = computed(() => toArray(props.button))
+const buttons = computed(() => toArray(button))
 
 const router = useRouter()
 const localePath = useLocalePath()
-function go(path: string) {
+function go(path: string): void {
   router.push(localePath(path))
 }
 </script>

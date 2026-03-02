@@ -19,7 +19,7 @@ export function createServerResponse<
 }
 
 /**
- * Create a standard server response for pagination.
+ * Create a standard server response for pagination queries.
  *
  * @param data Array of data items
  * @param total Total number of items
@@ -27,7 +27,12 @@ export function createServerResponse<
  * @param pageSize Number of items per page
  * @returns Standard server response object with pagination metadata
  */
-export function createPagingResponse<T>(data: T[], total: number, page: number, pageSize: number) {
+export function createQueryResponse<T>(
+  data: T[],
+  total: number,
+  page: number,
+  pageSize: number,
+): ServerResponse<T[], { total: number; page: number; pageSize: number; pageCount: number }> {
   return createServerResponse(data, {
     total,
     page,

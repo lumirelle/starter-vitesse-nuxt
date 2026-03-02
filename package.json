@@ -13,10 +13,10 @@
     "start": "bun .output/server/index.mjs",
     "start:generate": "bunx serve .output/public",
     "format": "bunx oxfmt",
-    "lint": "bun --parallel oxlint eslint",
-    "lint:fix": "bun --sequential 'oxlint --fix' 'eslint --fix'",
-    "check:type": "bun nuxt typecheck",
+    "lint": "bun --parallel 'oxlint --type-aware' eslint",
+    "lint:fix": "bun --sequential 'oxlint --type-aware --fix' 'eslint --fix'",
     "check:usage": "echo 'WIP...'",
+    "check:type": "bun nuxt typecheck",
     "check": "bun run --parallel lint check:type check:usage",
     "pretest": "bun playwright-core install --with-deps",
     "test": "bunx vitest",
@@ -76,7 +76,8 @@
         "eslint-plugin-oxlint": "^1.50.0",
         "nano-staged": "^0.9.0",
         "oxfmt": "^0.35.0",
-        "oxlint": "^1.50.0"
+        "oxlint": "^1.50.0",
+        "oxlint-tsgolint": "^0.15.0"
       },
       "test": {
         "@vitest/coverage-v8": "^4.0.18",
@@ -126,6 +127,7 @@
     "nuxt-typed-router": "catalog:build",
     "oxfmt": "catalog:check",
     "oxlint": "catalog:check",
+    "oxlint-tsgolint": "catalog:check",
     "pinia": "catalog:frontend",
     "playwright-core": "catalog:test",
     "simple-git-hooks": "catalog:dev",
@@ -140,7 +142,7 @@
   },
   "nano-staged": {
     "*": [
-      "bun oxlint",
+      "bun oxlint --type-aware",
       "bun eslint",
       "bunx oxfmt --no-error-on-unmatched-pattern"
     ]

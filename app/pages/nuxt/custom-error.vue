@@ -1,10 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'home',
-  validate: () => {
-    // Always return `false` to trigger the error
-    return false
-  },
+  // Always return `false` to trigger the error
+  validate: () => false,
 })
 </script>
 

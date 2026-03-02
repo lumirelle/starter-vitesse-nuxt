@@ -2,13 +2,14 @@
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
-const availableLocales = computed(() => {
-  return locales.value.filter((i) => i.code !== locale.value)
-})
+const availableLocales = computed(() => locales.value.filter((i) => i.code !== locale.value))
 
-function getNationFlag(code: string) {
-  if (code === 'zh') return 'i-twemoji-flag-china'
-  else if (code === 'en') return 'i-twemoji-flag-united-kingdom'
+function getNationFlag(code: string): string {
+  if (code === 'zh') {
+    return 'i-twemoji-flag-china'
+  } else if (code === 'en') {
+    return 'i-twemoji-flag-united-kingdom'
+  }
   return 'i-twemoji-flag-united-nations'
 }
 </script>

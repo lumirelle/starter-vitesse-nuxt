@@ -62,8 +62,8 @@ const option: ECOption = {
     },
   ],
 }
-function getPieOption(params: any) {
-  const option: ECOption = {
+function getPieOption(params: any): ECOption {
+  return {
     backgroundColor: 'transparent',
     dataset: { source: [params[0].dimensionNames, params[0].data] },
     series: [
@@ -82,7 +82,6 @@ function getPieOption(params: any) {
       },
     ],
   }
-  return option
 }
 const initOptions = {
   width: 100,

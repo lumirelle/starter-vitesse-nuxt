@@ -19,4 +19,5 @@ declare module 'vue' {
   }
 }
 
+// oxlint-disable-next-line unicorn/require-module-specifiers
 export {}
