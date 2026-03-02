@@ -3,8 +3,6 @@
  * @credits Nuxt SEO <https://nuxtseo.com/>
  */
 
-import { computed } from 'vue'
-
 const { title = 'title', isPro } = defineProps<{
   colorMode?: 'dark' | 'light'
   title?: string

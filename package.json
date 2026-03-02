@@ -33,7 +33,6 @@
         "dayjs": "^1.11.19",
         "echarts": "^6.0.0",
         "pinia": "^3.0.4",
-        "vue": "^3.5.29",
         "vue-echarts": "^8.0.1"
       },
       "icons": {
@@ -52,7 +51,6 @@
         "@nuxtjs/i18n": "^10.2.3",
         "@nuxtjs/seo": "^3.4.0",
         "@pinia/nuxt": "^0.11.3",
-        "@unocss/eslint-config": "^66.6.2",
         "@unocss/nuxt": "^66.6.2",
         "@vite-pwa/nuxt": "^1.1.1",
         "@vueuse/nuxt": "^14.2.1",
@@ -62,22 +60,22 @@
         "nuxt-qrcode": "^0.4.8",
         "nuxt-swiper": "^2.0.1",
         "nuxt-typed-router": "^4.0.7",
-        "unocss": "^66.6.2",
-        "unplugin-vue-router": "^0.19.2"
+        "unocss": "^66.6.2"
       },
       "dev": {
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
-        "typescript": "^5.9.3",
-        "vue-tsc": "^3.2.5"
+        "typescript": "^5.9.3"
       },
       "check": {
         "@antfu/eslint-config": "^7.6.1",
+        "@unocss/eslint-config": "^66.6.2",
         "eslint": "^9.39.3",
         "eslint-plugin-oxlint": "^1.50.0",
         "nano-staged": "^0.9.0",
         "oxfmt": "^0.35.0",
         "oxlint": "^1.50.0",
-        "oxlint-tsgolint": "^0.15.0"
+        "oxlint-tsgolint": "^0.15.0",
+        "vue-tsc": "^3.2.5"
       },
       "test": {
         "@vitest/coverage-v8": "^4.0.18",
@@ -106,7 +104,7 @@
     "@nuxtjs/seo": "catalog:build",
     "@pinia/nuxt": "catalog:build",
     "@takumi-rs/core": "catalog:frontend",
-    "@unocss/eslint-config": "catalog:build",
+    "@unocss/eslint-config": "catalog:check",
     "@unocss/nuxt": "catalog:build",
     "@vite-pwa/nuxt": "catalog:build",
     "@vitest/coverage-v8": "catalog:test",
@@ -134,11 +132,9 @@
     "std-env": "catalog:test",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
-    "unplugin-vue-router": "catalog:build",
     "vitest": "catalog:test",
-    "vue": "catalog:frontend",
     "vue-echarts": "catalog:frontend",
-    "vue-tsc": "catalog:dev"
+    "vue-tsc": "catalog:check"
   },
   "nano-staged": {
     "*": [
