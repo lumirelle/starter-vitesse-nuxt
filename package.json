@@ -12,9 +12,9 @@
     "start:generate": "bunx serve .output/public",
     "lint": "bun run --parallel 'oxlint --type-aware' eslint",
     "lint:fix": "oxlint --type-aware --fix && eslint --fix",
-    "check:usage": "knip-bun",
-    "check:type": "nuxt typecheck",
-    "check": "bun run --parallel lint check:type check:usage",
+    "unused": "knip-bun",
+    "typecheck": "nuxt typecheck",
+    "check": "bun run --parallel lint typecheck unused",
     "pretest": "playwright-core install --with-deps",
     "test": "vitest",
     "test:unit": "bun run test --project unit",
@@ -30,7 +30,8 @@
         "dayjs": "^1.11.20",
         "echarts": "^6.0.0",
         "pinia": "^3.0.4",
-        "vue-echarts": "^8.0.1"
+        "vue-echarts": "^8.0.1",
+        "vue-router": "^5.0.3"
       },
       "icons": {
         "@iconify-json/carbon": "^1.2.18",
@@ -56,7 +57,6 @@
         "nuxt-echarts": "^1.0.1",
         "nuxt-qrcode": "^0.4.8",
         "nuxt-swiper": "^2.0.1",
-        "nuxt-typed-router": "^4.0.7",
         "unocss": "^66.6.6"
       },
       "dev": {
@@ -120,7 +120,6 @@
     "nuxt-echarts": "catalog:build",
     "nuxt-qrcode": "catalog:build",
     "nuxt-swiper": "catalog:build",
-    "nuxt-typed-router": "catalog:build",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "pinia": "catalog:frontend",
@@ -131,13 +130,15 @@
     "unocss": "catalog:build",
     "vitest": "catalog:test",
     "vue-echarts": "catalog:frontend",
+    "vue-router": "catalog:frontend",
     "vue-tsc": "catalog:check"
   },
   "patchedDependencies": {
     "listhen@1.9.0": "patches/listhen@1.9.0.patch"
   },
   "overrides": {
-    "nuxt-og-image": "npm:nuxt-og-image@v6.0.0-beta.41"
+    "nuxt-og-image": "npm:nuxt-og-image@v6.0.0-beta.41",
+    "vue-router": "^5.0.3"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx nano-staged"

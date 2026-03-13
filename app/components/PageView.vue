@@ -5,11 +5,13 @@ const { t } = useI18n({
   useScope: 'local',
 })
 
+const NUMBER_REGEX = /\d/
+
 const time = useTimeAgo(() => res.value?.data?.startAt || 0, {
   messages: {
     justNow: t('justNow'),
-    past: (n: any) => (/\d/.test(n) ? t('ago', { time: n }) : n),
-    future: (n: any) => (/\d/.test(n) ? t('in', { time: n }) : n),
+    past: (n: any) => (NUMBER_REGEX.test(n) ? t('ago', { time: n }) : n),
+    future: (n: any) => (NUMBER_REGEX.test(n) ? t('in', { time: n }) : n),
     month: (n, past) => {
       if (n === 1) {
         return past ? t('lastMonth') : t('nextMonth')

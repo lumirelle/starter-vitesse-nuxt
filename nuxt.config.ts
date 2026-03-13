@@ -2,7 +2,7 @@ import { pwa } from './app/config/pwa'
 import { appDescription, appName } from './app/constants/app'
 
 export default defineNuxtConfig({
-  // @keep-sorted
+  /// keep-sorted
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     'nuxt-echarts',
     'nuxt-qrcode',
     'nuxt-swiper',
-    'nuxt-typed-router',
   ],
 
   devtools: {
@@ -89,19 +88,16 @@ export default defineNuxtConfig({
    */
   experimental: {
     /**
-     * When using `nuxt generate`, payload js assets included in sw precache manifest, but missing on offline, disabling
-     * extraction it until fixed.
-     *
-     * @see https://nuxt.com/docs/4.x/guide/going-further/experimental-features#payloadextraction
-     */
-    payloadExtraction: false,
-    /**
      * Allow defining `routeRules` inside page components using `defineRouteRules`.
      */
     inlineRouteRules: true,
+    /**
+     * Generate type definitions for the pages and their route rules.
+     */
+    typedPages: true,
   },
 
-  compatibilityDate: '2026-02-28',
+  compatibilityDate: '2026-03-13',
 
   nitro: {
     preset: 'bun',
@@ -117,7 +113,7 @@ export default defineNuxtConfig({
      * @default ['relativeTime', 'utc']
      * @see https://day.js.org/docs/zh-CN/plugin/plugin
      */
-    // @keep-sorted
+    /// keep-sorted
     plugins: ['advancedFormat', 'localizedFormat', 'relativeTime', 'timezone', 'utc'],
   },
 
@@ -127,9 +123,9 @@ export default defineNuxtConfig({
    * They are still dynamically imported when needed.
    */
   echarts: {
-    // @keep-sorted
+    /// keep-sorted
     charts: ['BarChart', 'LineChart', 'MapChart', 'PieChart'],
-    // @keep-sorted
+    /// keep-sorted
     components: [
       'DatasetComponent',
       'GeoComponent',
@@ -139,7 +135,7 @@ export default defineNuxtConfig({
       'TooltipComponent',
       'VisualMapComponent',
     ],
-    // @keep-sorted
+    /// keep-sorted
     features: ['LabelLayout', 'UniversalTransition'],
   },
 

@@ -1,14 +1,11 @@
 [install]
 linker = "isolated"
 
-[run]
-bun = true
-
 [test]
 coveragePathIgnorePatterns = [
   "**/dist/**",
   "**/command/preset/actions/**",
-  "**/*.{test,spec}.ts"
+  "**/*.{test,spec,bench,benchmark}.ts",
 ]
 coverageReporter = [
   "text",

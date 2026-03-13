@@ -8,8 +8,8 @@ const { t } = useI18n({
   <EntryBase
     :title="t('title')"
     :button="[
-      { text: t('button-text-1'), path: '/modules/e-charts/line' },
-      { text: t('button-text-2'), path: '/modules/e-charts/pie' },
+      { text: t('button-text-1'), path: 'modules-e-charts-line' },
+      { text: t('button-text-2'), path: 'modules-e-charts-pie' },
     ]"
   />
 </template>

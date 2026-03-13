@@ -1,3 +1,15 @@
+declare module '#app' {
+  interface NuxtApp {
+    $api: typeof globalThis.$fetch
+  }
+}
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $api: typeof globalThis.$fetch
+  }
+}
+
 export default defineNuxtPlugin({
   name: 'api',
   setup(nuxtApp) {

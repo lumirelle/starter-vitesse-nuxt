@@ -1,7 +1,7 @@
 <template>
   <div text-2xl font-300 inline-flex cursor-default>
     <div flex flex-col children:mx-auto>
-      <img h-18 w-18 inline-block src="/icons/nuxt.svg">
+      <img h-18 w-18 inline-block src="/icons/nuxt.svg" alt="Nuxt Logo">
       <span text-green-400 mt--2>Nuxt 4</span>
     </div>
     <div
@@ -13,7 +13,7 @@
       hover:rotate-135
     />
     <div flex flex-col children:mx-auto>
-      <img h-18 w-18 inline-block src="/icons/vite.png">
+      <img h-18 w-18 inline-block src="/icons/vite.png" alt="Vite Logo">
       <span text-purple-500 mt--2>Vitesse</span>
     </div>
   </div>

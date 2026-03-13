@@ -2,9 +2,11 @@
 import type { Arrayable } from '@antfu/utils'
 import { toArray } from '@antfu/utils'
 
+type Router = Parameters<typeof localePath>[0]
+
 interface Button {
   text: string
-  path: string
+  path: Router
 }
 
 const { button } = defineProps<{
@@ -16,8 +18,8 @@ const buttons = computed(() => toArray(button))
 
 const router = useRouter()
 const localePath = useLocalePath()
-function go(path: string): void {
-  router.push(localePath(path))
+function go(route: Router): void {
+  router.push(localePath(route))
 }
 </script>
 
