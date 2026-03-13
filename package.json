@@ -25,9 +25,9 @@
     "catalogs": {
       "frontend": {
         "@antfu/utils": "^9.3.0",
-        "@takumi-rs/core": "^0.70.4",
+        "@takumi-rs/core": "^0.72.0",
         "@vueuse/core": "^14.2.1",
-        "dayjs": "^1.11.19",
+        "dayjs": "^1.11.20",
         "echarts": "^6.0.0",
         "pinia": "^3.0.4",
         "vue-echarts": "^8.0.1"
@@ -40,47 +40,47 @@
       "build": {
         "@nuxt/eslint": "^1.15.2",
         "@nuxt/fonts": "^0.14.0",
-        "@nuxt/hints": "^1.0.0-alpha.9",
-        "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20251225-125234-23b8cef",
+        "@nuxt/hints": "^1.0.0",
+        "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20260305-121439-fd87f7d",
         "@nuxt/test-utils": "^4.0.0",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/device": "^4.0.0",
         "@nuxtjs/i18n": "^10.2.3",
         "@nuxtjs/seo": "^3.4.0",
         "@pinia/nuxt": "^0.11.3",
-        "@unocss/nuxt": "^66.6.5",
+        "@unocss/nuxt": "^66.6.6",
         "@vite-pwa/nuxt": "^1.1.1",
         "@vueuse/nuxt": "^14.2.1",
         "dayjs-nuxt": "^2.1.11",
-        "nuxt": "^4.3.1",
+        "nuxt": "^4.4.2",
         "nuxt-echarts": "^1.0.1",
         "nuxt-qrcode": "^0.4.8",
         "nuxt-swiper": "^2.0.1",
         "nuxt-typed-router": "^4.0.7",
-        "unocss": "^66.6.5"
+        "unocss": "^66.6.6"
       },
       "dev": {
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^5.9.3"
       },
       "check": {
-        "@antfu/eslint-config": "^7.6.1",
-        "@unocss/eslint-config": "^66.6.5",
-        "eslint": "^9.39.3",
-        "eslint-plugin-oxlint": "^1.51.0",
-        "knip": "^5.85.0",
+        "@antfu/eslint-config": "^7.7.2",
+        "@unocss/eslint-config": "^66.6.6",
+        "eslint": "^10.0.3",
+        "eslint-plugin-oxlint": "^1.55.0",
+        "knip": "^5.86.0",
         "nano-staged": "^0.9.0",
-        "oxlint": "^1.51.0",
+        "oxlint": "^1.55.0",
         "oxlint-tsgolint": "^0.16.0",
         "vue-tsc": "^3.2.5"
       },
       "test": {
-        "@vitest/coverage-v8": "^4.0.18",
+        "@vitest/coverage-v8": "^4.1.0",
         "@vue/test-utils": "^2.4.6",
-        "happy-dom": "^20.8.3",
+        "happy-dom": "^20.8.4",
         "playwright-core": "^1.58.2",
-        "std-env": "^4.0.0-rc.1",
-        "vitest": "^4.0.18"
+        "std-env": "^4.0.0",
+        "vitest": "^4.1.0"
       }
     }
   },

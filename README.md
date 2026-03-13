@@ -21,16 +21,6 @@
 > - [x] Package Manager: `pnpm` -> `bun`
 > - [ ] Build Tool: Still using `vite` with `typescript`
 > - [ ] Test Runner: Still using `vitest`
-> - [ ] Runtime: Partial using `bun` runtime, `vitest` is still using `nodejs` runtime
->
->   How to check? Add the following code at begin of the running script under `node_modules/`:
->
->   ```ts
->   console.info(process.execPath)
->   console.info('Node.js version:', process.version)
->   console.info('Bun detected:', typeof Bun !== 'undefined')
->   ```
->
 > - [x] Deploy Environment Support: `netlify` and `stackblitz`
 
 > [!Caution]
