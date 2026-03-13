@@ -61,9 +61,7 @@ const themeColor = computed(() => (isPro ? '124, 58, 237' : '34, 197, 94'))
           <circle cx="56" cy="12" r="6" :fill="`url(#${isPro ? 'nsLine2' : 'nsLine1'})`" />
         </svg>
         <span class="text-[32px] tracking-tight font-bold lg:text-[42px]">
-          Nuxt<span :class="isPro ? 'text-violet-500' : 'text-green-500'" class="ml-2"
-            >SEO{{ isPro ? ' Pro' : '' }}</span
-          >
+          Nuxt<span :class="isPro ? 'text-violet-500' : 'text-green-500'" class="ml-2">SEO{{ isPro ? ' Pro' : '' }}</span>
         </span>
       </div>
 

@@ -44,9 +44,8 @@ function clearResp(): void {
     </div>
     <div>
       <div flex gap-10 justify-center>
-        <label
-          >API
-          <input v-model="apiPath" input m="l-2" type="text" :placeholder="t('inputPlaceholder')" />
+        <label>API
+          <input v-model="apiPath" input m="l-2" type="text" :placeholder="t('inputPlaceholder')">
         </label>
         <label>
           {{ t('method') }}

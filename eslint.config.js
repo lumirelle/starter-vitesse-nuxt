@@ -5,8 +5,6 @@ import nuxt from './.nuxt/eslint.config.mjs'
 
 export default antfu(
   {
-    // Use `oxfmt`
-    stylistic: false,
     unocss: true,
   },
   /**
@@ -40,9 +38,3 @@ export default antfu(
       ],
     },
   })
-  .removeRules(
-    'vue/html-indent',
-    'vue/html-closing-bracket-newline',
-    'vue/html-self-closing',
-    'vue/singleline-html-element-content-newline',
-  )

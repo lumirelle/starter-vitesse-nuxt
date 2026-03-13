@@ -32,7 +32,7 @@ export function createQueryResponse<T>(
   total: number,
   page: number,
   pageSize: number,
-): ServerResponse<T[], { total: number; page: number; pageSize: number; pageCount: number }> {
+): ServerResponse<T[], { total: number, page: number, pageSize: number, pageCount: number }> {
   return createServerResponse(data, {
     total,
     page,

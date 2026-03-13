@@ -16,7 +16,7 @@ const { t } = useI18n({
       autocomplete="off"
       my-4
       input
-    />
+    >
   </EntryBase>
 </template>
 

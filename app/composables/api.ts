@@ -7,7 +7,7 @@ import type {
 import type { AsyncData, FetchResult, UseFetchOptions } from 'nuxt/app'
 import type { FetchError } from 'ofetch'
 
-//#region Type copy
+// #region Type copy
 
 /**
  * Extract keys of `T` whose values are all of type string.
@@ -20,8 +20,8 @@ type KeysOf<T> = Array<T extends T ? (keyof T extends string ? keyof T : never) 
  *
  * NOTE: This is a fork for `PickFrom` type from `asyncData.d.ts` as it's not exported there.
  */
-type PickFrom<T, K extends Array<string>> =
-  T extends Array<any>
+type PickFrom<T, K extends Array<string>>
+  = T extends Array<any>
     ? T
     : T extends Record<string, any>
       ? keyof T extends K[number]
@@ -35,11 +35,11 @@ type PickFrom<T, K extends Array<string>> =
  *
  * NOTE: This is a fork for `AvailableRouterMethod` type from `fetch.d.ts` as it's not exported there.
  */
-type AvailableRouterMethod<R extends NitroFetchRequest> =
-  | _AvailableRouterMethod<R>
-  | Uppercase<_AvailableRouterMethod<R>>
+type AvailableRouterMethod<R extends NitroFetchRequest>
+  = | _AvailableRouterMethod<R>
+    | Uppercase<_AvailableRouterMethod<R>>
 
-//#endregion
+// #endregion
 
 /**
  * Use fetch with `$api` (the customized `ofetch` instance).

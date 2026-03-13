@@ -85,6 +85,7 @@
     "jsdoc/check-tag-names": ["error", { "definedTags": ["credits", "experimental"] }],
     "jsdoc/require-param-type": "off",
     "jsdoc/require-returns-type": "off",
+    "node/no-process-env": "off",
     // See https://github.com/oxc-project/oxc/issues/19458
     "vue/define-props-destructuring": "off",
     "vue/max-props": "off"

@@ -10,7 +10,6 @@
     "generate": "nuxt generate",
     "start": "bun run .output/server/index.mjs",
     "start:generate": "bunx serve .output/public",
-    "format": "oxfmt",
     "lint": "bun run --parallel 'oxlint --type-aware' eslint",
     "lint:fix": "oxlint --type-aware --fix && eslint --fix",
     "check:usage": "knip-bun",
@@ -71,7 +70,6 @@
         "eslint-plugin-oxlint": "^1.51.0",
         "knip": "^5.85.0",
         "nano-staged": "^0.9.0",
-        "oxfmt": "^0.36.0",
         "oxlint": "^1.51.0",
         "oxlint-tsgolint": "^0.16.0",
         "vue-tsc": "^3.2.5"
@@ -123,7 +121,6 @@
     "nuxt-qrcode": "catalog:build",
     "nuxt-swiper": "catalog:build",
     "nuxt-typed-router": "catalog:build",
-    "oxfmt": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "pinia": "catalog:frontend",
@@ -148,8 +145,7 @@
   "nano-staged": {
     "*": [
       "oxlint --type-aware",
-      "eslint",
-      "oxfmt --no-error-on-unmatched-pattern"
+      "eslint"
     ]
   }
 }

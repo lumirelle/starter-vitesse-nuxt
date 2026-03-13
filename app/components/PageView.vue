@@ -34,9 +34,9 @@ const time = useTimeAgo(() => res.value?.data?.startAt || 0, {
       }
       return t('weeks', { n })
     },
-    hour: (n) => t('hours', { n }),
-    minute: (n) => t('minutes', { n }),
-    second: (n) => t('seconds', { n }),
+    hour: n => t('hours', { n }),
+    minute: n => t('minutes', { n }),
+    second: n => t('seconds', { n }),
     invalid: '',
   },
 })

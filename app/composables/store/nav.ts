@@ -1,7 +1,7 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 interface Nav {
-  items: { title: string; link: string }[]
+  items: { title: string, link: string }[]
 }
 
 export const useNavStore = defineStore('nav', () => {
@@ -16,10 +16,12 @@ export const useNavStore = defineStore('nav', () => {
       const res = await $api('/api/v1/nav')
       if (res.data) {
         navData.value = res.data
-      } else {
+      }
+      else {
         throw new Error('No data received from nav API')
       }
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error)
     }
   }

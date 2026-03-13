@@ -34,7 +34,7 @@ const {
       <p>
         userAgent: <span text-amber>{{ userAgent }}</span>
       </p>
-      <br />
+      <br>
       <p>
         <I18nT keypath="is-this-device">
           <template #device>
@@ -59,7 +59,7 @@ const {
         </I18nT>
         <span text-green>{{ isTablet }}</span>
       </p>
-      <br />
+      <br>
       <p>
         <I18nT keypath="is-this-device">
           <template #device>
@@ -100,7 +100,7 @@ const {
         </I18nT>
         <span text-green>{{ isIos }}</span>
       </p>
-      <br />
+      <br>
       <p>
         <I18nT keypath="is-this-device">
           <template #device>

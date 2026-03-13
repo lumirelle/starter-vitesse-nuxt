@@ -16,7 +16,7 @@ export const useUserStore = defineStore('user', () => {
   /**
    * List of previously used names, excluding the current one.
    */
-  const otherNames = computed(() => usedNames.value.filter((name) => name !== savedName.value))
+  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
 
   /**
    * Changes the current name of the user and saves the one that was used before.

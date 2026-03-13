@@ -49,7 +49,7 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
         'vertical-align': 'middle',
       },
       collections: {
