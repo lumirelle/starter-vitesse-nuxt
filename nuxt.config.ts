@@ -103,6 +103,22 @@ export default defineNuxtConfig({
     preset: 'bun',
   },
 
+  vite: {
+    optimizeDeps: {
+      include: [
+        'dayjs', // CJS
+        'dayjs/plugin/updateLocale', // CJS
+        'dayjs/locale/en', // CJS
+        'dayjs/locale/zh', // CJS
+        'dayjs/plugin/advancedFormat', // CJS
+        'dayjs/plugin/localizedFormat', // CJS
+        'dayjs/plugin/relativeTime', // CJS
+        'dayjs/plugin/timezone', // CJS
+        'dayjs/plugin/utc', // CJS
+      ],
+    },
+  },
+
   dayjs: {
     locales: ['en', 'zh'],
     defaultLocale: 'en',
