@@ -9,6 +9,7 @@ export default {
   /// keep-sorted
   ignoreDependencies: [
     '@iconify-json/*',
+    '@lumirelle/oxlint-config',
     '@takumi-rs/core',
     '@unocss/eslint-config',
     '@vitest/coverage-v8',

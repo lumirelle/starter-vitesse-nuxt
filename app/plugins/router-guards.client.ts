@@ -6,6 +6,7 @@ export default defineNuxtPlugin({
     const router = useRouter()
 
     router.beforeEach((to, from) => {
+      // oxlint-disable-next-line no-console
       console.info(`Routing from "${from.path}" to "${to.path}".`)
     })
 

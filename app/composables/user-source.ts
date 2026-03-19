@@ -42,6 +42,7 @@ export function useUserSource(options: UseUserSourceOptions = {}): UseUserSource
   function saveUserSource(): void {
     refererCookie.value = globalThis.document.referrer
     targetCookie.value = globalThis.location.href
+    // oxlint-disable-next-line no-console
     console.info(
       `Saved user source: ${JSON.stringify({ referer: refererCookie.value, target: targetCookie.value })}`,
     )

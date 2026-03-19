@@ -10,10 +10,10 @@
     "generate": "nuxt generate",
     "start": "bun run .output/server/index.mjs",
     "start:generate": "bunx serve .output/public",
-    "lint": "bun run --parallel 'oxlint --type-aware' eslint",
-    "lint:fix": "oxlint --type-aware --fix && eslint --fix",
-    "unused": "knip-bun",
+    "lint": "bun run --parallel oxlint eslint",
+    "lint:fix": "oxlint --fix && eslint --fix",
     "typecheck": "nuxt typecheck",
+    "unused": "knip-bun",
     "check": "bun run --parallel lint typecheck unused",
     "pretest": "playwright-core install --with-deps",
     "test": "vitest",
@@ -65,6 +65,7 @@
       },
       "check": {
         "@antfu/eslint-config": "^7.7.2",
+        "@lumirelle/oxlint-config": "^0.0.5",
         "@unocss/eslint-config": "^66.6.6",
         "eslint": "^10.0.3",
         "eslint-plugin-oxlint": "^1.55.0",
@@ -90,6 +91,7 @@
     "@iconify-json/carbon": "catalog:icons",
     "@iconify-json/twemoji": "catalog:icons",
     "@iconify/utils": "catalog:icons",
+    "@lumirelle/oxlint-config": "catalog:check",
     "@nuxt/eslint": "catalog:build",
     "@nuxt/fonts": "catalog:build",
     "@nuxt/hints": "catalog:build",
@@ -145,7 +147,7 @@
   },
   "nano-staged": {
     "*": [
-      "oxlint --type-aware",
+      "oxlint",
       "eslint"
     ]
   }

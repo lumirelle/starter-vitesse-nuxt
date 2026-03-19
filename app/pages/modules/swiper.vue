@@ -20,6 +20,7 @@ const slides = ref(Array.from({ length: 10 }))
 onMounted(() => {
   // Access Swiper instance
   // Read more about Swiper instance: https://swiperjs.com/swiper-api#methods--properties
+  // oxlint-disable-next-line no-console
   console.info(swiper.instance)
 })
 </script>

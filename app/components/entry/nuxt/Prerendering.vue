@@ -7,7 +7,7 @@ const { t } = useI18n({
 <template>
   <EntryBase
     :title="t('title')"
-    :button="[{ text: t('button-text'), path: '/nuxt/prerendering' }]"
+    :button="[{ text: t('button-text'), path: 'nuxt-prerendering' }]"
   />
 </template>
 
