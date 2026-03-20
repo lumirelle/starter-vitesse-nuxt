@@ -14,7 +14,7 @@ useHead({
 /**
  * `useApi` uses `$api` under the hood.
  */
-const { data: resUseApi } = await useApi('/api/v1/request-headers', {
+const { data: resUseApi } = await useApi()('/api/v1/request-headers', {
   key: 'useApi/request-headers',
 })
 

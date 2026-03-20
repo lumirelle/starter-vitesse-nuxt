@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: res } = await useApi('/api/v1/pageview')
+const { data: res } = await useApi()('/api/v1/pageview')
 
 const { t } = useI18n({
   useScope: 'local',
