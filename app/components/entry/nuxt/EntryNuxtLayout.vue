@@ -5,14 +5,17 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), path: 'modules-qrcode' }]" />
+  <EntryBase
+    :title="t('title')"
+    :button="[{ text: t('button-text'), route: 'nuxt-layout' }]"
+  />
 </template>
 
 <i18n lang="yaml">
 en:
-  title: To QRCode usecase >
+  title: To layout usecase >
   button-text: '@:global.go'
 zh:
-  title: 前往 QRCode 用例 >
+  title: 前往布局用例 >
   button-text: '@:global.go'
 </i18n>

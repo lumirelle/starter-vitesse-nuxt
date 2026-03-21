@@ -1,5 +1,7 @@
+<!-- A component to show how many page views a user has -->
+
 <script setup lang="ts">
-const { data: res } = await useApi()('/api/v1/pageview')
+const { data: res } = await useFetch('/api/v1/pageview')
 
 const { t } = useI18n({
   useScope: 'local',

@@ -7,5 +7,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div />
+  <PageHomeBase />
 </template>

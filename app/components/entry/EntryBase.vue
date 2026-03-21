@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import type { Arrayable } from '@antfu/utils'
+import type { RouteLocationNamedI18n } from 'vue-router'
+import type { RouteNamedMapI18n } from 'vue-router/auto-routes'
 import { toArray } from '@antfu/utils'
 
-type Router = Parameters<typeof localePath>[0]
+type Route = RouteLocationNamedI18n<keyof RouteNamedMapI18n>
 
 interface Button {
   text: string
-  path: Router
+  route: Route
 }
 
 const { button } = defineProps<{
@@ -15,12 +17,6 @@ const { button } = defineProps<{
 }>()
 
 const buttons = computed(() => toArray(button))
-
-const router = useRouter()
-const localePath = useLocalePath()
-function go(route: Router): void {
-  router.push(localePath(route))
-}
 </script>
 
 <template>
@@ -30,9 +26,9 @@ function go(route: Router): void {
       <slot />
     </div>
     <div>
-      <button v-for="(btn, index) in buttons" :key="index" text-sm btn m-3 @click="go(btn.path)">
+      <NuxtLinkLocale v-for="(btn, index) in buttons" :key="index" text-sm btn m-3 :to="btn.route">
         {{ btn.text }}
-      </button>
+      </NuxtLinkLocale>
     </div>
   </div>
 </template>

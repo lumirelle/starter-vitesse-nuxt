@@ -1,9 +1,9 @@
 <script setup lang="ts">
+defineOgImage('NuxtSeo.takumi')
+
 definePageMeta({
   layout: 'home',
 })
-
-defineOgImage('NuxtSeo.takumi')
 
 const { t } = useI18n({
   useScope: 'local',
@@ -21,14 +21,14 @@ const navStore = useNavStore()
 <template>
   <div>
     <Logos mb-6 />
-    <VitesseClientOnly>
+    <PresetClientOnly>
       <Suspense>
         <div>
           <PageView v-if="online" />
           <div v-else text-gray:80>
             {{ t('offline') }}
           </div>
-          <Nav v-if="navStore.navData" :items="navStore.navData.items" />
+          <AppNav v-if="navStore.navData" :items="navStore.navData.items" />
         </div>
         <template #fallback>
           <div op50 italic>
@@ -36,14 +36,15 @@ const navStore = useNavStore()
           </div>
         </template>
       </Suspense>
-    </VitesseClientOnly>
+    </PresetClientOnly>
     <div mt-6 flex flex-col gap-6 items-center>
-      <Section title="Nuxt">
+      <ContentSection title="Nuxt">
+        <EntryNuxtLayout />
         <EntryNuxtCustomError />
         <EntryNuxtCustomFetch />
         <EntryNuxtPrerendering />
-      </Section>
-      <Section title="Nuxt Modules -- UI">
+      </ContentSection>
+      <ContentSection title="Nuxt Modules -- UI">
         <EntryModuleUnoCssIcon />
         <EntryModuleImage />
         <EntryModuleColorMode />
@@ -51,11 +52,11 @@ const navStore = useNavStore()
         <EntryModuleSwiper />
         <EntryModuleECharts />
         <EntryModuleQrCode />
-      </Section>
-      <Section title="Nuxt Modules -- Utilities">
+      </ContentSection>
+      <ContentSection title="Nuxt Modules -- Utilities">
         <EntryModulePinia />
-        <EntryModuleDayjs />
-      </Section>
+        <EntryModuleDayJs />
+      </ContentSection>
     </div>
   </div>
 </template>

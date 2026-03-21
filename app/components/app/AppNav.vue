@@ -1,3 +1,8 @@
+<!-- Application Navigation -->
+<!-- For clarity, we use filename catches its name, so we use <AppNav> instead of <Nav> -->
+<!-- As Nuxt will prefix component name with its folder name -->
+<!-- See https://nuxt.com/docs/4.x/directory-structure/app/components#component-names -->
+
 <script lang="ts" setup>
 defineProps<{
   items: { title: string, link: string }[]

@@ -41,7 +41,7 @@
       "build": {
         "@nuxt/eslint": "^1.15.2",
         "@nuxt/fonts": "^0.14.0",
-        "@nuxt/hints": "^1.0.1",
+        "@nuxt/hints": "^1.0.2",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20260305-121439-fd87f7d",
         "@nuxt/test-utils": "^4.0.0",
         "@nuxtjs/color-mode": "^4.0.0",
@@ -69,7 +69,7 @@
         "@unocss/eslint-config": "^66.6.7",
         "eslint": "^10.1.0",
         "eslint-plugin-oxlint": "^1.56.0",
-        "knip": "^6.0.0",
+        "knip": "^6.0.1",
         "nano-staged": "^0.9.0",
         "oxlint": "^1.56.0",
         "oxlint-tsgolint": "0.17.0",
@@ -139,7 +139,7 @@
     "listhen@1.9.0": "patches/listhen@1.9.0.patch"
   },
   "overrides": {
-    "nuxt-og-image": "npm:nuxt-og-image@v6.0.0-beta.41",
+    "vite": "^8.0.1",
     "vue-router": "^5.0.4"
   },
   "simple-git-hooks": {

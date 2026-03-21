@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <PageHomeBase>
-    <VitesseClientOnly>
+    <PresetClientOnly>
       <!-- Web Component -->
       <swiper-container ref="containerRef" m="t-4 b-4">
         <swiper-slide
@@ -43,7 +43,7 @@ onMounted(() => {
           {{ t('slide', { number: idx + 1 }) }}
         </swiper-slide>
       </swiper-container>
-    </VitesseClientOnly>
+    </PresetClientOnly>
     <div flex="~ justify-center gap-4">
       <!-- Go back one slide -->
       <button btn @click="swiper.prev()">

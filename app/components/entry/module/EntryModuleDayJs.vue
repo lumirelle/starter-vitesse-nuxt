@@ -5,17 +5,14 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase
-    :title="t('title')"
-    :button="[{ text: t('button-text'), path: 'nuxt-custom-fetch' }]"
-  />
+  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), route: 'modules-dayjs' }]" />
 </template>
 
 <i18n lang="yaml">
 en:
-  title: To custom fetch usecase >
+  title: To dayjs usecase >
   button-text: '@:global.go'
 zh:
-  title: 前往自定义 fetch 用例 >
+  title: 前往 dayjs 用例 >
   button-text: '@:global.go'
 </i18n>

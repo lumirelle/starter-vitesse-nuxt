@@ -7,7 +7,7 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), path: { name: 'hi-id' } }]">
+  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), route: { path: `/hi/${name}` } }]">
     <input
       id="input"
       v-model="name"

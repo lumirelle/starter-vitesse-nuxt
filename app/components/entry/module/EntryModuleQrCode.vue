@@ -5,14 +5,14 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), path: 'modules-dayjs' }]" />
+  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), route: 'modules-qrcode' }]" />
 </template>
 
 <i18n lang="yaml">
 en:
-  title: To dayjs usecase >
+  title: To QRCode usecase >
   button-text: '@:global.go'
 zh:
-  title: 前往 dayjs 用例 >
+  title: 前往 QRCode 用例 >
   button-text: '@:global.go'
 </i18n>

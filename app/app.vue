@@ -1,20 +1,11 @@
 <script lang="ts" setup>
-import { appName } from './constants/app'
-
 /**
- * @see https://nuxtseo.com/docs/schema-org/api/use-schema-org
+ * @see https://nuxtseo.com/docs/schema-org/guides/default-schema-org#configuring-your-defaults
  */
 useSchemaOrg([
-  defineWebPage({
-    name: appName,
-  }),
-  defineWebSite({
-    name: appName,
-  }),
-  defineOrganization({
-    name: appName,
-    logo: '/icon.png',
-  }),
+  defineWebSite(),
+  defineWebPage(),
+  defineOrganization(),
 ])
 
 /**

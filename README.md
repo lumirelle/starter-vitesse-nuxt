@@ -23,15 +23,6 @@
 > - [ ] Test Runner: Still using `vitest`
 > - [x] Deploy Environment Support: `netlify` and `stackblitz`
 
-> [!Caution]
-> `nuxt dev` is currently broken by `bun`, because `bun` limits the url passed to `fileURLToPath` to be an absolute path.
->
-> There is a [PR](https://github.com/oven-sh/bun/pull/21765) can fix it, please waiting for it to being merged and released.
->
-> Before that, the workaround is to surround the `fileURLToPath` calls with a try-catch block to silently ignore the error.
->
-> See the related [issue](https://github.com/oven-sh/bun/issues/18748) for more details.
-
 > [!Note]
 >
 > This is a personal fork of [antfu/vitesse-nuxt](https://github.com/antfu/vitesse-nuxt) with some customizations.
@@ -84,7 +75,6 @@
 
 ### Nuxt Modules -- Development
 
-- [Typed Router](https://github.com/victorgarciaesgi/nuxt-typed-router) - Type safe routing for Nuxt.
 - [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
 - [DevTools](https://github.com/nuxt/devtools) - Unleash Nuxt Developer Experience.
 - [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.

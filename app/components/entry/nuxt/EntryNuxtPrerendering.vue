@@ -5,14 +5,17 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), path: 'modules-image' }]" />
+  <EntryBase
+    :title="t('title')"
+    :button="[{ text: t('button-text'), route: 'nuxt-prerendering' }]"
+  />
 </template>
 
 <i18n lang="yaml">
 en:
-  title: To {'@'}nuxt/image usecase >
+  title: To prerendering usecase >
   button-text: '@:global.go'
 zh:
-  title: 前往 {'@'}nuxt/image 用例 >
+  title: 前往预渲染用例 >
   button-text: '@:global.go'
 </i18n>

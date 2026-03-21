@@ -1,5 +1,5 @@
 import { pwa } from './app/config/pwa'
-import { appDescription, appName } from './app/constants/app'
+import { appDescription, appName, colorThemeDark, colorThemeLight } from './app/constants/app'
 
 export default defineNuxtConfig({
   /// keep-sorted
@@ -29,15 +29,18 @@ export default defineNuxtConfig({
   },
 
   app: {
+    /**
+     * See default tags [here](https://nuxt.com/docs/4.x/getting-started/seo-meta#defaults-tags).
+     */
     head: {
-      title: appName,
-      viewport: 'width=device-width,initial-scale=1',
       templateParams: { separator: '·' },
       meta: [
-        { name: 'description', content: appDescription },
+        // `favicon.ico`, `apple-touch-icon.png` are handled by `nuxt-seo-utils`
+        // See https://nuxtseo.com/docs/nuxt-seo/guides/using-the-modules#seo-utils
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222' },
+        // See https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/theme-color
+        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: colorThemeLight },
+        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: colorThemeDark },
       ],
     },
   },
@@ -45,9 +48,14 @@ export default defineNuxtConfig({
   /**
    * Shared config for SEO modules integrated by `nuxt-seo`.
    *
+   * This also configure the application name and description used in many places.
+   *
    * @see https://nuxtseo.com/docs/site-config/api/config
    */
-  site: { name: appName },
+  site: {
+    name: appName,
+    description: appDescription,
+  },
 
   /**
    * Runtime configuration.
@@ -56,7 +64,7 @@ export default defineNuxtConfig({
    */
   runtimeConfig: {
     public: {
-      BASE_URL: '',
+      XXX_API_KEY: '',
     },
   },
 
@@ -95,6 +103,12 @@ export default defineNuxtConfig({
      * Generate type definitions for the pages and their route rules.
      */
     typedPages: true,
+    /**
+     * Fix the issue of auto-imported.
+     *
+     * @see https://github.com/nuxt/nuxt/issues/34142
+     */
+    nitroAutoImports: true,
   },
 
   compatibilityDate: '2026-03-13',
@@ -115,6 +129,7 @@ export default defineNuxtConfig({
         'dayjs/plugin/relativeTime', // CJS
         'dayjs/plugin/timezone', // CJS
         'dayjs/plugin/utc', // CJS
+        '@antfu/utils',
       ],
     },
   },

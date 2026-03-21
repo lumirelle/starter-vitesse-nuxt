@@ -1,4 +1,4 @@
-export function useCount(): {
+export function useCountState(): {
   count: Ref<number>
   inc: () => void
   dec: () => void

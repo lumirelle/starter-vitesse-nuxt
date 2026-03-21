@@ -18,11 +18,11 @@ const dayjs = useDayjs()
   <PageHomeBase>
     <div>
       <!-- Use dayjs directly, `<ClientOnly>` is required to avoid hydration mismatch -->
-      <VitesseClientOnly>
+      <PresetClientOnly>
         <p text-amber>
-          {{ t('dayjs-now-is', { now: dayjs().format('LLdddd [at] LTS zzz') }) }}
+          {{ t('dayjs-now-is', { now: dayjs().format('dddd, LL [at] LTS zzz') }) }}
         </p>
-      </VitesseClientOnly>
+      </PresetClientOnly>
       <!-- The better solution is to use `<NuxtTime>` component -->
       <I18nT keypath="nuxt-time-now-is" tag="p" text-green>
         <template #now>

@@ -1,1 +1,1 @@
-export default defineEventHandler(event => Object.fromEntries(event.req.headers.entries()))
+export default defineEventHandler(event => event.runtime?.node?.req.headers)

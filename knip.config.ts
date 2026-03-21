@@ -16,7 +16,6 @@ export default {
     '@vueuse/core',
     'dayjs',
     'vitest-environment-nuxt',
-    'vue-router',
     'vue-tsc',
   ],
 } satisfies KnipConfig

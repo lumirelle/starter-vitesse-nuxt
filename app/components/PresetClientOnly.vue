@@ -1,3 +1,5 @@
+<!-- A wrap for <ClientOnly>, with preset fallback -->
+
 <template>
   <ClientOnly>
     <slot />

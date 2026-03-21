@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+definePageMeta({
+  layout: 'home',
+})
+
 defineRouteRules({
   prerender: true,
 })

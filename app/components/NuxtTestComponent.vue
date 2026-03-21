@@ -1,3 +1,6 @@
+<!-- This component is used for testing in Nuxt environment -->
+<!-- See test cases under `test/nuxt/` -->
+
 <script setup lang="ts">
 const { text = 'nuxt-spec' } = defineProps<{ text?: string }>()
 </script>
