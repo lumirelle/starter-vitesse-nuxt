@@ -34,7 +34,7 @@
         "vue-router": "^5.0.4"
       },
       "icons": {
-        "@iconify-json/carbon": "^1.2.19",
+        "@iconify-json/carbon": "^1.2.20",
         "@iconify-json/twemoji": "^1.2.5",
         "@iconify/utils": "^3.1.0"
       },
@@ -46,8 +46,8 @@
         "@nuxt/test-utils": "^4.0.0",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/device": "^4.0.0",
-        "@nuxtjs/i18n": "^10.2.3",
-        "@nuxtjs/seo": "^4.0.2",
+        "@nuxtjs/i18n": "^10.2.4",
+        "@nuxtjs/seo": "^5.0.2",
         "@pinia/nuxt": "^0.11.3",
         "@unocss/nuxt": "^66.6.7",
         "@vite-pwa/nuxt": "^1.1.1",
@@ -55,33 +55,33 @@
         "dayjs-nuxt": "^2.1.11",
         "nuxt": "^4.4.2",
         "nuxt-echarts": "^1.0.1",
-        "nuxt-qrcode": "^0.4.8",
+        "nuxt-qrcode": "^0.4.9",
         "nuxt-swiper": "^2.0.1",
         "unocss": "^66.6.7"
       },
       "dev": {
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
-        "typescript": "^5.9.3"
+        "typescript": "^6.0.2"
       },
       "check": {
         "@antfu/eslint-config": "^7.7.3",
         "@lumirelle/oxlint-config": "^0.0.5",
         "@unocss/eslint-config": "^66.6.7",
         "eslint": "^10.1.0",
-        "eslint-plugin-oxlint": "^1.56.0",
-        "knip": "^6.0.1",
+        "eslint-plugin-oxlint": "^1.57.0",
+        "knip": "^6.0.6",
         "nano-staged": "^0.9.0",
-        "oxlint": "^1.56.0",
+        "oxlint": "^1.57.0",
         "oxlint-tsgolint": "0.17.0",
         "vue-tsc": "^3.2.6"
       },
       "test": {
-        "@vitest/coverage-v8": "^4.1.0",
+        "@vitest/coverage-v8": "^4.1.2",
         "@vue/test-utils": "^2.4.6",
-        "happy-dom": "^20.8.4",
+        "happy-dom": "^20.8.9",
         "playwright-core": "^1.58.2",
         "std-env": "^4.0.0",
-        "vitest": "^4.1.0"
+        "vitest": "^4.1.2"
       }
     }
   },
@@ -139,8 +139,9 @@
     "listhen@1.9.0": "patches/listhen@1.9.0.patch"
   },
   "overrides": {
-    "vite": "^8.0.1",
-    "vue-router": "^5.0.4"
+    "typescript": "$typescript",
+    "vite": "^8.0.3",
+    "vue-router": "$vue-router"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx nano-staged"
