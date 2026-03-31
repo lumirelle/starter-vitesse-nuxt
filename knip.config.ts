@@ -14,7 +14,6 @@ export default {
     '@unocss/eslint-config',
     '@vitest/coverage-v8',
     '@vueuse/core',
-    'dayjs',
     'vitest-environment-nuxt',
     'vue-tsc',
   ],

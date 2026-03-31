@@ -16,7 +16,7 @@ await callOnce('nav', navStore.fetchNavData)
 </script>
 
 <template>
-  <VitePwaManifest />
+  <NuxtPwaManifest />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

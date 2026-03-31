@@ -48,14 +48,9 @@ const navStore = useNavStore()
         <EntryModuleUnoCssIcon />
         <EntryModuleImage />
         <EntryModuleColorMode />
-        <EntryModuleDevice />
-        <EntryModuleSwiper />
-        <EntryModuleECharts />
-        <EntryModuleQrCode />
       </ContentSection>
       <ContentSection title="Nuxt Modules -- Utilities">
         <EntryModulePinia />
-        <EntryModuleDayJs />
       </ContentSection>
     </div>
   </div>

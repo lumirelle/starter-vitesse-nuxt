@@ -49,35 +49,42 @@
 
 - 🦾 TypeScript, of course.
 
-- ⚙️ Variant of modules with variant business features.
+- ⚙️ [Variant of modules](#nuxt-modules) with variant features.
 
-## Plugins
+## Nuxt Modules
 
-### Nuxt Modules -- UI
+### UI
 
-- [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
+- [Uno CSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
 - [Fonts](https://github.com/nuxt/fonts) - Plug-and-play custom web font optimization and configuration for Nuxt apps.
 - [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
 - [Color Mode](https://github.com/nuxt-modules/color-mode) - Dark and light mode with auto detection made easy with Nuxt.
-- [Device](https://github.com/nuxt-modules/device) - Detect the type of device in your Nuxt applications.
 - [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
-- [Swiper](https://github.com/cpreston321/nuxt-swiper) - Utilizes Swiper.js as its foundation using its web components.
-- [ECharts](https://github.com/kingyue737/nuxt-echarts) - Nuxt Module for Apache ECharts™.
-- [Qrcode](https://github.com/sandros94/nuxt-qrcode) - Provide easy support in reading and creating QR Codes.
 
-### Nuxt Modules -- Utilities
+### UX
 
-- [Vue Use](https://github.com/vueuse/vueuse) - Collection of useful composition APIs.
-- [Pinia](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue.
-- [Dayjs](https://github.com/fumeapp/dayjs) - Natively integrate Day.js into Nuxt.
+- [Scripts](https://github.com/nuxt/scripts) - Better Privacy, Performance, and DX for Third-Party Scripts in Nuxt Apps.
+- [A11y](https://github.com/nuxt/a11y) - A Nuxt module that provides real-time accessibility feedback and automated testing right in your browser during development.
+
+### SEO
+
 - [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
-- [Vite PWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt 4.
 
-### Nuxt Modules -- Development
+### DX
 
-- [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
 - [DevTools](https://github.com/nuxt/devtools) - Unleash Nuxt Developer Experience.
 - [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
+- [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
+
+### Testing
+
+- [Test Utils](https://github.com/nuxt/test-utils) - Utilities for testing Nuxt applications.
+
+### Utilities
+
+- [Vite PWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt 4.
+- [Pinia](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue.
+- [Vue Use](https://github.com/vueuse/vueuse) - Collection of useful composition APIs.
 
 ## IDE
 

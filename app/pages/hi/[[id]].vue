@@ -2,7 +2,7 @@
 definePageMeta({
   layout: 'home',
   validate({ params }) {
-    return params.id == null || typeof params.id === 'string'
+    return 'id' in params && typeof params.id === 'string'
   },
 })
 
