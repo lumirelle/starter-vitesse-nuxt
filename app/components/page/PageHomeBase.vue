@@ -8,7 +8,7 @@ const { t } = useI18n({
   <div>
     <slot />
     <div>
-      <NuxtLinkLocale class="text-sm btn m-3" to="index">
+      <NuxtLinkLocale class="text-sm m-3 btn" to="index">
         {{ t('back') }}
       </NuxtLinkLocale>
     </div>

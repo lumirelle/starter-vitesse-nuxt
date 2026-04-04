@@ -14,7 +14,7 @@ defineProps<{
     <h2 class="text-2xl font-bold mb-4">
       {{ title }}
     </h2>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="gap-4 grid grid-cols-2">
       <slot />
     </div>
   </section>

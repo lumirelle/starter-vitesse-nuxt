@@ -14,7 +14,7 @@ useHead({
 
 <template>
   <div
-    class="text-black font-sans px-10 pt-12 bg-white flex flex-col min-h-screen antialiased dark:text-white dark:bg-[#020420]"
+    class="font-sans px-10 pt-12 bg-white flex flex-col min-h-screen antialiased text-black dark:bg-[#020420] dark:text-white"
   >
     <h1 class="text-6xl font-medium mb-4 sm:text-8xl" v-text="error.status" />
     <p class="text-xl leading-tight font-light mb-8 sm:text-2xl" v-text="error.statusText" />
