@@ -5,14 +5,14 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), route: 'modules-icon' }]" />
+  <EntryBase :usecase="t('title')" :button="[{ text: t('button-text'), route: 'modules-icon' }]" />
 </template>
 
 <i18n lang="yaml">
 en:
   title: To UnoCSS Icon usecase >
-  button-text: '@:global.go'
+  button-text: '@:go'
 zh:
   title: 前往 UnoCSS Icon 用例 >
-  button-text: '@:global.go'
+  button-text: '@:go'
 </i18n>

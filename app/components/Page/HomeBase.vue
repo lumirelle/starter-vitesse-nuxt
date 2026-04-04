@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useI18n()
 </script>
 
 <template>
@@ -14,10 +12,3 @@ const { t } = useI18n({
     </div>
   </div>
 </template>
-
-<i18n lang="yaml">
-en:
-  back: '@:global.back'
-zh:
-  back: '@:global.back'
-</i18n>

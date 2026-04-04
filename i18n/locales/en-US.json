@@ -1,6 +1,5 @@
 {
-  "global": {
-    "go": "GO!",
-    "back": "Back"
-  }
+  "go": "GO!",
+  "back": "Back",
+  "to-usecase": "To {usecase} usecase >"
 }

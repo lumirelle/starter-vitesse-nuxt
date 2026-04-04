@@ -1,6 +1,5 @@
 {
-  "global": {
-    "go": "冲冲！",
-    "back": "返回"
-  }
+  "go": "冲冲！",
+  "back": "返回",
+  "to-usecase": "前往 {usecase} 用例 >"
 }

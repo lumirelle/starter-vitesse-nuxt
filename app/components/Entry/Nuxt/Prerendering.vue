@@ -6,7 +6,7 @@ const { t } = useI18n({
 
 <template>
   <EntryBase
-    :title="t('title')"
+    :usecase="t('title')"
     :button="[{ text: t('button-text'), route: 'nuxt-prerendering' }]"
   />
 </template>
@@ -14,8 +14,8 @@ const { t } = useI18n({
 <i18n lang="yaml">
 en:
   title: To prerendering usecase >
-  button-text: '@:global.go'
+  button-text: '@:go'
 zh:
   title: 前往预渲染用例 >
-  button-text: '@:global.go'
+  button-text: '@:go'
 </i18n>

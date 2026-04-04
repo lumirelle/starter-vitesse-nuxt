@@ -69,15 +69,12 @@ export default defineConfig<PresetWind4Theme>({
     }],
   ],
   shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-nuxt text-white cursor-pointer select-none transition-colors duration-200 ease-in-out hover:bg-vite disabled:cursor-default disabled:opacity-50'],
+    // Vitesse colors, with transition on hover
+    ['bg-vitesse', 'bg-nuxt hover:bg-vite transition-colors duration-200 ease-in-out'],
+    ['text-vitesse', 'text-nuxt hover:text-vite transition-colors duration-200 ease-in-out'],
+    // Components
+    ['btn', 'px-4 py-1 rounded inline-block bg-vitesse text-white cursor-pointer select-none disabled:cursor-default disabled:opacity-50'],
     ['select', 'px-4 py-2 w-250px text-center *:bg-gray-100 dark:*:bg-gray-900 border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],
     ['input', 'px-4 py-2 w-250px text-center bg-transparent border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],
-  ],
-  safelist: [
-    'hover:text-nuxt',
-    'hover:text-vite',
-    'transition-colors',
-    'duration-200',
-    'ease-in-out',
   ],
 })

@@ -115,7 +115,7 @@ en:
   makeRequest: Make a custom fetch request
   clearResp: Clear Response
   inputPlaceholder: Enter api path to fetch
-  back: '@:global.back'
+  back: '@:back'
 zh:
   title: 自定义 Fetch
   respUseFetch: useFetch 的响应
@@ -126,5 +126,5 @@ zh:
   makeRequest: 发起自定义 fetch 请求
   clearResp: 清空响应
   inputPlaceholder: 请输入要请求的 API 路径
-  back: '@:global.back'
+  back: '@:back'
 </i18n>

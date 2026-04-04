@@ -7,7 +7,7 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <EntryBase :title="t('title')" :button="[{ text: t('button-text'), route: { path: `/hi/${name}` } }]">
+  <EntryBase :usecase="t('title')" :button="[{ text: t('button-text'), route: { path: `/hi/${name}` } }]">
     <input
       id="input"
       v-model="name"
@@ -24,9 +24,9 @@ const { t } = useI18n({
 en:
   title: To Pinia usecase >
   placeholder: Enter your name
-  button-text: '@:global.go'
+  button-text: '@:go'
 zh:
   title: 前往 Pinia 用例 >
   placeholder: 请输入您的姓名
-  button-text: '@:global.go'
+  button-text: '@:go'
 </i18n>

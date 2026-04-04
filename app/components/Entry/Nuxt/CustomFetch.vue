@@ -6,7 +6,7 @@ const { t } = useI18n({
 
 <template>
   <EntryBase
-    :title="t('title')"
+    :usecase="t('title')"
     :button="[{ text: t('button-text'), route: 'nuxt-custom-fetch' }]"
   />
 </template>
@@ -14,8 +14,8 @@ const { t } = useI18n({
 <i18n lang="yaml">
 en:
   title: To custom fetch usecase >
-  button-text: '@:global.go'
+  button-text: '@:go'
 zh:
   title: 前往自定义 fetch 用例 >
-  button-text: '@:global.go'
+  button-text: '@:go'
 </i18n>

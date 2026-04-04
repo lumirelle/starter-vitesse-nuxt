@@ -61,5 +61,6 @@
     "prod": {
       // Your production environment variables
     }
-  }
+  },
+  "arrayIndexInlay.enabled": false
 }
