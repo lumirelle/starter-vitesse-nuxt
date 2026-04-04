@@ -36,4 +36,8 @@ body,
 html.dark {
   color-scheme: dark;
 }
+
+::picker(select) {
+  border: none;
+}
 </style>

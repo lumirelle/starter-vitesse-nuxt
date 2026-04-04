@@ -90,6 +90,17 @@ export default defineNuxtConfig({
     },
   },
 
+  a11y: {
+    axe: {
+      options: {
+        rules: [
+          { id: 'color-contrast', enabled: false },
+        ],
+      },
+      runOptions: {},
+    },
+  },
+
   eslint: {
     config: {
       standalone: false,

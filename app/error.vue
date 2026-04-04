@@ -2,11 +2,15 @@
 
 <script setup lang="ts">
 import type { NuxtError } from '#app'
-import { useHead } from '#imports'
 
 const { error } = defineProps<{
   error: NuxtError
 }>()
+
+const { t } = useI18n({
+  useScope: 'local',
+})
+
 useHead({
   title: `${error.status} - ${error.statusText || 'Internal Server Error'}`,
 })
@@ -14,19 +18,30 @@ useHead({
 
 <template>
   <div
-    class="font-sans px-10 pt-12 bg-white flex flex-col min-h-screen antialiased text-black dark:bg-[#020420] dark:text-white"
+    class="text-black font-sans px-10 py-12 bg-white flex flex-col min-h-screen antialiased dark:text-white dark:bg-[#020420]"
   >
     <h1 class="text-6xl font-medium mb-4 sm:text-8xl" v-text="error.status" />
-    <p class="text-xl leading-tight font-light mb-8 sm:text-2xl" v-text="error.statusText" />
+    <p class="text-xl leading-tight font-light mb-8 sm:text-2xl">
+      <span v-text="error.statusText" />&nbsp;&nbsp;<NuxtLinkLocale to="index" class="underline hover:text-[#00DC82]">
+        {{ t('back-to-homepage') }}
+      </NuxtLinkLocale>
+    </p>
     <a
       href="https://nuxt.com/docs/4.x/getting-started/error-handling?utm_source=nuxt-error-dev-page"
       target="_blank"
       class="text-sm font-medium mx-auto underline-offset-3 inline-block top-6 absolute hover:text-[#00DC82] hover:underline sm:right-6"
-    >Customize this page</a>
-    <div
-      class="border border-b-0 border-black/5 rounded-t-md bg-gray-50/50 flex-1 h-auto overflow-y-auto dark:border-white/10 dark:bg-white/5"
-    >
-      <div class="text-xl leading-tight font-light p-8 z-10" v-html="error.stack" />
+    >{{ t('customize-this-page') }}</a>
+    <div code-block>
+      <pre code-pre v-html="error.stack" />
     </div>
   </div>
 </template>
+
+<i18n lang="yaml">
+en:
+  back-to-homepage: Back to homepage?
+  customize-this-page: Customize this page
+zh:
+  back-to-homepage: 返回首页？
+  customize-this-page: 自定义此页面
+</i18n>

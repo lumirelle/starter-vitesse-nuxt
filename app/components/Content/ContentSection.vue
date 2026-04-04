@@ -11,10 +11,10 @@ defineProps<{
 
 <template>
   <section>
-    <h2 class="text-2xl font-bold mb-4">
+    <h2 text-2xl font-bold mb-4 text-center>
       {{ title }}
     </h2>
-    <div class="gap-4 grid grid-cols-2">
+    <div gap-4 grid grid-cols-2>
       <slot />
     </div>
   </section>

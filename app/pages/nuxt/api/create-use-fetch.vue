@@ -36,9 +36,12 @@ function clearResp(): void {
 </script>
 
 <template>
-  <PageHomeBase>
+  <PageHomeBase :title="t('title')">
     <!-- Server-side request -->
-    <div>
+    <div mb-8>
+      <h2 mb-4 text-center>
+        {{ t('server-side-request') }}
+      </h2>
       <div flex gap-10 justify-center>
         <label>API
           <input value="/api/v1/request-headers" m="l-2" type="text" disabled input :placeholder="t('inputPlaceholder')">
@@ -50,19 +53,26 @@ function clearResp(): void {
           </select>
         </label>
       </div>
-      <div flex gap-4>
-        <div my-4 flex-1>
-          {{ t('respUseFetch') }}
-          <pre mt-4 p-4 text-left min-h-50 w-full overflow-x-auto bg="dark:#000">{{ resUseFetch ?? errorUseFetch }}</pre>
+      <div grid grid-cols-2 h-650px>
+        <div code-block>
+          <p code-label>
+            {{ t('respUseFetch') }}
+          </p>
+          <pre code-pre>{{ resUseFetch ?? errorUseFetch }}</pre>
         </div>
-        <div my-4 flex-1>
-          {{ t('respUseApi') }}
-          <pre mt-4 p-4 text-left min-h-50 w-full overflow-x-auto bg="dark:#000">{{ resUseApi ?? errorUseApi }}</pre>
+        <div code-block>
+          <p code-label>
+            {{ t('respUseApi') }}
+          </p>
+          <pre code-pre>{{ resUseApi ?? errorUseApi }}</pre>
         </div>
       </div>
     </div>
     <!-- Client-side request -->
     <div>
+      <h2 mb-4 text-center>
+        {{ t('client-side-request') }}
+      </h2>
       <div flex gap-10 justify-center>
         <label>API
           <input v-model="apiPath" input m="l-2" type="text" :placeholder="t('inputPlaceholder')">
@@ -78,18 +88,18 @@ function clearResp(): void {
           </select>
         </label>
       </div>
-      <div flex gap-4>
-        <div my-4 flex-1>
-          <div mb-4>
+      <div grid grid-cols-2 h-650px>
+        <div code-block>
+          <p code-label>
             {{ t('respFetch') }}
-          </div>
-          <pre mt-4 p-4 text-left min-h-50 w-full overflow-x-auto bg="dark:#000">{{ resFetch }}</pre>
+          </p>
+          <pre code-pre>{{ resFetch }}</pre>
         </div>
-        <div my-4 flex-1>
-          <div mb-4>
+        <div code-block>
+          <p code-label>
             {{ t('respApi') }}
-          </div>
-          <pre mt-4 p-4 text-left min-h-50 w-full overflow-x-auto bg="dark:#000">{{ resApi }}</pre>
+          </p>
+          <pre code-pre>{{ resApi }}</pre>
         </div>
       </div>
       <div flex="~ gap-4 justify-center">
@@ -106,7 +116,9 @@ function clearResp(): void {
 
 <i18n lang="yaml">
 en:
-  title: Custom Fetch
+  title: Nuxt API / createUseFetch
+  server-side-request: Server-side Request
+  client-side-request: Client-side Request
   respUseFetch: Response from useFetch
   respUseApi: Response from useApi
   respFetch: Response from $fetch
@@ -115,9 +127,10 @@ en:
   makeRequest: Make a custom fetch request
   clearResp: Clear Response
   inputPlaceholder: Enter api path to fetch
-  back: '@:back'
 zh:
-  title: 自定义 Fetch
+  title: Nuxt API / createUseFetch
+  server-side-request: 服务端请求
+  client-side-request: 客户端请求
   respUseFetch: useFetch 的响应
   respUseApi: useApi 的响应
   respFetch: $fetch 的响应
@@ -126,5 +139,4 @@ zh:
   makeRequest: 发起自定义 fetch 请求
   clearResp: 清空响应
   inputPlaceholder: 请输入要请求的 API 路径
-  back: '@:back'
 </i18n>

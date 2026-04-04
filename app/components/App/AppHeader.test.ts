@@ -1,13 +1,13 @@
 // A demo for testing Nuxt components just under the same folder
 
-import { Logos } from '#components'
+import { AppHeader } from '#components'
 import { unindent } from '@antfu/utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 
-describe('components/Logos.vue', () => {
+describe('components/AppHeader.vue', () => {
   it('should render', async () => {
-    const wrapper = await mountSuspended(Logos)
+    const wrapper = await mountSuspended(AppHeader)
     expect(wrapper.html()).toMatchInlineSnapshot(
       unindent`
       "<div text-2xl="" font-300="" inline-flex="" cursor-default="">

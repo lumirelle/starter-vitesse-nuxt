@@ -3,43 +3,66 @@ definePageMeta({
   layout: 'home',
 })
 
-const timer = ref<NodeJS.Timeout | null>(null)
-const timeout = ref<NodeJS.Timeout | null>(null)
-const timeLeft = ref(3.0)
+const { t } = useI18n({
+  useScope: 'local',
+})
+
+useHead({
+  title: t('title'),
+})
+
+const TIMEOUT = 5000
+
+const intervalTimer = ref<NodeJS.Timeout | null>(null)
+const timeoutTimer = ref<NodeJS.Timeout | null>(null)
+const timeLeft = ref(TIMEOUT)
 
 onMounted(() => {
-  timer.value = setInterval(() => {
-    timeLeft.value -= 0.1
-    if (timeLeft.value <= 0.1) {
+  intervalTimer.value = setInterval(() => {
+    timeLeft.value -= 100
+    if (timeLeft.value <= 100) {
       timeLeft.value = 0
-      if (timer.value)
-        clearInterval(timer.value)
+      if (intervalTimer.value)
+        clearInterval(intervalTimer.value)
     }
   }, 100)
-  timeout.value = setTimeout(() => {
+  timeoutTimer.value = setTimeout(() => {
     timeLeft.value = 0
-    if (timer.value)
-      clearInterval(timer.value)
+    if (intervalTimer.value)
+      clearInterval(intervalTimer.value)
     showError({ status: 500, statusText: 'This is a test error thrown from the create-error page.' })
-  }, 3000)
+  }, TIMEOUT)
 })
 
 onBeforeRouteLeave(() => {
-  if (timer.value)
-    clearInterval(timer.value)
-  if (timeout.value)
-    clearTimeout(timeout.value)
+  if (intervalTimer.value)
+    clearInterval(intervalTimer.value)
+  if (timeoutTimer.value)
+    clearTimeout(timeoutTimer.value)
 })
 onUnmounted(() => {
-  if (timer.value)
-    clearInterval(timer.value)
-  if (timeout.value)
-    clearTimeout(timeout.value)
+  if (intervalTimer.value)
+    clearInterval(intervalTimer.value)
+  if (timeoutTimer.value)
+    clearTimeout(timeoutTimer.value)
 })
 </script>
 
 <template>
-  <PageHomeBase title="Nuxt API / showError">
-    The error will be shown in <span text-vitesse>{{ timeLeft.toFixed(1) }}</span> seconds, and the page will be redirected to the error page...!
+  <PageHomeBase :title="t('title')">
+    <I18nT keypath="description" tag="span">
+      <template #time>
+        <span text-vitesse>{{ (timeLeft / 1000).toFixed(1) }}</span>
+      </template>
+    </I18nT>
   </PageHomeBase>
 </template>
+
+<i18n lang="yaml">
+en:
+  title: Nuxt API / showError
+  description: The error will be shown in {time} seconds, and the page will be redirected to the error page...!
+zh:
+  title: Nuxt API / showError
+  description: 错误将在 {time} 秒后显示，并且页面将被重定向到错误页面...！
+</i18n>

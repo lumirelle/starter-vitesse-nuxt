@@ -26,17 +26,17 @@ const { t } = useI18n()
 
 <template>
   <div py-8 rounded-lg bg-white w-600px shadow="[0_5px_15px_rgba(0,0,0,0.05)]" dark:bg-black dark:shadow="[0_5px_15px_rgba(255,255,255,0.05)]">
-    <I18nT keypath="to-usecase" scope="global" tag="h3">
+    <I18nT keypath="to-usecase" scope="global" tag="h3" text-center>
       <template #usecase>
-        <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer" underline text-vitesse>{{ usecase }}</a>
+        <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer" text-vitesse underline>{{ usecase }}</a>
         <span v-else>{{ usecase }}</span>
       </template>
     </I18nT>
-    <div>
+    <div mb-4>
       <slot />
     </div>
-    <div>
-      <NuxtLinkLocale v-for="(btn, index) in buttons" :key="index" text-sm m-3 btn :to=" btn.route">
+    <div text-center space-x-4>
+      <NuxtLinkLocale v-for="(btn, index) in buttons" :key="index" btn :to=" btn.route">
         {{ btn.text ?? t('go') }}
       </NuxtLinkLocale>
     </div>

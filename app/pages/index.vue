@@ -20,7 +20,7 @@ const navStore = useNavStore()
 
 <template>
   <div>
-    <Logos mb-6 />
+    <AppHeader mb-6 />
     <PresetClientOnly>
       <Suspense>
         <div>
@@ -40,8 +40,9 @@ const navStore = useNavStore()
     <div mt-6 flex flex-col gap-6 items-center>
       <ContentSection title="Nuxt">
         <EntryNuxtStructureLayouts />
+        <EntryNuxtStructureMiddleware />
         <EntryNuxtApiShowError />
-        <EntryNuxtCustomFetch />
+        <EntryNuxtApiCreateUseFetch />
         <EntryNuxtPrerendering />
       </ContentSection>
       <ContentSection title="Nuxt Modules -- UI">
