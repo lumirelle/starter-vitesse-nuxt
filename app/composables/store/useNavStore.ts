@@ -1,11 +1,7 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-interface Nav {
-  items: { title: string, link: string }[]
-}
-
 export const useNavStore = defineStore('nav', () => {
-  const navData = ref<Nav>()
+  const navData = ref<ApiNav.Nav>()
 
   /**
    * Fetch navigation data from an API or other sources.

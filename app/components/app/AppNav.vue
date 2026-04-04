@@ -5,16 +5,16 @@
 
 <script lang="ts" setup>
 defineProps<{
-  items: { title: string, link: string }[]
+  items: ApiNav.NavItem[]
 }>()
 </script>
 
 <template>
-  <nav p-4 rounded-lg bg="gray:10 dark:gray:800">
+  <nav p-4>
     <ul>
       <li v-for="item in items" :key="item.link">
         <NuxtLink :to="item.link">
-          <span>-> {{ item.title }}</span>
+          <span :class="item.class">-> {{ item.title }}</span>
         </NuxtLink>
       </li>
     </ul>

@@ -6,5 +6,6 @@ namespace ApiNav {
     id: string
     title: string
     link: string
+    class?: string
   }
 }

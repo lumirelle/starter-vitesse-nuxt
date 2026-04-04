@@ -1,3 +1,6 @@
+import type {
+  PresetWind4Theme,
+} from 'unocss'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import {
   defineConfig,
@@ -9,26 +12,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-export default defineConfig({
-  theme: {
-    /**
-     * Use fonts name directly, `@nuxt/font` will auto resolve the font resources from predefined providers.
-     *
-     * @see https://fonts.nuxt.com/get-started/usage#unocss
-     */
-    font: {
-      sans: 'DM Sans',
-      serif: 'DM Serif Display',
-      mono: 'DM Mono',
-    },
-  },
-  shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
-    ['entry', 'p-8 w-600px bg-white dark:bg-black rounded-lg shadow-[0_5px_15px_rgba(0,0,0,0.15)] dark:shadow-[0_5px_15px_rgba(255,255,255,0.05)]'],
-    ['select', 'px-4 py-2 w-250px text-center *:bg-gray-100 dark:*:bg-gray-900 border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],
-    ['input', 'px-4 py-2 w-250px text-center bg-transparent border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],
-  ],
+export default defineConfig<PresetWind4Theme>({
   presets: [
     /**
      * Tailwind CSS v4 only supports modern browsers. If you need to support legacy browsers, please use `presetWind3` instead.
@@ -61,4 +45,39 @@ export default defineConfig({
     presetTypography(),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+
+  theme: {
+    colors: {
+      nuxt: '#00dc82',
+      vite: '#a454ff',
+    },
+    /**
+     * Use fonts name directly, `@nuxt/font` will auto resolve the font resources from predefined providers.
+     *
+     * @see https://fonts.nuxt.com/get-started/usage#unocss
+     */
+    font: {
+      sans: 'DM Sans',
+      serif: 'DM Serif Display',
+      mono: 'DM Mono',
+    },
+  },
+  rules: [
+    [/^text-(.*)$/, ([, c], { theme }) => {
+      if (typeof theme.colors?.[c] === 'string')
+        return { color: theme.colors[c] }
+    }],
+  ],
+  shortcuts: [
+    ['btn', 'px-4 py-1 rounded inline-block bg-nuxt text-white cursor-pointer select-none transition-colors duration-200 ease-in-out hover:bg-vite disabled:cursor-default disabled:opacity-50'],
+    ['select', 'px-4 py-2 w-250px text-center *:bg-gray-100 dark:*:bg-gray-900 border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],
+    ['input', 'px-4 py-2 w-250px text-center bg-transparent border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],
+  ],
+  safelist: [
+    'hover:text-nuxt',
+    'hover:text-vite',
+    'transition-colors',
+    'duration-200',
+    'ease-in-out',
+  ],
 })
