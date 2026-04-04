@@ -47,10 +47,6 @@ export default defineConfig<PresetWind4Theme>({
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
   theme: {
-    colors: {
-      nuxt: '#00dc82',
-      vite: '#a454ff',
-    },
     /**
      * Use fonts name directly, `@nuxt/font` will auto resolve the font resources from predefined providers.
      *
@@ -62,16 +58,13 @@ export default defineConfig<PresetWind4Theme>({
       mono: 'DM Mono',
     },
   },
-  rules: [
-    [/^text-(.*)$/, ([, c], { theme }) => {
-      if (typeof theme.colors?.[c] === 'string')
-        return { color: theme.colors[c] }
-    }],
-  ],
   shortcuts: [
     // Vitesse colors, with transition on hover
-    ['bg-vitesse', 'bg-nuxt hover:bg-vite transition-colors duration-200 ease-in-out'],
-    ['text-vitesse', 'text-nuxt hover:text-vite transition-colors duration-200 ease-in-out'],
+    [/^(color|text|bg)-nuxt$/, ([, c]) => `${c}-green-400`],
+    [/^(color|text|bg)-vite$/, ([, c]) => `${c}-purple-500`],
+    [/^(color|text|bg)-vitesse$/, ([, c]) => `${c}-nuxt hover:${c}-vite transition-colors duration-200 ease-in-out`],
+    [/^(color|text|bg)-vitesse-nuxt$/, ([, c]) => `hover:${c}-nuxt transition-colors duration-200 ease-in-out`],
+    [/^(color|text|bg)-vitesse-vite$/, ([, c]) => `hover:${c}-vite transition-colors duration-200 ease-in-out`],
     // Components
     ['btn', 'px-4 py-1 rounded inline-block bg-vitesse text-white cursor-pointer select-none disabled:cursor-default disabled:opacity-50'],
     ['select', 'px-4 py-2 w-250px text-center *:bg-gray-100 dark:*:bg-gray-900 border border-rounded border-gray-200 dark:border-gray-700 outline-none active:outline-none'],

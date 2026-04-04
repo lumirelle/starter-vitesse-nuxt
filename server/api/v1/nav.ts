@@ -4,8 +4,8 @@
 export default defineEventHandler(() =>
   createServerResponse<ApiNav.Nav>({
     items: [
-      { id: '1', title: 'Home', link: '/', class: 'hover:text-nuxt transition-colors duration-200 ease-in-out' },
-      { id: '2', title: 'About', link: '/', class: 'hover:text-vite transition-colors duration-200 ease-in-out' },
+      { id: '1', title: 'Home', link: '/' },
+      { id: '2', title: 'About', link: '/' },
     ],
   }),
 )

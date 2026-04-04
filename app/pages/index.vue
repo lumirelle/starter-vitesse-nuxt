@@ -39,8 +39,8 @@ const navStore = useNavStore()
     </PresetClientOnly>
     <div mt-6 flex flex-col gap-6 items-center>
       <ContentSection title="Nuxt">
-        <EntryNuxtLayout />
-        <EntryNuxtCreateError />
+        <EntryNuxtStructureLayouts />
+        <EntryNuxtApiShowError />
         <EntryNuxtCustomFetch />
         <EntryNuxtPrerendering />
       </ContentSection>

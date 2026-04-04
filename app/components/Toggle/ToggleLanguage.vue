@@ -22,5 +22,6 @@ const availableLocales = computed(() =>
     :key="availableLocale.code"
     :class="availableLocale.flag"
     :locale="availableLocale.code"
+    aria-label="Toggle Language"
   />
 </template>

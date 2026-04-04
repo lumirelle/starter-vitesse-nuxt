@@ -2,6 +2,9 @@
 <!-- For clarity, we use filename catches its name, so we use <AppNav> instead of <Nav> -->
 <!-- As Nuxt will prefix component name with its folder name -->
 <!-- See https://nuxt.com/docs/4.x/directory-structure/app/components#component-names -->
+<!-- This helps: -->
+<!-- 1. When we import the component manually, it will share the same name with auto-imported -->
+<!-- 2. Since Vue generated component name from its filename, this helps keep the component name consistent -->
 
 <script lang="ts" setup>
 defineProps<{
@@ -11,10 +14,10 @@ defineProps<{
 
 <template>
   <nav p-4>
-    <ul>
-      <li v-for="item in items" :key="item.link">
+    <ul flex flex-col items-center>
+      <li v-for="item in items" :key="item.link" text-vitesse-nuxt even:text-vitesse-vite w-fit>
         <NuxtLink :to="item.link">
-          <span :class="item.class">-> {{ item.title }}</span>
+          <span>-> {{ item.title }}</span>
         </NuxtLink>
       </li>
     </ul>
