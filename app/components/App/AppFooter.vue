@@ -7,10 +7,13 @@
 <!-- 2. Since Vue generated component name from its filename, this helps keep the component name consistent -->
 
 <template>
-  <div text="xl gray-400" m-5 flex gap-3 justify-center>
-    <NuxtLinkLocale i-carbon-campsite to="index" aria-label="Go Home" />
-    <a i-carbon-logo-github href="https://github.com/lumirelle/starter-vitesse-nuxt" target="_blank" aria-label="View on GitHub" />
-    <ToggleColorMode />
-    <ToggleLanguage />
-  </div>
+  <footer>
+    <div text="xl gray-400" m-5 flex gap-3 justify-center>
+      <NuxtLinkLocale i-carbon-campsite to="index" aria-label="Go Home" />
+      <a i-carbon-logo-github href="https://github.com/lumirelle/starter-vitesse-nuxt" target="_blank" aria-label="View on GitHub" />
+      <ToggleColorMode />
+      <ToggleLanguage />
+    </div>
+    <slot />
+  </footer>
 </template>

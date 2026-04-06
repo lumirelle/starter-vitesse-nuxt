@@ -53,10 +53,5 @@ function toggleDark(): void {
 </script>
 
 <template>
-  <a
-    class="i-carbon-sun dark:i-carbon-moon h-[1em] w-[1em] cursor-pointer !outline-none"
-    href="javascript:void(0)"
-    aria-label="Toggle Color Mode"
-    @click="toggleDark"
-  />
+  <a class="i-carbon-sun dark:i-carbon-moon h-[1em] w-[1em] cursor-pointer !outline-none" href="javascript:void(0)" aria-label="Toggle Color Mode" @click="toggleDark" />
 </template>

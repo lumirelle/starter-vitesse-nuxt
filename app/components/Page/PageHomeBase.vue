@@ -3,24 +3,26 @@ defineProps<{
   title: string
 }>()
 
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 </script>
 
 <template>
   <div>
-    <h1 text-xl font-extrabold mb-4 text-center>
-      {{ title }}
-    </h1>
-    <div mb-4>
-      <slot />
-    </div>
-    <div>
-      <NuxtLinkLocale to="index" text-vitesse-vite mx-auto px-4 py-2 text-start border border-gray-200 rounded-2xl bg-gray-50 w-fit block dark:border-gray-800 dark:bg-gray-950>
-        <span>> </span><span>cd ~&nbsp;&nbsp;&nbsp;&nbsp;</span><span># {{ t('come-back-homepage') }}</span>
-      </NuxtLinkLocale>
-    </div>
+    <header>
+      <h1 text="xl center" font-extrabold mb-4>
+        {{ title }}
+      </h1>
+    </header>
+    <main>
+      <div mb-4>
+        <slot />
+      </div>
+      <div>
+        <NuxtLinkLocale to="index" text-vitesse-vite mx-auto p="x-4 y-2" border="~ gray-200 dark:gray-800" rounded-2xl bg="gray-50 dark:gray-950" w-fit block>
+          <span>> </span><span>cd ~&nbsp;&nbsp;&nbsp;&nbsp;</span><span># {{ t('come-back-homepage') }}</span>
+        </NuxtLinkLocale>
+      </div>
+    </main>
   </div>
 </template>
 

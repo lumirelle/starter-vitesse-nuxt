@@ -1,11 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'home',
-})
-
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 
 useHead({
   title: t('title'),
@@ -13,18 +7,18 @@ useHead({
 </script>
 
 <template>
-  <PageHomeBase>
-    <!-- https://image.nuxt.com/usage/nuxt-img -->
-    <figure class="mb-8">
-      <NuxtImg
-        src="/images/mountains_1.jpg"
-        :placeholder="[30, 20]"
-        width="300"
-        height="200"
-        class="rounded"
-      />
-      <figcaption class="text-xs text-gray-600 mt-3">
-        <I18nT tag="span" keypath="photo-by">
+  <PageHomeBase :title="t('title')">
+    <div flex="~ col" gap-8>
+      <!-- https://image.nuxt.com/usage/nuxt-img -->
+      <figure flex="~ col" items-center>
+        <NuxtImg
+          src="/images/mountains_1.jpg"
+          :placeholder="[30, 20]"
+          width="300"
+          height="200"
+          class="rounded"
+        />
+        <I18nT tag="figcaption" keypath="photo-by" text="xs gray-600" mt-3>
           <template #author>
             <a href="https://unsplash.com/@vorosbenisop" target="_blank" class="underline">Benjamin Voros</a>
           </template>
@@ -32,18 +26,15 @@ useHead({
             <a href="https://unsplash.com/s/photos/mountain" target="_blank" class="underline">Unsplash</a>
           </template>
         </I18nT>
-      </figcaption>
-    </figure>
-    <!-- https://image.nuxt.com/usage/nuxt-picture -->
-    <figure>
-      <NuxtPicture
-        src="/images/mountains_2.jpg"
-        width="3750"
-        height="2500"
-        sizes="xs:200px md:500px lg:1024"
-      />
-      <figcaption class="text-xs text-gray-600 mt-3">
-        <I18nT tag="span" keypath="photo-by">
+      </figure>
+      <!-- https://image.nuxt.com/usage/nuxt-picture -->
+      <figure flex="~ col" items-center>
+        <NuxtPicture
+          src="/images/mountains_2.jpg"
+          width="1200"
+          height="500"
+        />
+        <I18nT tag="figcaption" keypath="photo-by" text="xs gray-600" mt-3>
           <template #author>
             <a href="https://unsplash.com/@kydroon" target="_blank" class="underline">Kurt Cotoaga</a>
           </template>
@@ -51,16 +42,16 @@ useHead({
             <a href="https://unsplash.com/s/photos/mountain" target="_blank" class="underline">Unsplash</a>
           </template>
         </I18nT>
-      </figcaption>
-    </figure>
+      </figure>
+    </div>
   </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
-  title: Nuxt Image
+  title: Image
   photo-by: 'Photo by {author} on {source}.'
 zh:
-  title: Nuxt Image
+  title: 图片
   photo-by: '照片作者 {author}，来源于 {source}。'
 </i18n>

@@ -1,15 +1,10 @@
 <script lang="ts" setup>
 definePageMeta({
-  layout: 'home',
-  /**
-   * Force using dark mode on this page.
-   */
+  /** Force using light mode on this page. */
   colorMode: 'light',
 })
 
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 
 useHead({
   title: t('title'),
@@ -17,18 +12,25 @@ useHead({
 </script>
 
 <template>
-  <PageHomeBase>
-    <div>
-      <p>{{ t('forced-light') }}</p>
+  <PageHomeBase :title="t('title')">
+    <div flex="~ col" gap-4 items-center>
+      <p>
+        {{ t('description') }}
+      </p>
+      <NuxtLinkLocale to="modules-color-mode-dark" btn>
+        {{ t('dark-mode') }}
+      </NuxtLinkLocale>
     </div>
   </PageHomeBase>
 </template>
 
 <i18n lang="yaml">
 en:
-  title: light mode
-  forced-light: this page is forced to light mode.
+  title: Light Mode
+  description: this page is forced to light mode.
+  dark-mode: Dark Mode
 zh:
   title: 浅色模式
-  forced-light: 本页面被强制为了浅色模式。
+  description: 本页面被强制为了浅色模式。
+  dark-mode: 深色模式
 </i18n>

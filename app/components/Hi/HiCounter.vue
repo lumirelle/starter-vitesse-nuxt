@@ -3,15 +3,15 @@ const { count, inc, dec } = useCountState()
 </script>
 
 <template>
-  <div inline-flex m="y-3">
-    <button btn p-2 rounded-full @click="dec()">
-      <div i-carbon-subtract />
+  <div my-3 inline-flex>
+    <button btn p-2 rounded-full aria-label="Decrement" @click="dec()">
+      <i i-carbon-subtract />
     </button>
-    <div font="mono" w="15" m-auto inline-block>
+    <div font-mono m-auto text-center w-15 inline-block>
       {{ count }}
     </div>
-    <button btn p-2 rounded-full @click="inc()">
-      <div i-carbon-add />
+    <button btn p-2 rounded-full aria-label="Increment" @click="inc()">
+      <i i-carbon-add />
     </button>
   </div>
 </template>

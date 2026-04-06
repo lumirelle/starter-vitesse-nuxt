@@ -17,11 +17,5 @@ const availableLocales = computed(() =>
 </script>
 
 <template>
-  <SwitchLocalePathLink
-    v-for="availableLocale in availableLocales"
-    :key="availableLocale.code"
-    :class="availableLocale.flag"
-    :locale="availableLocale.code"
-    aria-label="Toggle Language"
-  />
+  <SwitchLocalePathLink v-for="availableLocale in availableLocales" :key="availableLocale.code" :class="availableLocale.flag" :locale="availableLocale.code" aria-label="Toggle Language" />
 </template>

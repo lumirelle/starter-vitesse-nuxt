@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://user-images.githubusercontent.com/11247099/140462375-7b7ac4db-35b7-453c-8a05-13d8d20282c4.png" width="600" alt="Vitesse Nuxt 4 Starter"/>
+<img src="./public/images/banner.png" width="600" alt="Vitesse Nuxt 4 Starter" style="border-radius: 8px;"/>
 </p>
 
 <h2 align="center">
@@ -61,11 +61,6 @@
 - [Color Mode](https://github.com/nuxt-modules/color-mode) - Dark and light mode with auto detection made easy with Nuxt.
 - [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
 
-### UX
-
-- [Scripts](https://github.com/nuxt/scripts) - Better Privacy, Performance, and DX for Third-Party Scripts in Nuxt Apps.
-- [A11y](https://github.com/nuxt/a11y) - A Nuxt module that provides real-time accessibility feedback and automated testing right in your browser during development.
-
 ### SEO
 
 - [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
@@ -73,8 +68,10 @@
 ### DX
 
 - [DevTools](https://github.com/nuxt/devtools) - Unleash Nuxt Developer Experience.
-- [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
+- [Scripts](https://github.com/nuxt/scripts) - Better Privacy, Performance, and DX for Third-Party Scripts in Nuxt Apps.
 - [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
+- [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
+- [A11y](https://github.com/nuxt/a11y) - A Nuxt module that provides real-time accessibility feedback and automated testing right in your browser during development.
 
 ### Testing
 

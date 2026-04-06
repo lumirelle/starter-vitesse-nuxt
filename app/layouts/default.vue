@@ -1,9 +1,10 @@
 <template>
-  <main class="px-10 py-20">
+  <div p="x-10 y-20">
     <slot />
-    <AppFooter />
-    <div class="text-sm mx-auto mt-5 text-center opacity-25">
-      [Default Layout]
-    </div>
-  </main>
+    <AppFooter>
+      <div text="sm center" m="x-auto t-5" opacity-25>
+        [Default Layout]
+      </div>
+    </AppFooter>
+  </div>
 </template>

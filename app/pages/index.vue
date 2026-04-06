@@ -5,9 +5,7 @@ definePageMeta({
   layout: 'home',
 })
 
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 
 useHead({
   title: t('title'),
@@ -19,8 +17,7 @@ const navStore = useNavStore()
 </script>
 
 <template>
-  <div>
-    <AppHeader mb-6 />
+  <main>
     <PresetClientOnly>
       <Suspense>
         <div>
@@ -37,24 +34,26 @@ const navStore = useNavStore()
         </template>
       </Suspense>
     </PresetClientOnly>
-    <div mt-6 flex flex-col gap-6 items-center>
+    <div mt-6 flex="~ col" gap-6 items-center>
       <ContentSection title="Nuxt">
         <EntryNuxtStructureLayouts />
         <EntryNuxtStructureMiddleware />
         <EntryNuxtApiShowError />
         <EntryNuxtApiCreateUseFetch />
-        <EntryNuxtPrerendering />
+        <EntryNuxtUsecasePrerendering />
       </ContentSection>
       <ContentSection title="Nuxt Modules -- UI">
-        <EntryModuleUnoCssIcon />
+        <EntryModuleUnocss />
+        <EntryModuleFonts />
         <EntryModuleImage />
         <EntryModuleColorMode />
+        <EntryModuleI18n />
       </ContentSection>
       <ContentSection title="Nuxt Modules -- Utilities">
         <EntryModulePinia />
       </ContentSection>
     </div>
-  </div>
+  </main>
 </template>
 
 <i18n lang="yaml">

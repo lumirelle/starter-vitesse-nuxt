@@ -3,9 +3,7 @@
 <script setup lang="ts">
 const { data: res } = await useFetch('/api/v1/pageview')
 
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 
 const NUMBER_REGEX = /\d/
 
@@ -47,7 +45,7 @@ const time = useTimeAgo(() => res.value?.data?.startAt || 0, {
 </script>
 
 <template>
-  <div text-gray:80 text-center>
+  <div text="gray:80 center">
     <span text-gray font-500>{{ res?.data?.pageview }}</span>
     {{ t('pageViews') }}
     <span text-gray>{{ time }}</span>

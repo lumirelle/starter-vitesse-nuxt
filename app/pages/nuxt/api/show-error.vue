@@ -1,11 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'home',
-})
-
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 
 useHead({
   title: t('title'),
@@ -50,7 +44,7 @@ onUnmounted(() => {
 
 <template>
   <PageHomeBase :title="t('title')">
-    <I18nT keypath="description" tag="span">
+    <I18nT keypath="description" tag="p" text-center>
       <template #time>
         <span text-vitesse>{{ (timeLeft / 1000).toFixed(1) }}</span>
       </template>

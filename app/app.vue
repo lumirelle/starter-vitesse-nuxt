@@ -16,12 +16,10 @@ await callOnce('nav', navStore.fetchNavData)
 </script>
 
 <template>
-  <div>
-    <NuxtPwaManifest />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtPwaManifest />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>

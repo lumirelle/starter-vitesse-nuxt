@@ -16,27 +16,25 @@ const themeColor = computed(() => (isPro ? '124, 58, 237' : '34, 197, 94'))
 </script>
 
 <template>
-  <div
-    class="text-neutral-900 p-10 bg-white flex flex-col h-full w-full items-center justify-center relative dark:text-neutral-50 lg:p-[60px] dark:bg-neutral-900"
-  >
+  <div text="neutral-900 dark:neutral-50" p="10 lg:15" bg="white dark:neutral-900" flex="~ col" h-full w-full items-center justify-center relative>
     <!-- Gradient background -->
     <div
-      class="bottom-0 left-0 right-0 top-0 absolute"
+      bottom-0 left-0 right-0 top-0 absolute
       :style="{
         backgroundImage: `radial-gradient(at 100% 100%, rgba(${themeColor}, 0.15), transparent)`,
       }"
     />
     <div
-      class="bottom-0 left-0 right-0 top-0 absolute"
+      bottom-0 left-0 right-0 top-0 absolute
       :style="{
         backgroundImage: `radial-gradient(at 0% 0%, rgba(${themeColor}, 0.1), transparent)`,
       }"
     />
 
-    <div class="text-center flex flex-col gap-5 items-center relative lg:gap-8">
+    <div text-center flex="~ col" gap="5 lg:8" items-center relative>
       <!-- Logo -->
-      <div class="flex gap-3 items-center">
-        <svg viewBox="0 0 64 64" class="h-10 w-10 lg:h-16 lg:w-16">
+      <div flex gap-3 items-center>
+        <svg viewBox="0 0 64 64" h="10 lg:16" w="10 lg:16">
           <defs>
             <linearGradient :id="isPro ? 'nsLine2' : 'nsLine1'" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" :stop-color="isPro ? '#7c3aed' : '#22c55e'" />
@@ -60,17 +58,14 @@ const themeColor = computed(() => (isPro ? '124, 58, 237' : '34, 197, 94'))
           />
           <circle cx="56" cy="12" r="6" :fill="`url(#${isPro ? 'nsLine2' : 'nsLine1'})`" />
         </svg>
-        <span class="text-[32px] tracking-tight font-bold lg:text-[42px]">
-          Nuxt<span :class="isPro ? 'text-violet-500' : 'text-green-500'" class="ml-2">SEO{{ isPro ? ' Pro' : '' }}</span>
+        <span text="4xl lg:[42px]" tracking-tight font-bold>
+          Nuxt<span :class="isPro ? 'text-violet-500' : 'text-green-500'" ml-2>SEO{{ isPro ? ' Pro' : '' }}</span>
         </span>
       </div>
 
-      <div class="w-full items-center justify-center">
+      <div w-full items-center justify-center>
         <!-- Title -->
-        <h1
-          class="text-[48px] leading-tight font-bold m-0 max-w-[700px] lg:text-[80px] lg:max-w-[1000px]"
-          style="display: block; line-clamp: 3; text-overflow: ellipsis; text-wrap: balance"
-        >
+        <h1 text="[48px] lg:[80px] balance ellipsis" max-w="[700px] lg:[1000px]" leading-tight font-bold m-0 block line-clamp-3>
           {{ title }}
         </h1>
       </div>
@@ -78,7 +73,7 @@ const themeColor = computed(() => (isPro ? '124, 58, 237' : '34, 197, 94'))
       <!-- Description -->
       <p
         v-if="description"
-        class="text-[24px] leading-relaxed opacity-70 max-w-[650px] lg:text-[32px] lg:max-w-[900px]"
+        text="[24px] lg:[32px]" leading-relaxed opacity-70 max-w="[650px] lg:max-w-[900px]"
       >
         {{ description }}
       </p>

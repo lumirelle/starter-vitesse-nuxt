@@ -25,7 +25,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div py-8 rounded-lg bg-white w-600px shadow="[0_5px_15px_rgba(0,0,0,0.05)]" dark:bg-black dark:shadow="[0_5px_15px_rgba(255,255,255,0.05)]">
+  <div py-8 rounded-lg bg="white dark:black" w-600px shadow="[0_5px_15px_rgba(0,0,0,0.05)] dark:[0_5px_15px_rgba(255,255,255,0.05)]">
     <I18nT keypath="to-usecase" scope="global" tag="h3" text-center>
       <template #usecase>
         <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer" text-vitesse underline>{{ usecase }}</a>

@@ -7,11 +7,11 @@
 <!-- 2. Since Vue generated component name from its filename, this helps keep the component name consistent -->
 
 <template>
-  <div text-2xl font-300 flex cursor-default justify-center>
+  <header text-2xl font-300 flex cursor-default justify-center>
     <h1 opacity0 absolute>
       Nuxt 4 and Vite 8
     </h1>
-    <div flex flex-col children:mx-auto>
+    <div flex="~ col" children:mx-auto>
       <img h-18 w-18 inline-block src="/icons/nuxt.svg" alt="Nuxt Logo">
       <span text-green-400 mt--2>Nuxt 4</span>
     </div>
@@ -23,9 +23,9 @@
       transition-all-500
       hover:rotate-135
     />
-    <div flex flex-col children:mx-auto>
+    <div flex="~ col" children:mx-auto>
       <img p-2 h-18 w-18 inline-block src="/icons/vite.svg" alt="Vite Logo">
       <span text-purple-500 mt--2>Vite 8</span>
     </div>
-  </div>
+  </header>
 </template>

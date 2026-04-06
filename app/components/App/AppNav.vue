@@ -14,8 +14,8 @@ defineProps<{
 
 <template>
   <nav p-4>
-    <ul flex flex-col items-center>
-      <li v-for="item in items" :key="item.link" text-vitesse-nuxt w-fit even:text-vitesse-vite>
+    <ul flex="~ col" items-center>
+      <li v-for="item in items" :key="item.link" text="vitesse-nuxt even:vitesse-vite" w-fit>
         <NuxtLink :to="item.link">
           <span>-> {{ item.title }}</span>
         </NuxtLink>

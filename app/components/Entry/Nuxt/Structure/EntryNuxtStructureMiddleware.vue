@@ -1,13 +1,9 @@
 <script setup lang="ts">
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 </script>
 
 <template>
-  <EntryBase
-    :usecase="t('usecase')" url="https://nuxt.com/docs/4.x/directory-structure/app/middleware" :button="{ route: 'nuxt-structure-middleware-abort' }"
-  />
+  <EntryBase :usecase="t('usecase')" url="https://nuxt.com/docs/4.x/directory-structure/app/middleware" :button="{ route: 'nuxt-structure-middleware-abort' }" />
 </template>
 
 <i18n lang="yaml">

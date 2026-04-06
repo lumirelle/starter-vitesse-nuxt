@@ -1,32 +1,24 @@
 <script setup lang="ts">
 const name = ref('')
 
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 </script>
 
 <template>
-  <EntryBase :usecase="t('title')" :button="[{ text: t('button-text'), route: { path: `/hi/${name}` } }]">
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('placeholder')"
-      type="text"
-      autocomplete="off"
-      my-4
-      input
-    >
+  <EntryBase :usecase="t('usecase')" url="https://pinia.vuejs.org/introduction.html" :button="{ route: { path: `/hi/${name}` } }">
+    <div text-center>
+      <label>{{ t('please') }}&nbsp;&nbsp;<input id="input" v-model="name" :placeholder="t('placeholder')" type="text" autocomplete="off" my-4 input></label>
+    </div>
   </EntryBase>
 </template>
 
 <i18n lang="yaml">
 en:
-  title: To Pinia usecase >
-  placeholder: Enter your name
-  button-text: '@:go'
+  usecase: Pinia
+  please: Please
+  placeholder: Enter your name!
 zh:
-  title: 前往 Pinia 用例 >
-  placeholder: 请输入您的姓名
-  button-text: '@:go'
+  usecase: Pinia
+  please: 请
+  placeholder: 输入您的姓名！
 </i18n>

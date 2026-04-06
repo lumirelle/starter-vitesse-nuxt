@@ -1,18 +1,14 @@
 <script setup lang="ts">
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 </script>
 
 <template>
-  <EntryBase :usecase="t('title')" :button="[{ text: t('button-text'), route: 'modules-image' }]" />
+  <EntryBase :usecase="t('usecase')" url="https://image.nuxt.com/get-started/installation" :button="{ route: 'modules-image' }" />
 </template>
 
 <i18n lang="yaml">
 en:
-  title: To {'@'}nuxt/image usecase >
-  button-text: '@:go'
+  usecase: Image
 zh:
-  title: 前往 {'@'}nuxt/image 用例 >
-  button-text: '@:go'
+  usecase: 图片
 </i18n>

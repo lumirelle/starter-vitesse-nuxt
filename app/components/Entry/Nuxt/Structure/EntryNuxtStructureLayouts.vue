@@ -1,13 +1,9 @@
 <script setup lang="ts">
-const { t } = useI18n({
-  useScope: 'local',
-})
+const { t } = useLocalI18n()
 </script>
 
 <template>
-  <EntryBase
-    :usecase="t('usecase')" url="https://nuxt.com/docs/4.x/directory-structure/app/layouts" :button="{ route: 'nuxt-structure-layout-default' }"
-  />
+  <EntryBase :usecase="t('usecase')" url="https://nuxt.com/docs/4.x/directory-structure/app/layouts" :button="{ route: 'nuxt-structure-layout-default' }" />
 </template>
 
 <i18n lang="yaml">

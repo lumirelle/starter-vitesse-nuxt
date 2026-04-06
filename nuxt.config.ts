@@ -50,16 +50,6 @@ export default defineNuxtConfig({
     },
   },
 
-  devServer: {
-    port: 3000,
-    /**
-     * Listen all the addresses of your machine (both IPv4 and IPv6).
-     *
-     * Listen on `::` just like listen on `0.0.0.0`, but with additional IPv6 support. This can extremely improve the performance of accessing via `localhost` on some systems (e.g. Windows).
-     */
-    host: '::',
-  },
-
   future: {
     compatibilityVersion: 5,
   },
