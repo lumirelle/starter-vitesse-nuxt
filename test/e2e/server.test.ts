@@ -12,7 +12,7 @@ import { describe, expect, it } from 'vitest'
  * @see [Setup Vitest](https://github.com/nuxt/test-utils/blob/main/src/e2e/setup/vitest.ts#L3)
  */
 await setup({
-  rootDir: fileURLToPath(new URL('../../', import.meta.url)),
+  rootDir: fileURLToPath(new URL('..', import.meta.url)),
 })
 
 describe('example nuxt e2e server test', () => {

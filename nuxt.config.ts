@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/hints',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
@@ -19,6 +19,20 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
   ],
+
+  // Disable modules that are not needed in the test environment to speed up the tests
+  $test: {
+    a11y: false,
+    eslint: false,
+    hints: false,
+    linkChecker: false,
+    ogImage: false,
+    pwa: false,
+    robots: false,
+    schemaOrg: false,
+    seo: false,
+    sitemap: false,
+  },
 
   devtools: {
     enabled: true,
@@ -60,10 +74,6 @@ export default defineNuxtConfig({
   experimental: {
     inlineRouteRules: true,
     typedPages: true,
-    /**
-     * Temporarily workaround before migrating to the new API.
-     */
-    nitroAutoImports: true,
   },
 
   compatibilityDate: '2026-03-13',
