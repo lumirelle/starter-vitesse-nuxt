@@ -27,8 +27,7 @@
         "@antfu/utils": "^9.3.0",
         "@takumi-rs/core": "^1.0.7",
         "@vueuse/core": "^14.2.1",
-        "pinia": "^3.0.4",
-        "vue-router": "^5.0.4"
+        "pinia": "^3.0.4"
       },
       "icons": {
         "@iconify-json/carbon": "^1.2.20",
@@ -120,13 +119,11 @@
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
     "vitest": "catalog:test",
-    "vue-router": "catalog:frontend",
     "vue-tsc": "catalog:check"
   },
   "overrides": {
     "typescript": "$typescript",
-    "vite": "^8.0.8",
-    "vue-router": "$vue-router"
+    "vite": "^8.0.8"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx nano-staged"
