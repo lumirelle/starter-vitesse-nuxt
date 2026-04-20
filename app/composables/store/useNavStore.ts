@@ -9,7 +9,7 @@ export const useNavStore = defineStore('nav', () => {
   async function fetchNavData(): Promise<void> {
     try {
       const { $api } = useNuxtApp()
-      const res = await $api('/api/v1/nav')
+      const res = await $api('/v1/nav')
       if (res.data) {
         navData.value = res.data
       }
