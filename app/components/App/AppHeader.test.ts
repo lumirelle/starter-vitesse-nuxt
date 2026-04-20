@@ -1,9 +1,9 @@
 // A demo for testing Nuxt components just under the same folder
 
-import { AppHeader } from '#components'
 import { unindent } from '@antfu/utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
+import { AppHeader } from '#components'
 
 describe('components/AppHeader.vue', () => {
   it('should render', async () => {
