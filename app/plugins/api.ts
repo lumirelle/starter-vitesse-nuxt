@@ -21,13 +21,13 @@ type TrimmedInternalApiKeys = TrimLeft<InternalApiKeys, `${BaseUrl}`>
 type TrimmedInternalApiKeysMap = {
   [K in TrimmedInternalApiKeys]: Extract<InternalApiKeys, `${K}` | `${BaseUrl}${K}`>
 }
-type NitroFetchRequest = TrimmedInternalApiKeys | Exclude<FetchRequest, string> | (string & {})
-type $Fetch<
+export type ApiNitroFetchRequest = TrimmedInternalApiKeys | Exclude<FetchRequest, string> | (string & {})
+type Base$Fetch<
   DefaultT = unknown,
-  DefaultR extends NitroFetchRequest = NitroFetchRequest,
+  DefaultR extends ApiNitroFetchRequest = ApiNitroFetchRequest,
 > = <
   T = DefaultT,
-  R extends NitroFetchRequest = DefaultR,
+  R extends ApiNitroFetchRequest = DefaultR,
   O extends NitroFetchOptions<R> = NitroFetchOptions<R>,
   MappedR = R extends keyof TrimmedInternalApiKeysMap ? TrimmedInternalApiKeysMap[R] : R,
 >(
@@ -36,16 +36,20 @@ type $Fetch<
 ) => Promise<
   TypedInternalResponse<MappedR, T, NitroFetchOptions<R> extends O ? 'get' : ExtractedRouteMethod<R, O>>
 >
+type $Fetch<T = unknown, R extends ApiNitroFetchRequest = ApiNitroFetchRequest> = Base$Fetch<T, R> & {
+  raw: never
+  create: never
+}
 
 // Type context
 declare module '#app' {
   interface NuxtApp {
-    $api: $Fetch<unknown, NitroFetchRequest>
+    $api: $Fetch<unknown, ApiNitroFetchRequest>
   }
 }
 declare module 'vue' {
   interface ComponentCustomProperties {
-    $api: $Fetch<unknown, NitroFetchRequest>
+    $api: $Fetch<unknown, ApiNitroFetchRequest>
   }
 }
 

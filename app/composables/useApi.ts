@@ -1,6 +1,9 @@
-// FIXME(Lumirelle): [nuxt:compiler] `createUseFetch` is a compiler macro that is only usable inside the directories scanned by the Nuxt compiler as an exported function and imported statically. Learn more: `https://nuxt.com/docs/guide/going-further/compiler`
-export const useApi = async (..._: any) => ({ data: undefined, error: undefined })/* createUseFetch(options => ({
+// XXX(Lumirelle): Better type...
+// XXX(Lumirelle): We should manually import this macro, otherwise it will cause an error,
+// because auto-imports will rename it by `as __$__createUseFetch`
+import { createUseFetch } from '#app/composables/fetch'
+
+export const useApi = createUseFetch(options => ({
   ...options,
   $fetch: useNuxtApp().$api,
 }))
- */
