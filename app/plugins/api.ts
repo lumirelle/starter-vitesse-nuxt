@@ -54,7 +54,7 @@ declare module 'vue' {
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const api = $fetch.create({
+  const $api = $fetch.create<unknown, ApiNitroFetchRequest>({
     // Custom `baseURL` for convenience
     baseURL: BASE_URL,
     // Manipulate headers
@@ -75,17 +75,23 @@ export default defineNuxtPlugin((nuxtApp) => {
       }
     },
     // Error handling
+    onRequestError({ error }) {
+      console.error('Request error:', error)
+    },
     async onResponseError({ response }) {
       if (response.status === 401 || response.status === 403) {
         console.error('User has not login!')
         await nuxtApp.runWithContext(async () => await navigateTo('/'))
+      }
+      else {
+        console.error('Response error:', response.status, response.statusText)
       }
     },
   })
 
   return {
     provide: {
-      api,
+      $api,
     },
   }
 })
