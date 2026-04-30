@@ -46,7 +46,7 @@
         "@nuxt/fonts": "^0.14.0",
         "@nuxt/hints": "^1.0.3",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20260305-121439-fd87f7d",
-        "@nuxt/scripts": "^1.0.2",
+        "@nuxt/scripts": "^1.0.4",
         "@nuxt/test-utils": "^4.0.3",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/i18n": "^10.3.0",
@@ -55,7 +55,7 @@
         "@unocss/nuxt": "^66.6.8",
         "@vite-pwa/nuxt": "^1.1.1",
         "@vueuse/nuxt": "^14.2.1",
-        "nuxt": "npm:nuxt-nightly@4.4.3-29608489.ff42fe25",
+        "nuxt": "^4.4.4",
         "unocss": "^66.6.8"
       },
       "check": {
@@ -64,7 +64,7 @@
         "@unocss/eslint-config": "^66.6.8",
         "eslint": "^10.2.1",
         "eslint-plugin-oxlint": "^1.62.0",
-        "knip": "^6.7.0",
+        "knip": "^6.9.0",
         "nano-staged": "^1.0.2",
         "oxlint": "^1.62.0",
         "oxlint-tsgolint": "^0.22.1",
@@ -125,7 +125,7 @@
   },
   "overrides": {
     "typescript": "$typescript",
-    "vite": "^8.0.9"
+    "vite": "^8.0.10"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx nano-staged"

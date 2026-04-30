@@ -1,5 +1,5 @@
-import process from 'node:process'
 import { appDescription, appName, colorThemeDark, colorThemeLight } from './app/constants/app'
+import { SUPPORT_LOCALES } from './config/i18n'
 
 export default defineNuxtConfig({
   /// keep-sorted
@@ -22,6 +22,7 @@ export default defineNuxtConfig({
 
   // Disable modules that are not needed in the test environment to speed up the tests
   $test: {
+    debug: { hydration: true },
     a11y: false,
     eslint: false,
     hints: false,
@@ -53,9 +54,20 @@ export default defineNuxtConfig({
     },
   },
 
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
+  },
+
   site: {
     name: appName,
     description: appDescription,
+  },
+
+  colorMode: {
+    // Better eyes!
+    fallback: 'dark',
   },
 
   runtimeConfig: {
@@ -74,6 +86,7 @@ export default defineNuxtConfig({
   experimental: {
     inlineRouteRules: true,
     typedPages: true,
+    typescriptPlugin: true,
   },
 
   compatibilityDate: '2026-03-13',
@@ -86,7 +99,16 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         '@antfu/utils',
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        '@vueuse/core',
       ],
+    },
+  },
+
+  typescript: {
+    nodeTsConfig: {
+      include: ['../*.ts'],
     },
   },
 
@@ -109,16 +131,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    locales: [
-      { code: 'en', language: 'en-US', name: 'English', file: 'en-US.json' },
-      /**
-       * For Chinese, it should be expressed with a script subtag instead of a region subtag. So we use `Hans` (for Simplified) and `Hant` (for Traditional) as recommended by BCP 47.
-       *
-       * @see https://en.wikipedia.org/wiki/IETF_language_tag#ISO_3166-1_and_UN_M.49
-       */
-      { code: 'zh', language: 'zh-Hans', name: '简体中文', file: 'zh-Hans.json' },
-      // ...
-    ],
+    locales: SUPPORT_LOCALES,
     defaultLocale: 'en',
     detectBrowserLanguage: {
       cookieKey: 'locale',
@@ -155,10 +168,7 @@ export default defineNuxtConfig({
   },
 
   pwa: {
-    registerType: 'autoUpdate',
     manifest: {
-      id: '/',
-      scope: '/',
       name: appName,
       short_name: appName,
       description: appDescription,
@@ -168,48 +178,6 @@ export default defineNuxtConfig({
         { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
         { src: 'maskable-icon.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
       ],
-    },
-    workbox: {
-      globPatterns: ['**/*.{js,css,html,txt,png,ico,svg}'],
-      navigateFallbackDenylist: [/^\/api\//],
-      navigateFallback: '/',
-      cleanupOutdatedCaches: true,
-      runtimeCaching: [
-        {
-          urlPattern: ({ url }) => url.origin === 'https://fonts.googleapis.com',
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'google-fonts-cache',
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-        {
-          urlPattern: ({ url }) => url.origin === 'https://fonts.gstatic.com',
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'gstatic-fonts-cache',
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-      ],
-    },
-    registerWebManifestInRouteRules: true,
-    writePlugin: true,
-    devOptions: {
-      enabled: process.env.VITE_PLUGIN_PWA === 'true',
-      navigateFallback: '/',
     },
   },
 
