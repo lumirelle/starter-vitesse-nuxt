@@ -1,20 +1,29 @@
 import type { KnipConfig } from 'knip'
 
 export default {
-  /// keep-sorted
   entry: [
-    'app/**/*.{ts,vue}',
-    'shared/types/**/*',
+    './app/**/*.{ts,vue}',
+    './shared/types/**/*',
   ],
-  /// keep-sorted
   ignoreDependencies: [
+    // Icons.
     '@iconify-json/*',
-    '@lumirelle/oxlint-config',
+
+    // Frontend libraries.
     '@takumi-rs/core',
-    '@unocss/eslint-config',
-    '@vitest/coverage-v8',
     '@vueuse/core',
-    'vitest-environment-nuxt',
+    'vue-router',
+
+    // We uses their types, but we don't import them directly.
+    'nitropack',
+    'ofetch',
+
+    // Code quality tools.
+    '@lumirelle/oxlint-config',
+    '@unocss/eslint-config',
     'vue-tsc',
+
+    // Vitest environment for Nuxt.
+    'vitest-environment-nuxt',
   ],
 } satisfies KnipConfig

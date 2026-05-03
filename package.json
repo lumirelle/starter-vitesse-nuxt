@@ -27,7 +27,8 @@
         "@antfu/utils": "^9.3.0",
         "@takumi-rs/core": "^1.1.2",
         "@vueuse/core": "^14.3.0",
-        "pinia": "^3.0.4"
+        "pinia": "^3.0.4",
+        "vue-router": "^5.0.6"
       },
       "icons": {
         "@iconify-json/carbon": "^1.2.20",
@@ -121,6 +122,7 @@
     "typescript": "catalog:types",
     "unocss": "catalog:build",
     "vitest": "catalog:test",
+    "vue-router": "catalog:frontend",
     "vue-tsc": "catalog:check"
   },
   "overrides": {
