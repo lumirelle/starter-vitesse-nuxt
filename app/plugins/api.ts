@@ -54,7 +54,7 @@ declare module 'vue' {
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const $api = $fetch.create<unknown, ApiNitroFetchRequest>({
+  const api = $fetch.create<unknown, ApiNitroFetchRequest>({
     // Custom `baseURL` for convenience
     baseURL: BASE_URL,
     // Manipulate headers
@@ -91,7 +91,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   return {
     provide: {
-      $api,
+      api,
     },
   }
 })

@@ -1,6 +1,5 @@
-import type {
-  PresetWind4Theme,
-} from 'unocss'
+import type { PresetWind4Theme } from 'unocss'
+import type { IconsOptions } from 'unocss/preset-icons'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import {
   defineConfig,
@@ -22,24 +21,10 @@ export default defineConfig<PresetWind4Theme>({
     presetWind4(),
     presetAttributify(),
     presetIcons({
+      ...presetLocalIcons(),
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
-      },
-      collections: {
-        public: FileSystemIconLoader('./public/icons'),
-      },
-      processor(props, meta) {
-        if (meta.collection === 'public') {
-          let { width = 1, height = 1 } = props
-          if (typeof width === 'string')
-            width = Number.parseInt(width)
-          if (typeof height === 'string')
-            height = Number.parseInt(height)
-          const min = Math.min(width, height)
-          props.width = `${Math.round((width / min) * 100) / 100}em`
-          props.height = `${Math.round((height / min) * 100) / 100}em`
-        }
       },
     }),
     presetTypography(),
@@ -72,14 +57,28 @@ export default defineConfig<PresetWind4Theme>({
     [/^(bg|text|decoration|border|fill|stroke)-vitesse-(nuxt|vite)$/, ([, prefix, suffix]) => {
       return `hover:${prefix}-${suffix} transition-colors duration-200 ease-in-out`
     }],
-    // Controls
-    ['btn', 'px-4 py-1 rounded inline-block bg-vitesse text-white cursor-pointer select-none disabled:cursor-default disabled:opacity-50'],
-    // FIXME(Lumirelle): How to customize the native select element?
-    ['select', 'px-4 py-2 min-w-250px text-center bg-transparent outline-none border rounded border-gray-200 hover:border-vitesse-nuxt focus:border-nuxt dark:border-gray-800 disabled:cursor-not-allowed disabled:opacity-50'],
-    ['input', 'px-4 py-2 min-w-250px text-center bg-transparent outline-none border rounded border-gray-200 hover:border-vitesse-nuxt focus:border-nuxt dark:border-gray-800 disabled:cursor-not-allowed disabled:opacity-50'],
-    // Code blocks
-    ['code-block', 'm-4 p-4 border border-black/5 rounded-md bg-gray-50/50 flex-1 h-auto overflow-y-auto dark:border-white/10 dark:bg-white/5'],
-    ['code-label', 'text-lg font-bold mb-4'],
-    ['code-pre', 'text-lg leading-tight'],
   ],
 })
+
+/**
+ * Preset for loading local icons from `./public/icons` directory, with width and height transformed to `em` unit for better scaling.
+ */
+function presetLocalIcons(): IconsOptions {
+  return {
+    collections: {
+      public: FileSystemIconLoader('./public/icons'),
+    },
+    processor(props, meta) {
+      if (meta.collection === 'public') {
+        let { width = 1, height = 1 } = props
+        if (typeof width === 'string')
+          width = Number.parseInt(width)
+        if (typeof height === 'string')
+          height = Number.parseInt(height)
+        const min = Math.min(width, height)
+        props.width = `${Math.round((width / min) * 100) / 100}em`
+        props.height = `${Math.round((height / min) * 100) / 100}em`
+      }
+    },
+  }
+}

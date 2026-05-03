@@ -1,5 +1,5 @@
 export default defineEventHandler(() =>
-  createServerResponse<ApiProducts.Product[]>([
+  createResponse<ApiProducts.Product[]>([
     {
       id: '1',
       name: 'Product A',

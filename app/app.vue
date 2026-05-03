@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+// #region SEO configuration
 /**
+ * Schema.org configuration.
  * @see https://nuxtseo.com/docs/schema-org/guides/default-schema-org#configuring-your-defaults
  */
 useSchemaOrg([
@@ -9,33 +11,25 @@ useSchemaOrg([
 ])
 
 /**
- * An example shows how to initialize a Pinia store when the app starts.
+ * OG Image configuration. Title and description will be inferred, this will be overridden by upstream pages that use different templates.
+ */
+defineOgImage('Page.takumi', {}, { alt: 'Vitesse Starter for Nuxt 4' })
+// #endregion
+
+// #region Global state initialization
+/**
+ * Initialize Pinia store when the app starts.
  */
 const navStore = useNavStore()
 await callOnce('nav', navStore.fetchNavData)
+// #endregion
 </script>
 
 <template>
-  <NuxtPwaManifest />
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div min-h-screen>
+    <NuxtPwaManifest />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
-
-<style>
-html,
-body,
-#__nuxt {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-html.dark {
-  color-scheme: dark;
-}
-
-::picker(select) {
-  border: none;
-}
-</style>

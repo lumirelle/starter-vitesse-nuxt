@@ -8,7 +8,7 @@ import type { ServerResponse } from '../types/response'
  * @param meta Metadata
  * @returns Standard server response object
  */
-export function createServerResponse<
+export function createResponse<
   DataT,
   MetaT extends Record<string, any> = Record<string, any>,
 >(data: Nullable<DataT> = null, meta: Nullable<MetaT> = null): ServerResponse<DataT, MetaT> {
@@ -33,7 +33,7 @@ export function createQueryResponse<T>(
   page: number,
   pageSize: number,
 ): ServerResponse<T[], { total: number, page: number, pageSize: number, pageCount: number }> {
-  return createServerResponse(data, {
+  return createResponse(data, {
     total,
     page,
     pageSize,

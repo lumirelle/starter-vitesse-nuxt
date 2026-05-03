@@ -43,6 +43,8 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['~/assets/styles/main.css'],
+
   router: {
     options: {
       scrollBehaviorType: 'smooth',
@@ -88,8 +90,6 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         '@antfu/utils',
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
         '@vueuse/core',
       ],
     },

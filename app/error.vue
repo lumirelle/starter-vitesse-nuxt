@@ -7,11 +7,11 @@ const { error } = defineProps<{
   error: NuxtError
 }>()
 
-const { t } = useLocalI18n()
-
 useHead({
   title: `${error.status} - ${error.statusText || 'Internal Server Error'}`,
 })
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -19,25 +19,16 @@ useHead({
     <h1 text="6xl sm:8xl" font-medium mb-4 v-text="error.status" />
     <p text="xl sm:lg" leading-tight font-light mb-8>
       <span v-text="error.statusText" />&nbsp;&nbsp;<NuxtLinkLocale to="index" underline hover:text="[#00DC82]">
-        {{ t('back-to-homepage') }}
+        {{ t('error_page.back-home') }}
       </NuxtLinkLocale>
     </p>
     <a
       href="https://nuxt.com/docs/4.x/getting-started/error-handling?utm_source=nuxt-error-dev-page"
       target="_blank"
       text-sm font-medium mx-auto underline-offset-3 inline-block top-6 absolute hover:text="[#00DC82]" hover:underline sm:right-6
-    >{{ t('customize-this-page') }}</a>
+    >{{ t('error_page.customize') }}</a>
     <div code-block tabindex="0">
       <pre code-pre v-html="error.stack" />
     </div>
   </div>
 </template>
-
-<i18n lang="yaml">
-en:
-  back-to-homepage: Back to homepage?
-  customize-this-page: Customize this page
-zh:
-  back-to-homepage: 返回首页？
-  customize-this-page: 自定义此页面
-</i18n>

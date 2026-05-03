@@ -1,31 +1,4 @@
 <script setup lang="ts">
-/**
- * CAUTION:
- *
- * In client, `color.value` may respect user's browser preference (e.g. `prefers-color-scheme`), but in server, due to the lack of this information, it will always use `light` as the default. This may cause **hydration mismatch**.
- *
- * For example:
- *
- * ```html
- * <div v-if="color.value === 'dark'">
- *   This is dark mode
- * </div>
- * <div v-else>
- *   This is light mode
- * </div>
- * ```
- *
- * Consider using CSS with media query to avoid this issue:
- *
- * ```html
- * <div class="dark:hidden">
- *   This is light mode
- * </div>
- * <div class="hidden dark:block">
- *   This is dark mode
- * </div>
- * ```
- */
 const color = useColorMode()
 
 /**

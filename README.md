@@ -29,59 +29,62 @@
 
 ## Features
 
-- 💚 [Nuxt 4](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, etc.
+### Framework
 
-- ⚡️ Vite - Instant HMR.
+- 💚 [Nuxt 4](https://nuxt.com/)
+  - 🛟 Server-Side Rendering (SSR);
+  - 📦 Edge Side Rendering (ESR): &ndash; Zero-config cloud functions and deploy.
+  - 🗺️ File-based routing;
+  - 📡 API (components, composables, utils, ...) auto importing;
+  - 🧩 Modules system;
+  - 🏗️ [Layout system](./app/layouts);
+  - ...etc.
 
-- 🎨 [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
+- ⚡️ [Vite 8 (Rolldown)](https://vite.dev/) &ndash; A blazing fast frontend build tool powering the next generation of web applications.
 
-- 😃 Use icons from any icon sets in Pure CSS, powered by [UnoCSS](https://github.com/unocss/unocss).
+- 🌳 [Vue 3](https://vuejs.org/) &ndash; An approachable, performant and versatile framework for building web user interfaces.
 
-- 🔥 The `<script setup>` syntax.
+### Search Engine Optimization (SEO)
 
-- 🍍 [State Management via Pinia](https://github.com/vuejs/pinia), see [./app/composables/store.ts](./app/composables/store.ts).
+- 🕷️ [Nuxt SEO](https://github.com/harlan-zw/nuxt-seo) &ndash; Fully equipped Technical SEO for busy Nuxters.
 
-- 📑 [Layout system](./app/layouts).
+### Progressive Web App (PWA)
 
-- 📥 APIs auto importing - for Composition API, VueUse and custom composables.
+- 📱 [Vite PWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt.
 
-- 🏎 Zero-config cloud functions and deploy.
+### User Interface
 
-- 🦾 TypeScript, of course.
+- 🎨 [UnoCSS](https://github.com/unocss/unocss) &ndash; The instant on-demand atomic CSS engine.
 
-- ⚙️ [Variant of modules](#nuxt-modules) with variant features.
+- 😃 Use icons from any icon sets, even [locally](./public/icons/) in Pure CSS, powered by [UnoCSS](https://github.com/unocss/unocss).
 
-## Nuxt Modules
+- 🔤 [Nuxt Fonts](https://github.com/nuxt/fonts) &ndash; Plug-and-play web font optimization and configuration for Nuxt apps.
 
-### UI
+- 🖼️ [Nuxt Image](https://github.com/nuxt/image) &ndash; Plug-and-play image optimization for Nuxt applications.
 
-- [Uno CSS](https://github.com/unocss/unocss) - The instant on-demand atomic CSS engine.
-- [Fonts](https://github.com/nuxt/fonts) - Plug-and-play custom web font optimization and configuration for Nuxt apps.
-- [Image](https://github.com/nuxt/image) - Plug-and-play image optimization for Nuxt apps.
-- [Color Mode](https://github.com/nuxt-modules/color-mode) - Dark and light mode with auto detection made easy with Nuxt.
-- [I18n](https://github.com/nuxt-modules/i18n) - Internationalization (i18n) for Nuxt apps.
+- 🌐 [Nuxt I18n](https://github.com/nuxt-modules/i18n) &ndash; Internationalization (i18n) for Nuxt apps.
 
-### SEO
+- 🎨 [Nuxt Color Mode](https://github.com/nuxt-modules/color-mode) &ndash; Dark and Light mode with auto detection.
 
-- [SEO](https://github.com/harlan-zw/nuxt-seo) - Fully equipped Technical SEO for busy Nuxters.
+### Development Experience
 
-### DX
+- 💪🏻 [TypeScript](https://www.typescriptlang.org/), of course.
 
-- [DevTools](https://github.com/nuxt/devtools) - Unleash Nuxt Developer Experience.
-- [Scripts](https://github.com/nuxt/scripts) - Better Privacy, Performance, and DX for Third-Party Scripts in Nuxt Apps.
-- [ESLint](https://github.com/nuxt/eslint) - Collection of ESLint-related packages for Nuxt.
-- [Hints](https://github.com/nuxt/hints) - A Nuxt module that provides real-time feedback on your application's performance, accessibility, and security right in your browser.
-- [A11y](https://github.com/nuxt/a11y) - A Nuxt module that provides real-time accessibility feedback and automated testing right in your browser during development.
+- 🍍 [Pinia](https://github.com/vuejs/pinia) &ndash; State Management, see [./app/composables/useStore.ts](./app/composables/useStore.ts).
 
-### Testing
+- 🫴🏻 [Vue Use](https://github.com/vueuse/vueuse) &ndash; Collection of useful composition functions for Vue.
 
-- [Test Utils](https://github.com/nuxt/test-utils) - Utilities for testing Nuxt applications.
+- 📜 [Scripts](https://github.com/nuxt/scripts) &ndash; Better Privacy, Performance, and DX for Third-Party Scripts in Nuxt Apps.
 
-### Utilities
+- 🧰 [DevTools](https://github.com/nuxt/devtools) &ndash; Unleash Nuxt Developer Experience.
 
-- [Vite PWA](https://github.com/vite-pwa/nuxt) - Zero-config PWA Plugin for Nuxt 4.
-- [Pinia](https://github.com/vuejs/pinia) - Intuitive, type safe, light and flexible Store for Vue.
-- [Vue Use](https://github.com/vueuse/vueuse) - Collection of useful composition APIs.
+- 🕵️ [ESLint](https://github.com/nuxt/eslint) &ndash; Provides Nuxt related ESLint rules.
+
+- 📝 [Hints](https://github.com/nuxt/hints) &ndash; Provides real-time feedback on your application's performance, accessibility, and security right in your browser.
+
+- ♿ [A11y](https://github.com/nuxt/a11y) &ndash; Provides real-time accessibility feedback and automated testing right in your browser during development.
+
+- 🧪 [Test Utils](https://github.com/nuxt/test-utils) - Utilities for testing Nuxt applications.
 
 ## IDE
 
