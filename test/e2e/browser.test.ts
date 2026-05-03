@@ -4,23 +4,29 @@
 
 import { fileURLToPath } from 'node:url'
 import { createPage, setup } from '@nuxt/test-utils/e2e'
+import { isWindows } from 'std-env'
 import { describe, expect, it } from 'vitest'
 
-/**
- * Setup test environment
- *
- * @see [Setup Vitest](https://github.com/nuxt/test-utils/blob/main/src/e2e/setup/vitest.ts#L3)
- */
-await setup({
-  rootDir: fileURLToPath(new URL('..', import.meta.url)),
-  browser: true,
-})
+// Skip tests on windows because playwright cannot be launched with bun.
+// See: https://github.com/oven-sh/bun/issues/15679
+if (!isWindows) {
+  /**
+   * Setup test environment
+   *
+   * @see [Setup Vitest](https://github.com/nuxt/test-utils/blob/main/src/e2e/setup/vitest.ts#L3)
+   */
+  await setup({
+    rootDir: fileURLToPath(new URL('../../', import.meta.url)),
+    browser: true,
+  })
+}
 
-describe('example nuxt e2e browser test', () => {
-  it('with hydrated client-side result', async () => {
+describe.skipIf(isWindows)('browser', () => {
+  it('/ -> should contain html doctype', async () => {
     // Render page in headless browser and wait until hydration is complete
     const page = await createPage('/')
     const html = await page.content()
     expect(html).toContain('<!DOCTYPE html>')
+    await page.close()
   })
 })

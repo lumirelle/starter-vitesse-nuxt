@@ -22,6 +22,7 @@
     "test:nuxt": "bun run test --project nuxt"
   },
   "workspaces": {
+    "packages": [],
     "catalogs": {
       "frontend": {
         "@antfu/utils": "^9.3.0",

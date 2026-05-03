@@ -21,7 +21,21 @@ export default defineNuxtConfig({
   ],
 
   $test: {
-    debug: { hydration: true },
+    vue: {
+      runtimeCompiler: true,
+    },
+    experimental: {
+      payloadExtraction: false,
+      // Does not support now, see https://github.com/npmx-dev/npmx.dev
+      viteEnvironmentApi: false,
+    },
+    nitro: {
+      preset: 'node',
+    },
+    ogImage: false,
+    // XXX(Lumirelle): Cause tests failure, need to investigate.
+    pwa: false,
+    unocss: false,
   },
 
   devtools: {

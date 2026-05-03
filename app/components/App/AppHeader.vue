@@ -12,7 +12,7 @@
       Nuxt 4 and Vite 8
     </h1>
     <div flex="~ col" children:mx-auto>
-      <img h-18 w-18 inline-block src="/icons/nuxt.svg" alt="Nuxt Logo">
+      <img i-public-nuxt h-18 w-18 inline-block alt="Nuxt Logo">
       <span text-green-400 mt--2>Nuxt 4</span>
     </div>
     <div
@@ -24,7 +24,7 @@
       hover:rotate-135
     />
     <div flex="~ col" children:mx-auto>
-      <img p-2 h-18 w-18 inline-block src="/icons/vite.svg" alt="Vite Logo">
+      <img i-public-vite p-2 h-18 w-18 inline-block alt="Vite Logo">
       <span text-purple-500 mt--2>Vite 8</span>
     </div>
   </header>
