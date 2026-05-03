@@ -1,4 +1,4 @@
-import { colorThemeDark, colorThemeLight } from './constants/app'
+import { colorThemeDark, colorThemeLight } from '../config/app'
 
 declare module 'nuxt/schema' {
   interface AppConfig {

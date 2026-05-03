@@ -1,4 +1,4 @@
-import { appDescription, appName, colorThemeDark, colorThemeLight } from './app/constants/app'
+import { appDescription, appName, colorThemeDark, colorThemeLight } from './config/app'
 import { SUPPORT_LOCALES } from './config/i18n'
 
 export default defineNuxtConfig({
@@ -20,19 +20,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
 
-  // Disable modules that are not needed in the test environment to speed up the tests
   $test: {
     debug: { hydration: true },
-    a11y: false,
-    eslint: false,
-    hints: false,
-    linkChecker: false,
-    ogImage: false,
-    pwa: false,
-    robots: false,
-    schemaOrg: false,
-    seo: false,
-    sitemap: false,
   },
 
   devtools: {
