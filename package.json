@@ -34,7 +34,7 @@
       "icons": {
         "@iconify-json/carbon": "^1.2.20",
         "@iconify-json/twemoji": "^1.2.5",
-        "@iconify/utils": "^3.1.1"
+        "@iconify/utils": "^3.1.2"
       },
       "dev": {
         "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657"
@@ -46,9 +46,9 @@
         "@nuxt/a11y": "^1.0.0-alpha.1",
         "@nuxt/eslint": "^1.15.2",
         "@nuxt/fonts": "^0.14.0",
-        "@nuxt/hints": "^1.0.3",
+        "@nuxt/hints": "^1.1.1",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20260305-121439-fd87f7d",
-        "@nuxt/scripts": "^1.0.5",
+        "@nuxt/scripts": "^1.0.6",
         "@nuxt/test-utils": "^4.0.3",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/i18n": "^10.3.0",
@@ -62,15 +62,15 @@
       },
       "check": {
         "@antfu/eslint-config": "^8.2.0",
-        "@lumirelle/oxlint-config": "^0.2.2",
+        "@lumirelle/oxlint-config": "^0.3.0",
         "@unocss/eslint-config": "^66.6.8",
         "eslint": "^10.3.0",
-        "eslint-plugin-oxlint": "^1.62.0",
+        "eslint-plugin-oxlint": "^1.63.0",
         "knip": "^6.11.0",
         "nano-staged": "^1.0.2",
-        "oxlint": "^1.62.0",
+        "oxlint": "^1.63.0",
         "oxlint-tsgolint": "^0.22.1",
-        "vue-tsc": "^3.2.7"
+        "vue-tsc": "^3.2.8"
       },
       "test": {
         "@vitest/coverage-v8": "^4.1.5",
