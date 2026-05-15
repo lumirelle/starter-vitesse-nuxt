@@ -14,12 +14,12 @@
 >
 > `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-vitesse-nuxt/tree/nodejs).
 >
-> Why? Just see the benchmark results under [the `/benchmark` folder in ts starter project](https://github.com/lumirelle/starter-ts/tree/main/benchmark).
+> See [Bun vs. Node.js comparison table](https://strapi.io/blog/bun-vs-nodejs-performance-comparison-guide).
 >
 > Migration progress:
 >
 > - [x] Package Manager: `pnpm` -> `bun`
-> - [ ] Build Tool: Still using `vite` with `typescript`
+> - [ ] Build Tool: Still using `vite` + `rolldown`
 > - [ ] Test Runner: Still using `vitest`
 > - [x] Deploy Environment Support: `netlify` and `stackblitz`
 
