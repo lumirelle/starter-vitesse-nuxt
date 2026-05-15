@@ -34,7 +34,7 @@
         "@nuxt/fonts": "^0.14.0",
         "@nuxt/hints": "^1.1.1",
         "@nuxt/image": "npm:@nuxt/image-nightly@2.0.1-20260305-121439-fd87f7d",
-        "@nuxt/scripts": "^1.0.6",
+        "@nuxt/scripts": "^1.1.0",
         "@nuxt/test-utils": "^4.0.3",
         "@nuxtjs/color-mode": "^4.0.0",
         "@nuxtjs/i18n": "^10.3.0",
@@ -45,7 +45,7 @@
         "@vueuse/nuxt": "^14.3.0",
         "nuxt": "^4.4.5",
         "unocss": "^66.6.8",
-        "vite": "^8.0.12"
+        "vite": "^8.0.13"
       },
       "frontend": {
         "@antfu/utils": "^9.3.0",
