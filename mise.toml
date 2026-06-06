@@ -1,0 +1,84 @@
+[env]
+_.path = [ "./node_modules/.bin" ]
+
+[tools]
+bun = "latest"
+aube = "latest"
+
+[tasks."prepare:git-pre-commit"]
+run = "mise generate git-pre-commit --write"
+
+[tasks."prepare:nuxt"]
+run = "aubr prepare:nuxt"
+
+[tasks.prepare]
+run = { tasks = [
+  "prepare:git-pre-commit",
+  "prepare:nuxt"
+] }
+
+[tasks.pre-commit]
+run = "nano-staged"
+
+[tasks.dev]
+run = "aubr dev"
+
+[tasks."dev:pwa"]
+run = "aubr dev:pwa"
+
+[tasks.build]
+run = "aubr build"
+
+[tasks.generate]
+run = "aubr generate"
+
+[tasks.start]
+run = "aubr start"
+
+[tasks."start:generate"]
+run = "aubr start:generate"
+
+[tasks.lint]
+run = [
+  "aubr oxlint",
+  "aubr eslint"
+]
+
+[tasks."lint:fix"]
+run = [
+  "aubr oxlint --fix",
+  "aubr eslint --fix"
+]
+
+[tasks.typecheck]
+run = "aubr typecheck"
+
+[tasks.unused]
+run = "aubr unused"
+
+[tasks.check]
+run = { tasks = [
+  "lint",
+  "typecheck",
+  "unused",
+] }
+
+[tasks."test:unit"]
+run = "aubr test:unit"
+
+[tasks."pretest:e2e"]
+run = "aubx playwright-core install --with-deps"
+
+[tasks."test:e2e"]
+depends = "pretest:e2e"
+run = "aubr test:e2e"
+
+[tasks."test:nuxt"]
+run = "aubr test:nuxt"
+
+[tasks.test]
+depends = "pretest:e2e"
+run = "aubr test"
+
+[tasks."test:watch"]
+run = "aubr test:watch"

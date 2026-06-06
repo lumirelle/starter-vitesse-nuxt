@@ -5,6 +5,7 @@ export default {
     './app/**/*.{ts,vue}',
     './shared/types/**/*',
   ],
+  ignoreBinaries: ['mise'],
   ignoreDependencies: [
     // Icons.
     '@iconify-json/*',
