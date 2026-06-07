@@ -4,81 +4,68 @@ _.path = [ "./node_modules/.bin" ]
 [tools]
 bun = "latest"
 aube = "latest"
+pkl = "latest"
+hk = "latest"
 
-[tasks."prepare:git-pre-commit"]
-run = "mise generate git-pre-commit --write"
+[hooks]
+enter = "hk install"
 
-[tasks."prepare:nuxt"]
-run = "aubr prepare:nuxt"
-
-[tasks.prepare]
-run = { tasks = [
-  "prepare:git-pre-commit",
-  "prepare:nuxt"
-] }
+[deps.auto-aube]
+sources = [
+  "package.json",
+  "bun.lock"
+]
+outputs = [ "node_modules/" ]
+# Because aube's output lockfile has bugs,
+# we use `bun install --lockfile-only` to generate a lockfile
+run = "bun install --lockfile-only && aube install && nuxt prepare"
+auto = true
 
 [tasks.pre-commit]
-run = "nano-staged"
+run = "hk run pre-commit"
 
 [tasks.dev]
-run = "aubr dev"
+run = "nuxt dev --open --public"
 
 [tasks."dev:pwa"]
-run = "aubr dev:pwa"
+run = "VITE_PLUGIN_PWA=true nuxt dev -o"
 
 [tasks.build]
-run = "aubr build"
+run = "nuxt build"
 
 [tasks.generate]
-run = "aubr generate"
+run = "nuxt generate"
 
 [tasks.start]
-run = "aubr start"
+run = "bun run .output/server/index.mjs"
 
 [tasks."start:generate"]
-run = "aubr start:generate"
-
-[tasks.lint]
-run = [
-  "aubr oxlint",
-  "aubr eslint"
-]
-
-[tasks."lint:fix"]
-run = [
-  "aubr oxlint --fix",
-  "aubr eslint --fix"
-]
-
-[tasks.typecheck]
-run = "aubr typecheck"
-
-[tasks.unused]
-run = "aubr unused"
+run = "aubx serve .output/public"
 
 [tasks.check]
-run = { tasks = [
-  "lint",
-  "typecheck",
-  "unused",
-] }
+run = "hk check --all"
+
+[tasks.fix]
+run = "hk fix --all"
 
 [tasks."test:unit"]
-run = "aubr test:unit"
+# It seems like run vitest.cmd directly will cause
+# tsnapi missing it's snapshot state...
+run = "aubr vitest run --project unit"
 
 [tasks."pretest:e2e"]
 run = "aubx playwright-core install --with-deps"
 
 [tasks."test:e2e"]
 depends = "pretest:e2e"
-run = "aubr test:e2e"
+run = "aubr vitest run --project e2e"
 
 [tasks."test:nuxt"]
-run = "aubr test:nuxt"
+run = "aubr vitest run --project nuxt"
 
 [tasks.test]
 depends = "pretest:e2e"
-run = "aubr test"
+run = "aubr vitest run"
 
 [tasks."test:watch"]
-run = "aubr test:watch"
+run = "aubr vitest"

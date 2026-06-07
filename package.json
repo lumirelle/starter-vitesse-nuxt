@@ -3,28 +3,11 @@
   "private": true,
   "packageManager": "aube@1.17.1",
   "scripts": {
-    "prepare": "mise run prepare",
-    "prepare:nuxt": "nuxt prepare",
-    "dev": "nuxt dev --open --public",
-    "dev:pwa": "VITE_PLUGIN_PWA=true nuxt dev -o",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "bun run .output/server/index.mjs",
-    "start:generate": "bunx serve .output/public",
-    "oxlint": "oxlint",
-    "eslint": "eslint",
-    "typecheck": "nuxt typecheck",
-    "unused": "knip-bun",
-    "test:unit": "bun run test --project unit",
-    "test:e2e": "bun run test --project e2e",
-    "test:nuxt": "bun run test --project nuxt",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "prepare": "nuxt prepare"
   },
   "workspaces": {
     "packages": [],
     "catalogs": {
-      "dev": {},
       "types": {
         "typescript": "^6.0.3"
       },
@@ -66,10 +49,8 @@
         "eslint": "^10.4.1",
         "eslint-plugin-oxlint": "^1.68.0",
         "knip": "^6.16.1",
-        "nano-staged": "^1.0.2",
         "oxlint": "^1.68.0",
         "oxlint-tsgolint": "^0.23.0",
-        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "vue-tsc": "^3.3.3"
       },
       "test": {
@@ -112,13 +93,11 @@
     "eslint-plugin-oxlint": "catalog:check",
     "happy-dom": "catalog:test",
     "knip": "catalog:check",
-    "nano-staged": "catalog:check",
     "nuxt": "catalog:build",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "pinia": "catalog:frontend",
     "playwright-core": "catalog:test",
-    "simple-git-hooks": "catalog:check",
     "std-env": "catalog:test",
     "typescript": "catalog:types",
     "unocss": "catalog:build",
@@ -130,14 +109,5 @@
   "overrides": {
     "typescript": "catalog:types",
     "vite": "catalog:build"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "bunx nano-staged"
-  },
-  "nano-staged": {
-    "*": [
-      "oxlint --no-error-on-unmatched-pattern",
-      "eslint"
-    ]
   }
 }
