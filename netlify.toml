@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "bun run build"
+command = "mise run build"
 
 [build.environment]
 BUN_VERSION = "latest"

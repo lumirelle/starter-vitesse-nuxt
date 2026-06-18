@@ -2,15 +2,16 @@
 _.path = [ "./node_modules/.bin" ]
 
 [tools]
+# Environments
 bun = "latest"
-"github:jdx/aube" = "latest"
+aube = "latest"
+"npm:serve" = "latest"
+# Linters & Formatters
 pkl = "latest"
 hk = "latest"
 
-[hooks]
-enter = "hk install"
-
-[deps.auto-aube]
+[deps.bun-aube]
+description = "Automatically install dependencies via aube & bun's lockfile."
 sources = [
   "package.json",
   "bun.lock"
@@ -20,9 +21,6 @@ outputs = [ "node_modules/" ]
 # we use `bun install --lockfile-only` to generate a lockfile
 run = "bun install --lockfile-only && aube install && nuxt prepare"
 auto = true
-
-[tasks.pre-commit]
-run = "hk run pre-commit"
 
 [tasks.dev]
 run = "nuxt dev --open --public"
@@ -40,7 +38,7 @@ run = "nuxt generate"
 run = "bun run .output/server/index.mjs"
 
 [tasks."start:generate"]
-run = "aubx serve .output/public"
+run = "serve .output/public"
 
 [tasks.check]
 run = "hk check --all"
@@ -49,23 +47,21 @@ run = "hk check --all"
 run = "hk fix --all"
 
 [tasks."test:unit"]
-# It seems like run vitest.cmd directly will cause
-# tsnapi missing it's snapshot state...
-run = "aubr vitest run --project unit"
+run = "vitest run --project unit"
 
 [tasks."pretest:e2e"]
-run = "aubx playwright-core install --with-deps"
+run = "playwright-core install --with-deps"
 
 [tasks."test:e2e"]
 depends = "pretest:e2e"
-run = "aubr vitest run --project e2e"
+run = "vitest run --project e2e"
 
 [tasks."test:nuxt"]
-run = "aubr vitest run --project nuxt"
+run = "vitest run --project nuxt"
 
 [tasks.test]
 depends = "pretest:e2e"
-run = "aubr vitest run"
+run = "vitest run"
 
 [tasks."test:watch"]
-run = "aubr vitest"
+run = "vitest"

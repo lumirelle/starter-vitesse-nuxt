@@ -5,7 +5,7 @@ export default {
     './app/**/*.{ts,vue}',
     './shared/types/**/*',
   ],
-  ignoreBinaries: ['mise'],
+  ignoreFiles: ['taze.config.ts'],
   ignoreDependencies: [
     // Icons.
     '@iconify-json/*',
@@ -23,6 +23,9 @@ export default {
     '@lumirelle/oxlint-config',
     '@unocss/eslint-config',
     'vue-tsc',
+
+    // Dependencies manager.
+    'taze',
 
     // Vitest environment for Nuxt.
     'vitest-environment-nuxt',
