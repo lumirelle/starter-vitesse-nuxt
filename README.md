@@ -12,16 +12,11 @@
 
 > [!Note]
 >
-> `main` branch of this starter is currently migrate to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-vitesse-nuxt/tree/nodejs).
+> `main` branch of this starter has migrated the runtime to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-vitesse-nuxt/tree/nodejs).
 >
-> See [Bun vs. Node.js comparison table](https://strapi.io/blog/bun-vs-nodejs-performance-comparison-guide).
+> See [Bun vs. Node.js comparison table](https://strapi.io/blog/bun-vs-nodejs-performance-comparison-guide) for more information.
 >
-> Migration progress:
->
-> - [x] Package Manager: `pnpm` -> `bun`
-> - [ ] Build Tool: Still using `vite` + `rolldown`
-> - [ ] Test Runner: Still using `vitest`
-> - [x] Deploy Environment Support: `netlify` and `stackblitz`
+> Also, we use [`mise`](https://mise.jdx.dev/) to manage our development environment and [`aube`](https://aube.jdx.dev/) to manage dependencies, you can check out the [mise getting started guide](https://mise.jdx.dev/getting-started.html) & [aube getting started guide](https://aube.jdx.dev/getting-started.html).
 
 > [!Note]
 >
@@ -33,11 +28,12 @@
 
 - 💚 [Nuxt 4](https://nuxt.com/)
   - 🛟 Server-Side Rendering (SSR);
-  - 📦 Edge Side Rendering (ESR): &ndash; Zero-config cloud functions and deploy.
+  - 📦 Edge Side Rendering (ESR) &ndash; Zero-config cloud functions and deploy.
   - 🗺️ File-based routing;
   - 📡 API (components, composables, utils, ...) auto importing;
-  - 🧩 Modules system;
+  - 🧩 Module system;
   - 🏗️ [Layout system](./app/layouts);
+  - 🪸 State management;
   - ...etc.
 
 - ⚡️ [Vite 8 (Rolldown)](https://vite.dev/) &ndash; A blazing fast frontend build tool powering the next generation of web applications.
@@ -69,8 +65,6 @@
 ### Development Experience
 
 - 💪🏻 [TypeScript](https://www.typescriptlang.org/), of course.
-
-- 🍍 [Pinia](https://github.com/vuejs/pinia) &ndash; State Management, see [./app/composables/useStore.ts](./app/composables/useStore.ts).
 
 - 🫴🏻 [Vue Use](https://github.com/vueuse/vueuse) &ndash; Collection of useful composition functions for Vue.
 
@@ -112,7 +106,7 @@ We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https:
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-bunx -b degit lumirelle/starter-vitesse-nuxt my-nuxt-app
+npx degit lumirelle/starter-vitesse-nuxt my-nuxt-app
 cd my-nuxt-app
-bun i # If you don't have bun installed, run: npm install -g bun or install via https://bun.sh/
+aube i # If you don't have aube installed, see here: https://aube.jdx.dev/installation.html
 ```

@@ -1,4 +1,4 @@
-namespace ApiNav {
+namespace ApiNavV1 {
   interface Nav {
     items: NavItem[]
   }

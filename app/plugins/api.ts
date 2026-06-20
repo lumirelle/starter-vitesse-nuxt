@@ -5,6 +5,10 @@
  * 2. Manipulate headers (e.g. forward headers from incoming request for server-side requests, and add additional headers like token and locale for both server-side and client-side requests);
  * 3. Error handling (e.g. redirect to login page when user doesn't login or token expires).
  *
+ * Provided via:
+ * 1. `globalThis.$api`;
+ * 2. `nuxtApp.$api`.
+ *
  * @see https://nuxt.com/docs/4.x/guide/recipes/custom-usefetch#recipe-custom-fetch-instance
  */
 import type { ExtractedRouteMethod, InternalApi, NitroFetchOptions, TypedInternalResponse } from 'nitropack'
@@ -36,7 +40,7 @@ type Base$Fetch<
 ) => Promise<
   TypedInternalResponse<MappedR, T, NitroFetchOptions<R> extends O ? 'get' : ExtractedRouteMethod<R, O>>
 >
-type $Fetch<T = unknown, R extends ApiNitroFetchRequest = ApiNitroFetchRequest> = Base$Fetch<T, R> & {
+export type $Api<T = unknown, R extends ApiNitroFetchRequest = ApiNitroFetchRequest> = Base$Fetch<T, R> & {
   raw: never
   create: never
 }
@@ -44,27 +48,31 @@ type $Fetch<T = unknown, R extends ApiNitroFetchRequest = ApiNitroFetchRequest> 
 // Type context
 declare module '#app' {
   interface NuxtApp {
-    $api: $Fetch<unknown, ApiNitroFetchRequest>
+    $api: $Api<unknown, ApiNitroFetchRequest>
   }
 }
 declare module 'vue' {
   interface ComponentCustomProperties {
-    $api: $Fetch<unknown, ApiNitroFetchRequest>
+    $api: $Api<unknown, ApiNitroFetchRequest>
   }
+}
+declare global {
+  var $api: $Api<unknown, ApiNitroFetchRequest>
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
   const api = $fetch.create<unknown, ApiNitroFetchRequest>({
     // Custom `baseURL` for convenience
     baseURL: BASE_URL,
+
     // Manipulate headers
     onRequest({ options }) {
       const locale = useCookie('locale', { default: () => 'en' }).value
       const token = useCookie('token').value
-      const headers = useRequestHeaders()
+      const requestHeaders = useRequestHeaders()
       // For server-side requests, forward the headers from the incoming request.
       if (import.meta.server) {
-        for (const [key, value] of Object.entries(headers)) {
+        for (const [key, value] of Object.entries(requestHeaders)) {
           options.headers.set(key, value)
         }
       }
@@ -74,21 +82,28 @@ export default defineNuxtPlugin((nuxtApp) => {
         options.headers.set('X-Token', token)
       }
     },
+
     // Error handling
     onRequestError({ error }) {
       console.error('Request error:', error)
     },
     async onResponseError({ response }) {
-      if (response.status === 401 || response.status === 403) {
-        console.error('User has not login!')
-        await nuxtApp.runWithContext(async () => await navigateTo('/'))
-      }
-      else {
-        console.error('Response error:', response.status, response.statusText)
+      switch (response.status) {
+        case 401:
+        case 403:
+          console.error('User has not login!')
+          await nuxtApp.runWithContext(async () => await navigateTo('/'))
+          break
+        default:
+          console.error('Response error:', response.status, response.statusText)
       }
     },
   })
 
+  // Provide via globalThis
+  globalThis.$api = api as unknown as $Api<unknown, ApiNitroFetchRequest>
+
+  // Provide via Nuxt plugin context
   return {
     provide: {
       api,

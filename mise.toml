@@ -47,21 +47,23 @@ run = "hk check --all"
 run = "hk fix --all"
 
 [tasks."test:unit"]
-run = "vitest run --project unit"
+# It seems like run vitest.cmd directly will cause
+# tsnapi missing it's snapshot state...
+run = "aubr vitest run --project unit"
 
 [tasks."pretest:e2e"]
 run = "playwright-core install --with-deps"
 
 [tasks."test:e2e"]
 depends = "pretest:e2e"
-run = "vitest run --project e2e"
+run = "aubr vitest run --project e2e"
 
 [tasks."test:nuxt"]
-run = "vitest run --project nuxt"
+run = "aubr vitest run --project nuxt"
 
 [tasks.test]
 depends = "pretest:e2e"
-run = "vitest run"
+run = "aubr vitest run"
 
 [tasks."test:watch"]
-run = "vitest"
+run = "aubr vitest"

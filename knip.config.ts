@@ -3,7 +3,9 @@ import type { KnipConfig } from 'knip'
 export default {
   entry: [
     './app/**/*.{ts,vue}',
-    './shared/types/**/*',
+    './server/**/*.{ts,vue}',
+    './test/**/*.{ts,vue}',
+    './shared/**/*.ts',
   ],
   ignoreFiles: ['taze.config.ts'],
   ignoreDependencies: [
@@ -26,8 +28,5 @@ export default {
 
     // Dependencies manager.
     'taze',
-
-    // Vitest environment for Nuxt.
-    'vitest-environment-nuxt',
   ],
 } satisfies KnipConfig

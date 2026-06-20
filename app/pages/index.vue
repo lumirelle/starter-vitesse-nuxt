@@ -7,7 +7,8 @@ useHead({
 
 const online = useOnline()
 
-const navStore = useNavStore()
+const navRepository = useNavRepository()
+const { data } = await useAsyncData('nav', () => navRepository.get())
 </script>
 
 <template>
@@ -17,7 +18,8 @@ const navStore = useNavStore()
       <div v-else text-gray:80>
         {{ t('status.offline') }}
       </div>
-      <AppNav v-if="navStore.navData" :items="navStore.navData.items" />
+
+      <AppNav v-if="data?.payload" :items="data.payload.items" />
     </div>
   </main>
 </template>

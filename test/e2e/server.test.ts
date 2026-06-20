@@ -16,8 +16,7 @@ await setup({
 })
 
 describe('server', () => {
-  // TODO(Lumirelle): It seems `node <output>/server/index.mjs` does not work as expected, we need to investigate it later
-  it.todo('/ -> should contain html doctype', async () => {
+  it('/ -> should contain html doctype', async () => {
     // Fetch for the server-side rendered result
     const html = await $fetch<string>('/')
     expect(html.slice(0, 15)).toMatchInlineSnapshot(`"<!DOCTYPE html>"`)

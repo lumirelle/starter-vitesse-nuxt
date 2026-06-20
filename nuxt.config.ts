@@ -14,28 +14,23 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    '@pinia/nuxt',
     '@unocss/nuxt',
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
   ],
 
   $test: {
-    vue: {
-      runtimeCompiler: true,
-    },
-    experimental: {
-      payloadExtraction: false,
-      // Does not support now, see https://github.com/npmx-dev/npmx.dev
-      viteEnvironmentApi: false,
-    },
+    // We run tests via vitest & node runtime (bun does not support coverage yet),
+    // so we need to set the nitro preset to node-server to avoid bundling issues.
+    // Set preset here because vitest environment overrides are not applied to the
+    // startup but only to the runtime.
     nitro: {
-      preset: 'node',
+      preset: 'node-server',
     },
-    ogImage: false,
-    // XXX(Lumirelle): Cause tests failure, need to investigate.
-    pwa: false,
-    unocss: false,
+  },
+
+  imports: {
+    dirs: ['composables/repository/*'],
   },
 
   devtools: {
@@ -76,8 +71,10 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    EXAMPLE_PRIVATE_CONFIG: undefined,
+
     public: {
-      XXX_API_KEY: undefined,
+      EXAMPLE_PUBLIC_CONFIG: undefined,
     },
   },
 
@@ -94,7 +91,7 @@ export default defineNuxtConfig({
     typescriptPlugin: true,
   },
 
-  compatibilityDate: '2026-03-13',
+  compatibilityDate: '2026-06-20',
 
   nitro: {
     preset: 'bun',
@@ -104,14 +101,9 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         '@antfu/utils',
+        '@unhead/schema-org/vue',
         '@vueuse/core',
       ],
-    },
-  },
-
-  typescript: {
-    nodeTsConfig: {
-      include: ['../*.ts'],
     },
   },
 
@@ -146,15 +138,6 @@ export default defineNuxtConfig({
 
   image: {
     format: ['avif', 'webp'],
-    presets: {
-      avatar: {
-        modifiers: { format: 'webp', width: 48, height: 48, fit: 'cover' },
-      },
-      logo: {
-        modifiers: { format: 'webp', width: 200, height: 80, fit: 'cover' },
-      },
-      // ...
-    },
     /**
      * Enable image optimization on external websites.
      *
@@ -171,6 +154,8 @@ export default defineNuxtConfig({
   },
 
   pwa: {
+    // Disable service worker
+    disable: true,
     manifest: {
       name: appName,
       short_name: appName,

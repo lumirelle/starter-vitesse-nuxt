@@ -1,5 +1,5 @@
 import { defineVitestProject } from '@nuxt/test-utils/config'
-import { isWindows } from 'std-env'
+import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vitest/config'
 
 const rootDir = import.meta.dirname
@@ -20,14 +20,36 @@ export default defineConfig({
           name: 'unit',
           include: ['./test/unit/*.{test,spec}.ts'],
           benchmark: { include: ['./test/unit/*.{bench,benchmark}.ts'] },
+          environment: 'node',
         },
       },
-      await defineVitestProject({
+      () => defineVitestProject({
         test: {
           name: 'nuxt',
           include: ['./test/nuxt/*.{test,spec}.ts'],
           benchmark: { include: ['./test/nuxt/*.{bench,benchmark}.ts'] },
           environment: 'nuxt',
+          environmentOptions: {
+            nuxt: {
+              rootDir,
+              // See https://github.com/npmx-dev/npmx.dev/blob/main/vite.config.ts#L203
+              overrides: {
+                vue: {
+                  runtimeCompiler: true,
+                },
+                experimental: {
+                  payloadExtraction: false,
+                  viteEnvironmentApi: false,
+                },
+                ogImage: false,
+              },
+            },
+          },
+          browser: {
+            enabled: true,
+            provider: playwright(),
+            instances: [{ browser: 'chromium', headless: true }],
+          },
         },
       }),
       {
@@ -37,7 +59,17 @@ export default defineConfig({
           benchmark: {
             include: ['./test/e2e/*.{bench,benchmark}.ts'],
           },
-          testTimeout: isWindows ? 36_000 : 12_000,
+          testTimeout: 120_000,
+          environment: 'node',
+          environmentOptions: {
+            nuxt: {
+              overrides: {
+                fonts: {
+                  provider: 'local',
+                },
+              },
+            },
+          },
         },
       },
     ],

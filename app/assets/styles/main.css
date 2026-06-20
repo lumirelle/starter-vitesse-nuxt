@@ -1,4 +1,11 @@
 /* Base reset and defaults */
+html {
+  box-sizing: border-box;
+}
+html.dark {
+  color-scheme: dark;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +14,6 @@
 *::before,
 *::after {
   box-sizing: inherit;
-}
-html {
-  box-sizing: border-box;
-}
-
-html.dark {
-  color-scheme: dark;
 }
 
 ::picker(select) {

@@ -17,9 +17,7 @@ await setup({
 })
 
 describe('browser', () => {
-  // TODO(Lumirelle): Skip browser test because playwright cannot be launched with bun.
-  // See: https://github.com/oven-sh/bun/issues/15679
-  it.todo('/ -> should contain html doctype', async () => {
+  it('/ -> should contain html doctype', async () => {
     // Render page in headless browser and wait until hydration is complete
     const page = await createPage('/')
     const html = await page.content()
