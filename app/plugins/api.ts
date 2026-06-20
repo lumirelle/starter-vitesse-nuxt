@@ -60,53 +60,57 @@ declare global {
   var $api: $Api<unknown, ApiNitroFetchRequest>
 }
 
-export default defineNuxtPlugin((nuxtApp) => {
-  const api = $fetch.create<unknown, ApiNitroFetchRequest>({
+export default defineNuxtPlugin({
+  // Make plugin who is standlone loading parallel, to gain better performance.
+  parallel: true,
+  setup(nuxtApp) {
+    const api = $fetch.create<unknown, ApiNitroFetchRequest>({
     // Custom `baseURL` for convenience
-    baseURL: BASE_URL,
+      baseURL: BASE_URL,
 
-    // Manipulate headers
-    onRequest({ options }) {
-      const locale = useCookie('locale', { default: () => 'en' }).value
-      const token = useCookie('token').value
-      const requestHeaders = useRequestHeaders()
-      // For server-side requests, forward the headers from the incoming request.
-      if (import.meta.server) {
-        for (const [key, value] of Object.entries(requestHeaders)) {
-          options.headers.set(key, value)
+      // Manipulate headers
+      onRequest({ options }) {
+        const locale = useCookie('locale', { default: () => 'en' }).value
+        const token = useCookie('token').value
+        const requestHeaders = useRequestHeaders()
+        // For server-side requests, forward the headers from the incoming request.
+        if (import.meta.server) {
+          for (const [key, value] of Object.entries(requestHeaders)) {
+            options.headers.set(key, value)
+          }
         }
-      }
-      // Additional headers for both server-side and client-side requests
-      options.headers.set('Language', locale)
-      if (token) {
-        options.headers.set('X-Token', token)
-      }
-    },
+        // Additional headers for both server-side and client-side requests
+        options.headers.set('Language', locale)
+        if (token) {
+          options.headers.set('X-Token', token)
+        }
+      },
 
-    // Error handling
-    onRequestError({ error }) {
-      console.error('Request error:', error)
-    },
-    async onResponseError({ response }) {
-      switch (response.status) {
-        case 401:
-        case 403:
-          console.error('User has not login!')
-          await nuxtApp.runWithContext(async () => await navigateTo('/'))
-          break
-        default:
-          console.error('Response error:', response.status, response.statusText)
-      }
-    },
-  })
+      // Error handling
+      onRequestError({ error }) {
+        console.error('Request error:', error)
+      },
+      async onResponseError({ response }) {
+        switch (response.status) {
+          case 401:
+          case 403:
+            console.error('User has not login!')
+            await nuxtApp.runWithContext(async () => await navigateTo('/'))
+            break
+          default:
+            console.error('Response error:', response.status, response.statusText)
+        }
+      },
+    })
 
-  // Provide via globalThis
-  globalThis.$api = api as unknown as $Api<unknown, ApiNitroFetchRequest>
+    // Provide via globalThis
+    globalThis.$api = api as unknown as $Api<unknown, ApiNitroFetchRequest>
 
-  // Provide via Nuxt plugin context
-  return {
-    provide: {
-      api,
-    },
-  }
+    // Provide via Nuxt plugin context
+    return {
+      provide: {
+        api,
+      },
+    }
+  },
 })
