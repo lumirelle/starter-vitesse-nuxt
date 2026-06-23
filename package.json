@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "aube@1.21.0",
+  "packageManager": "aube@1.22.0",
   "scripts": {
     "prepare": "nuxt prepare"
   },
@@ -42,6 +42,9 @@
         "@iconify-json/carbon": "^1.2.23",
         "@iconify-json/twemoji": "^1.2.5",
         "@iconify/utils": "^3.1.3"
+      },
+      "serve": {
+        "serve": "^14.2.6"
       },
       "check": {
         "@antfu/eslint-config": "^9.0.0",
@@ -96,6 +99,7 @@
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "playwright-core": "catalog:test",
+    "serve": "catalog:serve",
     "taze": "catalog:dev",
     "typescript": "catalog:types",
     "unocss": "catalog:build",

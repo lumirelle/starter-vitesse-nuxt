@@ -31,6 +31,12 @@ export default antfu(
         ],
       },
     },
+    toml: {
+      overrides: {
+        'toml/array-element-newline': ['error', 'consistent'],
+        'toml/array-bracket-spacing': ['error', 'never'],
+      },
+    },
   },
   /**
    * Don't forget to set `standalone: false` in your Nuxt ESLint module options.

@@ -7,26 +7,32 @@ export default {
     './test/**/*.{ts,vue}',
     './shared/**/*.ts',
   ],
-  ignoreFiles: ['taze.config.ts'],
+  ignoreFiles: [
+    // TODO(Lumirelle): Create a pull request to add taze plugin for knip.
+    'taze.config.ts',
+  ],
   ignoreDependencies: [
-    // Icons.
-    '@iconify-json/*',
+    // We uses their types, but we don't import them directly
+    'nitropack',
+    'ofetch',
 
-    // Frontend libraries.
+    // Frontend libraries
     '@takumi-rs/core',
     '@vueuse/core',
     'vue-router',
 
-    // We uses their types, but we don't import them directly.
-    'nitropack',
-    'ofetch',
+    // Icons
+    '@iconify-json/*',
 
-    // Code quality tools.
+    // Serve tools
+    'serve',
+
+    // Check tools
     '@lumirelle/oxlint-config',
     '@unocss/eslint-config',
     'vue-tsc',
 
-    // Dependencies manager.
+    // Dependencies manager
     'taze',
   ],
 } satisfies KnipConfig
