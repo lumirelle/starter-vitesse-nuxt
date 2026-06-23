@@ -30,7 +30,7 @@
         "@vueuse/nuxt": "^14.3.0",
         "nuxt": "^4.4.8",
         "unocss": "^66.7.2",
-        "vite": "^8.0.16"
+        "vite": "^8.1.0"
       },
       "frontend": {
         "@antfu/utils": "^9.3.0",
