@@ -1,4 +1,4 @@
 {
   "installDependencies": false,
-  "startCommand": "npm install mise @endevco/aube --global && mise install && mise deps"
+  "startCommand": "npm install --ignore-scripts=false mise @nubjs/nub --global && mise install && mise deps"
 }

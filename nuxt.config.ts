@@ -19,16 +19,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
 
-  $test: {
-    // We run tests via vitest & node runtime (bun does not support coverage yet),
-    // so we need to set the nitro preset to node-server to avoid bundling issues.
-    // Set preset here because vitest environment overrides are not applied to the
-    // startup but only to the runtime.
-    nitro: {
-      preset: 'node-server',
-    },
-  },
-
   imports: {
     dirs: ['composables/repository/*'],
   },
@@ -88,14 +78,9 @@ export default defineNuxtConfig({
   experimental: {
     inlineRouteRules: true,
     typedPages: true,
-    typescriptPlugin: true,
   },
 
   compatibilityDate: '2026-06-20',
-
-  nitro: {
-    preset: 'bun',
-  },
 
   vite: {
     optimizeDeps: {

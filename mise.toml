@@ -1,67 +1,76 @@
-[env]
-_.path = ["./node_modules/.bin"]
-
 [tools]
 # Environments
-bun = "1.3.14"
-aube = "1.26.0"
+node = 'latest'
+'github:nubjs/nub' = { version = 'latest', postinstall = 'nub pm pin' }
 # Linters & Formatters
-hk = "1.50.0"
-pkl = "0.32.0"
-stylua = "2.5.2"
-node = "24"
+hk = 'latest'
+stylua = 'latest'
+pkl = 'latest'
 
-[deps.bun-aube]
-description = "Automatically install dependencies via aube & bun's lockfile."
-sources = ["package.json", "bun.lock"]
-outputs = ["node_modules/"]
-# Because aube's output lockfile has bugs,
-# we use `bun install --lockfile-only` to generate a lockfile
-run = "bun install --lockfile-only && aube install && nuxt prepare"
+[deps.nub]
+description = 'Automatically install Node.js dependencies via nub.'
+sources = ['package.json', 'nub.lock']
+outputs = ['node_modules/']
+run = 'nub install'
 auto = true
 
-[tasks.dev]
-run = "nuxt dev --open --public"
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']
 
-[tasks."dev:pwa"]
-run = "VITE_PLUGIN_PWA=true nuxt dev -o"
+# See https://github.com/webpro-nl/knip/issues/1813 & https://github.com/oxc-project/oxc/issues/11834
+KNIP_DISABLE_RAW_TRANSFER = 1
+
+[tasks.dev]
+description = "Run the development server with hot reloading."
+usage = '''
+flag "--pwa" help="Whether to enable PWA support."
+'''
+run = "{{ 'VITE_PLUGIN_PWA=true' if usage.pwa else '' }} nuxt dev --open --public"
 
 [tasks.build]
-run = "nuxt build"
-
-[tasks.generate]
-run = "nuxt generate"
+description = "Run the production build."
+usage = '''
+flag "--static" help="Whether to build the static site."
+'''
+run = "nuxt {{ 'generate' if usage.static else 'build' }}"
 
 [tasks.start]
-run = "bun run .output/server/index.mjs"
-
-[tasks."start:generate"]
-run = "serve .output/public"
+description = "Start the production server."
+usage = '''
+flag "--static" help="Whether to start the static site."
+'''
+run = "{{ 'serve .output/public' if usage.static else 'nub .output/server/index.mjs' }}"
 
 [tasks.check]
-run = "hk check --all"
+description = 'Run all checks.'
+usage = '''
+flag "-s --staged" help="Run on staged files only without stashing unstaged changes"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
+'''
+run = '''
+hk check {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
+'''
 
 [tasks.fix]
-run = "hk fix --all"
+description = 'Fix all check issues.'
+usage = '''
+flag "-s --staged" help="Run on staged files only without stashing unstaged changes"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
+'''
+run = '''
+hk fix {{ "--staged" if usage.staged else "--all" }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
+'''
 
-[tasks."test:unit"]
-# It seems like run vitest.cmd directly will cause
-# tsnapi missing it's snapshot state...
-run = "aubr vitest run --project unit"
-
-[tasks."pretest:e2e"]
+[tasks.pretest]
 run = "playwright-core install --with-deps"
 
-[tasks."test:e2e"]
-depends = "pretest:e2e"
-run = "aubr vitest run --project e2e"
-
-[tasks."test:nuxt"]
-run = "aubr vitest run --project nuxt"
-
 [tasks.test]
-depends = "pretest:e2e"
-run = "aubr vitest run"
-
-[tasks."test:watch"]
-run = "aubr vitest"
+description = "Run tests."
+depends = ["build", "pretest"]
+usage = '''
+flag "-w --watch" help="Watch files for changes and rerun tests"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
+'''
+run = '''
+vitest {{ '' if usage.watch else 'run' }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
+'''

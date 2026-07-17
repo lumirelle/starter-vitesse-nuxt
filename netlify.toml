@@ -3,7 +3,7 @@ publish = "dist"
 command = "mise run build"
 
 [build.environment]
-BUN_VERSION = "latest"
+NODE_VERSION = "26.5.0"
 
 [[redirects]]
 from = "/*"

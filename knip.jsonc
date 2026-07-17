@@ -1,0 +1,27 @@
+{
+  "entry": [
+    "./app/**/*.{ts,vue}",
+    "./server/**/*.{ts,vue}",
+    "./test/**/*.{ts,vue}",
+    "./shared/**/*.ts"
+  ],
+  "ignoreDependencies": [
+    // We uses their types, but we don"t import them directly
+    "nitropack",
+    "ofetch",
+    // Frontend libraries
+    "@takumi-rs/core",
+    "@vueuse/core",
+    "vue-router",
+    // Icons
+    "@iconify-json/*",
+    // Serve tools
+    "serve",
+    // Quality
+    "@lumirelle/oxlint-config",
+    "@unocss/eslint-config",
+    "vue-tsc",
+    // Node.js dependencies manager
+    "taze"
+  ]
+}

@@ -2,7 +2,7 @@ FROM jdxcode/mise:latest AS build-stage
 
 WORKDIR /app
 
-COPY mise.toml mise.lock package.json bun.lock ./
+COPY mise.toml mise.lock package.json nub.lock ./
 
 RUN mise install
 

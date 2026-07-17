@@ -12,14 +12,6 @@
 
 > [!Note]
 >
-> `main` branch of this starter has migrated the runtime to [bun](https://bun.com/), if you want to use `nodejs` version, please check out the [`nodejs` branch](https://github.com/lumirelle/starter-vitesse-nuxt/tree/nodejs).
->
-> See [Bun vs. Node.js comparison table](https://strapi.io/blog/bun-vs-nodejs-performance-comparison-guide) for more information.
->
-> Also, we use [`mise`](https://mise.jdx.dev/) to manage our development environment and [`aube`](https://aube.jdx.dev/) to manage dependencies, you can check out the [mise getting started guide](https://mise.jdx.dev/getting-started.html) & [aube getting started guide](https://aube.jdx.dev/getting-started.html).
-
-> [!Note]
->
 > This is a personal fork of [antfu/vitesse-nuxt](https://github.com/antfu/vitesse-nuxt) with some customizations.
 
 ## Features
