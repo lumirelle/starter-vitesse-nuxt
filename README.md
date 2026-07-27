@@ -3,11 +3,11 @@
 </p>
 
 <h2 align="center">
-<a href="https://github.com/antfu/vitesse">Vitesse</a> Starter for Nuxt 4
+Starter template for Nuxt 4
 </h2><br>
 
 <p align="center">
-<a href="https://stackblitz.com/github/lumirelle/starter-vitesse-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Stackblitz"></a>
+<a href="https://stackblitz.com/github/lumirelle/starter-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Stackblitz"></a>
 </p>
 
 > [!Note]
@@ -87,18 +87,19 @@ We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https:
 
 ### Online
 
-<a href="https://stackblitz.com/github/lumirelle/starter-vitesse-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
+<a href="https://stackblitz.com/github/lumirelle/starter-nuxt"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt=""></a>
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/lumirelle/starter-vitesse-nuxt/generate).
+[Create a repo from this template on GitHub](https://github.com/lumirelle/starter-nuxt/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit lumirelle/starter-vitesse-nuxt my-nuxt-app
+npx degit lumirelle/starter-nuxt my-nuxt-app
 cd my-nuxt-app
-aube i # If you don't have aube installed, see here: https://aube.jdx.dev/installation.html
+# Nub (https://nubjs.com), The all-in-one JavaScript toolkit that augments Node.js instead of trying to replace it
+nub i
 ```
