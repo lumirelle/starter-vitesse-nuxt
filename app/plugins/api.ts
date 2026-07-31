@@ -38,6 +38,7 @@ type Base$Fetch<
   request: R,
   opts?: O,
 ) => Promise<
+  // @ts-expect-error Excessive depth
   TypedInternalResponse<MappedR, T, NitroFetchOptions<R> extends O ? 'get' : ExtractedRouteMethod<R, O>>
 >
 export type $Api<T = unknown, R extends ApiNitroFetchRequest = ApiNitroFetchRequest> = Base$Fetch<T, R> & {
