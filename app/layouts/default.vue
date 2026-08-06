@@ -1,7 +1,7 @@
 <template>
-  <!-- In order to support page-level transitions -->
-  <!-- We need to ensure the layout has only one root element -->
   <div>
+    <!-- In order to support page-level transitions -->
+    <!-- We need to ensure the layout has only one root element -->
     <AppHeader />
     <slot />
     <AppFooter>
